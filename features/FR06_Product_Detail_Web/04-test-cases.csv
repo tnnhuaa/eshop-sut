@@ -1,0 +1,5 @@
+TestCaseID,Feature,Technique,Preconditions,Input,Steps,ExpectedResult,ActualResult,Status,Evidence,BugID
+FR06-DT-001,FR-06,Domain Testing,TODO,TODO,TODO,TODO,TODO,Not Run,TODO,TODO
+FR06-BVA-001,FR-06,Boundary Value Analysis,TODO,quantity=0,TODO,System rejects quantity below 1,TODO,Not Run,TODO,TODO
+FR06-BVA-002,FR-06,Boundary Value Analysis,TODO,quantity=1,TODO,System accepts minimum quantity,TODO,Not Run,TODO,TODO
+FR06-BVA-003,FR-06,Boundary Value Analysis,TODO,quantity=2,TODO,System accepts value just above minimum,TODO,Not Run,TODO,TODO

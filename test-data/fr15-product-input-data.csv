@@ -1,0 +1,8 @@
+Label,NameLength,Name,Price,Category,ExpectedClass,Notes
+Empty name,0,,100000,Existing,Invalid,Name is required
+Minimum name,1,A,100000,Existing,Valid,Boundary value
+Max name,255,TODO_GENERATE_255_CHARS,100000,Existing,Valid,Boundary value
+Too long name,256,TODO_GENERATE_256_CHARS,100000,Existing,Invalid,Boundary value
+Zero price,10,Valid Name,0,Existing,Invalid,Price must be positive
+Small positive price,10,Valid Name,0.01,Existing,Valid,Boundary value
+Missing category,10,Valid Name,100000,,Invalid,Category required

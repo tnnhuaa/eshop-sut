@@ -1,0 +1,5 @@
+TestCaseID,Feature,Technique,Preconditions,Input,Steps,ExpectedResult,ActualResult,Status,Evidence,BugID
+FR10-DT-001,FR-10,Domain Testing,Order is pending,Admin sets confirmed,TODO,Transition accepted,TODO,Not Run,TODO,TODO
+FR10-DT-002,FR-10,Domain Testing,Order is delivered,Admin sets canceled,TODO,Transition rejected because delivered is final,TODO,Not Run,TODO,TODO
+FR10-BVA-001,FR-10,Boundary Value Analysis,Order is confirmed,User cancels order,TODO,Cancel accepted,TODO,Not Run,TODO,TODO
+FR10-BVA-002,FR-10,Boundary Value Analysis,Order is shipping,User cancels order,TODO,Cancel rejected,TODO,Not Run,TODO,TODO

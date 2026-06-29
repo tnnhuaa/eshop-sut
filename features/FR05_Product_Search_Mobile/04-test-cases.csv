@@ -1,0 +1,5 @@
+TestCaseID,Feature,Technique,Preconditions,Input,Steps,ExpectedResult,ActualResult,Status,Evidence,BugID
+FR05M-DT-001,FR-05-Mobile,Domain Testing,Mobile app connected to backend,Normal product keyword,TODO,Matching products displayed,TODO,Not Run,TODO,TODO
+FR05M-DT-002,FR-05-Mobile,Domain Testing,Mobile app connected to backend,HTML search payload,TODO,Payload displayed safely and not executed/rendered as HTML,TODO,Not Run,TODO,TODO
+FR05M-BVA-001,FR-05-Mobile,Boundary Value Analysis,Mobile app connected to backend,Empty keyword,TODO,All products or default listing displayed,TODO,Not Run,TODO,TODO
+FR05M-BVA-002,FR-05-Mobile,Boundary Value Analysis,Mobile app connected to backend,Keyword with no matches,TODO,Empty state displayed,TODO,Not Run,TODO,TODO

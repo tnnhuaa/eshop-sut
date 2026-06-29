@@ -1,0 +1,11 @@
+FromState,ToState,Actor,ExpectedValidity,Reason
+pending,confirmed,admin,Valid,Admin can confirm pending order
+confirmed,shipping,admin,Valid,Admin can ship confirmed order
+shipping,delivered,admin,Valid,Admin can complete shipping order
+pending,canceled,user,Valid,User can cancel pending order
+pending,canceled,admin,Valid,Admin can cancel pending order
+confirmed,canceled,user,Valid,User can cancel confirmed order
+confirmed,canceled,admin,Valid,Admin can cancel confirmed order
+shipping,canceled,user,Invalid,User cannot cancel shipping order
+delivered,canceled,admin,Invalid,Delivered is final
+canceled,confirmed,admin,Invalid,Canceled is final

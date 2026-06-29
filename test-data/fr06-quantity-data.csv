@@ -1,0 +1,8 @@
+Label,Quantity,ExpectedClass,Notes
+Below minimum,0,Invalid,Minimum valid quantity is 1
+Minimum,1,Valid,Boundary value
+Just above minimum,2,Valid,Boundary value
+Negative,-1,Invalid,Invalid partition
+Decimal,1.5,Invalid,Quantity must be integer
+Text,abc,Invalid,Quantity must be numeric integer
+Empty,,Invalid,Quantity required

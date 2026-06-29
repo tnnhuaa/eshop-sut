@@ -1,0 +1,6 @@
+TestCaseID,Feature,Technique,Preconditions,Input,Steps,ExpectedResult,ActualResult,Status,Evidence,BugID
+FR15-DT-001,FR-15,Domain Testing,Admin logged in,Valid product data,TODO,Product created,TODO,Not Run,TODO,TODO
+FR15-BVA-001,FR-15,Boundary Value Analysis,Admin logged in,name length=0,TODO,System rejects empty name,TODO,Not Run,TODO,TODO
+FR15-BVA-002,FR-15,Boundary Value Analysis,Admin logged in,name length=255,TODO,System accepts max length name,TODO,Not Run,TODO,TODO
+FR15-BVA-003,FR-15,Boundary Value Analysis,Admin logged in,name length=256,TODO,System rejects too long name,TODO,Not Run,TODO,TODO
+FR15-BVA-004,FR-15,Boundary Value Analysis,Admin logged in,price=0,TODO,System rejects non-positive price,TODO,Not Run,TODO,TODO
