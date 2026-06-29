@@ -21,9 +21,8 @@
 
 | Role | Email | Password Source | Result |
 | --- | --- | --- | --- |
-| User | `test@eshop.com` | README.md | TODO |
+| User | `test@eshop.com` | README.md: `Test1234!` | TODO |
 | Admin | `admin@eshop.com` | README.md: `Admin123!` | TODO |
-| Admin | `admin@eshop.com` | setup_guide.md: `admin123` | TODO |
 
 ## Notes
 
