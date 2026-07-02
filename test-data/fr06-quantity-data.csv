@@ -1,8 +1,11 @@
-Label,Quantity,ExpectedClass,Notes
-Below minimum,0,Invalid,Minimum valid quantity is 1
-Minimum,1,Valid,Boundary value
-Just above minimum,2,Valid,Boundary value
-Negative,-1,Invalid,Invalid partition
-Decimal,1.5,Invalid,Quantity must be integer
-Text,abc,Invalid,Quantity must be numeric integer
-Empty,,Invalid,Quantity required
+Label,Quantity,ExpectedClass,Technique,ExpectedBehavior,Notes
+Below minimum,0,Invalid,BVA,Reject and keep cart unchanged,Minimum valid quantity is 1
+Minimum,1,Valid,BVA,Accept and add one item,Boundary value
+Just above minimum,2,Valid,BVA,Accept and add two items,Boundary value
+Negative,-1,Invalid,BVA,Reject and keep cart unchanged,Invalid below zero
+Decimal,1.5,Invalid,Domain Testing,Reject because quantity must be integer,Not a formal boundary
+Text,abc,Invalid,Domain Testing,Reject because quantity must be numeric integer,Potential pasted value
+Empty,,Invalid,Domain Testing,Reject because quantity is required,Required-input class
+Spaces,"   ",Invalid,Domain Testing,Reject because spaces-only is not an integer,Potential pasted value
+Scientific notation,1e2,Invalid,Domain Testing,Reject or handle only if explicitly supported,Unsupported numeric notation
+Very large integer,999999999,Robustness,Robustness,Do not crash; review actual behavior,No maximum specified in SRS
