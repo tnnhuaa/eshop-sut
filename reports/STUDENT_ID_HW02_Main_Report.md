@@ -32,6 +32,8 @@ The report applies Domain Testing and Boundary Value Analysis with AI assistance
 - Execution: `features/FR06_Product_Detail_Web/05-test-execution.md`
 - AI gap analysis: `features/FR06_Product_Detail_Web/06-ai-gap-analysis.md`
 
+Day 3 status: FR-06 test design and manual execution completed with 21 test cases: 15 Domain Testing cases and 6 Boundary Value Analysis cases. The main explicit boundary is quantity minimum `1`, tested with `0`, `1`, and `2`. Additional domain tests cover invalid product IDs, invalid quantity classes, add-to-cart feedback, repeated add behavior, broken image URL, and safe rendering of HTML/script-looking product data. Manual execution result: 11 passed, 10 failed, 0 not run.
+
 ### FR-10 Order State Machine
 
 - Requirement analysis: `features/FR10_Order_State_Machine/01-requirement-analysis.md`
@@ -67,10 +69,10 @@ Pool D - FR-05-M Product Listing and Search on Mobile.
 | Metric | Count |
 | --- | ---: |
 | Features | 4 |
-| Test cases designed | TODO |
-| Test cases executed | TODO |
-| Passed | TODO |
-| Failed | TODO |
+| Test cases designed | 21 for FR-06; TODO for remaining features |
+| Test cases executed | 21 for FR-06; TODO for remaining features |
+| Passed | 11 for FR-06; TODO for remaining features |
+| Failed | 10 for FR-06; TODO for remaining features |
 | Not executed | TODO |
 | Bugs reported | TODO |
 

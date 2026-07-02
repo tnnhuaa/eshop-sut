@@ -52,7 +52,9 @@ AI was used during assignment planning, Day 1 setup guidance, AI documentation a
 
 4. "Thực hiện tiếp kế hoạch ngày 2 các phần requirement gap nên cần liệt kê kĩ và bao quát để bao quát hết các vấn đề thực sự thiếu của requirement"
 
-TODO: Add later prompts used for FR-06, FR-10, FR-15, FR-05-M, bug reports, and AI gap analysis. Full transcript and additional prompts should be attached in `prompt_log.md` if required.
+5. "Đây là kế hoạch ngày 3 đã chỉnh sửa hãy thực hiện và cho em review, khoan commit vội, cho em một đoạn tổng hợp việc đã làm ngắn gọn để e dễ check lại."
+
+TODO: Add later prompts used for FR-10, FR-15, FR-05-M, bug reports, and AI gap analysis. Full transcript and additional prompts should be attached in `prompt_log.md` if required.
 
 ### **4\. Specific parts of the work AI contributed to:**
 
@@ -65,6 +67,8 @@ For AI documentation, AI adapted the existing HW01 AI-02 and AI-03 Markdown form
 For Day 2 requirement analysis, AI contributed detailed requirement summaries, actor/precondition analysis, input variables, requirement gap IDs, risk levels, temporary assumptions, and verification plans for FR-06 Product Detail View, FR-10 Order State Machine, FR-15 Product Management CRUD, and FR-05-M Product Listing and Search on Mobile. I will review and correct these gaps before deriving Domain Testing and Boundary Value Analysis test cases.
 
 For the four assessed features, AI is expected to support Domain Testing and Boundary Value Analysis drafts for FR-06, FR-10, FR-15, and FR-05-M. I will review and correct the domain variables, equivalence classes, boundary values, expected results, execution results, and bug reports before submission.
+
+For Day 3, AI contributed the FR-06 domain model, Boundary Value Analysis, 21 draft test cases, AI gap analysis, prompt/raw-output logs, and a reusable Domain Testing/BVA Agent Skill with templates and an FR-06 example. I will review the generated test design and execute the test cases manually before accepting any pass/fail result or bug report.
 
 ### **5\. How I reviewed, revised, or verified the AI output:**
 
