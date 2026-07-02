@@ -13,7 +13,7 @@
 | FR06-DT-009 | 2026-07-02 | Student | Pass | Manual execution | N/A | Alphabetic text is blocked by the browser number input during normal UI testing. |
 | FR06-DT-010 | 2026-07-02 | Student | Fail | Manual execution | BUG-FR06-006 | Empty quantity is accepted and can create an invalid cart item/total. |
 | FR06-DT-011 | 2026-07-02 | Student | Fail | Manual execution | BUG-FR06-007 | Spaces are blocked, but the resulting empty value can still be added and lead to invalid/NaN cart value. |
-| FR06-DT-012 | 2026-07-02 | Student | Fail | Manual execution | BUG-FR06-008 | Scientific notation such as `1e2` is accepted by the input and parsed incorrectly. |
+| FR06-DT-012 | 2026-07-02 | Student | Fail | Manual execution | BUG-FR06-009 | Scientific notation such as `1e2` is accepted by the input and parsed incorrectly. |
 | FR06-DT-013 | 2026-07-02 | Student | Pass | Manual execution | N/A | Script-looking product content is rendered as text and does not execute. |
 | FR06-DT-014 | 2026-07-02 | Student | Pass | Manual execution | N/A | Broken image URL does not crash the page; layout remains usable. |
 | FR06-DT-015 | 2026-07-02 | Student | Fail | Manual execution | BUG-FR06-001 | No successful-add feedback after the first click because the product is not added until the second click. |
