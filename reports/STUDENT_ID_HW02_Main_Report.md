@@ -15,7 +15,7 @@ This report applies Domain Testing and Boundary Value Analysis to four selected 
 | Pool | Feature | Requirement ID | Platform | Current Status |
 | --- | --- | --- | --- | --- |
 | A | Product Detail View | FR-06 | Web User | Test design and manual execution completed |
-| B | Order State Machine | FR-10 | API + Web User + Web Admin | Requirement analysis completed |
+| B | Order State Machine | FR-10 | API + Web User + Web Admin | Test design completed, not executed |
 | C | Product Management CRUD | FR-15 | Admin Web + API | Requirement analysis completed |
 | D | Product Listing and Search on Mobile | FR-05-M | React Native Mobile | Requirement analysis completed |
 
@@ -178,7 +178,9 @@ Boundary-style checks should be applied to order count or identifier classes onl
 
 ### Recommended Test Coverage
 
-FR-10 test design should cover:
+FR-10 test design contains 29 draft test cases: 22 Domain Testing cases and 7 Boundary Value Analysis cases. These test cases are not executed yet, so `ActualResult`, `Status`, `Evidence`, and `BugID` remain pending.
+
+FR-10 test design covers:
 
 - Valid transition path: `pending -> confirmed -> shipping -> delivered`.
 - Valid cancellation from `pending` and `confirmed`.
@@ -187,6 +189,7 @@ FR-10 test design should cover:
 - Invalid outgoing transitions from `delivered` and `canceled`.
 - Role/ownership checks for user cancellation and admin status updates.
 - Invalid order ID and invalid status payload classes.
+- Cross-role state consistency between User order history and Admin order management after cancellation or final-state actions.
 
 Detailed artifacts are stored under `features/FR10_Order_State_Machine/`.
 
@@ -327,8 +330,8 @@ Detailed artifacts are stored under `features/FR05_Product_Search_Mobile/`.
 | --- | ---: |
 | Features selected | 4 |
 | Features with requirement analysis completed | 4 |
-| Features with test cases designed | 1 |
-| Test cases designed | 21 |
+| Features with test cases designed | 2 |
+| Test cases designed | 50 |
 | Test cases executed | 21 |
 | Passed | 11 |
 | Failed | 10 |
