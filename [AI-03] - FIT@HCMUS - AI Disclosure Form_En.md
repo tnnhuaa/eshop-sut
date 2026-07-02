@@ -50,7 +50,9 @@ AI was used during assignment planning, Day 1 setup guidance, AI documentation a
 
 3. "sử dụng 2 file này cho HW2 không cần AI-05, đồng thời chỉnh skill $homework-ai-docs chỉ cần 2 file AI-02, AI-03, dựa trên format, định dạng đã có trong 2 file đã gửi, chỉ chỉnh sửa nội dung cho phù hợp với phần bài tập tuần này, có thắc mắc gì thì có để em confirm."
 
-TODO: Add later prompts used for FR-06, FR-10, FR-15, Mobile FR-05, bug reports, and AI gap analysis. Full transcript and additional prompts should be attached in `prompt_log.md` if required.
+4. "Thực hiện tiếp kế hoạch ngày 2 các phần requirement gap nên cần liệt kê kĩ và bao quát để bao quát hết các vấn đề thực sự thiếu của requirement"
+
+TODO: Add later prompts used for FR-06, FR-10, FR-15, FR-05-M, bug reports, and AI gap analysis. Full transcript and additional prompts should be attached in `prompt_log.md` if required.
 
 ### **4\. Specific parts of the work AI contributed to:**
 
@@ -60,7 +62,9 @@ For HW02 setup, AI contributed the Day 1 checklist, assignment folder structure,
 
 For AI documentation, AI adapted the existing HW01 AI-02 and AI-03 Markdown format to HW02 and updated the local `homework-ai-docs` skill so it creates only AI-02 and AI-03, not AI-05.
 
-For the four assessed features, AI is expected to support Domain Testing and Boundary Value Analysis drafts for FR-06 Product Detail View, FR-10 Order State Machine, FR-15 Product Management CRUD, and Mobile FR-05 Product Listing and Search. I will review and correct the domain variables, equivalence classes, boundary values, expected results, execution results, and bug reports before submission.
+For Day 2 requirement analysis, AI contributed detailed requirement summaries, actor/precondition analysis, input variables, requirement gap IDs, risk levels, temporary assumptions, and verification plans for FR-06 Product Detail View, FR-10 Order State Machine, FR-15 Product Management CRUD, and FR-05-M Product Listing and Search on Mobile. I will review and correct these gaps before deriving Domain Testing and Boundary Value Analysis test cases.
+
+For the four assessed features, AI is expected to support Domain Testing and Boundary Value Analysis drafts for FR-06, FR-10, FR-15, and FR-05-M. I will review and correct the domain variables, equivalence classes, boundary values, expected results, execution results, and bug reports before submission.
 
 ### **5\. How I reviewed, revised, or verified the AI output:**
 

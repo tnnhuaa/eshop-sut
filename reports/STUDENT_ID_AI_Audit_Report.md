@@ -9,6 +9,7 @@ I use AI tools for the following tasks. Every AI-generated output is reviewed, c
 | No. | Date and Time | Tool | Prompt Summary | Artifact | Human Review Result |
 | --- | --- | --- | --- | --- | --- |
 | 1 | 2026-06-29 | Codex | Guided Day 1 setup and generated assignment structure/templates. | Day 1 structure and templates | Pending student review |
+| 2 | 2026-06-29 | Codex | Performed Day 2 requirement analysis and detailed requirement gap identification for FR-06, FR-10, FR-15, and FR-05-M. | Requirement analysis files and global gap index | Pending student review |
 
 ## Detailed Logs
 
@@ -18,5 +19,14 @@ I use AI tools for the following tasks. Every AI-generated output is reviewed, c
 - Date and time: 2026-06-29
 - Prompt: Asked Codex to act as an experienced Software Testing teacher and guide HW02 according to the 1.5-week plan, starting from Day 1 after cloning the repository.
 - Output summary: Created Day 1 setup guide, assignment folders, report skeletons, feature skeleton files, evidence folders, logs, and traceability templates.
+- Human review: TODO
+- Corrections made by student: TODO
+
+### Interaction 2
+
+- Tool: Codex
+- Date and time: 2026-06-29
+- Prompt: Asked Codex to continue Day 2 of the HW02 plan and make the requirement gap sections detailed and broad enough to cover the real missing or ambiguous requirement issues.
+- Output summary: Expanded requirement analysis for FR-06 Product Detail View, FR-10 Order State Machine, FR-15 Product Management CRUD, and FR-05-M Product Listing and Search on Mobile. Added detailed gap IDs, risk levels, temporary assumptions, verification plans, and updated the global assumptions/gaps file and requirement traceability matrix.
 - Human review: TODO
 - Corrections made by student: TODO

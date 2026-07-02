@@ -51,9 +51,9 @@ The report applies Domain Testing and Boundary Value Analysis with AI assistance
 - Execution: `features/FR15_Product_CRUD_Admin/05-test-execution.md`
 - AI gap analysis: `features/FR15_Product_CRUD_Admin/06-ai-gap-analysis.md`
 
-### FR-05 Product Listing and Search on Mobile
+### FR-05-M Product Listing and Search on Mobile
 
-Pool D - FR-05 Product Listing and Search, tested on the Mobile application as part of FR-20 Mobile Features.
+Pool D - FR-05-M Product Listing and Search on Mobile.
 
 - Requirement analysis: `features/FR05_Product_Search_Mobile/01-requirement-analysis.md`
 - Domain model: `features/FR05_Product_Search_Mobile/02-domain-model.md`
