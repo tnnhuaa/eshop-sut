@@ -16,7 +16,7 @@ This report applies Domain Testing and Boundary Value Analysis to four selected 
 | --- | --- | --- | --- | --- |
 | A | Product Detail View | FR-06 | Web User | Test design and manual execution completed |
 | B | Order State Machine | FR-10 | Web User + Web Admin | Frontend UI execution completed |
-| C | Product Management CRUD | FR-15 | Admin Web + API | Requirement analysis completed |
+| C | Product Management CRUD | FR-15 | Admin Web + API | Test design completed, not executed |
 | D | Product Listing and Search on Mobile | FR-05-M | React Native Mobile | Requirement analysis completed |
 
 ## Method
@@ -250,7 +250,9 @@ FR-15 requires Admin to create, view, update, and delete products. The key valid
 
 ### Recommended Test Coverage
 
-FR-15 test design should cover:
+FR-15 test design contains 48 test cases: 33 Domain Testing cases and 15 Boundary Value Analysis cases. Execution has not started yet, so `ActualResult`, `Status`, `Evidence`, and `BugID` remain as draft execution fields.
+
+FR-15 test design covers:
 
 - Valid create, view, update, and delete flows.
 - Required field validation for name, price, and category.
@@ -337,8 +339,8 @@ Detailed artifacts are stored under `features/FR05_Product_Search_Mobile/`.
 | --- | ---: |
 | Features selected | 4 |
 | Features with requirement analysis completed | 4 |
-| Features with test cases designed | 2 |
-| Test cases designed | 53 |
+| Features with test cases designed | 3 |
+| Test cases designed | 101 |
 | Test cases executed | 53 |
 | Passed | 31 |
 | Failed | 17 |
