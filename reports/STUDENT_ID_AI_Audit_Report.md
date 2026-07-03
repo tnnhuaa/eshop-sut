@@ -12,6 +12,8 @@ I use AI tools for the following tasks. Every AI-generated output is reviewed, c
 | 2 | 2026-06-29 | Codex | Analyzed requirements and identified detailed requirement gaps for FR-06, FR-10, FR-15, and FR-05-M. | Requirement analysis files and global gap index | Pending student review |
 | 3 | 2026-07-02 | Codex | Designed FR-06 Domain Testing/BVA artifacts and built a reusable Agent Skill. | FR-06 domain model, BVA, test cases, AI gap analysis, skill templates/example | Pending student review |
 | 4 | 2026-07-02 | Codex | Compared FR-06 manual execution results, split defect reports, and updated execution documentation. | FR-06 execution results, bug report, GitHub issue summaries, AI gap analysis, skill evaluation | Student reviewed issue list and confirmed defect split |
+| 5 | 2026-07-02 | Codex Browser | Executed FR-10 order-state test cases from Frontend UI and drafted defect reports. | FR-10 test execution table, execution summary, and bug draft file | Student created GitHub Issues `#10` and `#11` after reviewing the drafts |
+| 6 | 2026-07-03 | Codex Browser | Performed exploratory FR-10 retest to check remaining coverage gaps and confirm whether additional state-machine defects exist. | Supplemental FR-10 test cases, updated execution summary, RTM, main report, bug draft links | Student should review whether the added coverage cases match the intended submission scope |
 
 ## Detailed Logs
 
@@ -50,3 +52,21 @@ I use AI tools for the following tasks. Every AI-generated output is reviewed, c
 - Output summary: Updated FR-06 test cases and execution results, recorded 21 executed cases with 11 passed and 10 failed, mapped failed tests to 9 GitHub Issues, updated `STUDENT_ID_Bug_Report.md`, revised FR-06 AI gap analysis based on execution, and evaluated the reusable skill using FR-06 results.
 - Human review: The student reviewed the GitHub Issue list and confirmed that 9 open issues were created, including separate issues for decimal quantity and scientific notation quantity.
 - Corrections made by student: The student requested defect splitting for empty versus whitespace and decimal versus scientific notation; the documentation was updated accordingly.
+
+### Interaction 5
+
+- Tool: Codex Browser
+- Date and time: 2026-07-02
+- Prompt: Asked Codex to use the in-app browser to execute FR-10 test cases from the Web User and Admin frontend applications, create necessary test data, keep the data for later student retesting, and draft bug reports with screenshot placeholders instead of attaching evidence immediately.
+- Output summary: Created FR-10 order-state test data, executed 29 FR-10 test cases through Frontend UI, updated `05-test-cases.csv` and `06-test-execution.md`, and created `features/FR10_Order_State_Machine/bug-draft.md` with two defect drafts.
+- Human review: The student reviewed the FR-10 defect drafts and created GitHub Issues `#10` and `#11`.
+- Corrections made by student: Teacher clarification was applied: functional testing result is based on Frontend UI behavior, while backend/API was used only as data setup support.
+
+### Interaction 6
+
+- Tool: Codex Browser
+- Date and time: 2026-07-03
+- Prompt: Asked Codex to use the in-app browser to think extensively, test both Web User and Admin frontend applications, check whether additional bugs exist, and ensure FR-10 test coverage is complete.
+- Output summary: Recreated FR-10 test data, confirmed the two existing FR-10 defects, checked User final-state action visibility, checked Admin cancellation from `confirmed`, added three supplemental Domain Testing cases, and updated execution/report/traceability counts.
+- Human review: The student should review the new `FR10-DT-023` to `FR10-DT-025` rows and decide whether to keep them in the final submitted test set.
+- Corrections made by student: TODO

@@ -1,8 +1,9 @@
 # Skill Evaluation
 
-## Evaluation Feature
+## Evaluation Features
 
 - FR-06 Product Detail View.
+- FR-10 Order State Machine.
 
 ## Evaluation Goal
 
@@ -14,6 +15,8 @@ Evaluate whether the reusable Domain Testing and Boundary Value Analysis skill c
 | --- | --- | --- | --- | --- |
 | Initial FR-06 run | `examples/FR06-example/input-requirement.md` | `examples/FR06-example/raw-skill-output.md` | `examples/FR06-example/human-review.md` | Added guardrails for no invented maximum quantity, no exact toast text, no bug conclusion before execution |
 | Execution review | `features/FR06_Product_Detail_Web/04-test-cases.csv`, `05-test-execution.md` | Manual results: 21 executed, 11 passed, 10 failed | Compared generated tests with observed behavior and GitHub Issues `#1` to `#9` | No mandatory skill change; evaluation notes added |
+| FR-10 state-machine run | `.agent/examples/FR10-example/input-requirement.md` | `.agent/examples/FR10-example/raw-skill-output.md` | `.agent/examples/FR10-example/human-review.md` | Human review added state transition model, actor/permission/ownership dimensions, final-state checks, and cross-role UI consistency |
+| FR-10 execution review | `features/FR10_Order_State_Machine/05-test-cases.csv`, `06-test-execution.md` | Frontend UI results: 32 executed, 20 passed, 7 failed, 5 blocked | Compared generated tests with Web User/Admin UI behavior and FR-10 bug drafts | Skill should include a general lifecycle/state analysis rule |
 
 ## What The Skill Generated Correctly
 
@@ -59,17 +62,79 @@ Evaluate whether the reusable Domain Testing and Boundary Value Analysis skill c
 | Split similar invalid input classes when behavior differs | General skill improvement | Useful for later features such as FR-15 validation and FR-05-M search. |
 | Keep bug conclusion separate from test design | General skill guardrail | Applies to every feature because execution evidence is required. |
 
+## FR-10 Skill Evaluation
+
+### What The Skill Generated Correctly
+
+| Area | Result |
+| --- | --- |
+| Requirement decomposition | Correctly identified FR-10 as a state/lifecycle feature rather than a simple form validation feature. |
+| State variables | Correctly focused on `current_state`, `target_state`, actor role, order identity, and allowed transitions. |
+| Final-state risk | Correctly highlighted that `delivered` and `canceled` should have no outgoing transitions. |
+| Invalid transition classes | Included skipped transitions, backward transitions, same-state transitions, and unknown/missing status classes. |
+| Human review workflow | Preserved raw output and required review before accepting final test cases. |
+
+### What The Skill Missed Or Needed Human Review For
+
+| Weakness | Observation After Execution | Required Human Action |
+| --- | --- | --- |
+| Explicit state-transition matrix | The initial skill output needed strengthening into a clear 5 x 5 transition matrix. | Added state transition model and representative transition coverage manually. |
+| Actor and ownership depth | The raw output did not fully separate Admin, owner user, non-admin user, unauthenticated user, and non-owner user. | Added actor, permission, ownership, and token/session dimensions. |
+| Cross-role consistency | A pure transition model may miss that User UI and Admin UI can expose inconsistent actions after one actor changes state. | Added FR10-DT-021 and FR10-DT-022 for User/Admin consistency. |
+| UI-only execution scope | Some API-style cases cannot be executed from the frontend after teacher clarification. | Marked API-only inputs as `Blocked` and used UI behavior as the oracle. |
+| Evidence and issue mapping | The skill cannot know final screenshots or GitHub issue numbers during design. | Captured UI evidence and mapped failures to `BUG-FR10-001` and `BUG-FR10-002`. |
+
+### Result After Execution
+
+| Result | Count |
+| --- | ---: |
+| Total FR-10 test cases | 32 |
+| Passed | 20 |
+| Failed | 7 |
+| Blocked | 5 |
+| Defects identified | 2 |
+
+### FR-10 Defects Found
+
+| Bug ID | Related Skill Gap | Finding |
+| --- | --- | --- |
+| BUG-FR10-001 | Boundary between allowed and forbidden user cancellation | Web User can cancel an order while it is already `shipping`. |
+| BUG-FR10-002 | Final-state outgoing transition | Admin can move a canceled final-state order to delivered. |
+
+### Cause Analysis
+
+| Finding | Main Cause | Explanation |
+| --- | --- | --- |
+| `shipping` cancellation by user was accepted | Implementation defect | Requirement expects user cancellation to stop before shipping, but Web User UI still exposes `Hủy đơn`. |
+| `canceled -> delivered` was allowed | Implementation defect | Admin UI and backend behavior allow an outgoing transition from final state `canceled`. |
+| Some invalid API payload tests were blocked | Execution scope constraint | Teacher clarified that functional testing should use Frontend UI, so missing/unknown status payloads were not forced through API. |
+| State-transition matrix needed manual improvement | General skill weakness | Lifecycle features require explicit state variables, initial/final states, transition matrix, and actor permissions. |
+
+### FR-10-Specific vs General Skill Issues
+
+| Issue | Classification | Reason |
+| --- | --- | --- |
+| User can cancel shipping order | FR-10-specific implementation defect | This is a concrete behavior of the order flow. |
+| Admin can mark canceled order delivered | FR-10-specific implementation defect | This is a concrete final-state violation in the SUT. |
+| Need state-transition matrix for lifecycle features | General skill improvement | Any feature with states should require current state, target state, initial state, final states, valid/invalid transitions, and repeated transitions. |
+| Need actor/permission/ownership dimensions | General skill improvement | State changes often depend on actor role and ownership, not only status values. |
+| Need UI/API execution scope separation | General skill improvement | Test design may include API-style domains, but execution status must respect the selected test level and teacher clarification. |
+
 ## Decision On Skill Update
 
-No mandatory update to `.agent/SKILL.md` is required at this point because the existing guardrails already cover the main general risks:
+For FR-06, no mandatory update to `.agent/SKILL.md` was required because the existing guardrails already covered the main general risks:
 
 - Do not invent unspecified boundaries.
 - Do not assert exact unspecified UI text.
 - Do not conclude bugs before execution.
 - Require human review.
 
-The evaluation found useful future reminders, but they can be recorded here without changing the skill implementation. A future skill update may add a stronger reminder to split similar invalid input classes when execution shows different behavior.
+For FR-10, a future skill update is recommended because the missing rule is general, not FR-10-specific:
+
+- When a feature has state, lifecycle, status, workflow, or order progression, require `initial_state`, `current_state`, `target_state`, `final_state`, valid transitions, invalid transitions, repeated transitions, actor role, permission, ownership, and cross-role consistency checks.
+
+The current submission can record this in evaluation without editing `.agent/SKILL.md` immediately, unless the final commit plan includes a dedicated skill-fix commit.
 
 ## Final Evaluation Result
 
-The skill is usable for the next feature. It generated a solid FR-06 test design that led to meaningful execution results and 9 GitHub Issues. Its output still requires human review, especially for requirement assumptions, bug severity, issue grouping, and evidence validation.
+The skill is usable but must be reviewed carefully. It generated useful FR-06 and FR-10 starting points, but FR-10 showed that lifecycle features need stronger state-transition guidance. Human review was essential for adding the 5-state model, transition coverage, actor/permission checks, UI execution scope, and final defect mapping.
