@@ -17,7 +17,7 @@ This report applies Domain Testing and Boundary Value Analysis to four selected 
 | A | Product Detail View | FR-06 | Web User | Test design and manual execution completed |
 | B | Order State Machine | FR-10 | Web User + Web Admin | Frontend UI execution completed |
 | C | Product Management CRUD | FR-15 | Admin Web | Frontend UI execution completed |
-| D | Product Listing and Search on Mobile | FR-05-M | React Native Mobile | Test design completed, not executed |
+| D | Product Listing and Search on Mobile | FR-05-M | React Native Mobile | Mobile UI execution completed |
 
 ## Method
 
@@ -329,6 +329,7 @@ Some FR-05 wording is web-specific, such as grid layout, alt text, and `<h1>`. F
 | FR05M-GAP-11 | HTML/script keyword behavior is not defined | Security-oriented domain class | Payload should be shown as literal text or safely handled |
 | FR05M-GAP-12 | HTML error response instead of JSON is not specified | Mobile app may crash or display raw HTML | App should show safe error and not crash |
 | FR05M-GAP-15 | Mobile backend configuration is not defined | LAN/emulator IP can fail across environments | Record actual environment in setup logs |
+| FR05M-GAP-18 | Returning to Home after search is not defined | Header/logo navigation may keep stale filtered results | Returning Home should show the default/all product listing |
 
 ### Domain and BVA Focus
 
@@ -339,15 +340,16 @@ Some FR-05 wording is web-specific, such as grid layout, alt text, and `<h1>`. F
 | `product.name` | Displayable string | Empty, long, script-looking text | Normal seeded name, admin-created risky name |
 | `product.price` | Positive numeric value | Missing, non-numeric, negative, numeric string | Seeded price and malformed test data if available |
 | `product.imageUrl` | Reachable image URL | Empty, broken, slow image | Valid image, broken URL |
+| `search_state` | Default/all products after Home navigation | Stale filtered result after header/logo navigation | Search first, then tap header/logo |
 | `network_state` | Backend reachable | Backend unreachable, wrong IP, timeout | Current LAN/emulator connection, backend stopped |
 
 FR-05-M does not contain a clear numeric boundary in the SRS. Boundary-style testing should focus on keyword length only as robustness unless a maximum length is later specified.
 
-### Recommended Test Coverage
+### Test Coverage And Execution
 
-FR-05-M test design contains 24 draft test cases: 17 Domain Testing cases and 7 Boundary Value Analysis cases. Execution has not started yet because this feature should be tested on the React Native Mobile app using a real device or emulator.
+FR-05-M contains 25 test cases: 18 Domain Testing cases and 7 Boundary Value Analysis cases. Execution was performed from the React Native Mobile UI using the student's mobile environment. The execution result was recorded in `features/FR05_Product_Search_Mobile/Execution.xlsx`; remaining `TODO` actual results were interpreted as no issue observed based on the student's note.
 
-FR-05-M test design covers:
+FR-05-M test coverage includes:
 
 - Default product listing on mobile.
 - Product card image/name/price display.
@@ -356,10 +358,29 @@ FR-05-M test design covers:
 - Empty search returning default/all products.
 - Spaces-only and very long keyword behavior.
 - HTML/script-looking keyword displayed safely.
+- Returning to Home from header/logo after a filtered search.
 - Backend unreachable/API error state if feasible.
 - Broken image or risky product data created through Admin/API if feasible.
 
 Seed data for manual execution is prepared in `test-data/seed-fr05-mobile-products.js`. It creates stable `FR05M-` products for one-result, many-result, Vietnamese keyword, unsafe-looking name, and broken-image checks.
+
+### Manual Execution Summary
+
+| Result | Count |
+| --- | ---: |
+| Executed | 25 |
+| Passed | 20 |
+| Failed | 5 |
+| Blocked | 0 |
+
+### Main Defects Observed
+
+| Bug ID | GitHub Issue | Related Tests | Summary |
+| --- | --- | --- | --- |
+| BUG-FR05M-001 | `#18` | FR05M-DT-005 | Search keyword with leading/trailing spaces is not trimmed, so it does not behave like the same valid keyword without spaces. |
+| BUG-FR05M-002 | `#19` | FR05M-DT-007, FR05M-BVA-003 | No matching search result shows a blank result area instead of a suitable empty-state message. |
+| BUG-FR05M-003 | `#20` | FR05M-DT-018 | Returning to Home from the header/logo keeps the previous search results instead of resetting to all products. |
+| BUG-FR05M-004 | `#21` | FR05M-BVA-006 | A 256-character search keyword breaks the mobile result-label layout. |
 
 Detailed artifacts are stored under `features/FR05_Product_Search_Mobile/`.
 
@@ -370,12 +391,12 @@ Detailed artifacts are stored under `features/FR05_Product_Search_Mobile/`.
 | Features selected | 4 |
 | Features with requirement analysis completed | 4 |
 | Features with test cases designed | 4 |
-| Test cases designed | 125 |
-| Test cases executed | 101 |
-| Passed | 59 |
-| Failed | 28 |
-| Blocked / Not run | 38 |
-| Defect IDs identified from executed features | 16 confirmed defects and 1 price clarification |
+| Test cases designed | 126 |
+| Test cases executed | 126 |
+| Passed | 79 |
+| Failed | 33 |
+| Blocked / Not run | 14 |
+| Defect IDs identified from executed features | 20 defects and 1 price clarification |
 
 ## Artifact Index
 

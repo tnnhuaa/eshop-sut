@@ -82,6 +82,7 @@ FR-05 was originally written with web concepts such as grid layout, alt text, an
 | FR05M-GAP-15 | Requirement does not define mobile backend configuration expectations.                                               | Hard-coded LAN IP may fail on another network/device.                                       | For homework execution, record actual IP/environment in `logs/environment.md`.                                           | Verify mobile connects to backend on current network.                                                          |
 | FR05M-GAP-16 | Requirement does not define product card tap behavior.                                                               | FR-05 focuses listing/search, but product cards often navigate to detail.                   | Detail navigation is supportive, not required for FR-05 pass/fail.                                                       | Test only if using detail as evidence.                                                                         |
 | FR05M-GAP-17 | Requirement does not define safe display of product names/prices from admin-created data.                            | Search cards can display untrusted product data.                                            | Product name should be rendered as text; invalid price should not crash the list.                                        | Use FR-15-created data if time permits.                                                                        |
+| FR05M-GAP-18 | Requirement does not define whether returning to Home resets previous search/filter state.                           | Header/logo navigation may show a Home screen that still contains filtered results.         | Returning to Home should show the default/all product listing, equivalent to an empty search.                            | Search first, then tap header/logo and verify product list reset.                                               |
 
 ## Requirement Gap Coverage Checklist
 
@@ -92,4 +93,4 @@ FR-05 was originally written with web concepts such as grid layout, alt text, an
 | Empty/loading/error states | FR05M-GAP-05, FR05M-GAP-06, FR05M-GAP-07, FR05M-GAP-12 |
 | Security/safe display      | FR05M-GAP-10, FR05M-GAP-11, FR05M-GAP-17               |
 | Mobile environment         | FR05M-GAP-15                                           |
-| Optional UX/scalability    | FR05M-GAP-09, FR05M-GAP-14, FR05M-GAP-16               |
+| Optional UX/scalability    | FR05M-GAP-09, FR05M-GAP-14, FR05M-GAP-16, FR05M-GAP-18 |

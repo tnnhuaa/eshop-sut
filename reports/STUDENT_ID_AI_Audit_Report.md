@@ -16,7 +16,8 @@ I use AI tools for the following tasks. Every AI-generated output is reviewed, c
 | 6 | 2026-07-03 | Codex Browser | Performed exploratory FR-10 retest to check remaining coverage gaps and confirm whether additional state-machine defects exist. | Supplemental FR-10 test cases, updated execution summary, RTM, main report, bug draft links | Student should review whether the added coverage cases match the intended submission scope |
 | 7 | 2026-07-03 | Codex | Used the repository-local Agent Skill to design FR-15 Product CRUD Admin Domain Testing and BVA artifacts. | FR-15 domain model, BVA, 48 draft test cases, AI gap analysis, FR15 skill example files | Pending student review before execution |
 | 8 | 2026-07-03 | Codex Browser | Executed FR-15 Product CRUD Admin test cases through Admin Web UI and updated execution/report documentation. | FR-15 test cases with Actual Result/Status/BugID, execution summary, bug drafts, evidence references, AI gap analysis, main report, RTM, and execution log | Student created GitHub Issues `#12` to `#17`; decimal price behavior is recorded as a requirement clarification |
-| 9 | 2026-07-04 | Codex | Used the repository-local Agent Skill to design FR-05-M Mobile Product Listing/Search Domain Testing and BVA artifacts. | FR-05-M domain model, BVA, 24 draft test cases, AI gap analysis, FR05 skill example files, and mobile seed data script | Pending student manual execution on phone/emulator |
+| 9 | 2026-07-04 | Codex | Used the repository-local Agent Skill to design FR-05-M Mobile Product Listing/Search Domain Testing and BVA artifacts. | FR-05-M domain model, BVA, 24 draft test cases, AI gap analysis, FR05 skill example files, and mobile seed data script | Student later executed the cases on mobile and requested documentation updates |
+| 10 | 2026-07-04 | Codex + Android Emulator check | Reviewed the student's FR-05-M mobile execution results, attempted emulator double-check, split mobile search defects, and updated execution/report documentation. | FR-05-M execution results, GitHub Issues `#18` to `#21`, bug report, AI gap analysis, main report, RTM, and execution log | Student-provided mobile results were accepted as primary evidence; emulator retest was limited by insufficient storage |
 
 ## Detailed Logs
 
@@ -98,5 +99,14 @@ I use AI tools for the following tasks. Every AI-generated output is reviewed, c
 - Date and time: 2026-07-04
 - Prompt: Asked Codex to read and use `.agent/SKILL.md`, use templates in `.agent/templates/`, create Domain Testing and BVA for FR05_Product_Search_Mobile, record raw output, human review, final output, create seed data for manual evidence capture, and provide a short Vietnamese draft checklist for student execution.
 - Output summary: Created `.agent/examples/FR05-example/` with input requirement, raw skill output, human review, and final output. Updated FR-05-M domain model, BVA, 24 draft test cases, execution skeleton, AI gap analysis, main report, RTM, execution log, and added `test-data/seed-fr05-mobile-products.js`.
-- Human review: Pending student manual execution on mobile device or emulator.
-- Corrections made by student: TODO
+- Human review: Student later executed the mobile cases and provided actual results for documentation.
+- Corrections made by student: Added execution observations, including whitespace search, empty-state, Home reset, and long-keyword layout issues.
+
+### Interaction 10
+
+- Tool: Codex + Android emulator check
+- Date and time: 2026-07-04
+- Prompt: Asked Codex to use the student's `Execution.xlsx` actual results, treat remaining `TODO` cells as no issue, run emulator double-check where possible, and update bug report plus related documentation.
+- Output summary: Updated FR-05-M execution results to 25 executed cases with 20 passed, 5 failed, and 0 blocked. Split search defects into separate issues for untrimmed whitespace input, missing empty-state message, header/home navigation keeping previous search results, and long-keyword layout break. Updated `04-test-cases.csv`, `Execution.xlsx`, `05-test-execution.md`, `06-ai-gap-analysis.md`, `bug-draft.md`, `STUDENT_ID_Bug_Report.md`, main report, RTM, and execution log.
+- Human review: Student identified the header/home reset behavior as an additional issue, requested that the original combined no-result/whitespace bug be separated, and created GitHub Issues `#18` to `#21`.
+- Corrections made by student: Student added mobile screenshot evidence for the available FR-05-M issues; local evidence paths were recorded where files were present.

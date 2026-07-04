@@ -5,6 +5,7 @@
 - FR-06 Product Detail View.
 - FR-10 Order State Machine.
 - FR-15 Product CRUD Admin.
+- FR-05-M Product Listing and Search on Mobile.
 
 ## Evaluation Goal
 
@@ -20,6 +21,8 @@ Evaluate whether the reusable Domain Testing and Boundary Value Analysis skill c
 | FR-10 execution review | `features/FR10_Order_State_Machine/05-test-cases.csv`, `06-test-execution.md` | Frontend UI results: 32 executed, 20 passed, 7 failed, 5 blocked | Compared generated tests with Web User/Admin UI behavior and FR-10 bug drafts | Skill should include a general lifecycle/state analysis rule |
 | FR-15 CRUD run | `.agent/examples/FR15-example/input-requirement.md` | `.agent/examples/FR15-example/raw-skill-output.md` | `.agent/examples/FR15-example/human-review.md` | Human review refined optional fields, UI/API execution scope, duplicate-name assumption, and update-isolation checks |
 | FR-15 execution review | `features/FR15_Product_CRUD_Admin/04-test-cases.csv`, `05-test-execution.md` | Admin UI results: 48 executed, 28 passed, 11 failed, 9 blocked | Compared generated validation/update-isolation tests with Admin Web behavior and FR-15 bug drafts | No mandatory skill change; execution confirmed the need to record UI reachability, browser-vs-app validation, and requirement clarifications separately |
+| FR-05-M mobile search run | `.agent/examples/FR05-example/input-requirement.md` | `.agent/examples/FR05-example/raw-skill-output.md` | `.agent/examples/FR05-example/human-review.md` | Human review adapted web-specific FR-05 assertions to mobile UI and added stable seed data |
+| FR-05-M execution review | `features/FR05_Product_Search_Mobile/04-test-cases.csv`, `05-test-execution.md` | Mobile UI results: 25 executed, 20 passed, 5 failed, 0 blocked | Compared generated tests with student mobile execution and emulator/code double-check notes | Skill covered core search domains but should consider navigation/state-reset behavior for searchable Home screens |
 
 ## What The Skill Generated Correctly
 
@@ -180,6 +183,47 @@ The current submission can record this in evaluation without editing `.agent/SKI
 | Need UI/API reachability review | General skill guardrail | Test design can include API-only domains, but execution status must match the chosen test level. |
 | Need browser-vs-application validation distinction | General skill guardrail | HTML input validation may pass while application/backend validation remains incomplete. |
 
+## FR-05-M Skill Evaluation
+
+### What The Skill Generated Correctly
+
+| Area | Result |
+| --- | --- |
+| Mobile adaptation | Correctly treated web-only assertions such as grid, `alt`, and `<h1>` as mobile-equivalent checks rather than literal React Native requirements. |
+| Search partitions | Covered default listing, exact match, partial match, lowercase input, spaces around keyword, Vietnamese keyword, no-result keyword, and empty search. |
+| Empty/loading states | Included no-result and loading checks, which are explicit FR-05 expectations. |
+| Safe display | Included HTML/script-looking keyword and product-name classes. |
+| Robustness | Included long keyword and backend/network unreachable checks without treating unspecified max length as a formal boundary. |
+
+### What Needed Human Review
+
+| Weakness | Observation After Execution | Required Human Action |
+| --- | --- | --- |
+| Defect grouping | The initial execution summary grouped whitespace and no-result empty-state behavior together. | Split them into separate bugs because one is search normalization and the other is empty-state feedback. |
+| Navigation/search state | The original test set did not check returning to Home from the header/logo after a filtered search. | Added `FR05M-DT-018` and `BUG-FR05M-003`. |
+| Emulator evidence | Emulator booted, but Expo Go installation failed due insufficient storage. | Used student mobile execution as primary evidence and kept emulator result as a limitation note. |
+| Mobile screenshot evidence | The skill can draft issue content but cannot provide the student's final phone screenshots. | Student added available screenshot evidence and opened GitHub Issues `#18` to `#21`. |
+
+### Result After Execution
+
+| Result | Count |
+| --- | ---: |
+| Total FR-05-M test cases | 25 |
+| Passed | 20 |
+| Failed | 5 |
+| Blocked | 0 |
+| GitHub issues opened | 4 |
+
+### FR-05-M-Specific vs General Skill Issues
+
+| Issue | Classification | Reason |
+| --- | --- | --- |
+| Missing no-result empty state | FR-05-M-specific implementation defect | FR-05 explicitly requires an empty state when no search result exists. |
+| Header/Home keeps filtered results | FR-05-M-specific UI state defect | Returning to Home should restore the default product listing. |
+| Untrimmed search keyword | General search-input concern | Search features should define and test normalization of leading/trailing spaces. |
+| Long keyword layout break | General UI robustness concern | User-controlled text should not break layout even when no max length is specified. |
+| Need navigation/reset cases for searchable screens | General skill improvement | When search/filter state exists, test how it resets through Home/header/navigation actions. |
+
 ## Final Evaluation Result
 
-The skill is usable but must be reviewed carefully. It generated useful FR-06, FR-10, and FR-15 starting points. FR-10 showed that lifecycle features need stronger state-transition guidance, while FR-15 showed that form/CRUD testing must explicitly distinguish UI-reachable cases, browser-level validation, and application-level validation. Human review remains essential before final execution results are accepted.
+The skill is usable but must be reviewed carefully. It generated useful FR-06, FR-10, FR-15, and FR-05-M starting points. FR-10 showed that lifecycle features need stronger state-transition guidance, FR-15 showed that form/CRUD testing must distinguish UI reachability and validation layers, and FR-05-M showed that searchable screens should include reset/navigation behavior. Human review remains essential before final execution results are accepted.

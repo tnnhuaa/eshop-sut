@@ -107,6 +107,7 @@ This file records requirement gaps and assumptions discovered during Day 2. A ga
 | FR05M-GAP-15 | Mobile backend IP/configuration expectation is unspecified. | Medium | Record actual backend IP/environment. |
 | FR05M-GAP-16 | Product card tap/detail behavior is outside FR-05. | Low | Not required for listing/search pass/fail. |
 | FR05M-GAP-17 | Safe display of admin-created product data in mobile list is not explicit. | High | Render product data as text; invalid price must not crash list. |
+| FR05M-GAP-18 | Returning to Home after search is not specified. | Medium | Header/logo Home navigation should reset to the default/all product listing. |
 
 ## Day 2 Summary
 

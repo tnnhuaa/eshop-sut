@@ -9,7 +9,7 @@
 | Final output | `.agent/examples/FR05-example/final-output.md` | Used to update feature artifacts |
 | Domain model | `features/FR05_Product_Search_Mobile/02-domain-model.md` | Updated |
 | BVA | `features/FR05_Product_Search_Mobile/03-boundary-value-analysis.md` | Updated |
-| Test cases | `features/FR05_Product_Search_Mobile/04-test-cases.csv` | Draft, not executed |
+| Test cases | `features/FR05_Product_Search_Mobile/04-test-cases.csv` | Executed and updated |
 
 ## Missing Or Incorrect AI Suggestions
 
@@ -50,9 +50,37 @@
 | Browser-only execution for FR-05-M | The feature is selected as Mobile; Browser does not represent React Native UI behavior. |
 | Bug conclusions before manual execution | Skill is for design only; defects require evidence. |
 
-## Remaining Before Execution
+## Execution-Based Review
 
-- Run `node test-data/seed-fr05-mobile-products.js`.
-- Start backend and mobile app.
-- Confirm mobile device/emulator can reach the backend API URL.
-- Execute the 24 draft test cases and fill `ActualResult`, `Status`, `Evidence`, and `BugID`.
+| Question | Answer |
+| --- | --- |
+| What did the skill generate correctly? | It generated useful coverage for default listing, search partitions, no-result search, safe keyword display, long keyword robustness, loading, and mobile environment risks. |
+| What did execution confirm? | Manual mobile execution found four defect groups: untrimmed whitespace search, missing empty state for no-result searches, header/home navigation preserving an old filtered result, and layout break for a very long keyword. |
+| What did the skill miss? | The skill identified trimming, empty state, and long keyword as test targets, but did not initially include a navigation/state-reset case for returning Home through the header/logo. |
+| Was the issue caused by requirement, prompt, or implementation? | Missing empty state is an implementation defect because FR-05 explicitly requires empty state. Trimming and Home reset behavior are reviewed assumptions/gaps for usable search behavior. Long keyword layout is a robustness/UI defect because no max length is specified but layout should remain usable. |
+| Is this FR-05-M-specific or general? | Empty state and search-state reset are FR-05-M-specific. Input trimming and long-input layout robustness are general UI testing concerns. |
+
+## Result After Execution
+
+| Result | Count |
+| --- | ---: |
+| Total FR-05-M test cases | 25 |
+| Passed | 20 |
+| Failed | 5 |
+| Blocked | 0 |
+| GitHub issues opened | 4 |
+
+## Defects Found
+
+| Bug ID | Related Tests | Finding |
+| --- | --- | --- |
+| BUG-FR05M-001 / `#18` | FR05M-DT-005 | Search keyword with leading/trailing spaces is not trimmed. |
+| BUG-FR05M-002 / `#19` | FR05M-DT-007, FR05M-BVA-003 | Search with no matching products shows a blank result area instead of a suitable empty state. |
+| BUG-FR05M-003 / `#20` | FR05M-DT-018 | Returning to Home from the header/logo keeps the previous search results instead of resetting to the default product listing. |
+| BUG-FR05M-004 / `#21` | FR05M-BVA-006 | Very long search keyword breaks the mobile result-label layout. |
+
+## Remaining Follow-Up
+
+- GitHub Issues `#18` to `#21` were opened for the FR-05-M findings.
+- If a later emulator run succeeds, use it only as supporting confirmation because the primary execution already came from the mobile environment.
+- If the teacher asks about trimming or Home reset, explain that both were treated as reviewed usability assumptions/gaps for FR-05-M search behavior.

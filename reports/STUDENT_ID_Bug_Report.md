@@ -21,6 +21,10 @@
 | BUG-FR15-004 | FR-15 Product CRUD Admin | Product name longer than 255 characters is accepted | Major | Open | `#15` | `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-004.png` |
 | BUG-FR15-005 | FR-15 Product CRUD Admin | Updating one product temporarily changes all product names in Admin UI | Major | Open | `#16` | `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-005-1.png`; `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-005-2.png`; `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-005-3.png` |
 | REVIEW-FR15-006 | FR-15 Product CRUD Admin | Decimal price is accepted and displayed in product listing | Medium | Open / Needs confirmation | `#17` | `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-006.png` |
+| BUG-FR05M-001 | FR-05-M Product Listing and Search Mobile | Search keyword with leading and trailing spaces is not trimmed | Medium | Open | `#18` | `features/FR05_Product_Search_Mobile/evidence/BUG-FR05M-001-1.jpg`; `features/FR05_Product_Search_Mobile/evidence/BUG-FR05M-001-2.jpg` |
+| BUG-FR05M-002 | FR-05-M Product Listing and Search Mobile | Search with no matching products does not show an empty state | Major | Open | `#19` | `features/FR05_Product_Search_Mobile/evidence/BUG-FR05M-002.jpg` |
+| BUG-FR05M-003 | FR-05-M Product Listing and Search Mobile | Returning to Home from header keeps previous search results | Medium | Open | `#20` | GitHub Issue `#20` |
+| BUG-FR05M-004 | FR-05-M Product Listing and Search Mobile | Very long search keyword breaks the mobile result-label layout | Medium | Open | `#21` | `features/FR05_Product_Search_Mobile/evidence/BUG-FR05M-004.jpg` |
 
 ## Environment
 
@@ -359,4 +363,78 @@
 - Actual result: Admin UI allows creating a product with decimal price `0.01`. After saving, the product appears in the product list and the price is displayed as `0,01 VND`.
 - Evidence: `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-006.png`
 - Notes: This item is a requirement clarification/potential defect, not a confirmed defect under the current `> 0` wording.
+
+### BUG-FR05M-001: Search keyword with leading and trailing spaces is not trimmed
+
+- Feature: FR-05-M Product Listing and Search Mobile
+- Related test case: FR05M-DT-005
+- Severity: Medium
+- Priority: Medium
+- GitHub issue: `#18`
+- Preconditions: Backend and React Native Mobile app are running; FR05M seed products exist.
+- Steps to reproduce:
+  1. Open the mobile app Home screen.
+  2. Enter a valid matching keyword with leading/trailing spaces, such as `  FR05M-ALPHA  `.
+  3. Tap Search.
+  4. Compare the result with searching the trimmed keyword `FR05M-ALPHA`.
+- Expected result: The search keyword is trimmed before searching. `  FR05M-ALPHA  ` returns the same matching products as `FR05M-ALPHA`.
+- Actual result: The keyword with leading/trailing spaces is not trimmed, so the app does not return the same result as the trimmed keyword.
+- Evidence:
+  - `features/FR05_Product_Search_Mobile/evidence/BUG-FR05M-001-1.jpg`
+  - `features/FR05_Product_Search_Mobile/evidence/BUG-FR05M-001-2.jpg`
+- Notes: Trimming is recorded as a reviewed search-semantics assumption because FR-05 does not explicitly define spaces around keywords.
+
+### BUG-FR05M-002: Search with no matching products does not show an empty state
+
+- Feature: FR-05-M Product Listing and Search Mobile
+- Related test cases: FR05M-DT-007, FR05M-BVA-003
+- Severity: Major
+- Priority: High
+- GitHub issue: `#19`
+- Preconditions: Backend and React Native Mobile app are running.
+- Steps to reproduce:
+  1. Open the mobile app Home screen.
+  2. Enter a keyword that returns no products, such as `FR05M-NO-MATCH-XYZ`.
+  3. Tap Search.
+  4. Observe the result area.
+- Expected result: When no products match the search keyword, the app shows a suitable empty-state/no-result message.
+- Actual result: The mobile app shows an empty/blank result area without a clear no-result message.
+- Evidence: `features/FR05_Product_Search_Mobile/evidence/BUG-FR05M-002.jpg`
+- Notes: This is a confirmed FR-05-M requirement defect because FR-05 explicitly requires an empty state when there is no search result.
+
+### BUG-FR05M-003: Returning to Home from header keeps previous search results
+
+- Feature: FR-05-M Product Listing and Search Mobile
+- Related test case: FR05M-DT-018
+- Severity: Medium
+- Priority: Medium
+- GitHub issue: `#20`
+- Preconditions: Backend and React Native Mobile app are running; search result is currently filtered.
+- Steps to reproduce:
+  1. Open the mobile app Home screen.
+  2. Search for a keyword that filters the product list.
+  3. Tap the app header/logo to return to Home.
+  4. Observe the product list shown on the Home screen.
+- Expected result: Returning to Home from the header/logo resets the search state and shows the default/all product listing, equivalent to an empty search.
+- Actual result: The Home screen still shows the previous search results instead of resetting to all products.
+- Evidence: GitHub Issue `#20`
+- Notes: This is separated from empty search because the trigger is navigation/state reset, not text input validation.
+
+### BUG-FR05M-004: Very long search keyword breaks the mobile result-label layout
+
+- Feature: FR-05-M Product Listing and Search Mobile
+- Related test case: FR05M-BVA-006
+- Severity: Medium
+- Priority: Medium
+- GitHub issue: `#21`
+- Preconditions: Backend and React Native Mobile app are running.
+- Steps to reproduce:
+  1. Open the mobile app Home screen.
+  2. Enter a 256-character search keyword.
+  3. Tap Search.
+  4. Observe the result label and product-list area.
+- Expected result: The app remains responsive and displays the long keyword safely without breaking the layout.
+- Actual result: The full long keyword is displayed in the result label, wraps into multiple lines, and breaks the layout by pushing/overlapping the product-list area.
+- Evidence: `features/FR05_Product_Search_Mobile/evidence/BUG-FR05M-004.jpg`
+- Notes: FR-05 does not define a maximum keyword length, so this is a robustness/UI layout defect rather than a strict boundary-limit defect.
 
