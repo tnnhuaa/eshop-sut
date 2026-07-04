@@ -1,6 +1,6 @@
 # Domain Testing and BVA Agent Skill
 
-This folder contains the reusable Agent Skill created during HW02 Day 3 from the FR-06 Product Detail View workflow.
+This folder contains the reusable Agent Skill created during HW02 from the FR-06 Product Detail View workflow.
 
 ## Purpose
 

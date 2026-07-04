@@ -18,7 +18,7 @@
 | **Student ID:** | 23127280 |
 | **Class / Cohort:** | 23KTPM2 |
 | **Assignment ID (e.g., HW#00, HW#02):** | HW02-AI |
-| **Assignment date:** | 2026-06-29 |
+| **Assignment date:** | 2026-07-04 |
 | **AI tool(s) used:** | Codex; ChatGPT/Codex-style AI assistant |
 | **AI tool(s) used:** | [x] Yes  [ ] No |
 
@@ -74,7 +74,7 @@ The HW02 setup structure, AI documentation adaptation, requirement analysis, Dom
 | **Class / Cohort:** | 23KTPM2 |
 | **Course:** | CSC13003 - Software Testing |
 | **Instructor:** | Truong Phuoc Loc; Ho Tuan Thanh; Lam Quang Vu |
-| **Date:** | 2026-06-29 |
+| **Date:** | 2026-07-04 |
 | **Signature:** | Anh |
 
 ## **References**

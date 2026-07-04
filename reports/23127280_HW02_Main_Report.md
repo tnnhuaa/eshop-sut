@@ -2,10 +2,11 @@
 
 ## Student Information
 
-- Student ID: TODO
-- Full name: TODO
-- Class: TODO
-- Repository: TODO
+- Student ID: 23127280
+- Full name: Nguyen Hien Tuan Anh
+- Class: 23KTPM2
+- Repository: https://github.com/tnnhuaa/eshop-sut
+- Report finalized: 2026-07-04
 - SUT commit hash: `85af3ba875c88283615e22cb108f13e2fccaf0e9`
 
 ## Scope
@@ -269,8 +270,8 @@ FR-15 test coverage includes:
 | Result | Count |
 | --- | ---: |
 | Executed | 48 |
-| Passed | 27 |
-| Failed | 12 |
+| Passed | 28 |
+| Failed | 11 |
 | Blocked | 9 |
 
 ### Main Defects Observed

@@ -1,6 +1,6 @@
 # Skill Change Log
 
-## Initial creation - Day 3
+## Initial creation - FR-06 workflow
 
 - Created from the FR-06 Domain Testing and BVA workflow.
 - Added requirement analysis.

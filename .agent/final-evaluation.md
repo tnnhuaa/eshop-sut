@@ -2,7 +2,7 @@
 
 ## Status
 
-Initial Day 3 evaluation completed on FR-06.
+Initial evaluation completed on FR-06.
 
 ## Strengths
 

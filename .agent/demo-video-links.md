@@ -2,5 +2,4 @@
 
 | Demo | URL | Notes |
 | --- | --- | --- |
-| Agent Skill end-to-end on FR-06 | TODO | Show input requirement, raw output, human review, corrected final output |
-| Agent Skill reuse on FR-14 | TODO | FR-14 is reserved for skill demonstration and not counted as one of the four assessed features |
+| Agent Skill end-to-end demo | https://youtu.be/wRbw4lFawZ4 | Shows input requirement, raw output, human review, and corrected final output |
