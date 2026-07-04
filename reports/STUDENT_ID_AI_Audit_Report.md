@@ -16,6 +16,7 @@ I use AI tools for the following tasks. Every AI-generated output is reviewed, c
 | 6 | 2026-07-03 | Codex Browser | Performed exploratory FR-10 retest to check remaining coverage gaps and confirm whether additional state-machine defects exist. | Supplemental FR-10 test cases, updated execution summary, RTM, main report, bug draft links | Student should review whether the added coverage cases match the intended submission scope |
 | 7 | 2026-07-03 | Codex | Used the repository-local Agent Skill to design FR-15 Product CRUD Admin Domain Testing and BVA artifacts. | FR-15 domain model, BVA, 48 draft test cases, AI gap analysis, FR15 skill example files | Pending student review before execution |
 | 8 | 2026-07-03 | Codex Browser | Executed FR-15 Product CRUD Admin test cases through Admin Web UI and updated execution/report documentation. | FR-15 test cases with Actual Result/Status/BugID, execution summary, bug drafts, evidence references, AI gap analysis, main report, RTM, and execution log | Student created GitHub Issues `#12` to `#17`; decimal price behavior is recorded as a requirement clarification |
+| 9 | 2026-07-04 | Codex | Used the repository-local Agent Skill to design FR-05-M Mobile Product Listing/Search Domain Testing and BVA artifacts. | FR-05-M domain model, BVA, 24 draft test cases, AI gap analysis, FR05 skill example files, and mobile seed data script | Pending student manual execution on phone/emulator |
 
 ## Detailed Logs
 
@@ -90,3 +91,12 @@ I use AI tools for the following tasks. Every AI-generated output is reviewed, c
 - Output summary: Executed 48 FR-15 Product CRUD Admin test cases from Admin Web UI, updated `04-test-cases.csv`, created the execution summary, recorded UI-scope blocked cases, drafted six defect reports, linked available evidence screenshots, updated the main report, AI gap analysis, RTM, and execution log.
 - Human review: The student reviewed FR-15 bug drafts, created GitHub Issues `#12` to `#17`, and attached evidence screenshots on GitHub.
 - Corrections made by student: The decimal price case was changed from a confirmed defect to `REVIEW-FR15-006` because it passes the current `price > 0` wording unless integer-only VND is confirmed.
+
+### Interaction 9
+
+- Tool: Codex
+- Date and time: 2026-07-04
+- Prompt: Asked Codex to read and use `.agent/SKILL.md`, use templates in `.agent/templates/`, create Domain Testing and BVA for FR05_Product_Search_Mobile, record raw output, human review, final output, create seed data for manual evidence capture, and provide a short Vietnamese draft checklist for student execution.
+- Output summary: Created `.agent/examples/FR05-example/` with input requirement, raw skill output, human review, and final output. Updated FR-05-M domain model, BVA, 24 draft test cases, execution skeleton, AI gap analysis, main report, RTM, execution log, and added `test-data/seed-fr05-mobile-products.js`.
+- Human review: Pending student manual execution on mobile device or emulator.
+- Corrections made by student: TODO

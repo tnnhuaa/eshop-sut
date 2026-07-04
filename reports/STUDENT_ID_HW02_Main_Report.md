@@ -17,7 +17,7 @@ This report applies Domain Testing and Boundary Value Analysis to four selected 
 | A | Product Detail View | FR-06 | Web User | Test design and manual execution completed |
 | B | Order State Machine | FR-10 | Web User + Web Admin | Frontend UI execution completed |
 | C | Product Management CRUD | FR-15 | Admin Web | Frontend UI execution completed |
-| D | Product Listing and Search on Mobile | FR-05-M | React Native Mobile | Requirement analysis completed |
+| D | Product Listing and Search on Mobile | FR-05-M | React Native Mobile | Test design completed, not executed |
 
 ## Method
 
@@ -345,7 +345,9 @@ FR-05-M does not contain a clear numeric boundary in the SRS. Boundary-style tes
 
 ### Recommended Test Coverage
 
-FR-05-M test design should cover:
+FR-05-M test design contains 24 draft test cases: 17 Domain Testing cases and 7 Boundary Value Analysis cases. Execution has not started yet because this feature should be tested on the React Native Mobile app using a real device or emulator.
+
+FR-05-M test design covers:
 
 - Default product listing on mobile.
 - Product card image/name/price display.
@@ -357,6 +359,8 @@ FR-05-M test design should cover:
 - Backend unreachable/API error state if feasible.
 - Broken image or risky product data created through Admin/API if feasible.
 
+Seed data for manual execution is prepared in `test-data/seed-fr05-mobile-products.js`. It creates stable `FR05M-` products for one-result, many-result, Vietnamese keyword, unsafe-looking name, and broken-image checks.
+
 Detailed artifacts are stored under `features/FR05_Product_Search_Mobile/`.
 
 ## Overall Summary
@@ -365,12 +369,12 @@ Detailed artifacts are stored under `features/FR05_Product_Search_Mobile/`.
 | --- | ---: |
 | Features selected | 4 |
 | Features with requirement analysis completed | 4 |
-| Features with test cases designed | 3 |
-| Test cases designed | 101 |
+| Features with test cases designed | 4 |
+| Test cases designed | 125 |
 | Test cases executed | 101 |
 | Passed | 59 |
 | Failed | 28 |
-| Blocked / Not run | 14 |
+| Blocked / Not run | 38 |
 | Defect IDs identified from executed features | 16 confirmed defects and 1 price clarification |
 
 ## Artifact Index
