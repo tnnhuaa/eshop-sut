@@ -1,5 +1,10 @@
 # HW02 Bug Report
 
+## Bugs on the GitHub Issues page
+
+![](https://res.cloudinary.com/dlmpl2oi1/image/upload/v1783179265/Bugs_on_the_GitHub_Issues_page_2_giey26.png)
+![](https://res.cloudinary.com/dlmpl2oi1/image/upload/v1783179265/Bugs_on_the_GitHub_Issues_page_1_jkrl7w.png)
+
 ## Bug Summary
 
 | Bug ID | Feature | Title | Severity | Status | GitHub Issue | Evidence |
