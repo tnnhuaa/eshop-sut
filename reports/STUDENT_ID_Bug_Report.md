@@ -15,6 +15,12 @@
 | BUG-FR06-009 | FR-06 Product Detail View | Scientific notation quantity is accepted and parsed incorrectly | Major | Open | `#9` | `features/FR06_Product_Detail_Web/evidence/BUG-FR06-009.png`; `BUG-FR06-009_2.png` |
 | BUG-FR10-001 | FR-10 Order State Machine | User can cancel a shipping order from the Web User order history | Major | Open | `#10` | `features/FR10_Order_State_Machine/evidence/BUG-FR10-001-01.png`; `BUG-FR10-001-02.png` |
 | BUG-FR10-002 | FR-10 Order State Machine | Admin can mark a canceled final-state order as delivered | Major | Open | `#11` | `features/FR10_Order_State_Machine/evidence/BUG-FR10-002-01.png`; `BUG-FR10-002-02.png` |
+| BUG-FR15-001 | FR-15 Product CRUD Admin | Whitespace-only product name is accepted | Major | Open | `#12` | `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-001.png` |
+| BUG-FR15-002 | FR-15 Product CRUD Admin | Product can be created without price | Major | Open | `#13` | `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-002.png` |
+| BUG-FR15-003 | FR-15 Product CRUD Admin | Non-positive product prices are accepted | Major | Open | `#14` | `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-003.png` |
+| BUG-FR15-004 | FR-15 Product CRUD Admin | Product name longer than 255 characters is accepted | Major | Open | `#15` | `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-004.png` |
+| BUG-FR15-005 | FR-15 Product CRUD Admin | Updating one product temporarily changes all product names in Admin UI | Major | Open | `#16` | `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-005-1.png`; `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-005-2.png`; `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-005-3.png` |
+| REVIEW-FR15-006 | FR-15 Product CRUD Admin | Decimal price is accepted and displayed in product listing | Medium | Open / Needs confirmation | `#17` | `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-006.png` |
 
 ## Environment
 
@@ -239,3 +245,118 @@
   - `features/FR10_Order_State_Machine/evidence/BUG-FR10-002-02.png`
   - `features/FR10_Order_State_Machine/evidence/BUG-FR10-002-03.png`
 - Notes: This violates final-state protection in the FR-10 state machine.
+
+### BUG-FR15-001: Whitespace-only product name is accepted
+
+- Feature: FR-15 Product CRUD Admin
+- Related test case: FR15-DT-008
+- Severity: Major
+- Priority: High
+- GitHub issue: `#12`
+- Preconditions: Admin Web and backend are running; Admin is logged in.
+- Steps to reproduce:
+  1. Open Admin Product Management.
+  2. Create a product with name containing only spaces.
+  3. Enter a valid positive price and select an existing category.
+  4. Save the product.
+- Expected result: Whitespace-only name is treated as empty after trimming and the product is rejected.
+- Actual result: The product is accepted and appears in the Admin product list.
+- Evidence: `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-001.png`
+- Notes: FR-15 requires product name to be mandatory. A spaces-only value should not satisfy the required-name rule.
+
+### BUG-FR15-002: Product can be created without price
+
+- Feature: FR-15 Product CRUD Admin
+- Related test cases: FR15-DT-025, FR15-BVA-007
+- Severity: Major
+- Priority: High
+- GitHub issue: `#13`
+- Preconditions: Admin Web and backend are running; Admin is logged in.
+- Steps to reproduce:
+  1. Open Admin Product Management.
+  2. Enter a valid product name.
+  3. Leave price empty.
+  4. Select an existing category.
+  5. Save the product.
+- Expected result: Product is rejected because price is required.
+- Actual result: Product is created and appears in the product list.
+- Evidence: `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-002.png`
+- Notes: Browser/UI validation is not sufficient because empty price still reaches the save behavior.
+
+### BUG-FR15-003: Non-positive product prices are accepted
+
+- Feature: FR-15 Product CRUD Admin
+- Related test cases: FR15-BVA-008, FR15-BVA-009
+- Severity: Major
+- Priority: High
+- GitHub issue: `#14`
+- Preconditions: Admin Web and backend are running; Admin is logged in.
+- Steps to reproduce:
+  1. Open Admin Product Management.
+  2. Create a product with valid name and category.
+  3. Enter price `-1`, save, and observe the list.
+  4. Repeat with price `0`.
+- Expected result: Prices less than or equal to `0` are rejected because price must be positive (`> 0`).
+- Actual result: Products with negative and zero prices are accepted and displayed.
+- Evidence: `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-003.png`
+- Notes: This violates the explicit positive-price boundary.
+
+### BUG-FR15-004: Product name longer than 255 characters is accepted
+
+- Feature: FR-15 Product CRUD Admin
+- Related test cases: FR15-BVA-006, FR15-BVA-015
+- Severity: Major
+- Priority: High
+- GitHub issue: `#15`
+- Preconditions: Admin Web and backend are running; Admin is logged in.
+- Steps to reproduce:
+  1. Open Admin Product Management.
+  2. Create or edit a product using a 256-character ASCII name.
+  3. Enter a valid price and select an existing category.
+  4. Save the product.
+- Expected result: Product is rejected because the name exceeds the maximum 255-character limit.
+- Actual result: The 256-character product name is accepted and displayed.
+- Evidence: `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-004.png`
+- Notes: This violates the upper boundary for product name length.
+
+### BUG-FR15-005: Updating one product temporarily changes all product names in Admin UI
+
+- Feature: FR-15 Product CRUD Admin
+- Related test cases: FR15-DT-013, FR15-DT-019, FR15-DT-031, FR15-BVA-014
+- Severity: Major
+- Priority: High
+- GitHub issue: `#16`
+- Preconditions: Admin Web and backend are running; Admin is logged in; Product A and Product B exist with different names.
+- Steps to reproduce:
+  1. Open Admin Product Management.
+  2. Record Product A and Product B names.
+  3. Edit only Product A and save a new name.
+  4. Observe the product list immediately after save.
+  5. Reload the page and observe the product list again.
+- Expected result: Only Product A changes. Product B and other products remain unchanged immediately after save and after reload.
+- Actual result: Immediately after save, many rows display Product A's new name and Product B is hidden by the incorrect UI state. After reload, persisted data shows only Product A changed.
+- Evidence:
+  - `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-005-1.png`
+  - `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-005-2.png`
+  - `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-005-3.png`
+- Notes: This violates the UI-level interpretation of "only the edited product changes", even though the persisted backend state appears correct after reload.
+
+### REVIEW-FR15-006: Decimal price is accepted and displayed in product listing
+
+- Feature: FR-15 Product CRUD Admin
+- Related test case: FR15-BVA-010
+- Severity: Medium if integer-only VND is confirmed; otherwise not a defect
+- Priority: Medium
+- GitHub issue: `#17`
+- Preconditions: Admin Web and backend are running; Admin is logged in.
+- Steps to reproduce:
+  1. Open Admin Product Management.
+  2. Enter a valid product name.
+  3. Enter price `0.01`.
+  4. Select an existing category.
+  5. Save the product.
+- Expected result: The system handles product price consistently with the requirement. Since FR-15 only says price must be a positive number greater than `0`, decimal `0.01` may be considered valid. If product price is intended to be integer-only VND, the UI should reject decimal prices clearly.
+- Actual result: Admin UI allows creating a product with decimal price `0.01`. After saving, the product appears in the product list and the price is displayed as `0,01 VND`.
+- Evidence: `features/FR15_Product_CRUD_Admin/evidence/BUG-FR15-006.png`
+- Notes: This item is a requirement clarification/potential defect, not a confirmed defect under the current `> 0` wording.
+

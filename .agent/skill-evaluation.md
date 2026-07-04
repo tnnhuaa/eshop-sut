@@ -4,6 +4,7 @@
 
 - FR-06 Product Detail View.
 - FR-10 Order State Machine.
+- FR-15 Product CRUD Admin.
 
 ## Evaluation Goal
 
@@ -17,6 +18,8 @@ Evaluate whether the reusable Domain Testing and Boundary Value Analysis skill c
 | Execution review | `features/FR06_Product_Detail_Web/04-test-cases.csv`, `05-test-execution.md` | Manual results: 21 executed, 11 passed, 10 failed | Compared generated tests with observed behavior and GitHub Issues `#1` to `#9` | No mandatory skill change; evaluation notes added |
 | FR-10 state-machine run | `.agent/examples/FR10-example/input-requirement.md` | `.agent/examples/FR10-example/raw-skill-output.md` | `.agent/examples/FR10-example/human-review.md` | Human review added state transition model, actor/permission/ownership dimensions, final-state checks, and cross-role UI consistency |
 | FR-10 execution review | `features/FR10_Order_State_Machine/05-test-cases.csv`, `06-test-execution.md` | Frontend UI results: 32 executed, 20 passed, 7 failed, 5 blocked | Compared generated tests with Web User/Admin UI behavior and FR-10 bug drafts | Skill should include a general lifecycle/state analysis rule |
+| FR-15 CRUD run | `.agent/examples/FR15-example/input-requirement.md` | `.agent/examples/FR15-example/raw-skill-output.md` | `.agent/examples/FR15-example/human-review.md` | Human review refined optional fields, UI/API execution scope, duplicate-name assumption, and update-isolation checks |
+| FR-15 execution review | `features/FR15_Product_CRUD_Admin/04-test-cases.csv`, `05-test-execution.md` | Admin UI results: 48 executed, 28 passed, 11 failed, 9 blocked | Compared generated validation/update-isolation tests with Admin Web behavior and FR-15 bug drafts | No mandatory skill change; execution confirmed the need to record UI reachability, browser-vs-app validation, and requirement clarifications separately |
 
 ## What The Skill Generated Correctly
 
@@ -135,6 +138,48 @@ For FR-10, a future skill update is recommended because the missing rule is gene
 
 The current submission can record this in evaluation without editing `.agent/SKILL.md` immediately, unless the final commit plan includes a dedicated skill-fix commit.
 
+## FR-15 Skill Evaluation
+
+### What The Skill Generated Correctly
+
+| Area | Result |
+| --- | --- |
+| CRUD coverage | Correctly covered create, view, update, delete, list refresh, cancel edit, and delete persistence. |
+| Required fields | Correctly identified name, price, and category as the main validation domains. |
+| Boundary values | Correctly selected name length `0/1/254/255/256` and price values around `> 0`. |
+| Update isolation | Correctly treated "only the selected product changes" as a high-priority test condition. |
+| Authorization risk | Included unauthenticated and non-admin access as important domain classes. |
+
+### What Needed Human Review
+
+| Weakness | Observation After Execution | Required Human Action |
+| --- | --- | --- |
+| UI reachability | Missing category, invalid category ID, non-existing product ID, and direct unauthorized writes could not be produced from Admin UI. | Marked these cases as `Blocked` instead of forcing API execution. |
+| Browser vs application validation | Browser blocked empty name and non-numeric price, but application logic accepted whitespace name, empty price, zero/negative price, and overlong name. | Recorded actual validation layer behavior separately. |
+| Decimal price ambiguity | The requirement says positive number and the UI accepts/displays decimal `0.01` as `0,01 VND`. | Marked the testcase as passed and kept it as a requirement clarification if integer-only VND is expected. |
+| Immediate UI state | Persisted data after reload was correct, but immediate UI table showed many rows renamed after one product update. | Split immediate UI isolation failure from after-reload persistence pass. |
+
+### Result After Execution
+
+| Result | Count |
+| --- | ---: |
+| Total FR-15 test cases | 48 |
+| Passed | 28 |
+| Failed | 11 |
+| Blocked | 9 |
+| Draft defects identified | 5 confirmed defects and 1 price clarification |
+
+### FR-15-Specific vs General Skill Issues
+
+| Issue | Classification | Reason |
+| --- | --- | --- |
+| Whitespace-only name accepted | FR-15-specific implementation defect | Product name is required but spaces-only value is treated as valid. |
+| Empty/zero/negative price accepted | FR-15-specific implementation defect | Product price must be required and greater than `0`. |
+| Overlong product name accepted | FR-15-specific implementation defect | Product name max length is explicitly 255 characters. |
+| Immediate mass-name UI update | FR-15-specific implementation defect | Admin UI state update violates selected-product-only behavior before reload. |
+| Need UI/API reachability review | General skill guardrail | Test design can include API-only domains, but execution status must match the chosen test level. |
+| Need browser-vs-application validation distinction | General skill guardrail | HTML input validation may pass while application/backend validation remains incomplete. |
+
 ## Final Evaluation Result
 
-The skill is usable but must be reviewed carefully. It generated useful FR-06 and FR-10 starting points, but FR-10 showed that lifecycle features need stronger state-transition guidance. Human review was essential for adding the 5-state model, transition coverage, actor/permission checks, UI execution scope, and final defect mapping.
+The skill is usable but must be reviewed carefully. It generated useful FR-06, FR-10, and FR-15 starting points. FR-10 showed that lifecycle features need stronger state-transition guidance, while FR-15 showed that form/CRUD testing must explicitly distinguish UI-reachable cases, browser-level validation, and application-level validation. Human review remains essential before final execution results are accepted.

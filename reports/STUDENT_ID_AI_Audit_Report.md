@@ -15,6 +15,7 @@ I use AI tools for the following tasks. Every AI-generated output is reviewed, c
 | 5 | 2026-07-02 | Codex Browser | Executed FR-10 order-state test cases from Frontend UI and drafted defect reports. | FR-10 test execution table, execution summary, and bug draft file | Student created GitHub Issues `#10` and `#11` after reviewing the drafts |
 | 6 | 2026-07-03 | Codex Browser | Performed exploratory FR-10 retest to check remaining coverage gaps and confirm whether additional state-machine defects exist. | Supplemental FR-10 test cases, updated execution summary, RTM, main report, bug draft links | Student should review whether the added coverage cases match the intended submission scope |
 | 7 | 2026-07-03 | Codex | Used the repository-local Agent Skill to design FR-15 Product CRUD Admin Domain Testing and BVA artifacts. | FR-15 domain model, BVA, 48 draft test cases, AI gap analysis, FR15 skill example files | Pending student review before execution |
+| 8 | 2026-07-03 | Codex Browser | Executed FR-15 Product CRUD Admin test cases through Admin Web UI and updated execution/report documentation. | FR-15 test cases with Actual Result/Status/BugID, execution summary, bug drafts, evidence references, AI gap analysis, main report, RTM, and execution log | Student created GitHub Issues `#12` to `#17`; decimal price behavior is recorded as a requirement clarification |
 
 ## Detailed Logs
 
@@ -80,3 +81,12 @@ I use AI tools for the following tasks. Every AI-generated output is reviewed, c
 - Output summary: Created `.agent/examples/FR15-example/` with input requirement, raw skill output, human review, and final output. Updated FR-15 domain model, BVA, 48 draft test cases, and AI gap analysis.
 - Human review: Pending student review before execution.
 - Corrections made by student: TODO
+
+### Interaction 8
+
+- Tool: Codex Browser
+- Date and time: 2026-07-03
+- Prompt: Asked Codex to use the in-app browser to execute the created test cases and complete the related documentation files.
+- Output summary: Executed 48 FR-15 Product CRUD Admin test cases from Admin Web UI, updated `04-test-cases.csv`, created the execution summary, recorded UI-scope blocked cases, drafted six defect reports, linked available evidence screenshots, updated the main report, AI gap analysis, RTM, and execution log.
+- Human review: The student reviewed FR-15 bug drafts, created GitHub Issues `#12` to `#17`, and attached evidence screenshots on GitHub.
+- Corrections made by student: The decimal price case was changed from a confirmed defect to `REVIEW-FR15-006` because it passes the current `price > 0` wording unless integer-only VND is confirmed.

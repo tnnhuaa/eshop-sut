@@ -16,7 +16,7 @@ This report applies Domain Testing and Boundary Value Analysis to four selected 
 | --- | --- | --- | --- | --- |
 | A | Product Detail View | FR-06 | Web User | Test design and manual execution completed |
 | B | Order State Machine | FR-10 | Web User + Web Admin | Frontend UI execution completed |
-| C | Product Management CRUD | FR-15 | Admin Web + API | Test design completed, not executed |
+| C | Product Management CRUD | FR-15 | Admin Web | Frontend UI execution completed |
 | D | Product Listing and Search on Mobile | FR-05-M | React Native Mobile | Requirement analysis completed |
 
 ## Method
@@ -248,11 +248,11 @@ FR-15 requires Admin to create, view, update, and delete products. The key valid
 | `product_id` | Existing product ID | Non-existing, deleted, malformed | Existing ID, `999999` |
 | `actor_role` | Admin | User, unauthenticated | Admin token vs missing/user token |
 
-### Recommended Test Coverage
+### Test Coverage And Execution
 
-FR-15 test design contains 48 test cases: 33 Domain Testing cases and 15 Boundary Value Analysis cases. Execution has not started yet, so `ActualResult`, `Status`, `Evidence`, and `BugID` remain as draft execution fields.
+FR-15 contains 48 test cases: 33 Domain Testing cases and 15 Boundary Value Analysis cases. Execution was performed from the Admin Web frontend. API-only invalid domains were marked as blocked when the Admin UI could not produce the required invalid category, missing `category_id`, non-existing product ID, or direct unauthenticated write condition.
 
-FR-15 test design covers:
+FR-15 test coverage includes:
 
 - Valid create, view, update, and delete flows.
 - Required field validation for name, price, and category.
@@ -263,6 +263,32 @@ FR-15 test design covers:
 - Authorization for unauthenticated and non-admin users.
 - Update isolation by checking a non-target product remains unchanged.
 - Deletion of non-existing product and stale-list behavior.
+
+### Manual Execution Summary
+
+| Result | Count |
+| --- | ---: |
+| Executed | 48 |
+| Passed | 27 |
+| Failed | 12 |
+| Blocked | 9 |
+
+### Main Defects Observed
+
+| Bug ID | GitHub Issue | Related Tests | Summary |
+| --- | --- | --- | --- |
+| BUG-FR15-001 | `#12` | FR15-DT-008 | Whitespace-only product name is accepted. |
+| BUG-FR15-002 | `#13` | FR15-DT-025, FR15-BVA-007 | Product can be created without price. |
+| BUG-FR15-003 | `#14` | FR15-BVA-008, FR15-BVA-009 | Non-positive prices such as `-1` and `0` are accepted. |
+| BUG-FR15-004 | `#15` | FR15-BVA-006, FR15-BVA-015 | Product name longer than 255 characters is accepted during create/update. |
+| BUG-FR15-005 | `#16` | FR15-DT-013, FR15-DT-019, FR15-DT-031, FR15-BVA-014 | Updating one product temporarily changes all product names in Admin UI before reload. |
+| REVIEW-FR15-006 | `#17` | FR15-BVA-010 | Decimal price `0.01` is accepted and displayed as `0,01 VND`; this passes current `> 0` wording but needs confirmation if VND price must be integer-only. |
+
+### Execution Interpretation
+
+The strongest FR-15 defects are missing validation for whitespace-only name, missing/invalid price values, overlong names, and immediate UI update isolation. The update-isolation finding is important because the requirement says only the edited product should change. In this implementation, persisted data appears correct after reload, but the immediate Admin UI state incorrectly shows many rows with the edited product name.
+
+Blocked cases are not treated as missing work. They are valid domain cases that cannot be executed from the frontend UI under the teacher-confirmed functional testing scope.
 
 Detailed artifacts are stored under `features/FR15_Product_CRUD_Admin/`.
 
@@ -341,11 +367,11 @@ Detailed artifacts are stored under `features/FR05_Product_Search_Mobile/`.
 | Features with requirement analysis completed | 4 |
 | Features with test cases designed | 3 |
 | Test cases designed | 101 |
-| Test cases executed | 53 |
-| Passed | 31 |
-| Failed | 17 |
-| Blocked / Not run | 5 |
-| Defect IDs identified from executed features | 11 |
+| Test cases executed | 101 |
+| Passed | 59 |
+| Failed | 28 |
+| Blocked / Not run | 14 |
+| Defect IDs identified from executed features | 16 confirmed defects and 1 price clarification |
 
 ## Artifact Index
 
