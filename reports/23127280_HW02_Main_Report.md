@@ -78,6 +78,8 @@ The main input domains are `product_id`, product data fields, `quantity`, and th
 | `product.category` | Existing category shown clearly | Missing category, ID-only display | Expected human-readable category |
 | `quantity` | Positive integer, minimum `1` | Empty, spaces, text, zero, negative, decimal, scientific notation, very large | `1`, `2`, `3`, empty, spaces, `abc`, `0`, `-1`, `1.5`, `1e2`, `999999999` |
 
+The selected domain values come from the user-visible contract of the product detail page. `product_id` is included because the detail page is route-driven: existing IDs cover the normal path, while non-existing, non-numeric, and negative IDs check whether the page fails safely. Image, name, price, description, and category are separated because FR-06 requires complete product information, and each display field can fail independently. Quantity receives the widest set of invalid classes because it is the only direct user input in this feature and has an explicit rule: positive integer with minimum `1`. Empty, whitespace, text, zero, negative, decimal, and scientific notation values were selected as separate equivalence classes because browser number inputs and JavaScript parsing can treat them differently.
+
 ### Boundary Value Analysis
 
 The explicit boundary in FR-06 is the minimum allowed quantity: `quantity >= 1`.
@@ -87,6 +89,8 @@ The explicit boundary in FR-06 is the minimum allowed quantity: `quantity >= 1`.
 | Minimum positive integer quantity | `0` | `1` | `2` | `0` is rejected; `1` and `2` are accepted |
 
 Additional values such as `-1`, `1.5`, and `999999999` were included as negative-domain or robustness values. They are useful for finding defects but are not all official SRS boundaries.
+
+The BVA values `0`, `1`, and `2` were chosen because they are immediately below, at, and immediately above the minimum valid quantity. This targets the most likely decision point in the input validation. `-1` extends the invalid below-boundary class to a clearly negative integer, while `1.5` and `1e2` check whether the implementation enforces the "integer" part of the rule instead of accepting numeric-looking values. `999999999` is kept as a robustness value because the SRS does not define stock or maximum quantity.
 
 ### Test Design
 
@@ -175,7 +179,11 @@ FR-10 does not have a numeric boundary as its primary risk. The main test design
 | Order ID | Existing order owned/managed by actor | Non-existing, other user's order, malformed ID |
 | API payload | Supported lowercase status | Unknown status, uppercase/mixed-case status, missing status |
 
+The FR-10 domains were selected around lifecycle behavior rather than form-field validation. `Current order state` and `target state` are the main variables because the same action can be valid or invalid depending on where the order currently is. `Actor role` and ownership are included because User and Admin have different permissions, and a transition that is valid for Admin may be invalid for a normal user. Order ID classes check target correctness and ownership protection. Payload/status variants are kept as design inputs because order states behave like enum values; accepting unknown, uppercase, mixed-case, or missing status values would allow behavior outside the intended state machine.
+
 Boundary-style checks should be applied to order count or identifier classes only if supported by the implementation. For state behavior, the equivalent of a boundary is the edge between allowed and forbidden transitions, especially final states with no outgoing transition.
+
+For FR-10, BVA is interpreted as transition-boundary analysis. The important edge is not a numeric value but the point where a transition changes from valid to invalid. For example, `confirmed -> canceled` is allowed for a user, while `shipping -> canceled` should be rejected. Final states such as `delivered` and `canceled` were selected because they are boundary states with no valid outgoing transitions. Repeated, skipped, backward, and same-state transitions were included to test the edges of the lifecycle model.
 
 ### Recommended Test Coverage
 
@@ -248,6 +256,10 @@ FR-15 requires Admin to create, view, update, and delete products. The key valid
 | `imageUrl` | URL/path string | Empty, broken URL, non-image URL | Valid URL, broken URL |
 | `product_id` | Existing product ID | Non-existing, deleted, malformed | Existing ID, `999999` |
 | `actor_role` | Admin | User, unauthenticated | Admin token vs missing/user token |
+
+The FR-15 domains were selected from the CRUD workflow and the explicit input constraints. `name`, `price`, and `category_id` are primary variables because the SRS gives direct rules for them. `description` and `imageUrl` are still included because the Admin UI exposes them, but they are treated as optional/risky display data rather than strict validation fields. `product_id` is required for update/delete target correctness, and `actor_role` is included because product management belongs to the Admin subsystem. The representative values separate strict requirement failures from robustness risks: empty name, overlong name, zero price, and missing category are requirement-focused; broken image URL, very large price, and script-looking optional text are robustness or safe-display checks unless another requirement defines a hard rule.
+
+The FR-15 BVA values follow the explicit boundaries in the requirement. Product name has a maximum length of 255, so `254`, `255`, and `256` check just below, at, and just above the boundary. Price must be greater than `0`, so `-1`, `0`, `0.01`, and `1` check invalid below/at the threshold and valid just above it. Category has no numeric range in the SRS, so its boundary is modeled as selection state: no category versus an existing category. Update isolation is treated as a decision boundary between the selected product and every non-target product, which is why the design compares target and non-target values before and after editing.
 
 ### Test Coverage And Execution
 
@@ -344,7 +356,11 @@ Some FR-05 wording is web-specific, such as grid layout, alt text, and `<h1>`. F
 | `search_state` | Default/all products after Home navigation | Stale filtered result after header/logo navigation | Search first, then tap header/logo |
 | `network_state` | Backend reachable | Backend unreachable, wrong IP, timeout | Current LAN/emulator connection, backend stopped |
 
+The FR-05-M domains focus on observable mobile behavior. `search_keyword` is the main controllable input, so it includes normal text, case variations, leading/trailing spaces, Vietnamese accents, no-result text, long text, and HTML/script-looking strings. These values were selected because search defects often come from normalization, trimming, case sensitivity, encoding, and unsafe rendering. `product_list`, `product.name`, `product.price`, and `product.imageUrl` are included because every product card must display image, name, and formatted price. `search_state` was added after review because returning Home should restore the default listing, not preserve stale filtered results. `network_state` is included because mobile execution depends on backend reachability, emulator/LAN IP, and timeout behavior.
+
 FR-05-M does not contain a clear numeric boundary in the SRS. Boundary-style testing should focus on keyword length only as robustness unless a maximum length is later specified.
+
+The FR-05-M BVA set uses practical UI boundaries rather than formal numeric limits. An empty keyword is the lower boundary of search input and should return the default/all-product listing. A one-character keyword checks the smallest meaningful search text. A no-match keyword checks the boundary between result count `1` and result count `0`, where the empty-state requirement becomes visible. A many-match keyword checks the opposite display boundary where scrolling and card layout matter. The 256-character keyword is documented as robustness, not an official maximum, because the SRS does not define a keyword length limit.
 
 ### Test Coverage And Execution
 
