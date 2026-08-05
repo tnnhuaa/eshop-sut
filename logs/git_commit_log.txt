@@ -1,3 +1,0 @@
-TODO: Replace this file with the final output of:
-
-git log --oneline --decorate --graph --all
