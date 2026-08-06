@@ -1,5 +1,10 @@
-const path = require("path");
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
 const sqlite3 = require("../backend/node_modules/sqlite3").verbose();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const dbPath = path.resolve(__dirname, "../backend/database.sqlite");
 const db = new sqlite3.Database(dbPath);

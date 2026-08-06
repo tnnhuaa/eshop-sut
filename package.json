@@ -1,0 +1,24 @@
+{
+  "name": "eshop-hw04-automation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup:browsers": "playwright install chromium firefox msedge",
+    "test:fr06": "node scripts/run-feature.mjs FR06",
+    "test:fr10": "node scripts/run-feature.mjs FR10",
+    "test:fr15": "node scripts/run-feature.mjs FR15",
+    "test:matrix": "node scripts/run-matrix.mjs",
+    "demo:task2": "node scripts/run-feature.mjs FR06",
+    "demo:skill": "node scripts/run-feature.mjs FR06 --project=edge",
+    "report:verify": "node scripts/verify-reports.mjs",
+    "test:list": "playwright test --list",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.0.0",
+    "dotenv": "^17.0.0",
+    "typescript": "^5.9.0"
+  }
+}

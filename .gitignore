@@ -48,3 +48,11 @@ desktop.ini
 
 # Local code intelligence index
 .codegraph/
+
+# HW04 Playwright runtime artifacts
+artifacts/test-results/
+playwright-report/
+test-results/
+
+# Runtime database (baseline remains tracked)
+backend/database.sqlite
