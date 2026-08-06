@@ -12,8 +12,8 @@ Export the requested conversation scope to `AI_Audit.md`. Create one artifact fo
 1. Use `$ai-audit-initializer` first to ensure `AI_Audit.md` exists.
 2. Identify the requested conversation scope. If no scope is specified, export only exact prompt-response pairs currently available in context; never reconstruct missing text.
 3. Capture the actual date and time in GMT+7.
-4. Read `AI_Audit.md`, count existing `### Artifact` headings, and assign the next number.
-5. Insert one artifact block per user/AI pair in chronological order under `## **3. AI Interaction Log**` and before `## **4. Summary of AI Accuracy**`.
+4. Read `AI_Audit.md`, count existing `### Artifact #` verbatim-record headings, and assign the next number.
+5. For each user/AI pair, insert one five-column summary row immediately before `<!-- AUDIT_TABLE_ROWS_END -->` and one corresponding verbatim record immediately before `<!-- ARTIFACT_DETAILS_END -->`.
 6. Record every agent or sub-agent involved. Use `Codex (primary agent)` when no delegated agent was involved.
 7. Record direct file creation, editing, deletion, replacement, or append operations in repository-relative form.
 8. Normalize local paths and redact secrets using the privacy policy below.
@@ -22,14 +22,30 @@ Export the requested conversation scope to `AI_Audit.md`. Create one artifact fo
 11. Recalculate `## **4. Summary of AI Accuracy**`.
 12. Refresh `## **5. Conclusion - When should AI be used (or not)?**` from demonstrated strengths, errors, omissions, and human corrections.
 13. Refresh `## **6. Mandatory Disclosure (paste verbatim)**` as one first-person paragraph naming AI-assisted tasks, human review, and evidence that was not AI-generated.
-14. Preserve the student information and signature unless the user explicitly requests a correction.
+14. Preserve the faculty header, student information, instructions, signature, and references from `assets/AI_Audit_Report_Template.md`; update only assignment-specific fields unless the user explicitly requests a correction.
 
-## Required Artifact Template
+## Template Contract
+
+- Use `assets/AI_Audit_Report_Template.md` as the canonical reusable report template.
+- Keep the FIT/HCMUS header, student identity, class, course, instructors, signature name, instructions, and references unchanged.
+- Replace only `{{ASSIGNMENT_ID}}`, `{{ASSIGNMENT_DATE}}`, and `{{AI_TOOLS}}` when initializing a new homework.
+- Keep one concise audit-table row and one full verbatim record for every artifact. The row supports the official five-column layout; the record preserves exact evidence without breaking Markdown tables.
+- Preserve both insertion markers. Do not append duplicate summary, conclusion, disclosure, signature, or reference sections.
+
+## Required Audit-Table Row
+
+Use one row per artifact. Keep the row concise and point to the matching verbatim record for full prompt/output:
+
+```markdown
+| **Artifact #[X] - [short workstream title]**<br>Tool: [agent/tool]<br>Time: [GMT+7 timestamp]<br>Full prompt: see Artifact #[X] verbatim record below. | [Concise factual output summary]<br>Full output: see Artifact #[X] verbatim record below. | [VALID / INVALID / INCOMPLETE] | [Evidence-based reasoning and relevant ISTQB/course/technical source] | [Concrete student correction, or `None required.`] |
+```
+
+## Required Verbatim Record
 
 Use this exact structure:
 
 `````markdown
-### Artifact [X]
+### Artifact #[X] - Verbatim Record
 
 - **User:** Nguyễn Hiền Tuấn Anh (23127280)
 - **Date and Time:** [Actual date and time, GMT+7]
