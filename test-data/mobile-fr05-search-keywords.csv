@@ -1,8 +1,0 @@
-Label,Keyword,ExpectedClass,Notes
-Empty,,Valid,Should show default listing or all products
-One character,a,Valid,Boundary keyword length
-Normal keyword,phone,Valid,Search by product name
-No match,zzzz-no-product,Valid,Should show empty state
-HTML payload,<b>phone</b>,Risky,Must be displayed safely
-Script payload,<script>alert(1)</script>,Risky,Must not execute or render HTML
-Very long keyword,TODO_LONG_KEYWORD,Risky,Check UI and performance behavior

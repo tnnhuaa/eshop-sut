@@ -1,0 +1,7 @@
+interface:
+  display_name: "HW04 AI Audit Initializer"
+  short_description: "Create the individual HW04 AI audit file"
+  default_prompt: "Use $ai-audit-initializer to initialize AI_Audit.md for HW04 Automation Testing."
+
+policy:
+  allow_implicit_invocation: false

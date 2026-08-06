@@ -1,0 +1,7 @@
+interface:
+  display_name: "HW04 AI Export Audit"
+  short_description: "Export evidence-based HW04 AI audit artifacts"
+  default_prompt: "Use $ai-export-audit to export selected HW04 AI interactions, normalize private paths, evaluate evidence, and refresh AI_Audit.md."
+
+policy:
+  allow_implicit_invocation: true

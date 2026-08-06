@@ -45,3 +45,6 @@ desktop.ini
 *.temp
 *.swp
 ~$*
+
+# Local code intelligence index
+.codegraph/
