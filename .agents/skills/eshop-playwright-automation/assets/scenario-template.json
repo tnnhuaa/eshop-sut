@@ -1,0 +1,11 @@
+[
+  {
+    "id": "FEATURE-DT-001",
+    "title": "Replace with one observable behavior",
+    "preconditions": [],
+    "setup": {},
+    "input": {},
+    "expected": {},
+    "assertionTypes": ["visibility"]
+  }
+]

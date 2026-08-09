@@ -1,0 +1,4 @@
+interface:
+  display_name: "EShop Playwright Automation"
+  short_description: "Build and review data-driven EShop tests"
+  default_prompt: "Use $eshop-playwright-automation to automate one EShop feature with external data and multi-browser evidence."
