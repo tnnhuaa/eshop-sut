@@ -1,0 +1,110 @@
+[
+  {
+    "id": "FR06-DT-001",
+    "title": "Product detail shows the complete product information including its category",
+    "preconditions": ["Product ID 1 exists."],
+    "setup": { "productId": 1 },
+    "input": {},
+    "expected": { "name": "iPhone 15 Pro Max", "price": "30,000,000 ₫", "description": "Điện thoại cao cấp của Apple", "category": "Điện thoại" },
+    "assertionTypes": ["visibility", "text", "image-alt"]
+  },
+  {
+    "id": "FR06-DT-002",
+    "title": "Numeric-string price is formatted as Vietnamese currency",
+    "preconditions": ["Product ID 2 exists."],
+    "setup": { "productId": 2 },
+    "input": {},
+    "expected": { "name": "Samsung Galaxy S24 Ultra", "price": "28,000,000 ₫" },
+    "assertionTypes": ["visibility", "text", "image-alt"]
+  },
+  {
+    "id": "FR06-DT-003",
+    "title": "Unknown product ID shows a clear not-found state",
+    "preconditions": ["Backend and web application are running."],
+    "setup": { "productId": 999999 },
+    "input": {},
+    "expected": { "notFoundText": "Sản phẩm không tồn tại" },
+    "assertionTypes": ["visibility", "text", "absence"]
+  },
+  {
+    "id": "FR06-DT-006",
+    "title": "One add-to-cart click adds the selected quantity",
+    "preconditions": ["Product ID 1 exists and the cart is empty."],
+    "setup": { "productId": 1, "cartBaseline": "empty" },
+    "input": { "quantity": "1", "submitClicks": 1 },
+    "expected": { "name": "iPhone 15 Pro Max", "quantity": "1", "cartRows": 1 },
+    "assertionTypes": ["value", "visibility", "scoped-row"]
+  },
+  {
+    "id": "FR06-DT-008",
+    "title": "Adding the same product merges into its existing cart line",
+    "preconditions": ["Product ID 1 is already in the cart with quantity 1."],
+    "setup": { "productId": 1, "existingQuantity": "1", "preconditionSubmitClicks": 2 },
+    "input": { "quantity": "2", "submitClicks": 2 },
+    "expected": { "name": "iPhone 15 Pro Max", "quantity": "3", "cartRows": 1 },
+    "assertionTypes": ["value", "count", "scoped-row"]
+  },
+  {
+    "id": "FR06-DT-010",
+    "title": "Empty quantity is rejected without changing the cart",
+    "preconditions": ["Product ID 1 exists and the cart is empty."],
+    "setup": { "productId": 1, "cartBaseline": "empty" },
+    "input": { "quantity": "", "submitClicks": 2 },
+    "expected": { "cartEmptyText": "Giỏ hàng của bạn đang trống" },
+    "assertionTypes": ["value", "visibility", "absence"]
+  },
+  {
+    "id": "FR06-DT-012",
+    "title": "Scientific-notation quantity is rejected or safely handled",
+    "preconditions": ["Product ID 1 exists and the cart is empty."],
+    "setup": { "productId": 1, "cartBaseline": "empty" },
+    "input": { "quantity": "1e2", "submitClicks": 2 },
+    "expected": { "cartEmptyText": "Giỏ hàng của bạn đang trống" },
+    "assertionTypes": ["value", "visibility", "absence"]
+  },
+  {
+    "id": "FR06-DT-013",
+    "title": "Script-looking product content is rendered as inert text",
+    "preconditions": ["A product with script-looking content is available."],
+    "setup": { "productId": "xss-fixture", "mockProduct": { "id": "xss-fixture", "name": "<script>alert(1)</script>", "price": "1000", "description": "<script>alert(1)</script>", "imageUrl": "https://placehold.co/300x300/png?text=xss" } },
+    "input": {},
+    "expected": { "name": "<script>alert(1)</script>", "description": "<script>alert(1)</script>", "dialogCount": 0 },
+    "assertionTypes": ["visibility", "text", "no-dialog"]
+  },
+  {
+    "id": "FR06-DT-015",
+    "title": "A successful add displays visible feedback after one click",
+    "preconditions": ["Product ID 1 exists and the cart is empty."],
+    "setup": { "productId": 1, "cartBaseline": "empty" },
+    "input": { "quantity": "1", "submitClicks": 1 },
+    "expected": { "feedback": "Đã thêm" },
+    "assertionTypes": ["value", "visibility", "text"]
+  },
+  {
+    "id": "FR06-BVA-001",
+    "title": "Quantity zero is rejected",
+    "preconditions": ["Product ID 1 exists and the cart is empty."],
+    "setup": { "productId": 1, "cartBaseline": "empty" },
+    "input": { "quantity": "0", "submitClicks": 2 },
+    "expected": { "cartEmptyText": "Giỏ hàng của bạn đang trống" },
+    "assertionTypes": ["value", "visibility", "absence"]
+  },
+  {
+    "id": "FR06-BVA-004",
+    "title": "Negative quantity is rejected",
+    "preconditions": ["Product ID 1 exists and the cart is empty."],
+    "setup": { "productId": 1, "cartBaseline": "empty" },
+    "input": { "quantity": "-1", "submitClicks": 2 },
+    "expected": { "cartEmptyText": "Giỏ hàng của bạn đang trống" },
+    "assertionTypes": ["value", "visibility", "absence"]
+  },
+  {
+    "id": "FR06-BVA-005",
+    "title": "Decimal quantity is rejected",
+    "preconditions": ["Product ID 1 exists and the cart is empty."],
+    "setup": { "productId": 1, "cartBaseline": "empty" },
+    "input": { "quantity": "1.5", "submitClicks": 2 },
+    "expected": { "cartEmptyText": "Giỏ hàng của bạn đang trống" },
+    "assertionTypes": ["value", "visibility", "absence"]
+  }
+]
