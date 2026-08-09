@@ -1,24 +1,49 @@
-# AI Audit Report
+**Faculty of Information Technology (FIT) - Ho Chi Minh City University of Science (HCMUS)**
 
-## **1. Student and Assignment Information**
+**CS423 / CSC13003 - Software Testing (AI-augmented - 2026)**
+
+**AI POLICY - TEMPLATES - 2026 v1.0**
+
+# **AI Audit Report - 5-section Template per Artifact**
+
+*Mandatory appendix for every AI-assisted homework (HW#01-HW#06, and Seminar).*
+
+*Adapted from Med Kharbach, PhD (2026) - AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0. This adaptation is prepared for FIT@HCMUS - CS423 / CSC15003 Software Testing course.*
+
+## **1. Student Information**
 
 | Field | Value |
-| --- | --- |
-| Student ID | 23127280 |
-| Student Name | Nguyễn Hiền Tuấn Anh |
-| Assignment | HW04 – Automation Testing |
-| Exercise ID | HW04-AI |
-| Date | 2026-08-06 |
+| :---- | :---- |
+| **Student name (printed):** | Nguyen Hien Tuan Anh |
+| **Student ID:** | 23127280 |
+| **Class / Cohort:** | 23KTPM2 |
+| **Assignment ID (e.g., HW#00, HW#02):** | HW04-AI |
+| **Assignment date:** | 2026-08-06 |
+| **AI tool(s) used:** | Codex |
+| **AI tool(s) used:** | [x] Yes  [ ] No |
 
-## **2. AI Tools Used**
+## **2. Instructions (read before filling)**
 
-| AI Tool | Purpose |
-| --- | --- |
-| Codex | Planning, Playwright automation assistance, review, debugging, documentation, and audit logging |
+* Add one row per AI-generated artifact (test case, script, checklist, OpenAPI spec, JMeter plan, etc.).
+* Paste the verbatim prompt - DO NOT paraphrase.
+* Paste the verbatim AI output (or include a labelled screenshot in the report).
+* Tag the verdict: VALID / INVALID / INCOMPLETE.
+* Reasoning must cite a course slide, ISTQB section, or technical RFC.
+* Show the corrected artifact with the change highlighted.
+* Sample rows are in italic - replace them before submission.
 
-## **3. AI Interaction Log**
+## **3. Audit Table - one row per artifact**
 
-### Artifact 1
+| (1) Prompt + Tool | (2) AI Output | (3) Verdict | (4) Reasoning (ISTQB) | (5) Student Fix |
+| :---- | :---- | :---- | :---- | :---- |
+| **Artifact #1 - Adapt HW04 AI audit skills**<br>Tool: Codex<br>Time: 2026-08-06 00:18:38 GMT+7<br>Full prompt: see Artifact #1 verbatim record below. | Created and validated two repository-local audit skills and initialized the HW04 audit.<br>Full output: see Artifact #1 verbatim record below. | VALID | Repository state and the official skill validator confirmed both requested skills and the initialized audit. | None required. |
+| **Artifact #2 - Clean and archive the HW04 repository baseline**<br>Tool: Codex<br>Time: 2026-08-06 12:19:40 GMT+7<br>Full prompt: see Artifact #2 verbatim record below. | Removed approved mobile/runtime/dependency content and archived reusable HW02 evidence under `reference/hw02/`.<br>Full output: see Artifact #2 verbatim record below. | VALID | Resolved-path safety checks, final path checks, archive listing, and Git status confirmed the requested cleanup. | None required. |
+| **Artifact #3 - Reuse the official FIT audit template**<br>Tool: Codex<br>Time: 2026-08-06 12:35:29 GMT+7<br>Full prompt: see Artifact #3 verbatim record below. | Replaced the audit presentation layer with the prior FIT/HCMUS template while preserving the stricter HW04 evidence and privacy policies.<br>Full output: see Artifact #3 verbatim record below. | VALID | The canonical asset, migrated audit, insertion markers, unchanged identity/signature fields, and two successful skill validations confirm the requested template-only adaptation. | None required. |
+<!-- AUDIT_TABLE_ROWS_END -->
+
+### Verbatim Artifact Records
+
+### Artifact #1 - Verbatim Record
 
 - **User:** Nguyễn Hiền Tuấn Anh (23127280)
 - **Date and Time:** 2026-08-06 00:18:38 GMT+7
@@ -58,7 +83,7 @@ Next: gửi yêu cầu triển khai Playwright; các tương tác hoàn tất ti
 - **Reasoning:** Repository state confirms both requested HW04-local skills and the initialized audit exist. Official skill validation succeeded for both skills, and the HW03 source/global skill directories were not modified.
 - **Student Fixes:** None required.
 
-### Artifact 2
+### Artifact #2 - Verbatim Record
 
 - **User:** Nguyễn Hiền Tuấn Anh (23127280)
 - **Date and Time:** 2026-08-06 12:19:40 GMT+7
@@ -104,28 +129,85 @@ Next: dựng cấu hình Playwright dùng chung trước khi giao FR06, FR10 và
 - **Reasoning:** The requested cleanup was executed only against approved workspace targets, references were archived before source removal, effectively empty directories were inspected before deletion, and final filesystem checks confirmed both removal and preservation requirements.
 - **Student Fixes:** None required.
 
+### Artifact #3 - Verbatim Record
+
+- **User:** Nguyễn Hiền Tuấn Anh (23127280)
+- **Date and Time:** 2026-08-06 12:35:29 GMT+7
+- **Agent Used:** Codex (primary agent)
+- **Prompt:**
+
+````text
+em muốn sử dụng template của [23127280_AI_Audit_Report.md](reports/23127280_AI_Audit_Report.md) cho Skill [$ai-export-audit](.codex/skills/ai-export-audit/SKILL.md) vẫn giữ các ràng buộc chỉ thay đổi template, phần info và signature đem y chan qua chỉ sửa các nội dung cho phù hợp hw hiện tại, còn lại giữ nguyên, lưu để làm cho các hw trong tương lai
+````
+
+- **AI Output:**
+
+````text
+Đã đổi template và giữ nguyên toàn bộ policy kiểm chứng của skill.
+
+- Template chuẩn được lưu tại `.codex/skills/ai-export-audit/assets/AI_Audit_Report_Template.md`.
+- `AI_Audit.md` hiện dùng đúng header FIT/HCMUS, Student Information, Instructions, bảng audit 5 cột, Signature và References của bản HW02.
+- Thông tin cá nhân, class, course, instructors và chữ ký `Anh` được giữ nguyên; chỉ Assignment ID và ngày được đổi thành `HW04-AI` / `2026-08-06`.
+- Mỗi artifact có một row tóm tắt trong bảng và một Verbatim Record đầy đủ để giữ prompt/output nguyên văn, file modifications, verification evidence và verdict.
+- Template tương lai chỉ cần thay `ASSIGNMENT_ID`, `ASSIGNMENT_DATE` và `AI_TOOLS`; initializer đã được nối với template này.
+- `ai-export-audit` và `ai-audit-initializer` đều vượt qua `quick_validate.py`: `Skill is valid!`.
+- Artifact 1–2 được giữ nguyên và thay đổi này đã được ghi thành Artifact 3.
+
+Next: commit thay đổi template audit trước khi bắt đầu dựng Playwright.
+````
+
+- **File Modifications:**
+  - **File:** `.codex/skills/ai-export-audit/assets/AI_Audit_Report_Template.md`; **Action:** created; **Details:** added the canonical FIT/HCMUS audit template with fixed student/signature content, official instructions/references, insertion markers, and three assignment placeholders.
+  - **File:** `.codex/skills/ai-export-audit/SKILL.md`; **Action:** edited; **Details:** changed only the report-layout workflow to maintain a five-column summary row plus a full verbatim record while preserving evidence, privacy, verdict, and anti-fabrication policies.
+  - **File:** `.codex/skills/ai-audit-initializer/SKILL.md`; **Action:** edited; **Details:** replaced the embedded HW04-only template with canonical-asset initialization and future-homework placeholder replacement.
+  - **File:** `AI_Audit.md`; **Action:** migrated and appended; **Details:** applied the FIT/HCMUS template, preserved Artifacts 1–2, added summary rows and insertion markers, restored the original student/signature/reference format with HW04 assignment values, and recorded Artifact 3.
+
+- **Verification Evidence:** Both skill directories were validated with the official `skill-creator/scripts/quick_validate.py` under UTF-8 mode and returned `Skill is valid!`. A targeted structure check confirmed both insertion markers, three assignment placeholders only in the reusable asset, no unresolved placeholders in `AI_Audit.md`, both existing verbatim records, the FIT student information, the original signature fields, and the References section.
+- **Verdict:** VALID
+- **Reasoning:** The new asset reproduces the selected FIT/HCMUS report structure and fixed identity/signature content, while the exporter still requires exact prompts/outputs, repository-relative privacy normalization, file modifications, verification evidence, evidence-based verdicts, later correction handling, and HW04 anti-fabrication boundaries.
+- **Student Fixes:** None required.
+
+<!-- ARTIFACT_DETAILS_END -->
+
 ## **4. Summary of AI Accuracy**
 
 | Metric | Count | Percentage |
 | :---- | :---- | :---- |
-| **Total AI-generated artifacts audited** | 2 | 100% |
-| **VALID (correct, accepted as-is)** | 2 | 100% |
-| **INVALID (substantively wrong or rejected)** | 0 | 0% |
-| **INCOMPLETE (usable only after completion or refinement)** | 0 | 0% |
+| **Total AI-generated artifacts audited** | 3 | 100% |
+| **VALID (correct, accepted as-is)** | 3 | 100% |
+| **INVALID (wrong; rejected)** | 0 | 0% |
+| **INCOMPLETE (acceptable after edits)** | 0 | 0% |
 
 ## **5. Conclusion - When should AI be used (or not)?**
 
 * AI was effective for adapting a previously used audit workflow to the individual HW04 assignment while preserving privacy and evidence-based evaluation rules.
 * AI also helped perform a scoped repository cleanup while preserving reusable HW02 evidence in a clearly separated reference archive.
+* AI helped reuse the official FIT/HCMUS audit presentation without weakening exact-transcript, verification-evidence, privacy, and anti-fabrication requirements.
 * AI output must be validated against repository state and executable checks; the recorded work used skill validation, resolved-path safety checks, final path checks, and Git status evidence.
 * AI must not replace genuine Playwright execution, HTML reports, screenshots, Vietnamese narration, identity evidence, GitHub publication, or student review.
 
 ## **6. Mandatory Disclosure (paste verbatim)**
 
-I used Codex to adapt and validate two local Agent Skills for maintaining the HW04 AI Audit Report and to reorganize the repository by removing mobile, dependency, runtime, and obsolete HW02 demo content while archiving reusable HW02 references. I reviewed the assignment-specific scope, privacy, verification, and anti-fabrication constraints; the changes were checked through repository state, resolved-path safety checks, skill validation, and Git status. Codex did not fabricate browser executions, HTML reports, screenshots, videos, identity evidence, GitHub Issues, or submission actions.
+I used Codex to adapt and validate two local Agent Skills for maintaining the HW04 AI Audit Report, reuse the official FIT/HCMUS audit template, and reorganize the repository by removing mobile, dependency, runtime, and obsolete HW02 demo content while archiving reusable HW02 references. I reviewed the assignment-specific scope, privacy, verification, template identity, and anti-fabrication constraints; the changes were checked through repository state, resolved-path safety checks, structural checks, skill validation, and Git status. Codex did not fabricate browser executions, HTML reports, screenshots, videos, identity evidence, GitHub Issues, or submission actions.
 
 ## **Signature**
 
-- Student: Nguyễn Hiền Tuấn Anh
-- Student ID: 23127280
-- Date: 2026-08-06
+| Student name (printed): | NGUYEN HIEN TUAN ANH |
+| :---- | :---- |
+| **Student ID:** | 23127280 |
+| **Class / Cohort:** | 23KTPM2 |
+| **Course:** | CSC13003 - Software Testing |
+| **Instructor:** | Truong Phuoc Loc; Ho Tuan Thanh; Lam Quang Vu |
+| **Date:** | 2026-08-06 |
+| **Signature:** | Anh |
+
+## **References**
+
+* Kharbach, M. (2026). AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0.
+* ISTQB Foundation Level Syllabus (latest version).
+* ISTQB Foundation Level (CTFL v4.0.1) study guide.
+* Hardman, P. (2025). A Post-AI Learning Taxonomy.
+* Fuster Rabella, M. (2025). OECD Education Working Paper No. 338.
+* Perkins, M., Roe, J., & Furze, L. (2025). AI Assessment Scale.
+* Anthropic (2025). Building reliable AI test agents - engineering blog.
+* DeepEval & Promptfoo documentation - testing frameworks for LLM systems.
