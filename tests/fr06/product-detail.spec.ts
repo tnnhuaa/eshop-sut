@@ -46,7 +46,15 @@ class ProductDetailPage {
   }
 
   cartRow(productName: string) {
-    return this.page.getByRole("row").filter({ hasText: productName });
+    return this.page.getByRole("row").filter({
+      has: this.page.getByRole("cell", { name: productName, exact: true }),
+    });
+  }
+
+  async expectCartLine(productName: string, quantity: string, rowCount: number) {
+    const row = this.cartRow(productName);
+    await expect(row).toHaveCount(rowCount);
+    if (rowCount > 0) await expect(row).toContainText(quantity);
   }
 }
 
@@ -104,14 +112,19 @@ test.describe("FR06 Product Detail", () => {
           });
           await detail.setQuantityAndSubmit(input);
           await detail.openCart();
-          await expect(detail.cartRow(String(expected.name))).toHaveCount(Number(expected.cartRows));
-          await expect(detail.cartRow(String(expected.name))).toContainText(String(expected.quantity));
+          await detail.expectCartLine(
+            String(expected.name),
+            String(expected.quantity),
+            Number(expected.cartRows),
+          );
           break;
         case "FR06-DT-013":
           await expect(detail.heading(String(expected.name))).toBeVisible();
-          await expect(
-            page.locator("main p").filter({ hasText: String(expected.description) }),
-          ).toHaveText(String(expected.description));
+          const inertDescription = page.locator("main p").filter({
+            hasText: String(expected.description),
+          });
+          await expect(inertDescription).toHaveCount(1);
+          await expect(inertDescription).toHaveText(String(expected.description));
           await expect(page.locator("main script")).toHaveCount(0);
           expect(dialogCount).toBe(Number(expected.dialogCount));
           break;
@@ -129,8 +142,11 @@ test.describe("FR06 Product Detail", () => {
             await expect(page.getByRole("heading", { name: String(expected.cartEmptyText) })).toBeVisible();
             await expect(page.getByRole("row")).toHaveCount(0);
           } else {
-            await expect(detail.cartRow(String(expected.name))).toHaveCount(Number(expected.cartRows));
-            await expect(detail.cartRow(String(expected.name))).toContainText(String(expected.quantity));
+            await detail.expectCartLine(
+              String(expected.name),
+              String(expected.quantity),
+              Number(expected.cartRows),
+            );
           }
       }
     });
