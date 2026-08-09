@@ -105,6 +105,10 @@ test.describe("FR15 Product CRUD Admin", () => {
 
   for (const scenario of scenarios) {
     test(`${scenario.id} — ${scenario.title}`, async ({ page }) => {
+      test.info().annotations.push(
+        { type: "feature", description: "FR15" },
+        { type: "testCaseId", description: scenario.id },
+      );
       const productsPage = new AdminProductsPage(page);
       const setup = scenario.setup as ProductSetup;
       const input = scenario.input as ProductInput;

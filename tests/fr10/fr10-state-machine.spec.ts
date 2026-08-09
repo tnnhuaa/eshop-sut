@@ -19,6 +19,13 @@ function byId(id: string): Scenario {
   return scenario;
 }
 
+function annotateScenario(scenario: Scenario): void {
+  test.info().annotations.push(
+    { type: "feature", description: "FR10" },
+    { type: "testCaseId", description: scenario.id },
+  );
+}
+
 async function adminHeaders(request: APIRequestContext): Promise<Record<string, string>> {
   const response = await request.post(`${environment.apiBaseUrl}/login`, { data: environment.admin });
   expect(response.ok(), "Admin API login must succeed").toBeTruthy();
@@ -75,6 +82,7 @@ function userRow(page: Page, orderId: number): Locator {
 for (const id of ["FR10-DT-001", "FR10-DT-002", "FR10-DT-003"] as const) {
   const scenario = byId(id);
   test(`${scenario.id} — ${scenario.title}`, async ({ page, request }) => {
+    annotateScenario(scenario);
     const order = await seededOrder(request, scenario.setup.shippingAddress as string);
     await openAdminOrders(page, request);
     const row = adminRow(page, scenario.setup.shippingAddress as string);
@@ -90,6 +98,7 @@ for (const id of ["FR10-DT-001", "FR10-DT-002", "FR10-DT-003"] as const) {
 for (const id of ["FR10-DT-004", "FR10-DT-005"] as const) {
   const scenario = byId(id);
   test(`${scenario.id} — ${scenario.title}`, async ({ page, request }) => {
+    annotateScenario(scenario);
     const order = await seededOrder(request, scenario.setup.shippingAddress as string);
     await openUserProfile(page, request);
     const row = userRow(page, order.id);
@@ -104,6 +113,7 @@ for (const id of ["FR10-DT-004", "FR10-DT-005"] as const) {
 for (const id of ["FR10-DT-006", "FR10-DT-021"] as const) {
   const scenario = byId(id);
   test(`${scenario.id} — ${scenario.title}`, async ({ page, request }) => {
+    annotateScenario(scenario);
     const order = await seededOrder(request, scenario.setup.shippingAddress as string);
     const token = await authenticateViaApi(page, request, "user");
     const response = await request.put(`${environment.apiBaseUrl}/orders/${order.id}/cancel`, {
@@ -120,6 +130,7 @@ for (const id of ["FR10-DT-006", "FR10-DT-021"] as const) {
 for (const id of ["FR10-DT-011", "FR10-DT-012", "FR10-DT-022"] as const) {
   const scenario = byId(id);
   test(`${scenario.id} — ${scenario.title}`, async ({ page, request }) => {
+    annotateScenario(scenario);
     await openAdminOrders(page, request);
     const row = adminRow(page, scenario.setup.shippingAddress as string);
     await expect(row).toContainText(scenario.expected.status === "delivered" ? "Đã giao" : "Đã hủy");
@@ -129,6 +140,7 @@ for (const id of ["FR10-DT-011", "FR10-DT-012", "FR10-DT-022"] as const) {
 
 test(`${byId("FR10-DT-016").id} — ${byId("FR10-DT-016").title}`, async ({ request }) => {
   const scenario = byId("FR10-DT-016");
+  annotateScenario(scenario);
   const order = await seededOrder(request, scenario.setup.shippingAddress as string);
   const response = await request.put(`${environment.apiBaseUrl}/orders/${order.id}/cancel`, { data: {} });
   expect(response.status(), "Unauthenticated cancellation must be rejected").toBe(
@@ -139,6 +151,7 @@ test(`${byId("FR10-DT-016").id} — ${byId("FR10-DT-016").title}`, async ({ requ
 
 test(`${byId("FR10-DT-017").id} — ${byId("FR10-DT-017").title}`, async ({ page, request }) => {
   const scenario = byId("FR10-DT-017");
+  annotateScenario(scenario);
   const order = await seededOrder(request, scenario.setup.shippingAddress as string);
   const token = await authenticateViaApi(page, request, "user");
   const response = await request.put(`${environment.apiBaseUrl}/admin/orders/${order.id}/status`, {

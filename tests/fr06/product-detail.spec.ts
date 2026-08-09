@@ -67,6 +67,10 @@ test.describe("FR06 Product Detail", () => {
 
   for (const scenario of scenarios) {
     test(`${scenario.id} — ${scenario.title}`, async ({ page }) => {
+      test.info().annotations.push(
+        { type: "feature", description: "FR06" },
+        { type: "testCaseId", description: scenario.id },
+      );
       const setup = scenario.setup as ProductSetup;
       const input = scenario.input as ProductInput;
       const expected = scenario.expected as ProductExpected;
