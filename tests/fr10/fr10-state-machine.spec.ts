@@ -5,6 +5,12 @@ import { environment } from "../support/environment.js";
 
 type Order = { id: number; status: string; shipping_address: string };
 
+const adminTransitionActions: Record<string, string> = {
+  "FR10-DT-001": "Xác nhận",
+  "FR10-DT-002": "Giao hàng",
+  "FR10-DT-003": "Hoàn thành",
+};
+
 const scenarios = loadScenarios("test-data/fr10/state-machine-scenarios.json");
 
 function byId(id: string): Scenario {
@@ -37,6 +43,14 @@ async function readStatus(request: APIRequestContext, orderId: number): Promise<
   return ((await response.json()) as Order).status;
 }
 
+async function expectOrderStatus(
+  request: APIRequestContext,
+  orderId: number,
+  expectedStatus: unknown,
+): Promise<void> {
+  await expect.poll(() => readStatus(request, orderId)).toBe(expectedStatus);
+}
+
 async function openAdminOrders(page: Page, request: APIRequestContext): Promise<void> {
   await authenticateViaApi(page, request, "admin");
   await page.goto(environment.adminBaseUrl);
@@ -65,10 +79,10 @@ for (const id of ["FR10-DT-001", "FR10-DT-002", "FR10-DT-003"] as const) {
     await openAdminOrders(page, request);
     const row = adminRow(page, scenario.setup.shippingAddress as string);
     await expect(row).toContainText(scenario.expected.initialLabel as string);
-    const action = { "FR10-DT-001": "Xác nhận", "FR10-DT-002": "Giao hàng", "FR10-DT-003": "Hoàn thành" }[id];
+    const action = adminTransitionActions[id];
     await row.getByRole("button", { name: action }).click();
     await expect(row).toContainText(scenario.expected.label as string);
-    await expect.poll(() => readStatus(request, order.id)).toBe(scenario.expected.status);
+    await expectOrderStatus(request, order.id, scenario.expected.status);
     if (id === "FR10-DT-003") await expect(row.getByRole("button")).toHaveCount(0);
   });
 }
@@ -83,7 +97,7 @@ for (const id of ["FR10-DT-004", "FR10-DT-005"] as const) {
     await row.getByRole("button", { name: "Hủy đơn" }).click();
     await expect(row).toContainText(scenario.expected.label as string);
     await expect(row.getByRole("button", { name: "Hủy đơn" })).toHaveCount(0);
-    await expect.poll(() => readStatus(request, order.id)).toBe(scenario.expected.status);
+    await expectOrderStatus(request, order.id, scenario.expected.status);
   });
 }
 
@@ -96,8 +110,10 @@ for (const id of ["FR10-DT-006", "FR10-DT-021"] as const) {
       headers: { Authorization: `Bearer ${token}` },
       data: {},
     });
-    expect(response.status()).toBe(scenario.expected.httpStatus);
-    await expect.poll(() => readStatus(request, order.id)).toBe(scenario.expected.status);
+    expect(response.status(), "Shipping cancellation must be rejected").toBe(
+      scenario.expected.httpStatus,
+    );
+    await expectOrderStatus(request, order.id, scenario.expected.status);
   });
 }
 
@@ -115,8 +131,10 @@ test(`${byId("FR10-DT-016").id} — ${byId("FR10-DT-016").title}`, async ({ requ
   const scenario = byId("FR10-DT-016");
   const order = await seededOrder(request, scenario.setup.shippingAddress as string);
   const response = await request.put(`${environment.apiBaseUrl}/orders/${order.id}/cancel`, { data: {} });
-  expect(response.status()).toBe(scenario.expected.httpStatus);
-  await expect.poll(() => readStatus(request, order.id)).toBe(scenario.expected.status);
+  expect(response.status(), "Unauthenticated cancellation must be rejected").toBe(
+    scenario.expected.httpStatus,
+  );
+  await expectOrderStatus(request, order.id, scenario.expected.status);
 });
 
 test(`${byId("FR10-DT-017").id} — ${byId("FR10-DT-017").title}`, async ({ page, request }) => {
@@ -127,6 +145,8 @@ test(`${byId("FR10-DT-017").id} — ${byId("FR10-DT-017").title}`, async ({ page
     headers: { Authorization: `Bearer ${token}` },
     data: { status: scenario.input.targetStatus },
   });
-  expect(response.status()).toBe(scenario.expected.httpStatus);
-  await expect.poll(() => readStatus(request, order.id)).toBe(scenario.expected.status);
+  expect(response.status(), "A normal user must not access the admin status endpoint").toBe(
+    scenario.expected.httpStatus,
+  );
+  await expectOrderStatus(request, order.id, scenario.expected.status);
 });
