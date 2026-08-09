@@ -39,6 +39,7 @@
 | **Artifact #1 - Adapt HW04 AI audit skills**<br>Tool: Codex<br>Time: 2026-08-06 00:18:38 GMT+7<br>Full prompt: see Artifact #1 verbatim record below. | Created and validated two repository-local audit skills and initialized the HW04 audit.<br>Full output: see Artifact #1 verbatim record below. | VALID | Repository state and the official skill validator confirmed both requested skills and the initialized audit. | None required. |
 | **Artifact #2 - Clean and archive the HW04 repository baseline**<br>Tool: Codex<br>Time: 2026-08-06 12:19:40 GMT+7<br>Full prompt: see Artifact #2 verbatim record below. | Removed approved mobile/runtime/dependency content and archived reusable HW02 evidence under `reference/hw02/`.<br>Full output: see Artifact #2 verbatim record below. | VALID | Resolved-path safety checks, final path checks, archive listing, and Git status confirmed the requested cleanup. | None required. |
 | **Artifact #3 - Reuse the official FIT audit template**<br>Tool: Codex<br>Time: 2026-08-06 12:35:29 GMT+7<br>Full prompt: see Artifact #3 verbatim record below. | Replaced the audit presentation layer with the prior FIT/HCMUS template while preserving the stricter HW04 evidence and privacy policies.<br>Full output: see Artifact #3 verbatim record below. | VALID | The canonical asset, migrated audit, insertion markers, unchanged identity/signature fields, and two successful skill validations confirm the requested template-only adaptation. | None required. |
+| **Artifact #4 - Finalize Task 1 automation evidence and manual runbooks**<br>Tool: Codex<br>Time: 2026-08-10 00:49:10 GMT+7<br>Full prompt: see Artifact #4 verbatim record below. | Removed remaining inline test data, reran and verified the nine-browser-feature matrix, generated evidence manifests, and prepared separate Task 2 and Agent Skill video runbooks plus human-review and defect-decision forms.<br>Full output: see Artifact #4 verbatim record below. | VALID | TypeScript, three scenario validators, 108-test discovery, real Playwright execution, rendered report verification, prohibited-pattern scanning, and diff checks support the completed agent-owned scope. | Student must still review/sign, confirm or reject defect candidates, record both videos, and provide the YouTube URLs. |
 <!-- AUDIT_TABLE_ROWS_END -->
 
 ### Verbatim Artifact Records
@@ -167,14 +168,84 @@ Next: commit thay đổi template audit trước khi bắt đầu dựng Playwri
 - **Reasoning:** The new asset reproduces the selected FIT/HCMUS report structure and fixed identity/signature content, while the exporter still requires exact prompts/outputs, repository-relative privacy normalization, file modifications, verification evidence, evidence-based verdicts, later correction handling, and HW04 anti-fabrication boundaries.
 - **Student Fixes:** None required.
 
+### Artifact #4 - Verbatim Record
+
+- **User:** Nguyễn Hiền Tuấn Anh (23127280)
+- **Date and Time:** 2026-08-10 00:49:10 GMT+7
+- **Agent Used:** Codex (primary agent)
+- **Prompt:**
+
+````text
+oke a cứ thực hiện những gì cần làm trước đi, phần kịch bản quay video tách ra để em quay 2 clip riêng biệt task 2 và demo agent skill
+````
+
+- **AI Output:**
+
+````text
+Phần chuẩn bị của agent đã hoàn tất. Chưa có GitHub Issue, chữ ký hoặc quyết định defect nào được tạo thay em.
+
+Đã hoàn tất
+
+- Loại bỏ dữ liệu hardcode còn lại: FR06 lấy expected name từ JSON; FR10 dispatch theo workflow/actionLabel trong JSON; FR15 dùng environment và fixture JSON.
+- Chạy lại đủ 3 feature × 3 browser và tạo 9 HTML report mới.
+- Xác minh cả 9 report đều render `Run by: 23127280` cùng ISO timestamp.
+- Tạo 9 evidence manifest với `humanReview: PENDING` và `defectStatus: UNCONFIRMED`.
+- Chuẩn bị human review, bug confirmation, submission checklist và hai kịch bản video tách riêng.
+
+Kết quả kiểm chứng
+
+- TypeScript pass; cả ba validator pass với 12 scenario/feature.
+- Playwright phát hiện 108 test-browser combinations.
+- Kết quả: FR06 3 pass/9 fail, FR10 7 pass/5 fail, FR15 7 pass/5 fail trên mỗi browser; tổng cộng 51 pass/57 fail.
+- `report:verify` pass cho 9 report mới. Matrix trả exit code 1 vì assertion failure thật, không phải thiếu browser hay report.
+- Scan không còn fixed wait, tên sản phẩm/credential/URL FR15 hoặc FR10 TestCaseID arrays bị hardcode trong ba spec.
+
+Tài liệu em dùng
+
+- `manual/01-human-review-runbook-vi.md`
+- `manual/02-task2-video-script-vi.md`
+- `manual/03-agent-skill-video-script-vi.md`
+- `manual/04-bug-confirmation-runbook-vi.md`
+- `manual/05-submission-checklist-vi.md`
+
+Hai video đã được tách hoàn toàn: Task 2 demo FR06 multi-browser; Agent Skill dùng task Codex mới và prompt tại `skill-demo/input/video-demo-prompt.md`. Các thay đổi hiện chưa được commit.
+
+Việc tiếp theo của em: mở `manual/01-human-review-runbook-vi.md` và thực hiện human review trước.
+````
+
+- **File Modifications:**
+  - **File:** `tests/fr06/product-detail.spec.ts`; **Action:** edited; **Details:** replaced remaining hardcoded product headings with JSON-backed expected values.
+  - **File:** `test-data/fr06/product-detail-scenarios.json`; **Action:** edited; **Details:** added the expected product name to negative and feedback scenarios.
+  - **File:** `tests/fr10/fr10-state-machine.spec.ts`; **Action:** edited; **Details:** replaced inline TestCaseID groups and action map with one JSON-driven workflow dispatcher.
+  - **File:** `test-data/fr10/state-machine-scenarios.json`; **Action:** edited; **Details:** added workflow, action-label, final-label, and final-action-count data.
+  - **File:** `tests/fr15/product-crud-admin.spec.ts`; **Action:** edited; **Details:** moved URLs and credentials to the shared environment and fixture payload values to external JSON.
+  - **File:** `test-data/fr15/fixture-config.json`; **Action:** created; **Details:** added reusable FR15 fixture price, description, image URL, and category ID.
+  - **File:** `tests/support/data-loader.ts`; **Action:** edited; **Details:** added a validated JSON-object loader for external fixture configuration.
+  - **File:** `scripts/verify-reports.mjs`; **Action:** edited; **Details:** preserved report history while selecting and rendering the latest report for each of the nine feature-browser pairs.
+  - **File:** `package.json`; **Action:** edited; **Details:** made the Agent Skill demo execute FR06 on all three configured browsers.
+  - **File:** `manual/01-human-review-runbook-vi.md`; **Action:** created; **Details:** added the student-owned review table, correction rationale, checklist, and blank signature fields.
+  - **File:** `manual/02-task2-video-script-vi.md`; **Action:** created; **Details:** added the separate Vietnamese Task 2 recording timeline, commands, narration, and checks.
+  - **File:** `manual/03-agent-skill-video-script-vi.md`; **Action:** created; **Details:** added the separate Agent Skill recording timeline and human-gate narration.
+  - **File:** `manual/04-bug-confirmation-runbook-vi.md`; **Action:** created; **Details:** grouped 19 failing tests into nine unconfirmed candidate groups with reproduction commands and blank student decisions.
+  - **File:** `manual/05-submission-checklist-vi.md`; **Action:** created; **Details:** separated completed agent work from mandatory student actions and ZIP checks.
+  - **File:** `skill-demo/input/video-demo-prompt.md`; **Action:** created; **Details:** added the exact multi-step prompt for the separate Agent Skill video.
+  - **File:** `artifacts/html-reports/FR06/`, `artifacts/html-reports/FR10/`, and `artifacts/html-reports/FR15/`; **Action:** created report bundles; **Details:** added nine real latest Playwright HTML report bundles across Chromium, Firefox, and Edge.
+  - **File:** `artifacts/manifests/FR06/`, `artifacts/manifests/FR10/`, and `artifacts/manifests/FR15/`; **Action:** created; **Details:** added nine report manifests with pending human review and unconfirmed defect status.
+  - **File:** `AI_Audit.md`; **Action:** appended; **Details:** recorded Artifact 4 and refreshed accuracy, conclusion, and disclosure sections.
+
+- **Verification Evidence:** `npm run typecheck` passed. The skill validators reported FR06 12 scenarios/8 assertion types, FR10 12/6, and FR15 12/4. `npm run test:list` discovered 108 combinations. `npm run test:matrix` executed all nine feature-browser runs and produced 51 passes and 57 assertion failures with screenshots, video, and traces retained for failures. `npm run report:verify` rendered the latest nine reports and confirmed StudentID plus ISO timestamp metadata. A targeted `rg` scan returned `NO_PROHIBITED_MATCHES`; `git diff --check` returned no patch errors. Nine manifest-builder commands succeeded.
+- **Verdict:** VALID
+- **Reasoning:** The prompt requested completion of agent-owned prerequisites and two separate recording scripts. The current repository state and executed checks support those outcomes. Student-only human review, defect decisions, identity evidence, narration, YouTube upload, and signatures remain explicitly pending and were not fabricated.
+- **Student Fixes:** Complete and sign the human review, confirm or reject candidate defects, record the two separate videos, and provide the unlisted YouTube URLs.
+
 <!-- ARTIFACT_DETAILS_END -->
 
 ## **4. Summary of AI Accuracy**
 
 | Metric | Count | Percentage |
 | :---- | :---- | :---- |
-| **Total AI-generated artifacts audited** | 3 | 100% |
-| **VALID (correct, accepted as-is)** | 3 | 100% |
+| **Total AI-generated artifacts audited** | 4 | 100% |
+| **VALID (correct, accepted as-is)** | 4 | 100% |
 | **INVALID (wrong; rejected)** | 0 | 0% |
 | **INCOMPLETE (acceptable after edits)** | 0 | 0% |
 
@@ -183,12 +254,13 @@ Next: commit thay đổi template audit trước khi bắt đầu dựng Playwri
 * AI was effective for adapting a previously used audit workflow to the individual HW04 assignment while preserving privacy and evidence-based evaluation rules.
 * AI also helped perform a scoped repository cleanup while preserving reusable HW02 evidence in a clearly separated reference archive.
 * AI helped reuse the official FIT/HCMUS audit presentation without weakening exact-transcript, verification-evidence, privacy, and anti-fabrication requirements.
+* AI effectively refactored the three Playwright suites toward stricter external-data compliance, executed the full browser matrix, verified rendered report metadata, and prepared repeatable human-review and video workflows.
 * AI output must be validated against repository state and executable checks; the recorded work used skill validation, resolved-path safety checks, final path checks, and Git status evidence.
-* AI must not replace genuine Playwright execution, HTML reports, screenshots, Vietnamese narration, identity evidence, GitHub publication, or student review.
+* AI must not replace the student's review decisions, signatures, Vietnamese narration, identity evidence, GitHub defect confirmation, or submission actions.
 
 ## **6. Mandatory Disclosure (paste verbatim)**
 
-I used Codex to adapt and validate two local Agent Skills for maintaining the HW04 AI Audit Report, reuse the official FIT/HCMUS audit template, and reorganize the repository by removing mobile, dependency, runtime, and obsolete HW02 demo content while archiving reusable HW02 references. I reviewed the assignment-specific scope, privacy, verification, template identity, and anti-fabrication constraints; the changes were checked through repository state, resolved-path safety checks, structural checks, skill validation, and Git status. Codex did not fabricate browser executions, HTML reports, screenshots, videos, identity evidence, GitHub Issues, or submission actions.
+I used Codex to adapt and validate local Agent Skills, maintain the HW04 AI Audit Report, reuse the official FIT/HCMUS audit template, reorganize the repository, refactor data-driven Playwright tests for FR06, FR10, and FR15, execute and verify the three-browser report matrix, generate evidence manifests, and prepare human-review, defect-confirmation, submission, and video runbooks. I reviewed the assignment scope, privacy, verification, and anti-fabrication constraints; the changes were checked through repository state, TypeScript, scenario validators, Playwright discovery and execution, rendered report verification, pattern scans, manifest generation, and Git diff checks. Codex did not fabricate student review decisions, signatures, identity evidence, Vietnamese narration, YouTube uploads, GitHub Issues, or Moodle submission.
 
 ## **Signature**
 
