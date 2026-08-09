@@ -1,0 +1,12 @@
+{
+  "feature": "FR10",
+  "browser": "edge",
+  "generatedAt": "2026-08-09T17:49:44.638Z",
+  "artifacts": {
+    "spec": "tests/fr10/fr10-state-machine.spec.ts",
+    "data": "test-data/fr10/state-machine-scenarios.json",
+    "report": "artifacts/html-reports/FR10/edge/2026-08-09T17-40-25.448Z"
+  },
+  "humanReview": "PENDING",
+  "defectStatus": "UNCONFIRMED"
+}

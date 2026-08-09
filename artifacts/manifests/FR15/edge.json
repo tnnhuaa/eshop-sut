@@ -1,0 +1,12 @@
+{
+  "feature": "FR15",
+  "browser": "edge",
+  "generatedAt": "2026-08-09T17:49:44.608Z",
+  "artifacts": {
+    "spec": "tests/fr15/product-crud-admin.spec.ts",
+    "data": "test-data/fr15/product-crud-scenarios.json",
+    "report": "artifacts/html-reports/FR15/edge/2026-08-09T17-43-05.210Z"
+  },
+  "humanReview": "PENDING",
+  "defectStatus": "UNCONFIRMED"
+}

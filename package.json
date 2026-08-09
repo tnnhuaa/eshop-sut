@@ -10,7 +10,7 @@
     "test:fr15": "node scripts/run-feature.mjs FR15",
     "test:matrix": "node scripts/run-matrix.mjs",
     "demo:task2": "node scripts/run-feature.mjs FR06",
-    "demo:skill": "node scripts/run-feature.mjs FR06 --project=edge",
+    "demo:skill": "node scripts/run-feature.mjs FR06",
     "report:verify": "node scripts/verify-reports.mjs",
     "test:list": "playwright test --list",
     "typecheck": "tsc --noEmit"

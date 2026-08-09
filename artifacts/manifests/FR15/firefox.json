@@ -1,0 +1,12 @@
+{
+  "feature": "FR15",
+  "browser": "firefox",
+  "generatedAt": "2026-08-09T17:49:43.171Z",
+  "artifacts": {
+    "spec": "tests/fr15/product-crud-admin.spec.ts",
+    "data": "test-data/fr15/product-crud-scenarios.json",
+    "report": "artifacts/html-reports/FR15/firefox/2026-08-09T17-42-01.589Z"
+  },
+  "humanReview": "PENDING",
+  "defectStatus": "UNCONFIRMED"
+}

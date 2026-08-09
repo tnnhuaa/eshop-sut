@@ -21,13 +21,31 @@ function findReportIndexes(directory) {
 }
 
 const reports = findReportIndexes(root).sort();
-if (reports.length !== 9) {
-  throw new Error(`Expected exactly 9 main HTML reports, found ${reports.length}`);
+const latestReports = new Map();
+for (const report of reports) {
+  const [feature, browser, timestamp] = path.relative(root, report).split(path.sep);
+  if (!feature || !browser || !timestamp) continue;
+  const key = `${feature}/${browser}`;
+  const current = latestReports.get(key);
+  if (!current || timestamp > current.timestamp) {
+    latestReports.set(key, { report, timestamp });
+  }
 }
+
+const expectedKeys = ["FR06", "FR10", "FR15"].flatMap((feature) =>
+  ["chromium", "firefox", "edge"].map((browser) => `${feature}/${browser}`),
+);
+const missingKeys = expectedKeys.filter((key) => !latestReports.has(key));
+if (missingKeys.length > 0) {
+  throw new Error(`Missing latest HTML reports for: ${missingKeys.join(", ")}`);
+}
+
+const reportsToVerify = expectedKeys.map((key) => latestReports.get(key).report);
+console.log(`Found ${reports.length} historical reports; verifying the latest 9 feature-browser reports.`);
 
 const browser = await chromium.launch({ headless: true });
 try {
-  for (const report of reports) {
+  for (const report of reportsToVerify) {
     const page = await browser.newPage();
     await page.goto(pathToFileURL(report).href);
     await page.waitForFunction(

@@ -1,0 +1,12 @@
+{
+  "feature": "FR10",
+  "browser": "firefox",
+  "generatedAt": "2026-08-09T17:49:42.606Z",
+  "artifacts": {
+    "spec": "tests/fr10/fr10-state-machine.spec.ts",
+    "data": "test-data/fr10/state-machine-scenarios.json",
+    "report": "artifacts/html-reports/FR10/firefox/2026-08-09T17-39-01.856Z"
+  },
+  "humanReview": "PENDING",
+  "defectStatus": "UNCONFIRMED"
+}

@@ -1,0 +1,12 @@
+{
+  "feature": "FR06",
+  "browser": "edge",
+  "generatedAt": "2026-08-09T17:49:38.857Z",
+  "artifacts": {
+    "spec": "tests/fr06/product-detail.spec.ts",
+    "data": "test-data/fr06/product-detail-scenarios.json",
+    "report": "artifacts/html-reports/FR06/edge/2026-08-09T17-36-07.141Z"
+  },
+  "humanReview": "PENDING",
+  "defectStatus": "UNCONFIRMED"
+}

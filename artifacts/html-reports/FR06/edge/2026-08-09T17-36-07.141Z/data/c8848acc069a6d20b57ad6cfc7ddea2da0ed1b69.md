@@ -1,0 +1,182 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: fr06\product-detail.spec.ts >> FR06 Product Detail >> FR06-DT-010 — Empty quantity is rejected without changing the cart
+- Location: tests\fr06\product-detail.spec.ts:69:5
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: 'Giỏ hàng của bạn đang trống' })
+Expected: visible
+Timeout: 7500ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 7500ms
+  - waiting for getByRole('heading', { name: 'Giỏ hàng của bạn đang trống' })
+
+```
+
+```yaml
+- banner:
+  - link "EShop":
+    - /url: /
+  - navigation:
+    - link "Giỏ hàng":
+      - /url: /cart
+    - link "Đăng nhập":
+      - /url: /login
+    - link "Đăng ký":
+      - /url: /register
+- main:
+  - heading "Giỏ Hàng" [level=2]
+  - table:
+    - rowgroup:
+      - row "Sản phẩm Giá Số lượng Thành tiền Thao tác":
+        - columnheader "Sản phẩm"
+        - columnheader "Giá"
+        - columnheader "Số lượng"
+        - columnheader "Thành tiền"
+        - columnheader "Thao tác"
+    - rowgroup:
+      - row "iPhone 15 Pro Max 30,000,000 ₫ NaN NaN ₫ Xóa":
+        - cell "iPhone 15 Pro Max"
+        - cell "30,000,000 ₫"
+        - cell "NaN"
+        - cell "NaN ₫"
+        - cell "Xóa":
+          - button "Xóa"
+  - text: "Tổng tạm tính: NaN ₫"
+  - link "← Mua tiếp":
+    - /url: /
+  - button "Tiến hành thanh toán"
+- contentinfo: © 2026 EShop SUT. Dành cho mục đích kiểm thử.
+```
+
+# Test source
+
+```ts
+  46  |   }
+  47  | 
+  48  |   cartRow(productName: string) {
+  49  |     return this.page.getByRole("row").filter({
+  50  |       has: this.page.getByRole("cell", { name: productName, exact: true }),
+  51  |     });
+  52  |   }
+  53  | 
+  54  |   async expectCartLine(productName: string, quantity: string, rowCount: number) {
+  55  |     const row = this.cartRow(productName);
+  56  |     await expect(row).toHaveCount(rowCount);
+  57  |     if (rowCount > 0) await expect(row).toContainText(quantity);
+  58  |   }
+  59  | }
+  60  | 
+  61  | const scenarios = loadScenarios("test-data/fr06/product-detail-scenarios.json");
+  62  | 
+  63  | test.describe("FR06 Product Detail", () => {
+  64  |   test.beforeEach(async ({ page }) => {
+  65  |     await page.addInitScript(() => localStorage.clear());
+  66  |   });
+  67  | 
+  68  |   for (const scenario of scenarios) {
+  69  |     test(`${scenario.id} — ${scenario.title}`, async ({ page }) => {
+  70  |       test.info().annotations.push(
+  71  |         { type: "feature", description: "FR06" },
+  72  |         { type: "testCaseId", description: scenario.id },
+  73  |       );
+  74  |       const setup = scenario.setup as ProductSetup;
+  75  |       const input = scenario.input as ProductInput;
+  76  |       const expected = scenario.expected as ProductExpected;
+  77  |       const detail = new ProductDetailPage(page);
+  78  | 
+  79  |       if (setup.mockProduct) {
+  80  |         await page.route("**/api/products/xss-fixture", async (route) => {
+  81  |           await route.fulfill({ json: setup.mockProduct });
+  82  |         });
+  83  |       }
+  84  | 
+  85  |       let dialogCount = 0;
+  86  |       page.on("dialog", async (dialog) => {
+  87  |         dialogCount += 1;
+  88  |         await dialog.dismiss();
+  89  |       });
+  90  | 
+  91  |       await detail.open(setup.productId);
+  92  | 
+  93  |       switch (scenario.id) {
+  94  |         case "FR06-DT-001":
+  95  |           await expect(detail.heading(String(expected.name))).toBeVisible();
+  96  |           await expect(page.getByText(String(expected.price), { exact: true })).toBeVisible();
+  97  |           await expect(page.getByText(String(expected.description), { exact: true })).toBeVisible();
+  98  |           await expect(page.getByText(String(expected.category), { exact: true })).toBeVisible();
+  99  |           await expect(page.getByRole("img", { name: String(expected.name) })).toBeVisible();
+  100 |           break;
+  101 |         case "FR06-DT-002":
+  102 |           await expect(detail.heading(String(expected.name))).toBeVisible();
+  103 |           await expect(page.getByText(String(expected.price), { exact: true })).toBeVisible();
+  104 |           await expect(page.getByRole("img", { name: String(expected.name) })).toBeVisible();
+  105 |           break;
+  106 |         case "FR06-DT-003":
+  107 |           await expect(page.getByText(String(expected.notFoundText))).toBeVisible();
+  108 |           await expect(page.getByRole("heading", { level: 1 })).toHaveCount(0);
+  109 |           await expect(detail.addButton()).toHaveCount(0);
+  110 |           break;
+  111 |         case "FR06-DT-008":
+  112 |           await expect(detail.heading(String(expected.name))).toBeVisible();
+  113 |           await detail.setQuantityAndSubmit({
+  114 |             quantity: setup.existingQuantity,
+  115 |             submitClicks: setup.preconditionSubmitClicks,
+  116 |           });
+  117 |           await detail.setQuantityAndSubmit(input);
+  118 |           await detail.openCart();
+  119 |           await detail.expectCartLine(
+  120 |             String(expected.name),
+  121 |             String(expected.quantity),
+  122 |             Number(expected.cartRows),
+  123 |           );
+  124 |           break;
+  125 |         case "FR06-DT-013":
+  126 |           await expect(detail.heading(String(expected.name))).toBeVisible();
+  127 |           const inertDescription = page.locator("main p").filter({
+  128 |             hasText: String(expected.description),
+  129 |           });
+  130 |           await expect(inertDescription).toHaveCount(1);
+  131 |           await expect(inertDescription).toHaveText(String(expected.description));
+  132 |           await expect(page.locator("main script")).toHaveCount(0);
+  133 |           expect(dialogCount).toBe(Number(expected.dialogCount));
+  134 |           break;
+  135 |         case "FR06-DT-015":
+  136 |           await expect(detail.heading(String(expected.name))).toBeVisible();
+  137 |           await detail.setQuantityAndSubmit(input);
+  138 |           await expect(detail.addButton()).toHaveText(String(expected.feedback));
+  139 |           await expect(detail.quantityInput()).toHaveValue(String(input.quantity));
+  140 |           break;
+  141 |         default:
+  142 |           await expect(detail.heading(String(expected.name))).toBeVisible();
+  143 |           await detail.setQuantityAndSubmit(input);
+  144 |           await detail.openCart();
+  145 |           if ("cartEmptyText" in expected) {
+> 146 |             await expect(page.getByRole("heading", { name: String(expected.cartEmptyText) })).toBeVisible();
+      |                                                                                               ^ Error: expect(locator).toBeVisible() failed
+  147 |             await expect(page.getByRole("row")).toHaveCount(0);
+  148 |           } else {
+  149 |             await detail.expectCartLine(
+  150 |               String(expected.name),
+  151 |               String(expected.quantity),
+  152 |               Number(expected.cartRows),
+  153 |             );
+  154 |           }
+  155 |       }
+  156 |     });
+  157 |   }
+  158 | });
+  159 | 
+```
