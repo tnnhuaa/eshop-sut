@@ -29,7 +29,11 @@ class AdminProductsPage {
   nameInput() { return this.page.getByPlaceholder("Tên sản phẩm"); }
   priceInput() { return this.page.getByPlaceholder("Giá tiền"); }
   saveButton() { return this.page.getByRole("button", { name: "Lưu sản phẩm" }); }
-  row(name: string): Locator { return this.page.getByRole("row").filter({ hasText: name }); }
+  row(name: string): Locator {
+    return this.page.getByRole("row").filter({
+      has: this.page.getByRole("cell", { name, exact: true }),
+    });
+  }
   async fillProduct(input: ProductInput) {
     await this.nameInput().fill(input.name ?? "");
     await this.priceInput().fill(input.price ?? "");
@@ -42,6 +46,11 @@ class AdminProductsPage {
     await this.row(name).getByRole("button", { name: "Sửa" }).click();
     await expect(this.page.getByRole("heading", { name: "Sửa sản phẩm" })).toBeVisible();
     await this.fillProduct(input);
+  }
+  async expectProductValues(name: string, price: string) {
+    const productRow = this.row(name);
+    await expect(productRow).toHaveCount(1);
+    await expect(productRow).toContainText(price);
   }
 }
 
@@ -79,15 +88,19 @@ async function expectProductCountUnchanged(
   expect((await products(page)).length).toBe(productCount);
 }
 
+function managedScenarioNames(): string[] {
+  return scenarios.flatMap((scenario) => {
+    const input = scenario.input as ProductInput;
+    const setup = scenario.setup as ProductSetup;
+    return [input.name, setup.targetName, setup.otherName].filter(
+      (name): name is string => Boolean(name),
+    );
+  });
+}
+
 test.describe("FR15 Product CRUD Admin", () => {
   test.afterEach(async ({ page }) => {
-    await deleteNamedProducts(page, scenarios.flatMap((scenario) => {
-      const input = scenario.input as ProductInput;
-      const setup = scenario.setup as ProductSetup;
-      return [input.name, setup.targetName, setup.otherName].filter(
-        (name): name is string => Boolean(name),
-      );
-    }));
+    await deleteNamedProducts(page, managedScenarioNames());
   });
 
   for (const scenario of scenarios) {
@@ -149,9 +162,7 @@ test.describe("FR15 Product CRUD Admin", () => {
         case "FR15-DT-012":
           await productsPage.edit(String(setup.targetName), input);
           await productsPage.saveButton().click();
-          await expect(
-            productsPage.row(String(input.name)).filter({ hasText: String(input.price) }),
-          ).toHaveCount(1);
+          await productsPage.expectProductValues(String(input.name), String(input.price));
           await expect(productsPage.nameInput()).toHaveValue("");
           break;
         case "FR15-DT-013":
