@@ -11,6 +11,15 @@ export type Scenario = {
   assertionTypes: string[];
 };
 
+export function loadJsonObject<T>(relativePath: string): T {
+  const absolutePath = path.resolve(process.cwd(), relativePath);
+  const parsed: unknown = JSON.parse(fs.readFileSync(absolutePath, "utf8"));
+  if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
+    throw new Error(`JSON file must contain an object: ${relativePath}`);
+  }
+  return parsed as T;
+}
+
 export function loadScenarios(relativePath: string): Scenario[] {
   const absolutePath = path.resolve(process.cwd(), relativePath);
   const parsed: unknown = JSON.parse(fs.readFileSync(absolutePath, "utf8"));

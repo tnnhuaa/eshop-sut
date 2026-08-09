@@ -109,7 +109,7 @@ test.describe("FR06 Product Detail", () => {
           await expect(detail.addButton()).toHaveCount(0);
           break;
         case "FR06-DT-008":
-          await expect(detail.heading("iPhone 15 Pro Max")).toBeVisible();
+          await expect(detail.heading(String(expected.name))).toBeVisible();
           await detail.setQuantityAndSubmit({
             quantity: setup.existingQuantity,
             submitClicks: setup.preconditionSubmitClicks,
@@ -133,13 +133,13 @@ test.describe("FR06 Product Detail", () => {
           expect(dialogCount).toBe(Number(expected.dialogCount));
           break;
         case "FR06-DT-015":
-          await expect(detail.heading("iPhone 15 Pro Max")).toBeVisible();
+          await expect(detail.heading(String(expected.name))).toBeVisible();
           await detail.setQuantityAndSubmit(input);
           await expect(detail.addButton()).toHaveText(String(expected.feedback));
           await expect(detail.quantityInput()).toHaveValue(String(input.quantity));
           break;
         default:
-          await expect(detail.heading("iPhone 15 Pro Max")).toBeVisible();
+          await expect(detail.heading(String(expected.name))).toBeVisible();
           await detail.setQuantityAndSubmit(input);
           await detail.openCart();
           if ("cartEmptyText" in expected) {

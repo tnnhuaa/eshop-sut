@@ -50,7 +50,7 @@
     "preconditions": ["Product ID 1 exists and the cart is empty."],
     "setup": { "productId": 1, "cartBaseline": "empty" },
     "input": { "quantity": "", "submitClicks": 2 },
-    "expected": { "cartEmptyText": "Giỏ hàng của bạn đang trống" },
+    "expected": { "name": "iPhone 15 Pro Max", "cartEmptyText": "Giỏ hàng của bạn đang trống" },
     "assertionTypes": ["value", "visibility", "absence"]
   },
   {
@@ -59,7 +59,7 @@
     "preconditions": ["Product ID 1 exists and the cart is empty."],
     "setup": { "productId": 1, "cartBaseline": "empty" },
     "input": { "quantity": "1e2", "submitClicks": 2 },
-    "expected": { "cartEmptyText": "Giỏ hàng của bạn đang trống" },
+    "expected": { "name": "iPhone 15 Pro Max", "cartEmptyText": "Giỏ hàng của bạn đang trống" },
     "assertionTypes": ["value", "visibility", "absence"]
   },
   {
@@ -77,7 +77,7 @@
     "preconditions": ["Product ID 1 exists and the cart is empty."],
     "setup": { "productId": 1, "cartBaseline": "empty" },
     "input": { "quantity": "1", "submitClicks": 1 },
-    "expected": { "feedback": "Đã thêm" },
+    "expected": { "name": "iPhone 15 Pro Max", "feedback": "Đã thêm" },
     "assertionTypes": ["value", "visibility", "text"]
   },
   {
@@ -86,7 +86,7 @@
     "preconditions": ["Product ID 1 exists and the cart is empty."],
     "setup": { "productId": 1, "cartBaseline": "empty" },
     "input": { "quantity": "0", "submitClicks": 2 },
-    "expected": { "cartEmptyText": "Giỏ hàng của bạn đang trống" },
+    "expected": { "name": "iPhone 15 Pro Max", "cartEmptyText": "Giỏ hàng của bạn đang trống" },
     "assertionTypes": ["value", "visibility", "absence"]
   },
   {
@@ -95,7 +95,7 @@
     "preconditions": ["Product ID 1 exists and the cart is empty."],
     "setup": { "productId": 1, "cartBaseline": "empty" },
     "input": { "quantity": "-1", "submitClicks": 2 },
-    "expected": { "cartEmptyText": "Giỏ hàng của bạn đang trống" },
+    "expected": { "name": "iPhone 15 Pro Max", "cartEmptyText": "Giỏ hàng của bạn đang trống" },
     "assertionTypes": ["value", "visibility", "absence"]
   },
   {
@@ -104,7 +104,7 @@
     "preconditions": ["Product ID 1 exists and the cart is empty."],
     "setup": { "productId": 1, "cartBaseline": "empty" },
     "input": { "quantity": "1.5", "submitClicks": 2 },
-    "expected": { "cartEmptyText": "Giỏ hàng của bạn đang trống" },
+    "expected": { "name": "iPhone 15 Pro Max", "cartEmptyText": "Giỏ hàng của bạn đang trống" },
     "assertionTypes": ["value", "visibility", "absence"]
   }
 ]

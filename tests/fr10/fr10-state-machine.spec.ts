@@ -4,20 +4,27 @@ import { loadScenarios, type Scenario } from "../support/data-loader.js";
 import { environment } from "../support/environment.js";
 
 type Order = { id: number; status: string; shipping_address: string };
-
-const adminTransitionActions: Record<string, string> = {
-  "FR10-DT-001": "Xác nhận",
-  "FR10-DT-002": "Giao hàng",
-  "FR10-DT-003": "Hoàn thành",
+type OrderSetup = {
+  shippingAddress: string;
+  role: "admin" | "user" | "unauthenticated";
+  workflow:
+    | "admin-transition"
+    | "user-cancel-ui"
+    | "user-cancel-api"
+    | "admin-inspect"
+    | "unauthenticated-cancel-api"
+    | "user-admin-status-api";
+};
+type OrderInput = { action?: string; actionLabel?: string; targetStatus?: string };
+type OrderExpected = {
+  status: string;
+  httpStatus?: number;
+  initialLabel?: string;
+  label?: string;
+  actionCount?: number;
 };
 
 const scenarios = loadScenarios("test-data/fr10/state-machine-scenarios.json");
-
-function byId(id: string): Scenario {
-  const scenario = scenarios.find((candidate) => candidate.id === id);
-  if (!scenario) throw new Error(`Missing scenario ${id}`);
-  return scenario;
-}
 
 function annotateScenario(scenario: Scenario): void {
   test.info().annotations.push(
@@ -79,87 +86,78 @@ function userRow(page: Page, orderId: number): Locator {
   return page.locator("tr", { has: page.getByText(`#${orderId}`, { exact: true }) });
 }
 
-for (const id of ["FR10-DT-001", "FR10-DT-002", "FR10-DT-003"] as const) {
-  const scenario = byId(id);
+for (const scenario of scenarios) {
   test(`${scenario.id} — ${scenario.title}`, async ({ page, request }) => {
     annotateScenario(scenario);
-    const order = await seededOrder(request, scenario.setup.shippingAddress as string);
-    await openAdminOrders(page, request);
-    const row = adminRow(page, scenario.setup.shippingAddress as string);
-    await expect(row).toContainText(scenario.expected.initialLabel as string);
-    const action = adminTransitionActions[id];
-    await row.getByRole("button", { name: action }).click();
-    await expect(row).toContainText(scenario.expected.label as string);
-    await expectOrderStatus(request, order.id, scenario.expected.status);
-    if (id === "FR10-DT-003") await expect(row.getByRole("button")).toHaveCount(0);
+    const setup = scenario.setup as OrderSetup;
+    const input = scenario.input as OrderInput;
+    const expected = scenario.expected as unknown as OrderExpected;
+    const order = await seededOrder(request, setup.shippingAddress);
+
+    switch (setup.workflow) {
+      case "admin-transition": {
+        await openAdminOrders(page, request);
+        const row = adminRow(page, setup.shippingAddress);
+        await expect(row).toContainText(String(expected.initialLabel));
+        await row.getByRole("button", { name: String(input.actionLabel) }).click();
+        await expect(row).toContainText(String(expected.label));
+        await expectOrderStatus(request, order.id, expected.status);
+        if (expected.actionCount !== undefined) {
+          await expect(row.getByRole("button")).toHaveCount(expected.actionCount);
+        }
+        break;
+      }
+      case "user-cancel-ui": {
+        await openUserProfile(page, request);
+        const row = userRow(page, order.id);
+        page.once("dialog", (dialog) => dialog.accept());
+        await row.getByRole("button", { name: String(input.actionLabel) }).click();
+        await expect(row).toContainText(String(expected.label));
+        await expect(row.getByRole("button", { name: String(input.actionLabel) })).toHaveCount(0);
+        await expectOrderStatus(request, order.id, expected.status);
+        break;
+      }
+      case "user-cancel-api": {
+        const token = await authenticateViaApi(page, request, "user");
+        const response = await request.put(`${environment.apiBaseUrl}/orders/${order.id}/cancel`, {
+          headers: { Authorization: `Bearer ${token}` },
+          data: {},
+        });
+        expect(response.status(), "Shipping cancellation must be rejected").toBe(expected.httpStatus);
+        await expectOrderStatus(request, order.id, expected.status);
+        break;
+      }
+      case "admin-inspect": {
+        await openAdminOrders(page, request);
+        const row = adminRow(page, setup.shippingAddress);
+        await expect(row).toContainText(String(expected.label));
+        await expect(row.getByRole("button")).toHaveCount(Number(expected.actionCount));
+        break;
+      }
+      case "unauthenticated-cancel-api": {
+        const response = await request.put(`${environment.apiBaseUrl}/orders/${order.id}/cancel`, {
+          data: {},
+        });
+        expect(response.status(), "Unauthenticated cancellation must be rejected").toBe(
+          expected.httpStatus,
+        );
+        await expectOrderStatus(request, order.id, expected.status);
+        break;
+      }
+      case "user-admin-status-api": {
+        const token = await authenticateViaApi(page, request, "user");
+        const response = await request.put(`${environment.apiBaseUrl}/admin/orders/${order.id}/status`, {
+          headers: { Authorization: `Bearer ${token}` },
+          data: { status: input.targetStatus },
+        });
+        expect(response.status(), "A normal user must not access the admin status endpoint").toBe(
+          expected.httpStatus,
+        );
+        await expectOrderStatus(request, order.id, expected.status);
+        break;
+      }
+      default:
+        throw new Error(`Unsupported FR10 workflow for ${scenario.id}: ${String(setup.workflow)}`);
+    }
   });
 }
-
-for (const id of ["FR10-DT-004", "FR10-DT-005"] as const) {
-  const scenario = byId(id);
-  test(`${scenario.id} — ${scenario.title}`, async ({ page, request }) => {
-    annotateScenario(scenario);
-    const order = await seededOrder(request, scenario.setup.shippingAddress as string);
-    await openUserProfile(page, request);
-    const row = userRow(page, order.id);
-    page.once("dialog", (dialog) => dialog.accept());
-    await row.getByRole("button", { name: "Hủy đơn" }).click();
-    await expect(row).toContainText(scenario.expected.label as string);
-    await expect(row.getByRole("button", { name: "Hủy đơn" })).toHaveCount(0);
-    await expectOrderStatus(request, order.id, scenario.expected.status);
-  });
-}
-
-for (const id of ["FR10-DT-006", "FR10-DT-021"] as const) {
-  const scenario = byId(id);
-  test(`${scenario.id} — ${scenario.title}`, async ({ page, request }) => {
-    annotateScenario(scenario);
-    const order = await seededOrder(request, scenario.setup.shippingAddress as string);
-    const token = await authenticateViaApi(page, request, "user");
-    const response = await request.put(`${environment.apiBaseUrl}/orders/${order.id}/cancel`, {
-      headers: { Authorization: `Bearer ${token}` },
-      data: {},
-    });
-    expect(response.status(), "Shipping cancellation must be rejected").toBe(
-      scenario.expected.httpStatus,
-    );
-    await expectOrderStatus(request, order.id, scenario.expected.status);
-  });
-}
-
-for (const id of ["FR10-DT-011", "FR10-DT-012", "FR10-DT-022"] as const) {
-  const scenario = byId(id);
-  test(`${scenario.id} — ${scenario.title}`, async ({ page, request }) => {
-    annotateScenario(scenario);
-    await openAdminOrders(page, request);
-    const row = adminRow(page, scenario.setup.shippingAddress as string);
-    await expect(row).toContainText(scenario.expected.status === "delivered" ? "Đã giao" : "Đã hủy");
-    await expect(row.getByRole("button")).toHaveCount(scenario.expected.actionCount as number);
-  });
-}
-
-test(`${byId("FR10-DT-016").id} — ${byId("FR10-DT-016").title}`, async ({ request }) => {
-  const scenario = byId("FR10-DT-016");
-  annotateScenario(scenario);
-  const order = await seededOrder(request, scenario.setup.shippingAddress as string);
-  const response = await request.put(`${environment.apiBaseUrl}/orders/${order.id}/cancel`, { data: {} });
-  expect(response.status(), "Unauthenticated cancellation must be rejected").toBe(
-    scenario.expected.httpStatus,
-  );
-  await expectOrderStatus(request, order.id, scenario.expected.status);
-});
-
-test(`${byId("FR10-DT-017").id} — ${byId("FR10-DT-017").title}`, async ({ page, request }) => {
-  const scenario = byId("FR10-DT-017");
-  annotateScenario(scenario);
-  const order = await seededOrder(request, scenario.setup.shippingAddress as string);
-  const token = await authenticateViaApi(page, request, "user");
-  const response = await request.put(`${environment.apiBaseUrl}/admin/orders/${order.id}/status`, {
-    headers: { Authorization: `Bearer ${token}` },
-    data: { status: scenario.input.targetStatus },
-  });
-  expect(response.status(), "A normal user must not access the admin status endpoint").toBe(
-    scenario.expected.httpStatus,
-  );
-  await expectOrderStatus(request, order.id, scenario.expected.status);
-});

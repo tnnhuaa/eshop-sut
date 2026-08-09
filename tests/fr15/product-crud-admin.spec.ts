@@ -1,19 +1,21 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
-import { loadScenarios } from "../support/data-loader.js";
+import { loadJsonObject, loadScenarios } from "../support/data-loader.js";
+import { environment } from "../support/environment.js";
 
 type Product = { id: number; name: string; price: number | string };
 type ProductInput = { name?: string; price?: string };
 type ProductSetup = { targetName?: string; otherName?: string };
 type ProductExpected = { productName?: string; price?: string; rowCount?: number; created?: boolean; updated?: boolean; otherUnchanged?: boolean; deleted?: boolean; loginHeading?: string; saved?: boolean; dialogCount?: number };
+type FixtureConfig = { price: string; description: string; imageUrl: string; categoryId: number };
 
 class AdminProductsPage {
   constructor(private readonly page: Page) {}
 
-  async open() { await this.page.goto("http://127.0.0.1:5174"); }
+  async open() { await this.page.goto(environment.adminBaseUrl); }
   async login() {
     await this.open();
-    await this.page.getByPlaceholder("Email").fill("admin@eshop.com");
-    await this.page.getByPlaceholder("Password").fill("Admin123!");
+    await this.page.getByPlaceholder("Email").fill(environment.admin.email);
+    await this.page.getByPlaceholder("Password").fill(environment.admin.password);
     await this.page.getByRole("button", { name: "Login" }).click();
     await expect(this.page.getByText("EShop Admin", { exact: true })).toBeVisible();
     await this.openProductsTab();
@@ -55,10 +57,10 @@ class AdminProductsPage {
 }
 
 const scenarios = loadScenarios("test-data/fr15/product-crud-scenarios.json");
-const apiBase = "http://127.0.0.1:3000/api";
+const fixtureConfig = loadJsonObject<FixtureConfig>("test-data/fr15/fixture-config.json");
 
 async function products(page: Page): Promise<Product[]> {
-  const response = await page.request.get(`${apiBase}/products`);
+  const response = await page.request.get(`${environment.apiBaseUrl}/products`);
   expect(response.ok()).toBeTruthy();
   return response.json() as Promise<Product[]>;
 }
@@ -66,15 +68,21 @@ async function products(page: Page): Promise<Product[]> {
 async function deleteNamedProducts(page: Page, names: string[]) {
   const allProducts = await products(page);
   for (const product of allProducts.filter((item) => names.includes(item.name))) {
-    const response = await page.request.delete(`${apiBase}/products/${product.id}`);
+    const response = await page.request.delete(`${environment.apiBaseUrl}/products/${product.id}`);
     expect(response.ok()).toBeTruthy();
   }
 }
 
-async function createFixture(page: Page, name: string, price = "99999") {
+async function createFixture(page: Page, name: string, price = fixtureConfig.price) {
   await deleteNamedProducts(page, [name]);
-  const response = await page.request.post(`${apiBase}/products`, {
-    data: { name, price, description: "FR15 fixture", imageUrl: "", category_id: 1 },
+  const response = await page.request.post(`${environment.apiBaseUrl}/products`, {
+    data: {
+      name,
+      price,
+      description: fixtureConfig.description,
+      imageUrl: fixtureConfig.imageUrl,
+      category_id: fixtureConfig.categoryId,
+    },
   });
   expect(response.ok()).toBeTruthy();
 }
