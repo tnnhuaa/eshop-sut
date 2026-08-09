@@ -22,6 +22,10 @@ class AdminProductsPage {
     await this.page.getByText("Sản phẩm", { exact: true }).click();
     await expect(this.page.getByRole("heading", { name: "Quản lý Sản phẩm" })).toBeVisible();
   }
+  async reloadProductsTab() {
+    await this.page.reload();
+    await this.openProductsTab();
+  }
   nameInput() { return this.page.getByPlaceholder("Tên sản phẩm"); }
   priceInput() { return this.page.getByPlaceholder("Giá tiền"); }
   saveButton() { return this.page.getByRole("button", { name: "Lưu sản phẩm" }); }
@@ -66,6 +70,15 @@ async function createFixture(page: Page, name: string, price = "99999") {
   expect(response.ok()).toBeTruthy();
 }
 
+async function expectProductCountUnchanged(
+  page: Page,
+  action: () => Promise<void>,
+): Promise<void> {
+  const productCount = (await products(page)).length;
+  await action();
+  expect((await products(page)).length).toBe(productCount);
+}
+
 test.describe("FR15 Product CRUD Admin", () => {
   test.afterEach(async ({ page }) => {
     await deleteNamedProducts(page, scenarios.flatMap((scenario) => {
@@ -100,8 +113,7 @@ test.describe("FR15 Product CRUD Admin", () => {
       if (setup.targetName) await createFixture(page, setup.targetName);
       if (setup.otherName) await createFixture(page, setup.otherName);
       if (setup.targetName || setup.otherName) {
-        await page.reload();
-        await productsPage.openProductsTab();
+        await productsPage.reloadProductsTab();
       }
 
       switch (scenario.id) {
@@ -120,10 +132,8 @@ test.describe("FR15 Product CRUD Admin", () => {
           break;
         case "FR15-DT-007":
           {
-          const productCount = (await products(page)).length;
-          await productsPage.create(input);
+          await expectProductCountUnchanged(page, () => productsPage.create(input));
           await expect(productsPage.nameInput()).toHaveValue("");
-          expect((await products(page)).length).toBe(productCount);
           await expect(productsPage.saveButton()).toBeVisible();
           break;
           }
@@ -131,9 +141,7 @@ test.describe("FR15 Product CRUD Admin", () => {
         case "FR15-DT-025":
         case "FR15-BVA-006":
           {
-          const productCount = (await products(page)).length;
-          await productsPage.create(input);
-          expect((await products(page)).length).toBe(productCount);
+          await expectProductCountUnchanged(page, () => productsPage.create(input));
           await expect(productsPage.nameInput()).toHaveValue(String(input.name));
           await expect(productsPage.saveButton()).toBeVisible();
           break;
@@ -155,8 +163,7 @@ test.describe("FR15 Product CRUD Admin", () => {
           break;
         case "FR15-DT-016":
           await createFixture(page, String(input.name), String(input.price));
-          await page.reload();
-          await productsPage.openProductsTab();
+          await productsPage.reloadProductsTab();
           await expect(productsPage.row(String(input.name))).toBeVisible();
           await productsPage.row(String(input.name)).getByRole("button", { name: "Xóa" }).click();
           await expect(productsPage.row(String(input.name))).toHaveCount(0);
