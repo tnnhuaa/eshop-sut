@@ -1,156 +1,115 @@
-* commit 11579cd797e15d963fff55ed0ae860fced45f8f0 (HEAD -> hw2-tanh, origin/hw2-tanh)
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Sat Jul 4 23:19:38 2026 +0700
-| 
-|     docs(hw2): Update Bug Report with improved formatting and GitHub issue links
-| 
-* commit ff720d5ebcadac73559640b337856dd425876ea4
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Sat Jul 4 23:00:58 2026 +0700
-| 
-|     docs(hw2): Update HW02 Main Report with detailed domain and boundary value analysis.
-| 
-* commit 30051a2ec8dbc81fc68dc2773edae12ac54cf25a
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Sat Jul 4 22:37:35 2026 +0700
-| 
-|     docs(hw2): Convert report to PDF
-|
-* commit 8ce97a9784619329101855e7fa0faa59d642676b
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Sat Jul 4 22:22:58 2026 +0700
-| 
-|     docs(hw02): update README to remove suggested submission tree section
-|
-* commit d62055c1591a84840f6db72b0a36094c996dd4b9
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Sat Jul 4 22:20:56 2026 +0700
-| 
-|     docs(hw02): finalize submission documentation
-| 
-* commit 2967da3459657870a45436132e799a7efc9357e6
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Sat Jul 4 16:47:27 2026 +0700
-| 
-|     docs(hw2):  using Agent Skill to create testcase for another FR
-| 
-* commit 018e6472812da3e6a6a06a852bfac690ac93ac15
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Sat Jul 4 14:43:28 2026 +0700
-| 
-|     docs(hw2): update AI audit & AI critique report
-| 
-* commit bb550f9d307047850bec7406115121cbf7c62abb
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Sat Jul 4 14:08:18 2026 +0700
-| 
-|     test(fr05m): finalize mobile search execution evidence
-| 
-* commit 1b4e6a41229002eb91155b02def77e801354ebb3
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Sat Jul 4 11:58:42 2026 +0700
-| 
-|     test(fr05m): add mobile search domain and BVA design
-| 
-* commit 5fb3a61ae345bee4b950823024111a5f14b6fb44
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Sat Jul 4 11:32:29 2026 +0700
-| 
-|     test(fr15): execute product CRUD tests and link issues
-| 
-* commit d991a1101bac7541f7b911c0e8ae6a642fed220c
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Fri Jul 3 22:48:59 2026 +0700
-| 
-|     test(fr15): add product CRUD domain and BVA test design
-| 
-* commit bec89e2bc3d9677ab1fba8052bb56b37c40b1fd1
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Fri Jul 3 22:10:24 2026 +0700
-| 
-|     test(fr10): record execution evidence and bug reports
-| 
-* commit ebab3ecb8a3219d3cfde3a4bc035977d65062431
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Thu Jul 2 23:28:33 2026 +0700
-| 
-|     test(fr10): add state transition domain and BVA test design
-| 
-* commit 6bee31bb26612aae0aadde5e8a8e361ca838ae86
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Thu Jul 2 22:26:16 2026 +0700
-| 
-|     docs(fr06): enhance skill evaluation and gap analysis, add detailed bug reports and evidence for FR-06 defects
-| 
-* commit f272b5dd7776ffdd8129f3ca11c230cf5d810b39
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Thu Jul 2 22:14:17 2026 +0700
-| 
-|     refactor: update test cases and execution results for FR-06, fix bug IDs in traceability matrix
-| 
-* commit 09b619ea6dfbf654a79cafa27213f59539b2347b
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Thu Jul 2 15:03:46 2026 +0700
-| 
-|     test(fr06): record product detail execution results
-| 
-* commit bec3f600036669f53fc5a630bcb99b8e26d574e8
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Thu Jul 2 15:03:34 2026 +0700
-| 
-|     docs(skill): add templates example and human review rules
-| 
-* commit f015fda6356552424aebd0be86171c5b5cb10abc
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Thu Jul 2 15:03:27 2026 +0700
-| 
-|     feat(skill): add reusable domain testing and BVA agent skill
-| 
-* commit c7a779cb9ed38a7106bc2bc25191190058d5e8cd
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Thu Jul 2 15:03:17 2026 +0700
-| 
-|     test(fr06): add product detail test cases
-| 
-* commit bb1cf305a0a3700b3ec590de683b3d5b81bb2d5e
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Thu Jul 2 15:03:10 2026 +0700
-| 
-|     docs(fr06): complete domain and boundary analysis
-| 
-* commit 6d2e144e1e62284c2c090d163166c269186f477c
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Thu Jul 2 10:23:54 2026 +0700
-| 
-|     docs(hw02): add traceability assumptions and requirement gaps
-| 
-* commit a75d329fd00e81e9ba12ae78efd8e3cab7f6b439
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Thu Jul 2 10:23:36 2026 +0700
-| 
-|     docs(hw02): complete requirement analysis for selected features
-| 
-* commit 3ea3dac8bd3d45b4098edd5b32f25d24638242d1
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Mon Jun 29 17:13:08 2026 +0700
-| 
-|     feat: Add database baseline and update environment log with user password details
-| 
-* commit 7f48c2d5b10b18a7359c2c03373dfe0a081a4d07
-| Author: tnnhuaa <nguyenhientuananh@gmail.com>
-| Date:   Mon Jun 29 16:49:57 2026 +0700
-| 
-|     feat: Draft the submission outline based on the requirements
-| 
-* commit 85af3ba875c88283615e22cb108f13e2fccaf0e9 (origin/main, origin/HEAD, main)
-| Author: ttbhanh-hcmus <ttbhanh@hcmus.edu.vn>
-| Date:   Fri May 15 08:30:35 2026 +0700
-| 
-|     first upload
-| 
-* commit 2f9bf2bab45855abf211377a5d5eba10031649e3
-  Author: Hanh Tran <ttbhanh@fit.hcmus.edu.vn>
-  Date:   Fri May 15 08:27:44 2026 +0700
-  
-      Initial commit
-(END)
+# HW04 Git Commit Log
+
+Branch: `hw4-tanh`
+Range: `5ee8acd^..HEAD`
+Generated: 2026-08-10 (GMT+7)
+
+commit 133e88311430995e81f272a591bad8c3dab54dab (HEAD -> hw4-tanh)
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T16:23:46+07:00
+Subject: docs(reports): complete HW04 submission set
+
+commit 68f4cad17d7484d9319ae3a0e6b471a6765bd4af
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T16:09:41+07:00
+Subject: docs(defects): link confirmed authorization issue
+
+commit d06798942f39c7e9669175850487ee12785de5b5
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T15:57:08+07:00
+Subject: docs(submission): record videos and confirmed defects
+
+commit 440c033f0a27c8c99188559eac08c83c09ec9a9c
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T14:15:08+07:00
+Subject: docs(review): publish student review in English
+
+commit dc8aa1279219809e3ac94adfdb87f82388385936
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T14:12:39+07:00
+Subject: docs(review): record student validation of automation fixes
+
+commit cd43a56b70773cf89ae2817dc8d1ed99e5a6461d
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T01:02:56+07:00
+Subject: docs(audit): record final automation evidence workflow
+
+commit 3f66041425fd420d97552c6c999c8660b7eee814
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T01:02:40+07:00
+Subject: test(evidence): add final three-browser report matrix
+
+commit f7926965ea6ae7a64d5443782a0c736ae7d65a5c
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T01:01:41+07:00
+Subject: refactor(tests): enforce external data across HW04 features
+
+commit 345ecb70c2a447493b5994c284c0d3fda29ea1e2
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T00:11:44+07:00
+Subject: docs(ai-audit): apply reusable HW04 audit template
+
+commit fd191944ebc046cca165515ef6f4eae083da16bd
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T00:11:44+07:00
+Subject: test(skill): record isolated FR06 forward test
+
+commit 0e3ee5750c2c2e6f0ab2c4031963bfa919b16b87
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T00:11:33+07:00
+Subject: feat(skill): add EShop Playwright automation agent
+
+commit bf2944d297e022786720019ae7707c81288906a0
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T00:11:19+07:00
+Subject: test(hw4): finalize cross-browser traceability and evidence
+
+commit 1285bca0defa0b6f043882de7e73e7e816091b2f
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T00:10:31+07:00
+Subject: fix(fr15): enforce update isolation and cleanup
+
+commit 8b34fbed0cc743614fa6f98e48c520d35b0492ad
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T00:09:45+07:00
+Subject: fix(fr15): stabilize navigation and rejected creates
+
+commit 015198ed0a04e68abee5860d80ab76e8e417f33a
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T00:09:03+07:00
+Subject: test(fr15): add admin product CRUD automation
+
+commit cc9cfe6d62e460ea51d608f574cd874877373456
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T00:08:35+07:00
+Subject: fix(fr10): verify transitions and authorization outcomes
+
+commit 24addc808a66dd7799b4f780e36275a5ff59a00e
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T00:07:54+07:00
+Subject: test(fr10): add order state machine automation
+
+commit d2a1a586ef125d01a687b93cee4fd7d491f5518b
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T00:07:17+07:00
+Subject: fix(fr06): harden cart and safe-content assertions
+
+commit af6037fcd78d627c3ac2358638e2bad03730cabb
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T00:06:45+07:00
+Subject: test(fr06): add data-driven product detail automation
+
+commit 0340c689e8bfba8896fd684d868f38b29ea6f91f
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-07T00:22:52+07:00
+Subject: chore(hw4): scaffold Playwright automation foundation
+
+commit 142c5853f96fa436f7082c6bfc31572c7eaa5d3d
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-06T12:47:43+07:00
+Subject: docs(ai-audit): update AI Audit Initializer and Export Audit templates for improved clarity and structure
+
+commit 5ee8acdf728b08d86110641abac41732edb8a359
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-06T12:24:14+07:00
+Subject: chore(hw4): archive HW02 artifacts and prepare audit skills

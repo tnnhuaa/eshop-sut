@@ -18,7 +18,7 @@
 | **Student ID:** | 23127280 |
 | **Class / Cohort:** | 23KTPM2 |
 | **Assignment ID (e.g., HW#00, HW#02):** | HW04-AI |
-| **Assignment date:** | 2026-08-06 |
+| **Assignment date:** | 2026-08-10 |
 | **AI tool(s) used:** | Codex |
 | **AI tool(s) used:** | [x] Yes  [ ] No |
 
@@ -34,12 +34,14 @@
 
 ## **3. Audit Table - one row per artifact**
 
-| (1) Prompt + Tool | (2) AI Output | (3) Verdict | (4) Reasoning (ISTQB) | (5) Student Fix |
+Only interactions that materially affected the automation, human evidence gates, defect reporting, or final submission are retained. Meta-prompts about audit formatting and routine status questions are intentionally omitted.
+
+| (1) Prompt + Tool | (2) AI Output | (3) Verdict | (4) Reasoning (ISTQB / technical evidence) | (5) Student Fix |
 | :---- | :---- | :---- | :---- | :---- |
-| **Artifact #1 - Adapt HW04 AI audit skills**<br>Tool: Codex<br>Time: 2026-08-06 00:18:38 GMT+7<br>Full prompt: see Artifact #1 verbatim record below. | Created and validated two repository-local audit skills and initialized the HW04 audit.<br>Full output: see Artifact #1 verbatim record below. | VALID | Repository state and the official skill validator confirmed both requested skills and the initialized audit. | None required. |
-| **Artifact #2 - Clean and archive the HW04 repository baseline**<br>Tool: Codex<br>Time: 2026-08-06 12:19:40 GMT+7<br>Full prompt: see Artifact #2 verbatim record below. | Removed approved mobile/runtime/dependency content and archived reusable HW02 evidence under `reference/hw02/`.<br>Full output: see Artifact #2 verbatim record below. | VALID | Resolved-path safety checks, final path checks, archive listing, and Git status confirmed the requested cleanup. | None required. |
-| **Artifact #3 - Reuse the official FIT audit template**<br>Tool: Codex<br>Time: 2026-08-06 12:35:29 GMT+7<br>Full prompt: see Artifact #3 verbatim record below. | Replaced the audit presentation layer with the prior FIT/HCMUS template while preserving the stricter HW04 evidence and privacy policies.<br>Full output: see Artifact #3 verbatim record below. | VALID | The canonical asset, migrated audit, insertion markers, unchanged identity/signature fields, and two successful skill validations confirm the requested template-only adaptation. | None required. |
-| **Artifact #4 - Finalize Task 1 automation evidence and manual runbooks**<br>Tool: Codex<br>Time: 2026-08-10 00:49:10 GMT+7<br>Full prompt: see Artifact #4 verbatim record below. | Removed remaining inline test data, reran and verified the nine-browser-feature matrix, generated evidence manifests, and prepared separate Task 2 and Agent Skill video runbooks plus human-review and defect-decision forms.<br>Full output: see Artifact #4 verbatim record below. | VALID | TypeScript, three scenario validators, 108-test discovery, real Playwright execution, rendered report verification, prohibited-pattern scanning, and diff checks support the completed agent-owned scope. | Student must still review/sign, confirm or reject defect candidates, record both videos, and provide the YouTube URLs. |
+| **Artifact #1 - Finalize data-driven automation and browser evidence**<br>Tool: Codex<br>Time: 2026-08-10 00:49:10 GMT+7<br>Full prompt: see Artifact #1 verbatim record below. | Refactored remaining inline data, executed 36 cases on three browsers, verified nine reports, and prepared separate human-review and video workflows.<br>Full output: see Artifact #1 below. | VALID | TypeScript, scenario validation, 108-test discovery, executed HTML reports, metadata verification, and prohibited-pattern scans support the technical output. ISTQB test implementation and execution require traceability and comparison of actual versus expected results. | The student reviewed and accepted eight corrections, signed the human-review record, confirmed nine defect groups, and recorded both videos. |
+| **Artifact #2 - Record videos and confirmed candidate defects**<br>Tool: Codex<br>Time: 2026-08-10 15:57:08 GMT+7<br>Full prompt: see Artifact #2 verbatim record below. | Added the two student-provided video URLs and recorded the nine confirmed groups, but could not publish the new GitHub Issue because the available browser session was signed out.<br>Full output: see Artifact #2 below. | INCOMPLETE | Repository diffs verify the documentation changes, but Task 1 also requires a screenshot-bearing GitHub Issue for a genuine new defect. Authentication prevented that external side effect at this stage. | The student manually captured the meaningful HTML-report error screenshot and later created Issue #23. |
+| **Artifact #3 - Verify and link authorization defect Issue #23**<br>Tool: Codex<br>Time: 2026-08-10 16:09:41 GMT+7<br>Full prompt: see Artifact #3 verbatim record below. | Verified the public issue title, expected/actual response, label, browser scope, and screenshot, then linked #23 in active HW04 documentation.<br>Full output: see Artifact #3 below. | VALID | Public Issue #23 and the committed README/defect-record changes directly verify the result. The screenshot shows the Playwright report error rather than the blank page produced by an API-only test. | The student created the issue, selected the `bug` label, and uploaded the report screenshot; Codex only verified and documented it. |
+| **Artifact #4 - Complete curated HW04 submission documentation**<br>Tool: Codex<br>Time: 2026-08-10 16:18:08 GMT+7<br>Full prompt: see Artifact #4 verbatim record below. | Replaced stale HW02 active reports with HW04 Markdown/text deliverables, created traceability and packaging documentation, curated the audit, and intentionally generated no PDFs.<br>Full output: see Artifact #4 below. | VALID | Cross-document scans, word count, CSV row validation, file-state checks, and Git diff checks verify the requested documentation scope. The reports use the executed 36-case/9-run evidence rather than fabricated results. | The student will perform the requested manual PDF exports and final visual review; no Markdown correction has been requested yet. |
 <!-- AUDIT_TABLE_ROWS_END -->
 
 ### Verbatim Artifact Records
@@ -47,132 +49,8 @@
 ### Artifact #1 - Verbatim Record
 
 - **User:** Nguyễn Hiền Tuấn Anh (23127280)
-- **Date and Time:** 2026-08-06 00:18:38 GMT+7
-- **Agent Used:** Codex (primary agent)
-- **Prompt:**
-
-````text
-external-skills/ai-export-audit/
-external-skills/ai-audit-initializer/
-
-Lấy skill này qua để viết audit đi a, cập nhật skill hiện có theo skill trên em đã dùng trong hw3
-````
-
-- **AI Output:**
-
-````text
-Đã chuyển và nâng cấp hai skill audit từ HW03 sang HW04.
-
-- `.codex/skills/ai-audit-initializer/` tạo mẫu audit cá nhân cho HW04-AI, Student ID 23127280.
-- `.codex/skills/ai-export-audit/` giữ workflow HW03 và bổ sung verification evidence cùng ràng buộc HTML report, video, screenshot và defect thật.
-- `AI_Audit.md` đã được khởi tạo và tương tác này được ghi thành Artifact 1.
-- Cả hai skill đều vượt qua `quick_validate.py`: `Skill is valid!`.
-- Không sửa bản skill nguồn HW03 hoặc skill global; `.codegraph/` đang untracked được giữ nguyên.
-
-Next: gửi yêu cầu triển khai Playwright; các tương tác hoàn tất tiếp theo sẽ được nối vào `AI_Audit.md` bằng `$ai-export-audit`.
-````
-
-- **File Modifications:**
-  - **File:** `.codex/skills/ai-audit-initializer/SKILL.md`; **Action:** created; **Details:** adapted the HW03 initializer for individual HW04-AI use with a complete six-section audit template and evidence guardrails.
-  - **File:** `.codex/skills/ai-audit-initializer/agents/openai.yaml`; **Action:** created; **Details:** added Codex UI metadata and disabled implicit invocation.
-  - **File:** `.codex/skills/ai-export-audit/SKILL.md`; **Action:** created; **Details:** adapted the HW03 export workflow for HW04 automation evidence, individual authorship, and browser-report constraints.
-  - **File:** `.codex/skills/ai-export-audit/agents/openai.yaml`; **Action:** created; **Details:** added Codex UI metadata and enabled implicit invocation.
-  - **File:** `AI_Audit.md`; **Action:** created and appended; **Details:** initialized the individual HW04 audit and recorded Artifact 1.
-
-- **Verification Evidence:** Both skill directories were checked with the official `skill-creator/scripts/quick_validate.py` under UTF-8 mode; each returned `Skill is valid!`. `git status --short` showed the new `.codex/` and `AI_Audit.md` paths.
-- **Verdict:** VALID
-- **Reasoning:** Repository state confirms both requested HW04-local skills and the initialized audit exist. Official skill validation succeeded for both skills, and the HW03 source/global skill directories were not modified.
-- **Student Fixes:** None required.
-
-### Artifact #2 - Verbatim Record
-
-- **User:** Nguyễn Hiền Tuấn Anh (23127280)
-- **Date and Time:** 2026-08-06 12:19:40 GMT+7
-- **Agent Used:** Codex (primary agent)
-- **Prompt:**
-
-````text
-# Response annotations:
-Each item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. When addressing multiple comments, label each answer with its annotation number (for example, `Annotation 1`) so the user can match it to the numbered annotation.
-<response-annotations>
-[{"text":"4. Thư mục nên lược bỏ khỏi cây HW04Thư mục/mụcQuyết địnhLý dofrontend-mobile/BỏPool D không thuộc HW04features/FR05_Product_Search_Mobile/BỏFeature mobile không được automation trong bài nàyDữ liệu mobile-*, seed-fr05-*BỏKhông phục vụ ba feature webTất cả node_modules/Bỏ và cài lạiKhông commit hoặc đóng gói dependencyDemoSkill/Bỏ khỏi active treeDemo Domain/BVA của HW02, không phải automation skill.agent/examples/FR05-example/BỏVí dụ mobile không liên quanreports/*.pdf và screenshot tổng hợp HW02Chuyển khỏi active deliverablesChỉ giữ làm reference; không trộn với report HW04features/*/evidence/ cũChuyển sang reference hoặc bỏKhông được dùng như execution evidence HW04backend/database.sqlite đang chạyKhông dùng làm bản chuẩnTrạng thái đã bị thay đổi trong quá trình testapi/, demo-agent-skill/Bỏ nếu vẫn rỗngKhông có artifact để tái sử dụnglogs/ cũ và prompt_log.md cũKhông đưa vào deliverable HW04HW04 cần log và timestamp mớiai/raw-outputs/ cũChỉ giữ referenceKhông được trình bày như output AI của HW04","annotation":"Thực hiện mục này trước"}]
-</response-annotations>
-
-## My request for Codex:
-````
-
-- **AI Output:**
-
-````text
-Annotation 1 — cleanup đã hoàn tất.
-
-- Đã xóa `frontend-mobile/`, `features/FR05_Product_Search_Mobile/`, hai mobile test-data file, `DemoSkill/`, `.agent/examples/FR05-example/`, ba `node_modules/`, runtime `backend/database.sqlite`, `api/` và `demo-agent-skill/` rỗng.
-- Đã chuyển PDF, ảnh tổng hợp, evidence FR06/FR10/FR15, logs, prompt log và AI raw output HW02 sang `reference/hw02/`.
-- Đã giữ `backend/database-baseline.sqlite`, SUT web/admin/backend, ba feature web, `.codex/skills/` và `AI_Audit.md`.
-- Kiểm tra cuối xác nhận toàn bộ target cần xóa không còn và reference archive có đủ file.
-- Không chạy test vì đây là cleanup cấu trúc; file tracked đã xóa vẫn phục hồi được từ Git, còn dependency có thể cài lại từ lockfile.
-- Workstream này đã được ghi thành Artifact 2 trong `AI_Audit.md`.
-
-Next: dựng cấu hình Playwright dùng chung trước khi giao FR06, FR10 và FR15 cho sub-agent.
-````
-
-- **File Modifications:**
-  - **File:** `reference/hw02/`; **Action:** created and populated; **Details:** archived the HW02 PDFs, aggregate issue screenshots, FR06/FR10/FR15 evidence, execution logs, prompt log, and FR06 raw AI output.
-  - **File:** `frontend-mobile/`, `features/FR05_Product_Search_Mobile/`, `DemoSkill/`, and `.agent/examples/FR05-example/`; **Action:** deleted; **Details:** removed mobile-only and HW02 demo artifacts excluded from HW04.
-  - **File:** `test-data/seed-fr05-mobile-products.js` and `test-data/mobile-fr05-search-keywords.csv`; **Action:** deleted; **Details:** removed Pool D test data.
-  - **File:** `backend/node_modules/`, `frontend-web/node_modules/`, and `frontend-admin/node_modules/`; **Action:** deleted; **Details:** removed reinstallable dependencies while preserving package lockfiles.
-  - **File:** `backend/database.sqlite`; **Action:** deleted; **Details:** removed the mutated runtime database and retained `backend/database-baseline.sqlite`.
-  - **File:** `api/` and `demo-agent-skill/`; **Action:** deleted; **Details:** removed empty directory structures after verifying they contained no files.
-  - **File:** `AI_Audit.md`; **Action:** appended; **Details:** recorded Artifact 2 and refreshed the accuracy summary, conclusion, and disclosure.
-
-- **Verification Evidence:** All delete targets were resolved beneath the repository root before removal. The final path check returned `False` for every approved delete target and `True` for `backend/database-baseline.sqlite`, `.codex/skills/ai-export-audit/SKILL.md`, and `AI_Audit.md`. `rg --files reference/hw02` listed the archived reports, logs, raw output, and 24 web-feature evidence images. `git status --short` showed the expected tracked deletions and the new reference archive.
-- **Verdict:** VALID
-- **Reasoning:** The requested cleanup was executed only against approved workspace targets, references were archived before source removal, effectively empty directories were inspected before deletion, and final filesystem checks confirmed both removal and preservation requirements.
-- **Student Fixes:** None required.
-
-### Artifact #3 - Verbatim Record
-
-- **User:** Nguyễn Hiền Tuấn Anh (23127280)
-- **Date and Time:** 2026-08-06 12:35:29 GMT+7
-- **Agent Used:** Codex (primary agent)
-- **Prompt:**
-
-````text
-em muốn sử dụng template của [23127280_AI_Audit_Report.md](reports/23127280_AI_Audit_Report.md) cho Skill [$ai-export-audit](.codex/skills/ai-export-audit/SKILL.md) vẫn giữ các ràng buộc chỉ thay đổi template, phần info và signature đem y chan qua chỉ sửa các nội dung cho phù hợp hw hiện tại, còn lại giữ nguyên, lưu để làm cho các hw trong tương lai
-````
-
-- **AI Output:**
-
-````text
-Đã đổi template và giữ nguyên toàn bộ policy kiểm chứng của skill.
-
-- Template chuẩn được lưu tại `.codex/skills/ai-export-audit/assets/AI_Audit_Report_Template.md`.
-- `AI_Audit.md` hiện dùng đúng header FIT/HCMUS, Student Information, Instructions, bảng audit 5 cột, Signature và References của bản HW02.
-- Thông tin cá nhân, class, course, instructors và chữ ký `Anh` được giữ nguyên; chỉ Assignment ID và ngày được đổi thành `HW04-AI` / `2026-08-06`.
-- Mỗi artifact có một row tóm tắt trong bảng và một Verbatim Record đầy đủ để giữ prompt/output nguyên văn, file modifications, verification evidence và verdict.
-- Template tương lai chỉ cần thay `ASSIGNMENT_ID`, `ASSIGNMENT_DATE` và `AI_TOOLS`; initializer đã được nối với template này.
-- `ai-export-audit` và `ai-audit-initializer` đều vượt qua `quick_validate.py`: `Skill is valid!`.
-- Artifact 1–2 được giữ nguyên và thay đổi này đã được ghi thành Artifact 3.
-
-Next: commit thay đổi template audit trước khi bắt đầu dựng Playwright.
-````
-
-- **File Modifications:**
-  - **File:** `.codex/skills/ai-export-audit/assets/AI_Audit_Report_Template.md`; **Action:** created; **Details:** added the canonical FIT/HCMUS audit template with fixed student/signature content, official instructions/references, insertion markers, and three assignment placeholders.
-  - **File:** `.codex/skills/ai-export-audit/SKILL.md`; **Action:** edited; **Details:** changed only the report-layout workflow to maintain a five-column summary row plus a full verbatim record while preserving evidence, privacy, verdict, and anti-fabrication policies.
-  - **File:** `.codex/skills/ai-audit-initializer/SKILL.md`; **Action:** edited; **Details:** replaced the embedded HW04-only template with canonical-asset initialization and future-homework placeholder replacement.
-  - **File:** `AI_Audit.md`; **Action:** migrated and appended; **Details:** applied the FIT/HCMUS template, preserved Artifacts 1–2, added summary rows and insertion markers, restored the original student/signature/reference format with HW04 assignment values, and recorded Artifact 3.
-
-- **Verification Evidence:** Both skill directories were validated with the official `skill-creator/scripts/quick_validate.py` under UTF-8 mode and returned `Skill is valid!`. A targeted structure check confirmed both insertion markers, three assignment placeholders only in the reusable asset, no unresolved placeholders in `AI_Audit.md`, both existing verbatim records, the FIT student information, the original signature fields, and the References section.
-- **Verdict:** VALID
-- **Reasoning:** The new asset reproduces the selected FIT/HCMUS report structure and fixed identity/signature content, while the exporter still requires exact prompts/outputs, repository-relative privacy normalization, file modifications, verification evidence, evidence-based verdicts, later correction handling, and HW04 anti-fabrication boundaries.
-- **Student Fixes:** None required.
-
-### Artifact #4 - Verbatim Record
-
-- **User:** Nguyễn Hiền Tuấn Anh (23127280)
 - **Date and Time:** 2026-08-10 00:49:10 GMT+7
-- **Agent Used:** Codex (primary agent)
+- **Agent Used:** Codex (primary agent); feature sub-agents contributed earlier scoped automation work, which the primary agent reviewed and integrated
 - **Prompt:**
 
 ````text
@@ -215,28 +93,139 @@ Việc tiếp theo của em: mở `manual/01-human-review-runbook-vi.md` và th�
 
 - **File Modifications:**
   - **File:** `tests/fr06/product-detail.spec.ts`; **Action:** edited; **Details:** replaced remaining hardcoded product headings with JSON-backed expected values.
-  - **File:** `test-data/fr06/product-detail-scenarios.json`; **Action:** edited; **Details:** added the expected product name to negative and feedback scenarios.
-  - **File:** `tests/fr10/fr10-state-machine.spec.ts`; **Action:** edited; **Details:** replaced inline TestCaseID groups and action map with one JSON-driven workflow dispatcher.
+  - **File:** `test-data/fr06/product-detail-scenarios.json`; **Action:** edited; **Details:** added expected values required by the negative and feedback scenarios.
+  - **File:** `tests/fr10/fr10-state-machine.spec.ts`; **Action:** edited; **Details:** replaced inline TestCaseID groups and action maps with one JSON-driven workflow dispatcher.
   - **File:** `test-data/fr10/state-machine-scenarios.json`; **Action:** edited; **Details:** added workflow, action-label, final-label, and final-action-count data.
-  - **File:** `tests/fr15/product-crud-admin.spec.ts`; **Action:** edited; **Details:** moved URLs and credentials to the shared environment and fixture payload values to external JSON.
-  - **File:** `test-data/fr15/fixture-config.json`; **Action:** created; **Details:** added reusable FR15 fixture price, description, image URL, and category ID.
-  - **File:** `tests/support/data-loader.ts`; **Action:** edited; **Details:** added a validated JSON-object loader for external fixture configuration.
-  - **File:** `scripts/verify-reports.mjs`; **Action:** edited; **Details:** preserved report history while selecting and rendering the latest report for each of the nine feature-browser pairs.
-  - **File:** `package.json`; **Action:** edited; **Details:** made the Agent Skill demo execute FR06 on all three configured browsers.
-  - **File:** `manual/01-human-review-runbook-vi.md`; **Action:** created; **Details:** added the student-owned review table, correction rationale, checklist, and blank signature fields.
-  - **File:** `manual/02-task2-video-script-vi.md`; **Action:** created; **Details:** added the separate Vietnamese Task 2 recording timeline, commands, narration, and checks.
-  - **File:** `manual/03-agent-skill-video-script-vi.md`; **Action:** created; **Details:** added the separate Agent Skill recording timeline and human-gate narration.
-  - **File:** `manual/04-bug-confirmation-runbook-vi.md`; **Action:** created; **Details:** grouped 19 failing tests into nine unconfirmed candidate groups with reproduction commands and blank student decisions.
-  - **File:** `manual/05-submission-checklist-vi.md`; **Action:** created; **Details:** separated completed agent work from mandatory student actions and ZIP checks.
-  - **File:** `skill-demo/input/video-demo-prompt.md`; **Action:** created; **Details:** added the exact multi-step prompt for the separate Agent Skill video.
-  - **File:** `artifacts/html-reports/FR06/`, `artifacts/html-reports/FR10/`, and `artifacts/html-reports/FR15/`; **Action:** created report bundles; **Details:** added nine real latest Playwright HTML report bundles across Chromium, Firefox, and Edge.
-  - **File:** `artifacts/manifests/FR06/`, `artifacts/manifests/FR10/`, and `artifacts/manifests/FR15/`; **Action:** created; **Details:** added nine report manifests with pending human review and unconfirmed defect status.
-  - **File:** `AI_Audit.md`; **Action:** appended; **Details:** recorded Artifact 4 and refreshed accuracy, conclusion, and disclosure sections.
+  - **File:** `tests/fr15/product-crud-admin.spec.ts`; **Action:** edited; **Details:** moved URLs, credentials, and fixture payload values to shared external configuration.
+  - **File:** `test-data/fr15/fixture-config.json`; **Action:** created; **Details:** added reusable FR15 fixture data.
+  - **File:** `tests/support/data-loader.ts`; **Action:** edited; **Details:** added validated JSON-object loading.
+  - **File:** `scripts/verify-reports.mjs`; **Action:** edited; **Details:** selected and rendered the final report for each feature-browser pair while preserving history.
+  - **File:** `manual/01-human-review-runbook-vi.md` through `manual/05-submission-checklist-vi.md`; **Action:** created; **Details:** prepared student-owned review, video, defect, and submission steps.
+  - **File:** `artifacts/html-reports/FR06/`, `FR10/`, and `FR15/`; **Action:** created report bundles; **Details:** added nine executed Playwright HTML reports across Chromium, Firefox, and Edge.
 
-- **Verification Evidence:** `npm run typecheck` passed. The skill validators reported FR06 12 scenarios/8 assertion types, FR10 12/6, and FR15 12/4. `npm run test:list` discovered 108 combinations. `npm run test:matrix` executed all nine feature-browser runs and produced 51 passes and 57 assertion failures with screenshots, video, and traces retained for failures. `npm run report:verify` rendered the latest nine reports and confirmed StudentID plus ISO timestamp metadata. A targeted `rg` scan returned `NO_PROHIBITED_MATCHES`; `git diff --check` returned no patch errors. Nine manifest-builder commands succeeded.
+- **Verification Evidence:** `npm run typecheck` passed. Scenario validators reported FR06 12 scenarios/8 assertion categories, FR10 12/6, and FR15 12/4. `npm run test:list` discovered 108 browser combinations. `npm run test:matrix` completed nine feature-browser invocations with 51 passes and 57 genuine assertion failures. `npm run report:verify` confirmed Student ID and ISO timestamp metadata in all nine reports. Targeted scans found no fixed waits or prohibited inline scenario mappings.
 - **Verdict:** VALID
-- **Reasoning:** The prompt requested completion of agent-owned prerequisites and two separate recording scripts. The current repository state and executed checks support those outcomes. Student-only human review, defect decisions, identity evidence, narration, YouTube upload, and signatures remain explicitly pending and were not fabricated.
-- **Student Fixes:** Complete and sign the human review, confirm or reject candidate defects, record the two separate videos, and provide the unlisted YouTube URLs.
+- **Reasoning:** The output completed the requested agent-owned preparation and kept student-only gates explicitly pending. The executed reports and repository state support the claims. This follows ISTQB's separation between test implementation/execution evidence and human evaluation of observed failures.
+- **Student Fixes:** The student completed and signed `manual/01-human-review-record-en.md`, accepted eight documented corrections, confirmed the nine candidate groups, recorded and uploaded both videos, and supplied their URLs. These actions replaced the initial `PENDING` human gates with genuine student evidence.
+
+### Artifact #2 - Verbatim Record
+
+- **User:** Nguyễn Hiền Tuấn Anh (23127280)
+- **Date and Time:** 2026-08-10 15:57:08 GMT+7
+- **Agent Used:** Codex (primary agent)
+- **Prompt:**
+
+````text
+Link video task 2: https://youtu.be/XXYWit38OCQ
+Link agenskill demo: https://youtu.be/J4cTY_ij4hk
+Em đã xác nhận canđiate defect luôn
+````
+
+- **AI Output:**
+
+````text
+Đăng nhập GitHub trong tab anh vừa mở, rồi nhắn **“đã đăng nhập”** để anh tạo issue `FR10-DT-017` kèm screenshot.
+
+Đã hoàn thành:
+
+1. Ghi hai video vào `README.md`.
+2. Lưu quyết định xác nhận 9 nhóm defect tại `reports/23127280_HW04_Confirmed_Defects.md`.
+3. Ánh xạ 8 nhóm với 14 GitHub Issues cũ, tránh tạo defect trùng.
+4. Commit: `d067989 docs(submission): record videos and confirmed defects`.
+5. Các runbook tiếng Việt và artifact quay video vẫn local, không bị commit.
+
+::git-commit{cwd="."}
+````
+
+- **File Modifications:**
+  - **File:** `README.md`; **Action:** replaced content; **Details:** converted the active README from HW02 to HW04, added the 36-case/9-run summary and both student-provided video URLs.
+  - **File:** `reports/23127280_HW04_Confirmed_Defects.md`; **Action:** created; **Details:** recorded the nine student-confirmed automation groups and mapped reproduced failures to existing issues.
+
+- **Verification Evidence:** Commit `d067989` contains exactly the README and confirmed-defect record changes. The two public YouTube URLs were supplied by the student. The repository's public issue list showed the existing FR06, FR10, and FR15 issue records. The available browser session was signed out, so no new issue was claimed at this stage.
+- **Verdict:** INCOMPLETE
+- **Reasoning:** The documentation and duplicate-avoidance mapping were correct, but the workstream still lacked the required GitHub Issue and screenshot for the newly identified FR10 authorization failure. A report is not complete until the observed defect is linked to attributable evidence.
+- **Student Fixes:** The student opened the HTML report instead of using the blank screenshot from the API-only page, captured `Expected: 403` and `Received: 200`, and manually published Issue #23 with the `bug` label.
+
+### Artifact #3 - Verbatim Record
+
+- **User:** Nguyễn Hiền Tuấn Anh (23127280)
+- **Date and Time:** 2026-08-10 16:09:41 GMT+7
+- **Agent Used:** Codex (primary agent)
+- **Prompt:**
+
+````text
+https://github.com/tnnhuaa/eshop-sut/issues/23
+
+Đã xong
+````
+
+- **AI Output:**
+
+````text
+Không cần sửa thêm Issue #23; nội dung và screenshot đều hợp lệ.
+
+Đã cập nhật:
+
+- `README.md`
+- `reports/23127280_HW04_Confirmed_Defects.md`
+- Tổng: **9 nhóm defect, ánh xạ tới 15 GitHub Issues**
+- Commit: `68f4cad docs(defects): link confirmed authorization issue`
+
+Next: giữ Issue #23 ở trạng thái `Open`.
+
+::git-commit{cwd="."}
+````
+
+- **File Modifications:**
+  - **File:** `README.md`; **Action:** edited; **Details:** linked Issue #23 and updated the GitHub Issue record count to 15.
+  - **File:** `reports/23127280_HW04_Confirmed_Defects.md`; **Action:** edited; **Details:** replaced the pending authorization issue with public Issue #23 and described its report screenshot.
+
+- **Verification Evidence:** The public page `https://github.com/tnnhuaa/eshop-sut/issues/23` showed the expected title, test case `FR10-DT-017`, Chromium/Firefox/Edge reproduction, expected HTTP 403, actual HTTP 200, Major severity, `bug` label, and an attached image. Commit `68f4cad` contains the two documentation updates.
+- **Verdict:** VALID
+- **Reasoning:** The public issue and repository diff directly support the AI's verification and mapping. The evidence correctly uses the HTML report error because an API-only Playwright request leaves the page screenshot blank.
+- **Student Fixes:** The student performed the external, attributable actions: creating Issue #23, applying the label, and attaching the screenshot. Codex did not create or fabricate those actions.
+
+### Artifact #4 - Verbatim Record
+
+- **User:** Nguyễn Hiền Tuấn Anh (23127280)
+- **Date and Time:** 2026-08-10 16:18:08 GMT+7
+- **Agent Used:** Codex (primary agent)
+- **Prompt:**
+
+````text
+Cập nhật các docs còn thiếu đi anh, cập nhật AI_audit chỉ lấy những prompt thật sự đáng giá để ghi vào, nhớ bổ sung student fix và resonable, không xuất PDF cho file nào hết em sẽ tự xuất
+````
+
+- **AI Output:**
+
+````text
+Không cần xuất PDF lúc này; toàn bộ tài liệu HW04 dạng Markdown/text đã hoàn tất.
+
+1. Đã tạo Main Report HW04, thay Bug Report và AI Critique HW02 bằng bản HW04.
+2. Đã làm mới traceability 36 test cases, report index, submission manifest và git commit log.
+3. AI Audit chỉ giữ 4 workstream đáng giá; mỗi artifact có prompt/output thật, verification evidence, Reasoning và Student Fixes.
+4. Kiểm tra hoàn tất: AI Critique nằm trong 200–300 từ, traceability có 36 dòng, không còn tài liệu active nào mang assignment ID `HW02-AI`, và không có PDF mới.
+5. Các runbook tiếng Việt, report quay video ngày 10/08 và skill-demo helper vẫn local, không được commit.
+
+Next: em đọc Main Report và AI Audit, sau đó tự xuất ba PDF theo submission manifest.
+
+::git-commit{cwd="."}
+````
+
+- **File Modifications:**
+  - **File:** `reports/23127280_HW04_Main_Report.md`; **Action:** created; **Details:** documented scope, AI-first workflow, data-driven design, human corrections, report matrix, results, defect classification, traceability, videos, Agent Skill, and responsibility.
+  - **File:** `reports/23127280_Bug_Report.md`; **Action:** replaced content; **Details:** replaced stale HW02 content with the nine-group HW04 automation defect report and 15 Issue links.
+  - **File:** `reports/23127280_AI_Critique.md`; **Action:** replaced content; **Details:** added the required HW04 200–300 word critique and student responsibility statement.
+  - **File:** `supporting/requirement-traceability-matrix.csv`; **Action:** replaced content; **Details:** added one row for each of 36 test cases with spec, JSON data, browsers, result, defect group, Issue, and report paths.
+  - **File:** `reports/README.md`; **Action:** replaced content; **Details:** created the active HW04 report index.
+  - **File:** `reports/23127280_HW04_Submission_Manifest.md`; **Action:** created; **Details:** listed required content, manual PDF exports, and exclusion rules.
+  - **File:** `AI_Audit.md` and `reports/23127280_AI_Audit_Report.md`; **Action:** replaced content; **Details:** retained four valuable evidence-backed workstreams and added explicit Reasoning and Student Fixes.
+  - **File:** `reports/git_commit_log.txt`; **Action:** replaced content; **Details:** refreshed the active HW04 branch history.
+
+- **Verification Evidence:** Markdown headings and assignment IDs were scanned; the critique word count was checked against the 200–300 requirement; the traceability CSV was validated for 36 unique rows and three browsers per row; test/report metrics were cross-checked as 36 unique cases, 108 browser executions, 51 passes, 57 failures, and nine reports; Git diff checks found no patch errors; no PDF was created.
+- **Verdict:** VALID
+- **Reasoning:** The requested active deliverables were created from committed scripts, external test data, executed report paths, signed review, and public Issue evidence. The work intentionally excludes PDF generation and avoids presenting HW02 reference material as HW04 execution evidence.
+- **Student Fixes:** The student explicitly chose to export PDFs manually and must visually review the exported Main Report, AI Critique, and AI Audit. No correction to the generated Markdown has been requested at this point.
 
 <!-- ARTIFACT_DETAILS_END -->
 
@@ -245,22 +234,21 @@ Việc tiếp theo của em: mở `manual/01-human-review-runbook-vi.md` và th�
 | Metric | Count | Percentage |
 | :---- | :---- | :---- |
 | **Total AI-generated artifacts audited** | 4 | 100% |
-| **VALID (correct, accepted as-is)** | 4 | 100% |
+| **VALID (correct, accepted as-is)** | 3 | 75% |
 | **INVALID (wrong; rejected)** | 0 | 0% |
-| **INCOMPLETE (acceptable after edits)** | 0 | 0% |
+| **INCOMPLETE (acceptable after edits)** | 1 | 25% |
 
 ## **5. Conclusion - When should AI be used (or not)?**
 
-* AI was effective for adapting a previously used audit workflow to the individual HW04 assignment while preserving privacy and evidence-based evaluation rules.
-* AI also helped perform a scoped repository cleanup while preserving reusable HW02 evidence in a clearly separated reference archive.
-* AI helped reuse the official FIT/HCMUS audit presentation without weakening exact-transcript, verification-evidence, privacy, and anti-fabrication requirements.
-* AI effectively refactored the three Playwright suites toward stricter external-data compliance, executed the full browser matrix, verified rendered report metadata, and prepared repeatable human-review and video workflows.
-* AI output must be validated against repository state and executable checks; the recorded work used skill validation, resolved-path safety checks, final path checks, and Git status evidence.
-* AI must not replace the student's review decisions, signatures, Vietnamese narration, identity evidence, GitHub defect confirmation, or submission actions.
+* AI was effective at converting reviewed test cases into reusable data-driven Playwright structure, running a repeatable browser matrix, and organizing traceable reports.
+* AI initially optimized for convenient code and missed strict external-data boundaries, DOM ambiguity, asynchronous persistence, and shared-database isolation. These limitations required student-reviewed fixes.
+* AI was useful for grouping failures and drafting defect evidence, but it could not decide the final oracle or perform attributable student actions. The student confirmed the groups, captured the meaningful report screenshot, and created Issue #23.
+* AI should be used to generate, refactor, check, and summarize artifacts when its output can be verified through source files, executed tests, reports, and public records.
+* AI should not replace human review, signatures, identity evidence, narration, video publication, defect confirmation, PDF visual inspection, or Moodle submission.
 
 ## **6. Mandatory Disclosure (paste verbatim)**
 
-I used Codex to adapt and validate local Agent Skills, maintain the HW04 AI Audit Report, reuse the official FIT/HCMUS audit template, reorganize the repository, refactor data-driven Playwright tests for FR06, FR10, and FR15, execute and verify the three-browser report matrix, generate evidence manifests, and prepare human-review, defect-confirmation, submission, and video runbooks. I reviewed the assignment scope, privacy, verification, and anti-fabrication constraints; the changes were checked through repository state, TypeScript, scenario validators, Playwright discovery and execution, rendered report verification, pattern scans, manifest generation, and Git diff checks. Codex did not fabricate student review decisions, signatures, identity evidence, Vietnamese narration, YouTube uploads, GitHub Issues, or Moodle submission.
+I used Codex to generate and refine data-driven Playwright automation for FR06, FR10, and FR15; configure Chromium, Firefox, and Edge execution; verify HTML report metadata; create a reusable EShop Playwright Agent Skill; classify automation failures; and prepare the HW04 Markdown and text documentation. I reviewed and accepted the documented script corrections, confirmed the nine product-defect groups, recorded both narrated videos with authorship evidence, captured the meaningful Playwright report screenshot, and manually created GitHub Issue #23. The executed HTML reports, traces, screenshots, identity evidence, narration, YouTube publication, student signature, GitHub actions, PDF export, and Moodle submission were not fabricated by AI.
 
 ## **Signature**
 
@@ -270,7 +258,7 @@ I used Codex to adapt and validate local Agent Skills, maintain the HW04 AI Audi
 | **Class / Cohort:** | 23KTPM2 |
 | **Course:** | CSC13003 - Software Testing |
 | **Instructor:** | Truong Phuoc Loc; Ho Tuan Thanh; Lam Quang Vu |
-| **Date:** | 2026-08-06 |
+| **Date:** | 2026-08-10 |
 | **Signature:** | Anh |
 
 ## **References**
