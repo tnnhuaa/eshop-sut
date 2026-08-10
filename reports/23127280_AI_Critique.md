@@ -1,44 +1,31 @@
-# AI Critique Reports
+# AI Critique Report
 
-**Student Information**
+## Student Information
 
 | Field | Value |
-| :---- | :---- |
-| **Student name (printed):** | Nguyen Hien Tuan Anh |
-| **Student ID:** | 23127280 |
-| **Class / Cohort:** | 23KTPM2 |
-| **Assignment ID (e.g., HW#00, HW#02):** | HW02-AI |
-| **Assignment date:** | 2026-07-04 |
-| **AI tool(s) used:** | Codex; ChatGPT/Codex-style AI assistant |
-| **AI tool(s) used:** | [x] Yes  [ ] No |
+| --- | --- |
+| Student name | Nguyen Hien Tuan Anh |
+| Student ID | 23127280 |
+| Class / Cohort | 23KTPM2 |
+| Assignment | HW04-AI |
+| Assignment date | 2026-08-10 |
+| AI tool | Codex |
 
----
 ## AI Critique
 
-AI was useful in HW02 mainly as a structured testing assistant. It helped me break down the selected EShop requirements into requirement items, input variables, equivalence partitions, boundary values, state-transition rules, and traceability artifacts. It was especially helpful for FR-10 because it suggested thinking in terms of current state, target state, actor, permission, ownership, and final states. It also helped keep the documentation consistent across test cases, execution summaries, bug reports, AI gap analysis, and the reusable Agent Skill examples.
+AI was effective at converting the reviewed HW02 cases into a consistent Playwright structure, but its first output was not submission-ready. It generated useful scenario loops and assertions, yet left several values and control mappings inside the specifications. That conflicted with the strict HW04 requirement that test data be stored in separate JSON or CSV files. It also proposed selectors based on visible product text without knowing that the same text appeared in several page regions. In FR10, it initially checked backend state too early after a UI transition. In FR15, it underestimated how reloading the admin page resets the selected tab and how tests sharing one mutable database can contaminate one another.
 
-However, the AI output was not reliable enough to submit without review. In FR-06, it could generate useful quantity tests, but it could not know that the Add to Cart button required two clicks until manual execution. It also tended to group similar invalid inputs together, while execution showed that empty input, whitespace, decimal quantity, and scientific notation should be reported separately. In FR-10, the initial output needed stronger state-transition modeling and cross-role consistency checks between User UI and Admin UI. In FR-15, AI-generated cases included some API-style invalid domains that were not reachable from the Admin UI, so they had to be marked as blocked under the teacher-confirmed frontend testing scope. In FR-05-M, AI missed the search-state reset case where returning Home from the header still kept old search results.
+These problems occurred because the model optimized for readable code from incomplete prompts and static source context. It could infer likely workflows, but it did not automatically understand the rendered DOM, asynchronous persistence, shared test-state risks, or the lecturer's strict interpretation of external test data. Human review therefore moved all remaining scenario and fixture values to JSON, scoped locators to exact rows and regions, replaced timing assumptions with `expect.poll`, reopened the Products tab after reload, and limited cleanup to scenario-owned records with one worker.
 
-The main reason for these misses is that AI works from the written requirement and prompt context, not from real product behavior. It can infer likely risks, but it cannot replace actual execution, screenshots, issue confirmation, or teacher clarification. My biggest lesson is that AI is strongest before and after testing: it helps design coverage and organize evidence, but the tester must still decide the oracle, execute the SUT, split defects carefully, and reject or correct AI assumptions.
+The most important lesson is that AI should generate a reviewable hypothesis, not the final oracle. Executed reports, requirements, and student judgment must decide whether a failure belongs to automation, data, environment, or the product. This was especially important for `FR10-DT-017`: the AI exposed a possible authorization defect, but I reviewed the expected HTTP status, confirmed the three-browser evidence, captured the report error, and created GitHub Issue #23 myself.
 
-## **Signature**
+## Signature
 
-| Student name (printed): | NGUYEN HIEN TUAN ANH |
-| :---- | :---- |
-| **Student ID:** | 23127280 |
-| **Class / Cohort:** | 23KTPM2 |
-| **Course:** | CSC13003 - Software Testing |
-| **Instructor:** | Truong Phuoc Loc; Ho Tuan Thanh; Lam Quang Vu |
-| **Date:** | 2026-07-04 |
-| **Signature:** | Anh |
-
-## **References**
-
-* Kharbach, M. (2026). AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0.
-* ISTQB Foundation Level Syllabus (latest version).
-* ISTQB Foundation Level (CTFL v4.0.1) study guide.
-* Hardman, P. (2025). A Post-AI Learning Taxonomy.
-* Fuster Rabella, M. (2025). OECD Education Working Paper No. 338.
-* Perkins, M., Roe, J., & Furze, L. (2025). AI Assessment Scale.
-* Anthropic (2025). Building reliable AI test agents - engineering blog.
-* DeepEval & Promptfoo documentation - testing frameworks for LLM systems.
+| Field | Value |
+| --- | --- |
+| Student name | NGUYEN HIEN TUAN ANH |
+| Student ID | 23127280 |
+| Class / Cohort | 23KTPM2 |
+| Course | CSC13003 - Software Testing |
+| Date | 2026-08-10 |
+| Signature | Anh |
