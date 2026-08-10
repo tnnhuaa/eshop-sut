@@ -4,7 +4,12 @@ Branch: `hw4-tanh`
 Range: `5ee8acd^..HEAD`
 Generated: 2026-08-10 (GMT+7)
 
-commit 133e88311430995e81f272a591bad8c3dab54dab (HEAD -> hw4-tanh)
+commit 229e76a4e5a99e83d7344b9d53c78d9143145f20 (HEAD -> hw4-tanh)
+Author: tnnhuaa <nguyenhientuananh@gmail.com>
+Date: 2026-08-10T16:24:21+07:00
+Subject: docs(audit): curate final HW04 evidence record
+
+commit 133e88311430995e81f272a591bad8c3dab54dab
 Author: tnnhuaa <nguyenhientuananh@gmail.com>
 Date: 2026-08-10T16:23:46+07:00
 Subject: docs(reports): complete HW04 submission set
