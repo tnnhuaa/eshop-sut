@@ -33,6 +33,7 @@
 | Passed executions | 51 |
 | Failed executions | 57 |
 | Student-confirmed defect groups | 9 |
+| GitHub Issue records linked | 15 |
 
 Each of the three features has 12 externally data-driven scenarios and runs on Chromium, Firefox, and Edge. Every browser run produces a Playwright HTML report that displays `Run by: 23127280` and an ISO timestamp.
 
@@ -45,7 +46,7 @@ Each of the three features has 12 externally data-driven scenarios and runs on C
 
 ## Defect Status
 
-The student reviewed and confirmed all nine candidate defect groups produced by the final automation matrix. Eight groups reproduce defects already documented in existing GitHub Issues from HW02. The remaining authorization defect, `FR10-DT-017`, is pending publication as a new GitHub Issue. The detailed mapping is recorded in [`reports/23127280_HW04_Confirmed_Defects.md`](reports/23127280_HW04_Confirmed_Defects.md).
+The student reviewed and confirmed all nine candidate defect groups produced by the final automation matrix. Eight groups reproduce defects already documented in existing GitHub Issues from HW02. The newly identified authorization defect, `FR10-DT-017`, is documented in GitHub Issue [#23](https://github.com/tnnhuaa/eshop-sut/issues/23) with the Playwright failure screenshot. The detailed mapping is recorded in [`reports/23127280_HW04_Confirmed_Defects.md`](reports/23127280_HW04_Confirmed_Defects.md).
 
 ## Key Submission Artifacts
 
@@ -54,4 +55,3 @@ The student reviewed and confirmed all nine candidate defect groups produced by 
 - Final HTML reports: `artifacts/html-reports/<feature>/<browser>/<timestamp>/index.html`
 - Student human review: `manual/01-human-review-record-en.md`
 - Reusable skill: `.agents/skills/eshop-playwright-automation/`
-
