@@ -1,0 +1,2 @@
+Use $eshop-jmeter-performance to validate and safely demo Scenario B Coupon Purchase with the supplied demo CSV and 2 VUs. Verify the nine-request flow, external data, correlations, business assertions, unique result paths, and stop conditions. Stop before execution and ask for my explicit approval. If approved, run for 30–60 seconds only, label all output RUN_UNVERIFIED, and never invent missing JTL, resource, or human evidence.
+
