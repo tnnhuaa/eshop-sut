@@ -1,0 +1,11 @@
+email,password,search_keyword,product_id,quantity,coupon_code,shipping_address
+perf_001@example.test,Perf1234!,iPhone,1,1,PERF50000,"1 Performance Street, HCMC"
+perf_002@example.test,Perf1234!,iPhone,1,1,PERF50000,"2 Performance Street, HCMC"
+perf_003@example.test,Perf1234!,iPhone,1,1,PERF50000,"3 Performance Street, HCMC"
+perf_004@example.test,Perf1234!,iPhone,1,1,PERF50000,"4 Performance Street, HCMC"
+perf_005@example.test,Perf1234!,iPhone,1,1,PERF50000,"5 Performance Street, HCMC"
+perf_006@example.test,Perf1234!,iPhone,1,1,PERF50000,"6 Performance Street, HCMC"
+perf_007@example.test,Perf1234!,iPhone,1,1,PERF50000,"7 Performance Street, HCMC"
+perf_008@example.test,Perf1234!,iPhone,1,1,PERF50000,"8 Performance Street, HCMC"
+perf_009@example.test,Perf1234!,iPhone,1,1,PERF50000,"9 Performance Street, HCMC"
+perf_010@example.test,Perf1234!,iPhone,1,1,PERF50000,"10 Performance Street, HCMC"

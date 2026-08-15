@@ -1,0 +1,15 @@
+{
+  "reset_id": "23127280-preflight-20260816-002",
+  "created_at_gmt7": "2026-08-16T00:06:01.299+07:00",
+  "database": "backend/database.sqlite",
+  "users": 10,
+  "coupon": {
+    "code": "PERF50000",
+    "type": "fixed",
+    "discount_value": 50000,
+    "max_uses_per_user": 1000
+  },
+  "csv": "performance/data/users.csv",
+  "csv_sha256": "36ed5c640d83ac450179788e8f4f65f1453b0aec78573c67f63b86c3f707302e",
+  "evidence_state": "RUN_UNVERIFIED"
+}
