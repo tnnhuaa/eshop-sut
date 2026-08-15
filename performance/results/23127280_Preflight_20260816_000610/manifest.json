@@ -1,0 +1,22 @@
+{
+  "files": [
+    {
+      "path": "performance/results/23127280_Preflight_20260816_000610/23127280_Preflight_20260816_000610.jtl",
+      "size": 1530,
+      "sha256": "bcd9f9c1b8be104dee747443f7c7ffe094502110015134aad0dfa9640538053c",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/reports/23127280_Preflight_20260816_000610/index.html",
+      "size": 9699,
+      "sha256": "383d79f17ced65fd5ef45369a292324ef9a63a871981b4dbcbfb0ed46797ebf5",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/data/last-reset.json",
+      "size": 447,
+      "sha256": "eaa9d694fbb5e7a23a411c008c3eeba7a9afd863320e16cac8e8d5e8549d49ae",
+      "state": "RUN_UNVERIFIED"
+    }
+  ]
+}
