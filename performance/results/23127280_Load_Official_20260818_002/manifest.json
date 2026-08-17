@@ -1,0 +1,93 @@
+{
+  "evidence_state": "HUMAN_VERIFIED",
+  "run_id": "23127280_Load_Official_20260818_002",
+  "student_decision": "ACCEPTED",
+  "student_verdict": "PASS latency/error SLO; CPU and RAM remained below the stop thresholds",
+  "video_state": "STUDENT_CAPTURED_PENDING_URL",
+  "files": [
+    {
+      "path": "performance/results/23127280_Load_Official_20260818_002/23127280_Load_Official_20260818_002.jtl",
+      "size": 1088473,
+      "sha256": "bf5dc50a76fcb3e5d9a3f2c2a7887436d340c2838a1fa0524d10c8c665b8d619",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Load_Official_20260818_002/summary.md",
+      "size": 577,
+      "sha256": "319d5d412c86dc34f2f8736e243f1708c26c1df78e9f89bf62786dcb2253cde3",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Load_Official_20260818_002/run-record.md",
+      "size": 1394,
+      "sha256": "590ffed940425e6104d0cdfe04291e92cdd93d79ef7f128eafdc51ee105d6a93",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Load_Official_20260818_002/reset-snapshot.json",
+      "size": 450,
+      "sha256": "265d8cbdeed78d9a1f3b61bf499a2e6d973b27878d7c54c2b08a66ab1184e3ac",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Load_Official_20260818_002/plan-snapshot.jmx",
+      "size": 37430,
+      "sha256": "9ab21bff7f840f9e9c1de96a36f1fa2c282edd0425d28d8a4f8511a096ad2372",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Load_Official_20260818_002/runner-snapshot.ps1",
+      "size": 5238,
+      "sha256": "1985c82e2e9d0d9355f894288580694d4a2b2828c755eb4e9e4c47f68e191eb6",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "performance/reports/23127280_Load_Official_20260818_002/index.html",
+      "size": 9698,
+      "sha256": "80ae18a45b387b845236dc8e384771297ab00ea51ea74c278e698948326b98d6",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "performance/reports/23127280_Load_Official_20260818_002/statistics.json",
+      "size": 4970,
+      "sha256": "c2de576d3e3ef56451ff82e1910e9f086d1fde316be16a91d77d05bd375c947d",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "docs/evidence/load/23127280_Load_Official_20260818_002/README.md",
+      "size": 1001,
+      "sha256": "17e64670302a50d526042142232e7eac788bec9f77e2f974223ab144fe643494",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "docs/evidence/load/23127280_Load_Official_20260818_002/resource-counters.csv",
+      "size": 27407,
+      "sha256": "4f225440b942be58ae461a95bebcd82deb2b58a651495c59524fc1c5ab668269",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "docs/evidence/load/23127280_Load_Official_20260818_002/summary-report.png",
+      "size": 138716,
+      "sha256": "26165dd022a7999ce9d19a593c5be635ca0c5276d503a68e46cd41607ce3885b",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "docs/evidence/load/23127280_Load_Official_20260818_002/html-dashboard.png",
+      "size": 258163,
+      "sha256": "037b748bfa197cdf453f3888441644dc2c620b50b87ca9aef27eb9d4ca58baa0",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "docs/evidence/load/23127280_Load_Official_20260818_002/terminal-final.png",
+      "size": 52089,
+      "sha256": "42712ed6a1e6b49806658be3e4a0fffb0f9a23a1c6d8e4f480eb64c39a39965b",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "docs/evidence/load/23127280_Load_Official_20260818_002/task-manager-during-run.png",
+      "size": 718958,
+      "sha256": "1d694182f81ca9a26a7fee303b7bbc8a642431479a852e269dd4beb329221b8c",
+      "state": "HUMAN_VERIFIED"
+    }
+  ]
+}
