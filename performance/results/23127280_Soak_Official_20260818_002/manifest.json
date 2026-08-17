@@ -4,7 +4,8 @@
   "student_decision": "ACCEPTED",
   "student_verdict": "PASS latency/error/stability with transient CPU warning",
   "preliminary_verdict": "PASS latency/error/stability with transient CPU warning",
-  "video_state": "STUDENT_CAPTURED_PENDING_URL",
+  "video_state": "STUDENT_URL_PROVIDED",
+  "video_url": "https://youtu.be/J4wv5SuVCFA",
   "files": [
     {
       "path": "performance/results/23127280_Soak_Official_20260818_002/23127280_Soak_Official_20260818_002.jtl",
@@ -20,8 +21,8 @@
     },
     {
       "path": "performance/results/23127280_Soak_Official_20260818_002/run-record.md",
-      "size": 1907,
-      "sha256": "ad734bfd7dd7b45344f40cae50bbd97d70414c703df185461e5d75f9bead3c29",
+      "size": 2025,
+      "sha256": "ba58b622da557537c464ecd7c4a45099901fd5bdbb463d0813bcec0fceaaafdb",
       "state": "HUMAN_VERIFIED"
     },
     {

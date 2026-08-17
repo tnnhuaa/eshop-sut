@@ -12,7 +12,7 @@ Scenario B covers authentication through Login, reads through Product Search and
 
 ## 2. AI-assisted design and human review
 
-The plans were structurally validated, exercised through fresh preflights, and executed in CLI mode. The student inspected GUI listeners only after each run and supplied screenshots and narrated recordings. Final video URLs and the signed human-review form remain pending.
+The plans were structurally validated, exercised through fresh preflights, and executed in CLI mode. The student inspected GUI listeners only after each run and supplied screenshots and narrated recordings. On 2026-08-18, the student supplied the five YouTube URLs listed in Section 9. Final playback checks in an incognito window remain pending.
 
 ## 3. Environment and workload
 
@@ -43,7 +43,7 @@ Task 3 is `HUMAN_VERIFIED` in `docs/continuous-performance-pipeline.md`. On 2026
 
 ## 7. Agent Skill
 
-The repository includes `.agents/skills/eshop-jmeter-performance/`. It enforces external test data, preflight gates, CLI execution, immutable run IDs, explicit approval before dangerous profiles, and evidence states. Scenario B remains the default endpoint contract. The validator also accepts `--contract` with a JSON definition of sampler order, CSV variables, correlations, listeners, filename rules, and forbidden literals, allowing the guarded workflow to be reused for another endpoint group without editing validator code. The bundled Scenario B contract passes all four current JMX plans; the custom-contract path was also exercised. The demonstration script is in `manual/11-agent-skill-demo-script-vi.md`; the video URL remains pending.
+The repository includes `.agents/skills/eshop-jmeter-performance/`. It enforces external test data, preflight gates, CLI execution, immutable run IDs, explicit approval before dangerous profiles, and evidence states. Scenario B remains the default endpoint contract. The validator also accepts `--contract` with a JSON definition of sampler order, CSV variables, correlations, listeners, filename rules, and forbidden literals, allowing the guarded workflow to be reused for another endpoint group without editing validator code. The bundled Scenario B contract passes all four current JMX plans; the custom-contract path was also exercised. The demonstration script is in `manual/11-agent-skill-demo-script-vi.md`, and the student supplied the [Agent Skill demonstration video](https://youtu.be/WmdhTCnFddQ).
 
 ## 8. Issues and limitations
 
@@ -51,4 +51,14 @@ No issue is claimed yet. Source inspection identified candidate risks in account
 
 ## 9. Evidence and submission
 
-Load `_002`, Stress, corrected Spike, Soak `_002`, the official-run hardware, Task 2 analysis, and Task 3 proposal are human-verified. Load `_002` replaces the contaminated `_001` evidence documented in `docs/load-001-integrity-incident.md`. Soak `_001` was removed from the submission tree and preserved under `rejected-evidence`. Video URLs, YouTube upload, and Moodle submission remain pending. The current TA rubric totals 100 points.
+Load `_002`, Stress, corrected Spike, Soak `_002`, the official-run hardware, Task 2 analysis, and Task 3 proposal are human-verified. Load `_002` replaces the contaminated `_001` evidence documented in `docs/load-001-integrity-incident.md`. Soak `_001` was removed from the submission tree and preserved under `rejected-evidence`.
+
+| Video evidence | Accepted run or artifact | Student-provided URL |
+|---|---|---|
+| Load | `23127280_Load_Official_20260818_002` | [YouTube](https://youtu.be/SvDzvYLyzRQ) |
+| Stress | `23127280_Stress_Official_20260818_001` | [YouTube](https://youtu.be/aem-M4Twah4) |
+| Spike | `23127280_Spike_Official_20260818_002` | [YouTube](https://youtu.be/q1NMVWSS-98) |
+| Soak | `23127280_Soak_Official_20260818_002` | [YouTube](https://youtu.be/J4wv5SuVCFA) |
+| Agent Skill | `.agents/skills/eshop-jmeter-performance/` | [YouTube](https://youtu.be/WmdhTCnFddQ) |
+
+The URLs were supplied by the student on 2026-08-18. Their incognito accessibility, privacy setting, audio, and duration still require the final manual playback gate. Moodle submission also remains pending. The current TA rubric totals 100 points.

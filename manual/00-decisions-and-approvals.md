@@ -20,16 +20,17 @@
 - [x] Official Load `_001` was accepted by the student based on the original 7108-sample run: pass latency/error SLOs with transient CPU warning; video URL pending.
 - [x] Load `_001` raw-integrity incident resolved by manually recording Load `_002`; `_001` remains excluded because its current JTL contains 45 later preflight samples.
 - [x] Student requested and manually recorded Load rerun `23127280_Load_Official_20260818_002` with a fresh reset and preflight.
-- [x] Official Load `_002` accepted as `HUMAN_VERIFIED`: 7120 samples, p95 9 ms, 0.00% errors, peak CPU 89.54%, and peak physical RAM 79.17%; video URL pending.
+- [x] Official Load `_002` accepted as `HUMAN_VERIFIED`: 7120 samples, p95 9 ms, 0.00% errors, peak CPU 89.54%, and peak physical RAM 79.17%; student-provided video: https://youtu.be/SvDzvYLyzRQ.
 - [x] `APPROVE STRESS 23127280_Stress_Official_20260818_001` recorded before Stress with OBS recording and backend ready.
-- [x] Official Stress accepted as `HUMAN_VERIFIED`: no application breaking point through 30 VU, with CPU/RAM warning; video URL pending.
+- [x] Official Stress accepted as `HUMAN_VERIFIED`: no application breaking point through 30 VU, with CPU/RAM warning; student-provided video: https://youtu.be/aem-M4Twah4.
 - [x] `APPROVE SPIKE 23127280_Spike_Official_20260818_001` recorded before Spike with OBS recording and backend ready.
 - [x] Official Spike `_001` rejected: test-data coupon limit was exhausted and caused a `NOT_FOUND` failure cascade. Raw JTL, HTML, resource, backend-log, image, and video evidence are retained; rerun required.
 - [x] `APPROVE SPIKE 23127280_Spike_Official_20260818_002` recorded for the corrected rerun with OBS recording and backend ready.
-- [x] Corrected Spike `_002` accepted as `HUMAN_VERIFIED`: pass latency, error, and recovery with a transient CPU warning; video URL pending.
+- [x] Corrected Spike `_002` accepted as `HUMAN_VERIFIED`: pass latency, error, and recovery with a transient CPU warning; student-provided video: https://youtu.be/q1NMVWSS-98.
 - [x] Soak `_001` rejected by the student because the agent started it instead of leaving the manually recorded execution to the student. Its raw evidence is preserved outside the submission tree under `rejected-evidence/soak/23127280_Soak_Official_20260818_001/`.
 - [x] `APPROVE SOAK 23127280_Soak_Official_20260818_002` recorded for the student-operated 10-minute rerun, with OBS recording and backend ready.
-- [x] Official Soak `_002` accepted as `HUMAN_VERIFIED`: pass latency, error, and stability with a transient CPU warning; video URL pending.
+- [x] Official Soak `_002` accepted as `HUMAN_VERIFIED`: pass latency, error, and stability with a transient CPU warning; student-provided video: https://youtu.be/J4wv5SuVCFA.
+- [x] Agent Skill demonstration recorded by the student; student-provided video: https://youtu.be/WmdhTCnFddQ.
 - [ ] Final report, AI critique, video links, and submission package human-reviewed.
 
 Only the student may mark evidence `HUMAN_VERIFIED`.

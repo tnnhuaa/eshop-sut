@@ -1,7 +1,8 @@
 {
   "evidence_state": "HUMAN_VERIFIED",
   "student_decision": "ACCEPT OFFICIAL STRESS 23127280_Stress_Official_20260818_001; VERDICT NO APPLICATION BREAKING POINT THROUGH 30VU WITH CPU/RAM WARNING",
-  "video_state": "PENDING_URL",
+  "video_state": "STUDENT_URL_PROVIDED",
+  "video_url": "https://youtu.be/aem-M4Twah4",
   "files": [
     {
       "path": "performance/stress/23127280_Stress_20260815.jmx",
@@ -35,8 +36,8 @@
     },
     {
       "path": "performance/results/23127280_Stress_Official_20260818_001/run-record.md",
-      "size": 3382,
-      "sha256": "c25f79f5d8d0a84c918b845ad68f30d69ea32aeeeec37809987e25723669a206",
+      "size": 3354,
+      "sha256": "c2a86e04a82aa1254f579830f5179bf316737d60af3a7ea817957c519e7e6b7d",
       "state": "RUN_UNVERIFIED"
     },
     {

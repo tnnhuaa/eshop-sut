@@ -1,7 +1,8 @@
 {
   "evidence_state": "HUMAN_VERIFIED",
   "student_decision": "ACCEPT OFFICIAL SPIKE 23127280_Spike_Official_20260818_002; VERDICT PASS LATENCY ERROR AND RECOVERY WITH TRANSIENT CPU WARNING",
-  "video_state": "PENDING_URL",
+  "video_state": "STUDENT_URL_PROVIDED",
+  "video_url": "https://youtu.be/q1NMVWSS-98",
   "files": [
     {
       "path": "performance/results/23127280_Spike_Official_20260818_002/plan-snapshot.jmx",
@@ -35,8 +36,8 @@
     },
     {
       "path": "performance/results/23127280_Spike_Official_20260818_002/run-record.md",
-      "size": 3687,
-      "sha256": "cd9febf9e05b8ba823fee7a2005c98ab2f530fceb4e99544c57c50be1e9b8f0d",
+      "size": 3658,
+      "sha256": "32a24bf217ba14ed4047fe1dc99fc4d591e8eec4082d2eafa290e11f900d5a9e",
       "state": "RUN_UNVERIFIED"
     },
     {

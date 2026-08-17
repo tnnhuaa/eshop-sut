@@ -10,8 +10,20 @@ Login → Search → Product Detail → Add/Get Cart → Apply Fixed Coupon → 
 
 ## Safe start
 
-1. Record the Agent Skill demo using `manual/11-agent-skill-demo-script-vi.md`, then add all video URLs.
+1. Open all five video links below in an incognito window and verify privacy, audio, and duration.
 2. Refresh the AI Audit Report and Git commit log.
 3. Run the final submission checks before packaging.
+
+## Demo videos
+
+| Evidence | Accepted run or artifact | Video |
+|---|---|---|
+| Load | `23127280_Load_Official_20260818_002` | [YouTube](https://youtu.be/SvDzvYLyzRQ) |
+| Stress | `23127280_Stress_Official_20260818_001` | [YouTube](https://youtu.be/aem-M4Twah4) |
+| Spike | `23127280_Spike_Official_20260818_002` | [YouTube](https://youtu.be/q1NMVWSS-98) |
+| Soak | `23127280_Soak_Official_20260818_002` | [YouTube](https://youtu.be/J4wv5SuVCFA) |
+| Agent Skill | `.agents/skills/eshop-jmeter-performance/` | [YouTube](https://youtu.be/WmdhTCnFddQ) |
+
+The student supplied these URLs on 2026-08-18. Final incognito playback checks remain manual.
 
 Never overwrite raw evidence or mark AI-generated material as human-verified.

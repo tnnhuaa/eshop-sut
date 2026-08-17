@@ -34,7 +34,7 @@
 - HTML Statistics evidence: `docs/evidence/spike/23127280_Spike_Official_20260818_002/html-statistics.png`
 - In-run CLI and Task Manager evidence: `docs/evidence/spike/23127280_Spike_Official_20260818_002/task-manager-during-run.png`
 - View Results Tree evidence: `docs/evidence/spike/23127280_Spike_Official_20260818_002/view-results-tree.png`
-- Video status: `PENDING_URL`; the student reports that the corrected clip was recorded and will provide its URL later.
+- Video: captured by the student; URL supplied on 2026-08-18: https://youtu.be/q1NMVWSS-98
 - Interpretation: the application handled the 2-to-20-VU spike without errors and returned to baseline-like throughput and latency. The result carries a transient CPU warning.
 - Student decision: `ACCEPT OFFICIAL SPIKE 23127280_Spike_Official_20260818_002; VERDICT PASS LATENCY ERROR AND RECOVERY WITH TRANSIENT CPU WARNING`
 - Student verdict: accepted as valid official Spike evidence with a transient CPU warning.

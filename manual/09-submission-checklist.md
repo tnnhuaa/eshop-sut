@@ -10,11 +10,11 @@
 
 ## Documentation
 
-- [ ] README and report list scenarios, endpoint groups, threshold, issues, and video link.
+- [x] README and report list scenarios, endpoint groups, threshold, issues, and video links.
 - [ ] AI analysis is checked against raw JTL and human review is signed.
 - [ ] AI Audit, AI critique, CI proposal, commit log, and manifest are current.
-- [ ] Rubric discrepancy (rows 90 versus Total 100) is noted without inventing a criterion.
-- [ ] Agent Skill passes validation and has a real demo video.
+- [x] The revised TA rubric is used; its current rows total 100 points.
+- [x] Agent Skill passes validation and has a student-provided demo video URL.
 
 ## Final manual gate
 
@@ -22,4 +22,3 @@
 - [ ] ZIP name is `23127280_HW05_AI_Performance_<grade>.zip`.
 - [ ] ZIP was extracted once and checked before upload.
 - [ ] Moodle upload and submission were completed by the student.
-

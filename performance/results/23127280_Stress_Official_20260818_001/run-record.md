@@ -31,7 +31,7 @@
 - HTML Statistics evidence: `docs/evidence/stress/23127280_Stress_Official_20260818_001/html-statistics.png`
 - In-run CLI and Task Manager evidence: `docs/evidence/stress/23127280_Stress_Official_20260818_001/task-manager-during-run.png`
 - Aggregate Report evidence: `docs/evidence/stress/23127280_Stress_Official_20260818_001/aggregate-report.png`
-- Video status: `PENDING_URL`; the student reports that the required clip was recorded and will provide its URL later.
+- Video: captured by the student; URL supplied on 2026-08-18: https://youtu.be/aem-M4Twah4
 - Interpretation: no application-level breaking point was observed through the highest tested stage of 30 VU. The result carries a transient CPU-saturation warning and incomplete post-run RAM-recovery observation.
 - Student decision: `ACCEPT OFFICIAL STRESS 23127280_Stress_Official_20260818_001; VERDICT NO APPLICATION BREAKING POINT THROUGH 30VU WITH CPU/RAM WARNING`
 - Student verdict: accepted as valid official Stress evidence with CPU/RAM warning.

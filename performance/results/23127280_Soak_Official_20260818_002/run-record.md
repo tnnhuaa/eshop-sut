@@ -11,7 +11,7 @@
 - JTL SHA-256: `88ec16b56070d04ec225dbcdcfbd1fde3a473bfa7c5aea630cfa917c51bcc7b0`
 - HTML report: `performance/reports/23127280_Soak_Official_20260818_002/index.html`
 - Resource evidence: `docs/evidence/soak/23127280_Soak_Official_20260818_002/resource-counters.csv`
-- Recording: captured by the student; upload URL pending
+- Recording: captured by the student; URL supplied on 2026-08-18: https://youtu.be/J4wv5SuVCFA
 - Raw result: `16759` samples; `25.411 samples/s` including ramp-up; p50 `2 ms`; p95 `9 ms`; p99 `11 ms`; max `120 ms`; errors `0.00%`
 - First steady five minutes: `7926` samples; `26.420 samples/s`; p95 `9 ms`; `0` errors
 - Last steady five minutes: `7919` samples; `26.397 samples/s`; p95 `8 ms`; `0` errors
