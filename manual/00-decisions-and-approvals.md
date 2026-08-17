@@ -18,7 +18,9 @@
 - [x] Calibration result `L = 10` accepted with raw evidence on 2026-08-17.
 - [x] Official Load approved as `APPROVE OFFICIAL LOAD 23127280_Load_Official_20260817_001` with OBS recording and backend ready.
 - [x] Official Load `_001` was accepted by the student based on the original 7108-sample run: pass latency/error SLOs with transient CPU warning; video URL pending.
-- [ ] Load `_001` raw-integrity incident unresolved: the current JTL contains 45 samples from five later preflights and no longer matches the accepted SHA-256 or HTML report. Recover the original JTL or manually record Load `_002` before submission.
+- [x] Load `_001` raw-integrity incident resolved by manually recording Load `_002`; `_001` remains excluded because its current JTL contains 45 later preflight samples.
+- [x] Student requested and manually recorded Load rerun `23127280_Load_Official_20260818_002` with a fresh reset and preflight.
+- [x] Official Load `_002` accepted as `HUMAN_VERIFIED`: 7120 samples, p95 9 ms, 0.00% errors, peak CPU 89.54%, and peak physical RAM 79.17%; video URL pending.
 - [x] `APPROVE STRESS 23127280_Stress_Official_20260818_001` recorded before Stress with OBS recording and backend ready.
 - [x] Official Stress accepted as `HUMAN_VERIFIED`: no application breaking point through 30 VU, with CPU/RAM warning; video URL pending.
 - [x] `APPROVE SPIKE 23127280_Spike_Official_20260818_001` recorded before Spike with OBS recording and backend ready.

@@ -2,7 +2,7 @@
 
 ## Status
 
-`RUN_UNVERIFIED` — do not submit the current raw JTL as the accepted Load `_001` evidence.
+`REPLACED` — do not submit the current raw JTL as the accepted Load `_001` evidence. The student recorded and verified `23127280_Load_Official_20260818_002` as the replacement on 2026-08-18.
 
 ## Evidence mismatch
 
@@ -15,11 +15,6 @@
 
 The 45 extra rows form five groups of nine samples at approximately 00:40, 01:09, 01:29, 01:47, and 02:07 on 2026-08-18. Those times align with later preflight executions, not the accepted Load interval, which ended around 00:16.
 
-## Required resolution
+## Resolution
 
-Use one of these evidence-safe options:
-
-1. Recover the byte-identical original JTL whose SHA-256 is recorded above.
-2. Seed clean data and manually record a new CLI Load run with a new ID such as `23127280_Load_Official_20260818_002`.
-
-Do not delete rows, filter the file, or regenerate a replacement under the `_001` identity. Raw evidence must remain immutable.
+The student seeded clean data and manually recorded a new CLI Load run as `23127280_Load_Official_20260818_002`. The replacement contains 7,120 successful samples, 0.00% errors, and a byte-preserved raw JTL. The `_001` file remains unchanged and excluded from submission.
