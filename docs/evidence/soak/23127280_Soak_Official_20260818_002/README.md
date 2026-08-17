@@ -1,6 +1,6 @@
 # Soak Evidence — 23127280_Soak_Official_20260818_002
 
-Evidence state: `RUN_UNVERIFIED`
+Evidence state: `HUMAN_VERIFIED`
 
 This folder contains student-captured evidence for the 7-VU, 10-minute sustained Soak run:
 
@@ -10,4 +10,4 @@ This folder contains student-captured evidence for the 7-VU, 10-minute sustained
 - `html-dashboard.png`: generated JMeter Dashboard showing 100% pass and the Statistics table.
 - `resource-counters.csv`: one-second CPU and physical-RAM readings collected during the session.
 
-The raw JTL recorded `16,759` successful samples and no failures. Stable throughput was `26.420 samples/s` in the first five sustained minutes and `26.397 samples/s` in the last five. The evidence remains unverified until the student accepts the run.
+The raw JTL recorded `16,759` successful samples and no failures. Stable throughput was `26.420 samples/s` in the first five sustained minutes and `26.397 samples/s` in the last five. On 2026-08-18, the student accepted the verdict: `PASS latency/error/stability with transient CPU warning`.

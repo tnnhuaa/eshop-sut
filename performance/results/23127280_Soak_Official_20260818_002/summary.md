@@ -1,6 +1,6 @@
 {
   "source": "performance/results/23127280_Soak_Official_20260818_002/23127280_Soak_Official_20260818_002.jtl",
-  "evidence_state": "RUN_UNVERIFIED",
+  "evidence_state": "HUMAN_VERIFIED",
   "samples": 16759,
   "successes": 16759,
   "errors": 0,

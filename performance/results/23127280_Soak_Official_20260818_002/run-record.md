@@ -1,6 +1,6 @@
 # Performance Run Record
 
-- Evidence state: `RUN_UNVERIFIED`
+- Evidence state: `HUMAN_VERIFIED`
 - Run ID: `23127280_Soak_Official_20260818_002`
 - Scenario: Scenario B coupon purchase — Soak/Endurance
 - Git commit at execution: `66fe5b775d7e1ae4b0ceae6f4d0f0dbf3da113bd`
@@ -20,5 +20,5 @@
 - Physical RAM: first `70.28%`; average `66.52%`; max `72.44%`; final `60.74%`
 - Stability assessment: the first and last steady windows differed by `0.023 samples/s` (`0.09%`), and p95 improved from `9 ms` to `8 ms`. No sustained latency, throughput, error-rate, or memory degradation was observed.
 - Preliminary verdict: `PASS latency/error/stability with transient CPU warning`
-- Student verdict: `PENDING`
-- Student name/date: `PENDING`
+- Student verdict: `PASS latency/error/stability with transient CPU warning`
+- Student name/date: `Nguyễn Hiền Tuấn Anh / 2026-08-18`

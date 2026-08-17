@@ -26,7 +26,7 @@ Hardware evidence: `INCOMPLETE`. Accepted calibrated stable concurrency: `L = 10
 | Stress | HUMAN_VERIFIED | 7607 raw JTL rows | 15.852 raw samples/s | 35 ms raw; endpoint max 15 ms | 0.00% | CPU max 99.87% (1 second consecutive); physical RAM max 78.67% | No application breaking point through 30 VU; CPU/RAM warning |
 | Spike `_001` | REJECTED | 38010 raw JTL rows | 145.761 raw samples/s | 25 ms raw | 21.0655% raw | CPU max 95.38%; physical RAM max 85.19% | Test-data coupon limit exhausted; `NOT_FOUND` cascade; rerun required |
 | Spike `_002` | HUMAN_VERIFIED | 36598 raw JTL rows | 140.984 raw samples/s | 58 ms raw; HTML total 18 ms | 0.00% | CPU max 97.44% (2 seconds consecutive); physical RAM max 78.85% | PASS latency, error, and recovery; transient CPU warning |
-| Soak `_002` | RUN_UNVERIFIED | 16759 | 25.411 including ramp; steady 26.420 first half / 26.397 last half | 9 ms raw; 8 ms in last half | 0.00% | CPU max 97.20% (1 second above 95%); physical RAM max 72.44%, final 60.74% | PASS latency/error/stability with transient CPU warning; student verdict pending |
+| Soak `_002` | HUMAN_VERIFIED | 16759 | 25.411 including ramp; steady 26.420 first half / 26.397 last half | 9 ms raw; 8 ms in last half | 0.00% | CPU max 97.20% (1 second above 95%); physical RAM max 72.44%, final 60.74% | PASS latency/error/stability with transient CPU warning |
 
 ## 5. AI analysis and misinterpretation hunt
 
@@ -46,4 +46,4 @@ No issue is claimed yet. Source inspection identified candidate risks in account
 
 ## 9. Evidence and submission
 
-Stress and corrected Spike are human-verified. Load `_001` was originally accepted, but its current raw JTL no longer matches the accepted report and is therefore `RUN_UNVERIFIED`; see `docs/load-001-integrity-incident.md`. Soak `_001` was removed from the submission tree and preserved under `rejected-evidence`; the manually recorded `_002` run has complete raw, HTML, image, and resource evidence but still needs the student's verdict. Video URLs, hardware evidence, human review, YouTube upload, and Moodle submission remain pending. The current TA rubric totals 100 points.
+Stress, corrected Spike, and Soak `_002` are human-verified. Load `_001` was originally accepted, but its current raw JTL no longer matches the accepted report and is therefore `RUN_UNVERIFIED`; see `docs/load-001-integrity-incident.md`. Soak `_001` was removed from the submission tree and preserved under `rejected-evidence`. Video URLs, hardware evidence, human review, YouTube upload, and Moodle submission remain pending. The current TA rubric totals 100 points.

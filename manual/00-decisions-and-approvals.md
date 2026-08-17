@@ -27,7 +27,7 @@
 - [x] Corrected Spike `_002` accepted as `HUMAN_VERIFIED`: pass latency, error, and recovery with a transient CPU warning; video URL pending.
 - [x] Soak `_001` rejected by the student because the agent started it instead of leaving the manually recorded execution to the student. Its raw evidence is preserved outside the submission tree under `rejected-evidence/soak/23127280_Soak_Official_20260818_001/`.
 - [x] `APPROVE SOAK 23127280_Soak_Official_20260818_002` recorded for the student-operated 10-minute rerun, with OBS recording and backend ready.
-- [ ] Official Soak `_002` student verdict pending.
+- [x] Official Soak `_002` accepted as `HUMAN_VERIFIED`: pass latency, error, and stability with a transient CPU warning; video URL pending.
 - [ ] Final report, AI critique, video links, and submission package human-reviewed.
 
 Only the student may mark evidence `HUMAN_VERIFIED`.
