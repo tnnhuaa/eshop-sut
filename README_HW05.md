@@ -2,6 +2,8 @@
 
 Current state: calibration accepted at `L = 10`; Load `_002`, Stress, corrected Spike, and Soak `_002` are `HUMAN_VERIFIED`. Load `_002` replaces the contaminated Load `_001` evidence.
 
+The accepted Soak run uses the committed seven-user fixture `performance/data/users-soak-official-20260818-002.csv`, matching `floor(0.7L)`.
+
 ## Scenario B
 
 Login → Search → Product Detail → Add/Get Cart → Apply Fixed Coupon → Checkout → Record Coupon Usage → My Orders.
