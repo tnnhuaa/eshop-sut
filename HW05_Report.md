@@ -16,7 +16,7 @@ The plans were structurally validated, exercised through fresh preflights, and e
 
 ## 3. Environment and workload
 
-Hardware evidence: `RUN_UNVERIFIED`. The captured machine is an Acer Nitro AN515-57 with an Intel Core i5-11400H, 24 GB RAM, and Windows 11. Accepted calibrated stable concurrency: `L = 10`. Provisional SLO is p95 below 2 seconds and error rate below 1%; it must be confirmed or changed using baseline evidence.
+Hardware evidence: `HUMAN_VERIFIED`. On 2026-08-18, the student confirmed that host `TUANANH` is the machine used for the official runs. It is an Acer Nitro AN515-57 with an Intel Core i5-11400H, 24 GB RAM, and Windows 11. Accepted calibrated stable concurrency: `L = 10`. Provisional SLO is p95 below 2 seconds and error rate below 1%; it must be confirmed or changed using baseline evidence.
 
 ## 4. Results
 
@@ -49,4 +49,4 @@ No issue is claimed yet. Source inspection identified candidate risks in account
 
 ## 9. Evidence and submission
 
-Load `_002`, Stress, corrected Spike, and Soak `_002` are human-verified. Load `_002` replaces the contaminated `_001` evidence documented in `docs/load-001-integrity-incident.md`. Soak `_001` was removed from the submission tree and preserved under `rejected-evidence`. Video URLs, hardware confirmation, human review, YouTube upload, and Moodle submission remain pending. The current TA rubric totals 100 points.
+Load `_002`, Stress, corrected Spike, Soak `_002`, and the official-run hardware are human-verified. Load `_002` replaces the contaminated `_001` evidence documented in `docs/load-001-integrity-incident.md`. Soak `_001` was removed from the submission tree and preserved under `rejected-evidence`. Video URLs, Task 2 human review, YouTube upload, and Moodle submission remain pending. The current TA rubric totals 100 points.

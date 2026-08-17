@@ -1,6 +1,6 @@
 # Hardware Evidence
 
-Evidence state: `RUN_UNVERIFIED`
+Evidence state: `HUMAN_VERIFIED`
 
 The student-captured `SystemInformation.png` records the machine used for the local performance tests.
 
@@ -15,4 +15,4 @@ SHA-256: `9f38bc7d265f5c640102ee6a60094024c2abe18f581f8027cb528918de11f6ce`
 | Installed memory | 24,576 MB RAM |
 | DirectX | DirectX 12 |
 
-The student must confirm that this screenshot belongs to the same machine used for the official runs before changing the state to `HUMAN_VERIFIED`.
+On 2026-08-18, the student explicitly confirmed `HARDWARE VERIFIED TUANANH` and that this is the machine used for the official runs.
