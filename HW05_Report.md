@@ -31,7 +31,9 @@ Hardware evidence: `RUN_UNVERIFIED`. The captured machine is an Acer Nitro AN515
 
 ## 5. AI analysis and misinterpretation hunt
 
-Two automatic interpretations required correction. First, Stress reported 7607 raw JTL rows while the HTML endpoint total was 6883 because the raw file also contains 724 parent transaction-controller samples; these values describe different aggregation levels. Second, Load `_001` initially appeared complete from its HTML report, but SHA-256 and row-count verification later found 45 appended preflight rows. The accepted metrics are therefore not sufficient to authenticate the current raw file, so Load was downgraded to `RUN_UNVERIFIED` without editing the JTL.
+The evidence-backed Task 2 draft is in `docs/task2-ai-analysis.md`, and the mandatory 200–300-word draft is in `AI_Critique.md`. Both remain `RUN_UNVERIFIED` until the student completes `manual/06-human-review-form.md`.
+
+The main correction concerns aggregation scope. Stress has 7,607 raw rows, including 799 parent E2E rows and 6,808 endpoint rows; the HTML total is 6,883. The earlier AI explanation incorrectly treated the 724 order-history samples as parent rows. Spike shows the same risk: raw all-row p95 is 58 ms, while the HTML total reports 18 ms for a different population. Every reported metric must therefore identify its source and sample population.
 
 ## 6. Continuous performance pipeline
 
