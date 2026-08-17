@@ -43,7 +43,7 @@ Task 3 is `HUMAN_VERIFIED` in `docs/continuous-performance-pipeline.md`. On 2026
 
 ## 7. Agent Skill
 
-The repository includes `.agents/skills/eshop-jmeter-performance/`. It enforced Scenario B scope, external test data, preflight gates, CLI execution, immutable run IDs, explicit approval before dangerous profiles, and evidence states. The student recorded the performance runs; video URLs remain pending.
+The repository includes `.agents/skills/eshop-jmeter-performance/`. It enforces external test data, preflight gates, CLI execution, immutable run IDs, explicit approval before dangerous profiles, and evidence states. Scenario B remains the default endpoint contract. The validator also accepts `--contract` with a JSON definition of sampler order, CSV variables, correlations, listeners, filename rules, and forbidden literals, allowing the guarded workflow to be reused for another endpoint group without editing validator code. The bundled Scenario B contract passes all four current JMX plans; the custom-contract path was also exercised. The demonstration script is in `manual/11-agent-skill-demo-script-vi.md`; the video URL remains pending.
 
 ## 8. Issues and limitations
 

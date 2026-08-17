@@ -10,7 +10,7 @@ Login → Search → Product Detail → Add/Get Cart → Apply Fixed Coupon → 
 
 ## Safe start
 
-1. Add the four performance-video URLs and the Agent Skill demonstration link.
+1. Record the Agent Skill demo using `manual/11-agent-skill-demo-script-vi.md`, then add all video URLs.
 2. Refresh the AI Audit Report and Git commit log.
 3. Run the final submission checks before packaging.
 

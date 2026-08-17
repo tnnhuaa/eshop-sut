@@ -1,28 +1,47 @@
 #!/usr/bin/env python3
 import argparse
+import json
 import re
 import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-REQUIRED_SAMPLERS = [
-    ("01", "login"),
-    ("02", "search"),
-    ("03", "product"),
-    ("04", "cart"),
-    ("05", "cart"),
-    ("06", "coupon"),
-    ("07", "checkout"),
-    ("08", "coupon"),
-    ("09", "orders"),
-]
-REQUIRED_VARIABLES = ["email", "password", "search_keyword", "product_id", "quantity", "coupon_code", "shipping_address"]
+SKILL_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_CONTRACT = SKILL_ROOT / "references" / "scenario-b-contract.json"
 
 
-def validate(path):
+def load_contract(path):
+    contract_path = path or DEFAULT_CONTRACT
+    try:
+        contract = json.loads(contract_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ValueError(f"cannot read endpoint contract {contract_path}: {exc}") from exc
+
+    required = {
+        "name",
+        "filename_pattern",
+        "samplers",
+        "csv_variables",
+        "correlations",
+        "listener_by_scenario",
+    }
+    missing = required.difference(contract)
+    if missing:
+        raise ValueError(f"endpoint contract missing keys: {', '.join(sorted(missing))}")
+    try:
+        re.compile(contract["filename_pattern"])
+    except (TypeError, re.error) as exc:
+        raise ValueError(f"invalid filename_pattern: {exc}") from exc
+    for sampler in contract["samplers"]:
+        if not isinstance(sampler, dict) or not {"number", "keyword"}.issubset(sampler):
+            raise ValueError("each sampler needs number and keyword")
+    return contract, contract_path
+
+
+def validate(path, contract):
     errors = []
-    if not re.fullmatch(r"23127280_(Load|Stress|Spike|Soak)_\d{8}\.jmx", path.name):
-        errors.append("filename does not follow 23127280_{ScenarioType}_{YYYYMMDD}.jmx")
+    if not re.fullmatch(contract["filename_pattern"], path.name):
+        errors.append(f"filename does not match contract pattern: {contract['filename_pattern']}")
     try:
         root = ET.parse(path).getroot()
     except (ET.ParseError, OSError) as exc:
@@ -30,29 +49,32 @@ def validate(path):
     roots = [root]
     serialized = ET.tostring(root, encoding="unicode")
     if "<HTTPSamplerProxy" not in serialized:
-        fragment = path.with_name("scenario_b_fragment.jmx")
-        if fragment.is_file():
+        fragment_name = contract.get("fragment_filename")
+        fragment = path.with_name(fragment_name) if fragment_name else None
+        if fragment and fragment.is_file():
             try:
                 fragment_root = ET.parse(fragment).getroot()
                 roots.append(fragment_root)
                 serialized += ET.tostring(fragment_root, encoding="unicode")
             except ET.ParseError as exc:
-                errors.append(f"included scenario fragment XML parse failed: {exc}")
+                errors.append(f"included endpoint fragment XML parse failed: {exc}")
         else:
-            errors.append("plan contains no HTTP samplers and no sibling scenario_b_fragment.jmx")
+            errors.append("plan contains no HTTP samplers and no configured sibling fragment")
     sampler_names = [
         element.attrib.get("testname", "").lower()
         for document_root in roots
         for element in document_root.iter("HTTPSamplerProxy")
     ]
-    for number, keyword in REQUIRED_SAMPLERS:
+    for sampler in contract["samplers"]:
+        number = str(sampler["number"])
+        keyword = str(sampler["keyword"]).lower()
         if not any(number in name and keyword in name for name in sampler_names):
-            pattern = rf'testname="[^"]*{number}[^"]*{keyword}[^"]*"'
+            pattern = rf'testname="[^"]*{re.escape(number)}[^"]*{re.escape(keyword)}[^"]*"'
             if not re.search(pattern, serialized, re.IGNORECASE):
-                errors.append(f"missing Scenario B sampler {number} ({keyword})")
+                errors.append(f"missing required sampler {number} ({keyword})")
     if any(document_root.find(".//IncludeController") is not None for document_root in roots):
         errors.append("IncludeController is not allowed; embed the workflow and use ModuleController")
-    for variable in REQUIRED_VARIABLES:
+    for variable in contract["csv_variables"]:
         if variable not in serialized:
             errors.append(f"missing CSV variable: {variable}")
     extracted = set()
@@ -61,7 +83,7 @@ def validate(path):
             for prop in processor.findall("stringProp"):
                 if prop.attrib.get("name") == "JSONPostProcessor.referenceNames" and prop.text:
                     extracted.update(item.strip() for item in prop.text.split(";") if item.strip())
-    for correlation in ["token", "user_id", "product_name", "product_price", "coupon_id", "discount_amount", "final_amount", "orderId"]:
+    for correlation in contract["correlations"]:
         if correlation not in extracted:
             errors.append(f"missing extracted correlation variable: {correlation}")
     csv_sets = [element for document_root in roots for element in document_root.iter("CSVDataSet")]
@@ -74,39 +96,46 @@ def validate(path):
     listeners = [element for document_root in roots for element in document_root.iter("ResultCollector")]
     if any(listener.attrib.get("enabled", "true") == "true" for listener in listeners):
         errors.append("GUI ResultCollector must be disabled for CLI execution")
-    expected_listener = None
-    if "_Load_" in path.name:
-        expected_listener = "SummaryReport"
-    elif "_Stress_" in path.name:
-        expected_listener = "StatVisualizer"
-    elif "_Spike_" in path.name:
-        expected_listener = "ViewResultsFullVisualizer"
-    if expected_listener and not any(listener.attrib.get("guiclass") == expected_listener for listener in listeners):
-        errors.append(f"missing assigned post-run listener: {expected_listener}")
+    for scenario, listener_class in contract["listener_by_scenario"].items():
+        if f"_{scenario}_" in path.name and not any(
+            listener.attrib.get("guiclass") == listener_class for listener in listeners
+        ):
+            errors.append(f"missing assigned post-run listener: {listener_class}")
     request_payloads = "".join(
         ET.tostring(sampler, encoding="unicode")
         for document_root in roots
         for sampler in document_root.iter("HTTPSamplerProxy")
     )
-    if "PERF50000" in request_payloads:
-        errors.append("coupon is hardcoded in an HTTP sampler instead of read from CSV")
+    for literal in contract.get("forbidden_literals", []):
+        if literal and literal in request_payloads:
+            errors.append(f"forbidden literal is hardcoded in an HTTP sampler: {literal}")
     return errors
 
 
 def main():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Validate a JMeter plan against an endpoint-group contract.")
     parser.add_argument("jmx", type=Path, nargs="+")
+    parser.add_argument(
+        "--contract",
+        type=Path,
+        help="JSON endpoint contract; defaults to the bundled Scenario B contract",
+    )
     args = parser.parse_args()
+    try:
+        contract, contract_path = load_contract(args.contract)
+    except ValueError as exc:
+        raise SystemExit(f"CONTRACT ERROR: {exc}") from exc
+
     failed = False
     for path in args.jmx:
-        errors = validate(path)
+        errors = validate(path, contract)
         if errors:
             failed = True
-            print(f"FAIL {path}")
+            print(f"FAIL {path} [{contract['name']}]")
             for error in errors:
                 print(f"  - {error}")
         else:
-            print(f"PASS {path}")
+            print(f"PASS {path} [{contract['name']}; {contract_path.as_posix()}]")
     sys.exit(1 if failed else 0)
 
 
