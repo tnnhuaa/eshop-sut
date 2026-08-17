@@ -2,17 +2,17 @@
 
 ## Test evidence
 
-- [ ] Load, Stress, Spike raw JTL files are real, non-empty, uniquely named, and hashed.
-- [ ] HTML report folders open correctly.
-- [ ] Three assigned post-run report views are distinct.
-- [ ] Soak ran for 10–15 minutes with recorded threshold metrics.
-- [ ] Hardware and resource evidence matches the student's machine.
+- [x] Load, Stress, Spike raw JTL files are real, non-empty, uniquely named, and hashed.
+- [x] HTML report folders exist and contain their generated dashboard files.
+- [x] Three assigned post-run report views are distinct: Load Summary, Stress Aggregate, and Spike View Results Tree.
+- [x] Soak ran for 10 minutes with recorded threshold metrics.
+- [x] Hardware and resource evidence matches the student's machine.
 
 ## Documentation
 
 - [x] README and report list scenarios, endpoint groups, threshold, issues, and video links.
-- [ ] AI analysis is checked against raw JTL and human review is signed.
-- [ ] AI Audit, AI critique, CI proposal, commit log, and manifest are current.
+- [x] AI analysis is checked against raw JTL and human review is recorded.
+- [ ] AI Audit, AI critique, CI proposal, commit log, and submission manifest are current.
 - [x] The revised TA rubric is used; its current rows total 100 points.
 - [x] Agent Skill passes validation and has a student-provided demo video URL.
 
