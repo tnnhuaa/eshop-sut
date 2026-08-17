@@ -1,0 +1,10 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1786993622450,45,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,680,235,1,1,http://localhost:3000/api/login,45,0,36
+1786993622576,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,1,1,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786993622582,4,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,1,1,http://localhost:3000/api/products/1,4,0,0
+1786993622802,5,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,402,1,1,http://localhost:3000/api/cart,5,0,0
+1786993622813,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,334,284,1,1,http://localhost:3000/api/cart,4,0,0
+1786993622828,6,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,243,1,1,http://localhost:3000/api/apply-coupon,6,0,0
+1786993622884,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-1,text,true,,315,414,1,1,http://localhost:3000/api/checkout,11,0,0
+1786993622921,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-1,text,true,,295,360,1,1,http://localhost:3000/api/coupon-usage,11,0,0
+1786993622938,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-1,text,true,,420,296,1,1,http://localhost:3000/api/orders/my-orders,4,0,0

@@ -1,0 +1,24 @@
+# Performance Run Record
+
+- Evidence state: `RUN_UNVERIFIED`
+- Run ID: `23127280_Soak_Official_20260818_002`
+- Scenario: Scenario B coupon purchase — Soak/Endurance
+- Git commit at execution: `66fe5b775d7e1ae4b0ceae6f4d0f0dbf3da113bd`
+- Reset ID: `23127280-soak-official-20260818-002`
+- Start/end GMT+7: `2026-08-18 02:07:11.001 +07:00` / `2026-08-18 02:18:10.521 +07:00`
+- Workload: `7 VU = floor(0.7 x L=10)`; `60 s` ramp-up; `10 min` sustained load; `250-750 ms` think time between requests
+- JTL: `performance/results/23127280_Soak_Official_20260818_002/23127280_Soak_Official_20260818_002.jtl`
+- JTL SHA-256: `88ec16b56070d04ec225dbcdcfbd1fde3a473bfa7c5aea630cfa917c51bcc7b0`
+- HTML report: `performance/reports/23127280_Soak_Official_20260818_002/index.html`
+- Resource evidence: `docs/evidence/soak/23127280_Soak_Official_20260818_002/resource-counters.csv`
+- Recording: captured by the student; upload URL pending
+- Raw result: `16759` samples; `25.411 samples/s` including ramp-up; p50 `2 ms`; p95 `9 ms`; p99 `11 ms`; max `120 ms`; errors `0.00%`
+- First steady five minutes: `7926` samples; `26.420 samples/s`; p95 `9 ms`; `0` errors
+- Last steady five minutes: `7919` samples; `26.397 samples/s`; p95 `8 ms`; `0` errors
+- Final 60 seconds: `1573` samples; `26.217 samples/s`; p95 `8 ms`; `0` errors
+- CPU: `689` one-second readings; first `69.64%`; average `21.09%`; max `97.20%`; final `13.51%`; longest continuous interval above `95%` was `1 second`
+- Physical RAM: first `70.28%`; average `66.52%`; max `72.44%`; final `60.74%`
+- Stability assessment: the first and last steady windows differed by `0.023 samples/s` (`0.09%`), and p95 improved from `9 ms` to `8 ms`. No sustained latency, throughput, error-rate, or memory degradation was observed.
+- Preliminary verdict: `PASS latency/error/stability with transient CPU warning`
+- Student verdict: `PENDING`
+- Student name/date: `PENDING`

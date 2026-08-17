@@ -1,0 +1,15 @@
+{
+  "reset_id": "23127280-soak-official-20260818-002",
+  "created_at_gmt7": "2026-08-18T02:06:58.168+07:00",
+  "database": "backend/database.sqlite",
+  "users": 7,
+  "coupon": {
+    "code": "PERF50000",
+    "type": "fixed",
+    "discount_value": 50000,
+    "max_uses_per_user": 1000
+  },
+  "csv": "performance/data/users-soak-official-20260818-002.csv",
+  "csv_sha256": "90fcdb310a0716c25cfa836593a2e304bb23fc4e55d727885f4ec25e4b17d508",
+  "evidence_state": "RUN_UNVERIFIED"
+}

@@ -1,0 +1,93 @@
+{
+  "evidence_state": "RUN_UNVERIFIED",
+  "run_id": "23127280_Soak_Official_20260818_002",
+  "student_decision": "PENDING",
+  "preliminary_verdict": "PASS latency/error/stability with transient CPU warning",
+  "video_state": "STUDENT_CAPTURED_PENDING_URL",
+  "files": [
+    {
+      "path": "performance/results/23127280_Soak_Official_20260818_002/23127280_Soak_Official_20260818_002.jtl",
+      "size": 2835484,
+      "sha256": "88ec16b56070d04ec225dbcdcfbd1fde3a473bfa7c5aea630cfa917c51bcc7b0",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Soak_Official_20260818_002/summary.md",
+      "size": 869,
+      "sha256": "1240dc942d2e71e6fb68b7a41db3fb14dd9d109f461c3b7d61fc3547acb0307f",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Soak_Official_20260818_002/run-record.md",
+      "size": 1907,
+      "sha256": "067a8ab71cd651e306ca32b44ef4462be6f0d9f3acb0bc9b22ebec69c916dbd1",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Soak_Official_20260818_002/reset-snapshot.json",
+      "size": 477,
+      "sha256": "c6b099c28faf835832b45c03161d5eeb7bab3d1610b0066c8477e16b20a7ba58",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Soak_Official_20260818_002/plan-snapshot.jmx",
+      "size": 38412,
+      "sha256": "741f5f853fe57d7fcc709c9c15ddbbcc28afea9df1911ee36bf46887aa3fd470",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Soak_Official_20260818_002/runner-snapshot.ps1",
+      "size": 6193,
+      "sha256": "ebe6e7df06c406b24cb64612d6613eca5eb9b9edf03dc52c2e5faeb992bffa09",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/reports/23127280_Soak_Official_20260818_002/index.html",
+      "size": 9698,
+      "sha256": "70b6c0774a378156fa177de43eec7ba4ca1d38b79a79e98f43e9182640a1ca10",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/reports/23127280_Soak_Official_20260818_002/statistics.json",
+      "size": 4977,
+      "sha256": "65af53d990eecf044c6f806a4cf124c41bb6bdb50b30f766ada52e6a5c250ee9",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/soak/23127280_Soak_Official_20260818_002/README.md",
+      "size": 922,
+      "sha256": "e427dc821acc810881dd99fa677e848f86005953978f3cee9fb8f07fb36fd25c",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/soak/23127280_Soak_Official_20260818_002/resource-counters.csv",
+      "size": 41899,
+      "sha256": "8548d7e302a0b7b0066e23fce7bc8d15be2b99a4f2b85e81372612ae4e705730",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/soak/23127280_Soak_Official_20260818_002/terminal-final.png",
+      "size": 52499,
+      "sha256": "a4d65a9ea129a01156c2abae753cf4d4738c07ef341ce3f8b43a8072217d8d04",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/soak/23127280_Soak_Official_20260818_002/task-manager-during-run.png",
+      "size": 594977,
+      "sha256": "70d47c0ebbfb1b4f2a914a318ca18848523d0fad9e4f80d7c0f59689fce32c67",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/soak/23127280_Soak_Official_20260818_002/jmeter-summary-report.png",
+      "size": 334691,
+      "sha256": "4114a6f476c354e43fcc2a93359dccb9aeac53baace8e0ac1a5676b78f95680e",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/soak/23127280_Soak_Official_20260818_002/html-dashboard.png",
+      "size": 193275,
+      "sha256": "c08c44b6bdeec6f4a119de017c9667ef706fd6e81a201285485faa0b74c7d721",
+      "state": "RUN_UNVERIFIED"
+    }
+  ]
+}
