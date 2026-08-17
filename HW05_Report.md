@@ -16,7 +16,7 @@ The plans were structurally validated, exercised through fresh preflights, and e
 
 ## 3. Environment and workload
 
-Hardware evidence: `INCOMPLETE`. Accepted calibrated stable concurrency: `L = 10`. Provisional SLO is p95 below 2 seconds and error rate below 1%; it must be confirmed or changed using baseline evidence.
+Hardware evidence: `RUN_UNVERIFIED`. The captured machine is an Acer Nitro AN515-57 with an Intel Core i5-11400H, 24 GB RAM, and Windows 11. Accepted calibrated stable concurrency: `L = 10`. Provisional SLO is p95 below 2 seconds and error rate below 1%; it must be confirmed or changed using baseline evidence.
 
 ## 4. Results
 
