@@ -1,0 +1,34 @@
+# Rejected Official Spike Run Record
+
+- Evidence state: `REJECTED`
+- Run ID: `23127280_Spike_Official_20260818_001`
+- Scenario: Spike — Scenario B Coupon Purchase
+- Student approval: `APPROVE SPIKE 23127280_Spike_Official_20260818_001`
+- Reset ID: `23127280-spike-official-20260818-001`
+- Git commit at run preparation: `66fe5b775d7e1ae4b0ceae6f4d0f0dbf3da113bd`
+- Accepted calibrated load: `L = 10`
+- Intended profile: 2 VU baseline for 60 seconds; ramp to 20 VU in 10 seconds; hold for 60 seconds; ramp down in 10 seconds; recover at 2 VU for 120 seconds
+- Think time: 250–750 ms between workflows
+- Preflight gate: passed 9/9 business requests before the measured run
+- Start GMT+7: `2026-08-18 01:09:39.741 +07:00`
+- End GMT+7: `2026-08-18 01:14:00.510 +07:00`
+- Raw JTL: 38010 rows; 30003 successful rows; 8007 failed rows; raw error rate 21.0655%
+- HTML Dashboard: 34010 adjusted samples; 6006 adjusted failures; error rate 17.66%
+- Failure composition: Apply Coupon returned 2002 HTTP 400 failures; Checkout produced 2002 failures after `final_amount` became `NOT_FOUND`; Order History produced 2001 failed assertions; the E2E controller recorded 2002 failures
+- Seed constraint: 20 users with `max_uses_per_user = 100`, allowing at most 2000 successful coupon usages. The JTL contains 1999 successful Coupon Usage samples before the failure cascade.
+- First failure GMT+7: `2026-08-18 01:11:34.657 +07:00`
+- Backend symptom: Checkout received invalid JSON containing `"total_amount":NOT_FOUND`, which `body-parser` rejected. This was downstream of failed coupon correlation, not evidence that the backend reached a performance breaking point.
+- Root-cause classification: test-data exhaustion plus missing dependency gating in the JMeter plan
+- CPU: first 70.86%; average 25.25%; maximum 95.38%; maximum consecutive duration above 95% was 1 second; last 14.13%
+- Physical RAM: first 82.22%; average 81.02%; maximum 85.19%; last 76.30%
+- Original plan snapshot: `performance/results/23127280_Spike_Official_20260818_001/plan-snapshot.jmx`
+- Original runner snapshot: `performance/results/23127280_Spike_Official_20260818_001/runner-snapshot.ps1`
+- Raw JTL: `performance/results/23127280_Spike_Official_20260818_001/23127280_Spike_Official_20260818_001.jtl`
+- HTML report: `performance/reports/23127280_Spike_Official_20260818_001/index.html`
+- Resource CSV: `docs/evidence/spike/23127280_Spike_Official_20260818_001/resource-counters.csv`
+- Evidence images: terminal final, CLI with Task Manager, View Results Tree, and HTML Statistics under `docs/evidence/spike/23127280_Spike_Official_20260818_001/`
+- Backend log: `docs/evidence/spike/23127280_Spike_Official_20260818_001/backend-invalid-json.log`
+- Video status: recorded but rejected as official Spike evidence; retain as human-review evidence. URL remains `PENDING_URL`.
+- Required correction: raise the isolated performance coupon limit, stop dependent requests after coupon failure, and exclude the successful configuration sampler from measured statistics
+- Student decision: `REJECT OFFICIAL SPIKE 23127280_Spike_Official_20260818_001; REASON TEST DATA COUPON LIMIT EXHAUSTED AND CAUSED NOT_FOUND CASCADE`
+- Student verdict: rejected as official performance evidence; a new run ID is required.

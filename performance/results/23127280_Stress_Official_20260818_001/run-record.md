@@ -1,0 +1,37 @@
+# Official Stress Run Record
+
+- Evidence state: `HUMAN_VERIFIED`
+- Run ID: `23127280_Stress_Official_20260818_001`
+- Scenario: Stress — Scenario B Coupon Purchase
+- Student approval: `APPROVE STRESS 23127280_Stress_Official_20260818_001`
+- Reset ID: `23127280-stress-official-20260818-001`
+- Git commit at run preparation: `66fe5b775d7e1ae4b0ceae6f4d0f0dbf3da113bd`
+- Accepted calibrated load: `L = 10`
+- Profile: serial stages at 10, 15, 20, and 30 VU; 60-second ramp and 120-second total duration per stage; think time 500–1500 ms
+- Preflight gate: `23127280_Preflight_20260818_004029`; 9/9 samples successful; 0 errors
+- Start GMT+7: `2026-08-18 00:40:40.555 +07:00`
+- End GMT+7: `2026-08-18 00:48:40.441 +07:00`
+- Raw JTL samples: 7607; 7607 successes; 0 errors; error rate 0.00%
+- Raw JTL composition: 6808 HTTP request samples and 799 `Scenario B - Coupon Purchase E2E` controller samples
+- Raw JTL throughput: 15.852 samples/second
+- Raw elapsed: p50 3 ms; p95 35 ms; p99 64 ms; maximum 8821 ms
+- HTTP endpoint p95 range in the HTML Statistics table: 4–15 ms; maximum endpoint p95 was 15 ms for Checkout
+- E2E controller: 799 samples; p95 3639 ms; maximum 8821 ms
+- Stage 1, 10 VU: 1026 raw samples; 8.054 samples/second; p95 38 ms; 0 errors
+- Stage 2, 15 VU: 1530 raw samples; 11.990 samples/second; p95 32 ms; 0 errors
+- Stage 3, 20 VU: 2030 raw samples; 15.849 samples/second; p95 41 ms; 0 errors
+- Stage 4, 30 VU: 3021 raw samples; 23.461 samples/second; p95 33 ms; 0 errors
+- HTML Dashboard total: 6883. This differs from the 7607 raw JTL rows because JMeter Dashboard applies controller discrimination to nested transaction samples. All labels, including request 09, remain present.
+- CPU: first 69.72%; average 31.71%; maximum 99.87%; 2 one-second readings above 95%, with a maximum consecutive duration of 1 second; the 60-second emergency-stop condition was not met
+- Physical RAM: first 67.72%; average 72.81%; maximum 78.67%; last 75.69%. The recording ended about 23 seconds after the test, so full memory recovery was not established.
+- Raw JTL: `performance/results/23127280_Stress_Official_20260818_001/23127280_Stress_Official_20260818_001.jtl`
+- HTML report: `performance/reports/23127280_Stress_Official_20260818_001/index.html`
+- Resource CSV: `docs/evidence/stress/23127280_Stress_Official_20260818_001/resource-counters.csv`
+- Terminal evidence: `docs/evidence/stress/23127280_Stress_Official_20260818_001/terminal-final.png`
+- HTML Statistics evidence: `docs/evidence/stress/23127280_Stress_Official_20260818_001/html-statistics.png`
+- In-run CLI and Task Manager evidence: `docs/evidence/stress/23127280_Stress_Official_20260818_001/task-manager-during-run.png`
+- Aggregate Report evidence: `docs/evidence/stress/23127280_Stress_Official_20260818_001/aggregate-report.png`
+- Video status: `PENDING_URL`; the student reports that the required clip was recorded and will provide its URL later.
+- Interpretation: no application-level breaking point was observed through the highest tested stage of 30 VU. The result carries a transient CPU-saturation warning and incomplete post-run RAM-recovery observation.
+- Student decision: `ACCEPT OFFICIAL STRESS 23127280_Stress_Official_20260818_001; VERDICT NO APPLICATION BREAKING POINT THROUGH 30VU WITH CPU/RAM WARNING`
+- Student verdict: accepted as valid official Stress evidence with CPU/RAM warning.

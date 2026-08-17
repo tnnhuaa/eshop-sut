@@ -1,0 +1,85 @@
+{
+  "evidence_state": "REJECTED",
+  "student_decision": "REJECT OFFICIAL SPIKE 23127280_Spike_Official_20260818_001; REASON TEST DATA COUPON LIMIT EXHAUSTED AND CAUSED NOT_FOUND CASCADE",
+  "video_state": "REJECTED_OFFICIAL_EVIDENCE_RETAINED_FOR_HUMAN_REVIEW",
+  "files": [
+    {
+      "path": "performance/results/23127280_Spike_Official_20260818_001/plan-snapshot.jmx",
+      "size": 39329,
+      "sha256": "88ab1b7ba4c69712f058e72ef12b2ddb080e03a4935b5cbca543d7e899324192",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Spike_Official_20260818_001/runner-snapshot.ps1",
+      "size": 5479,
+      "sha256": "af4b3d49189e09ca0c855119b631a6c7190fcf3b780aaf53fd08672b2fa0c55c",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Spike_Official_20260818_001/reset-snapshot.json",
+      "size": 451,
+      "sha256": "84bce07000ba2d6adc7a3fbd15d62a0ad0864d0ad95a977080b48e3364072464",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Spike_Official_20260818_001/23127280_Spike_Official_20260818_001.jtl",
+      "size": 6200056,
+      "sha256": "19f27d199cd3a1f78ac67a15fa9eae3624c4970cd258986cf6753eb20e9224c1",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Spike_Official_20260818_001/summary.md",
+      "size": 989,
+      "sha256": "26982591b6ceb3e1dcfabb18a3d661a0cd40c71b02837d99d097299a4ba1d752",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Spike_Official_20260818_001/run-record.md",
+      "size": 3265,
+      "sha256": "acdc765487fb404123b811a7f725bc24fa37537936282ee9927526e0dad1d02f",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/reports/23127280_Spike_Official_20260818_001/index.html",
+      "size": 9699,
+      "sha256": "5c321ac72df07e921e650e6a8e2f652b0934f894f6ecfe318d106f1f5edd3e4a",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/spike/23127280_Spike_Official_20260818_001/resource-counters.csv",
+      "size": 17818,
+      "sha256": "442506dd6e8775fc0dcb0d53f673cd5c682fcbded5991a133d09f4a66cf5efd5",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/spike/23127280_Spike_Official_20260818_001/terminal-final.png",
+      "size": 52228,
+      "sha256": "ab6c15f80c878b11acdb10e8677e3bc319c4ea561df51d2651e32de758c72009",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/spike/23127280_Spike_Official_20260818_001/task-manager-during-run.png",
+      "size": 728511,
+      "sha256": "566ee8c1aeed5c0e5bab5c67e9191ce3b65f62a7ca5c01fe6739621eca2962ff",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/spike/23127280_Spike_Official_20260818_001/view-results-tree.png",
+      "size": 381428,
+      "sha256": "b3de43a9e2041a53f473e54368b59222928a529ccb23d7ab631b949d8c03caeb",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/spike/23127280_Spike_Official_20260818_001/html-statistics.png",
+      "size": 350445,
+      "sha256": "b0a45759df3a51a286fb6bee7851af5128761a485b55e0679fac8995a1dc1894",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/spike/23127280_Spike_Official_20260818_001/backend-invalid-json.log",
+      "size": 21311,
+      "sha256": "81292b012c1b536d920c896e76d3ac4c72433e633f7ee642354e398382a71c8c",
+      "state": "RUN_UNVERIFIED"
+    }
+  ]
+}

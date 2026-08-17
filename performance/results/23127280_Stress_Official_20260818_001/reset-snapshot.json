@@ -1,0 +1,15 @@
+{
+  "reset_id": "23127280-stress-official-20260818-001",
+  "created_at_gmt7": "2026-08-18T00:40:29.108+07:00",
+  "database": "backend/database.sqlite",
+  "users": 30,
+  "coupon": {
+    "code": "PERF50000",
+    "type": "fixed",
+    "discount_value": 50000,
+    "max_uses_per_user": 100
+  },
+  "csv": "performance/data/users.csv",
+  "csv_sha256": "895f3732c4e71114f9d0ab2aa0f211197c3acfe53a822d2ea1bcd98f96d91c51",
+  "evidence_state": "RUN_UNVERIFIED"
+}

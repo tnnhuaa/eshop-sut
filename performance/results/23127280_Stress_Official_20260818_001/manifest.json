@@ -1,0 +1,79 @@
+{
+  "evidence_state": "HUMAN_VERIFIED",
+  "student_decision": "ACCEPT OFFICIAL STRESS 23127280_Stress_Official_20260818_001; VERDICT NO APPLICATION BREAKING POINT THROUGH 30VU WITH CPU/RAM WARNING",
+  "video_state": "PENDING_URL",
+  "files": [
+    {
+      "path": "performance/stress/23127280_Stress_20260815.jmx",
+      "size": 43080,
+      "sha256": "a79286556a513c7a59a813e35c35cee62d64e2bf03de146cfbb2f2e3a9947c3d",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/data/users.csv",
+      "size": 2560,
+      "sha256": "895f3732c4e71114f9d0ab2aa0f211197c3acfe53a822d2ea1bcd98f96d91c51",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Stress_Official_20260818_001/reset-snapshot.json",
+      "size": 452,
+      "sha256": "fbb9e166814d52883047fba489f82ee0be9b70070d59978dc31919c0cbcbf0a1",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Stress_Official_20260818_001/23127280_Stress_Official_20260818_001.jtl",
+      "size": 1066691,
+      "sha256": "f22f8a090fdda4fba7032c4325a229b189805aa815168ea20092196c03556c9f",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Stress_Official_20260818_001/summary.md",
+      "size": 922,
+      "sha256": "3693446314d8f9b4851e6a32b95a68226f5cd4e3ce81bd60c25119dd67515438",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Stress_Official_20260818_001/run-record.md",
+      "size": 3382,
+      "sha256": "c25f79f5d8d0a84c918b845ad68f30d69ea32aeeeec37809987e25723669a206",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/reports/23127280_Stress_Official_20260818_001/index.html",
+      "size": 9702,
+      "sha256": "4422a3d412ab44cebdcd33caebed11a727dab5f183fe95a7df03e4d8d6261d99",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/stress/23127280_Stress_Official_20260818_001/resource-counters.csv",
+      "size": 30445,
+      "sha256": "062f952753b8bb109727ce80386b2b4fc7c61d6e430b852fb8cb7c22c4675494",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/stress/23127280_Stress_Official_20260818_001/terminal-final.png",
+      "size": 52665,
+      "sha256": "3b58c3d26105665396e2cb3ba569797f031a7ae3169860d2cf9bc4c80c8d286d",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/stress/23127280_Stress_Official_20260818_001/html-statistics.png",
+      "size": 275500,
+      "sha256": "5ef0fcc67c734c19d04b6e8a39e896ac8d34a285bc1a1805d62ca8e28d10ab31",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/stress/23127280_Stress_Official_20260818_001/task-manager-during-run.png",
+      "size": 705641,
+      "sha256": "3b56828627f4b059a9dbfb7d55539c35abd042953bc67c0714a1e0a3fa83aefa",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/stress/23127280_Stress_Official_20260818_001/aggregate-report.png",
+      "size": 145798,
+      "sha256": "1491644ce5a4bf0658c220b63db1904480bbc527f0c63f3591d99b67d400dcd6",
+      "state": "RUN_UNVERIFIED"
+    }
+  ]
+}

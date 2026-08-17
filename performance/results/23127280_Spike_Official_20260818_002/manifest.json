@@ -1,0 +1,79 @@
+{
+  "evidence_state": "HUMAN_VERIFIED",
+  "student_decision": "ACCEPT OFFICIAL SPIKE 23127280_Spike_Official_20260818_002; VERDICT PASS LATENCY ERROR AND RECOVERY WITH TRANSIENT CPU WARNING",
+  "video_state": "PENDING_URL",
+  "files": [
+    {
+      "path": "performance/results/23127280_Spike_Official_20260818_002/plan-snapshot.jmx",
+      "size": 39682,
+      "sha256": "88c4c68ae2912565b6cd2df94ca33b7cd961f5f16b874730c9a025cbb7b0300f",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Spike_Official_20260818_002/runner-snapshot.ps1",
+      "size": 5472,
+      "sha256": "8d67b0bf3eb950bce46e64db649320ea4a2368a94b230beec99658ce0f774694",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Spike_Official_20260818_002/reset-snapshot.json",
+      "size": 452,
+      "sha256": "6c9cd7ddf159b7225a25f774b091aad74b874c19a81e8ea9c8e3f85e0561a6e1",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Spike_Official_20260818_002/23127280_Spike_Official_20260818_002.jtl",
+      "size": 5650800,
+      "sha256": "fe4a192b0d8197a6da780914da30f63b27601a7a9d6474d2254da23f47b00d95",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Spike_Official_20260818_002/summary.md",
+      "size": 922,
+      "sha256": "a52d40629612d1b30b597b5b064064785a7cddccc3a26d5a6f048b96273cec21",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Spike_Official_20260818_002/run-record.md",
+      "size": 3687,
+      "sha256": "cd9febf9e05b8ba823fee7a2005c98ab2f530fceb4e99544c57c50be1e9b8f0d",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/reports/23127280_Spike_Official_20260818_002/index.html",
+      "size": 9699,
+      "sha256": "ba2fb3924a07f1267cd07d0f825a9aa9b8a5dee4faad5ffd37e3e9e70699196f",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/spike/23127280_Spike_Official_20260818_002/resource-counters.csv",
+      "size": 17796,
+      "sha256": "9487a0699110075975ac235a49e054c15a1af71bd649da52441bca2238566344",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/spike/23127280_Spike_Official_20260818_002/terminal-final.png",
+      "size": 54076,
+      "sha256": "c43b4c50fe26acc37221f1e21aadbea07bb23d3941849b2a8acc58c72416eede",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/spike/23127280_Spike_Official_20260818_002/task-manager-during-run.png",
+      "size": 605485,
+      "sha256": "3ec20cc699a09ee19877f3fcb064e1f4d26ca69f3cae2280a28c8f7a30684725",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/spike/23127280_Spike_Official_20260818_002/view-results-tree.png",
+      "size": 201678,
+      "sha256": "ad45387a603f451006cd45546b48cf54d0fb17ea8ede0617b9a50108c70a13da",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/spike/23127280_Spike_Official_20260818_002/html-statistics.png",
+      "size": 278816,
+      "sha256": "79c215bdd1fc0103fd9fbb6517fadff71c5113b6e28622b3fb74f8dfff0738da",
+      "state": "RUN_UNVERIFIED"
+    }
+  ]
+}

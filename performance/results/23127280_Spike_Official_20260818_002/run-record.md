@@ -1,0 +1,40 @@
+# Corrected Official Spike Run Record
+
+- Evidence state: `HUMAN_VERIFIED`
+- Run ID: `23127280_Spike_Official_20260818_002`
+- Scenario: Spike — Scenario B Coupon Purchase
+- Student approval: `APPROVE SPIKE 23127280_Spike_Official_20260818_002`
+- Reset ID: `23127280-spike-official-20260818-002`
+- Git commit at run preparation: `66fe5b775d7e1ae4b0ceae6f4d0f0dbf3da113bd`
+- Accepted calibrated load: `L = 10`
+- Profile: 2 VU baseline for 60 seconds; ramp to 20 VU in 10 seconds; hold for 60 seconds; ramp down in 10 seconds; recover at 2 VU for 120 seconds
+- Think time: 250–750 ms between workflows
+- Corrective controls: coupon limit 1000 uses per user; dependent Checkout flow gated by successful coupon correlation; successful configuration sampler excluded from measured JTL
+- Preflight gate: `23127280_Preflight_20260818_012934`; 9/9 business requests successful; 0 errors
+- Start GMT+7: `2026-08-18 01:29:47.005 +07:00`
+- End GMT+7: `2026-08-18 01:34:06.594 +07:00`
+- Raw JTL: 36598 rows; 36598 successes; 0 errors; error rate 0.00%
+- Raw JTL throughput: 140.984 samples/second
+- Raw elapsed: p50 6 ms; p95 58 ms; p99 151 ms; maximum 444 ms
+- HTML Dashboard: 32939 adjusted samples; 0 errors; 126.96 transactions/second; total p95 18 ms
+- Baseline, first 60 seconds: 1931 HTTP samples; 32.183 HTTP requests/second; p95 10 ms; 0 errors
+- Ramp-up, 60–70 seconds: 1821 HTTP samples; 182.100 HTTP requests/second; p95 19 ms; 0 errors
+- Spike hold, 70–130 seconds: 17524 HTTP samples; 292.067 HTTP requests/second; p95 32 ms; 0 errors
+- Ramp-down, 130–140 seconds: 3191 HTTP samples; 319.100 HTTP requests/second; p95 15 ms; 0 errors
+- Recovery after the 15-second thread-group buffer, 155–260 seconds: 3500 HTTP samples; 33.333 HTTP requests/second; p95 7 ms; 0 errors
+- Recovery comparison: late recovery returned close to the baseline request rate and improved from baseline p95 10 ms to recovery p95 7 ms
+- CPU: first 74.01%; average 37.23%; maximum 97.44%; 5 one-second readings above 95%, with a maximum consecutive duration of 2 seconds; last 6.62%. The 60-second emergency-stop condition was not met.
+- Physical RAM: first 75.77%; average 76.37%; maximum 78.85%; last 71.82%
+- Original measured plan snapshot: `performance/results/23127280_Spike_Official_20260818_002/plan-snapshot.jmx`
+- Original runner snapshot: `performance/results/23127280_Spike_Official_20260818_002/runner-snapshot.ps1`
+- Raw JTL: `performance/results/23127280_Spike_Official_20260818_002/23127280_Spike_Official_20260818_002.jtl`
+- HTML report: `performance/reports/23127280_Spike_Official_20260818_002/index.html`
+- Resource CSV: `docs/evidence/spike/23127280_Spike_Official_20260818_002/resource-counters.csv`
+- Terminal evidence: `docs/evidence/spike/23127280_Spike_Official_20260818_002/terminal-final.png`
+- HTML Statistics evidence: `docs/evidence/spike/23127280_Spike_Official_20260818_002/html-statistics.png`
+- In-run CLI and Task Manager evidence: `docs/evidence/spike/23127280_Spike_Official_20260818_002/task-manager-during-run.png`
+- View Results Tree evidence: `docs/evidence/spike/23127280_Spike_Official_20260818_002/view-results-tree.png`
+- Video status: `PENDING_URL`; the student reports that the corrected clip was recorded and will provide its URL later.
+- Interpretation: the application handled the 2-to-20-VU spike without errors and returned to baseline-like throughput and latency. The result carries a transient CPU warning.
+- Student decision: `ACCEPT OFFICIAL SPIKE 23127280_Spike_Official_20260818_002; VERDICT PASS LATENCY ERROR AND RECOVERY WITH TRANSIENT CPU WARNING`
+- Student verdict: accepted as valid official Spike evidence with a transient CPU warning.

@@ -1,0 +1,15 @@
+{
+  "reset_id": "23127280-spike-official-20260818-001",
+  "created_at_gmt7": "2026-08-18T01:09:28.890+07:00",
+  "database": "backend/database.sqlite",
+  "users": 20,
+  "coupon": {
+    "code": "PERF50000",
+    "type": "fixed",
+    "discount_value": 50000,
+    "max_uses_per_user": 100
+  },
+  "csv": "performance/data/users.csv",
+  "csv_sha256": "be27388853fe05c08044bf76acf6e0fa288db3b3f85d0570d82f9feae12cc4be",
+  "evidence_state": "RUN_UNVERIFIED"
+}
