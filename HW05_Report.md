@@ -39,7 +39,7 @@ The student selected composite-index experiments and order-history pagination as
 
 ## 6. Continuous performance pipeline
 
-See `docs/continuous-performance-pipeline.md` for trigger rules, p95/error gates, runner-noise controls, retention, and safety trade-offs.
+Task 3 is drafted in `docs/continuous-performance-pipeline.md` with review state `RUN_UNVERIFIED`. The model watches performance-sensitive paths, runs a 1-VU preflight, selects PR/nightly/weekly/release tiers, and compares only compatible p95 populations. It combines the absolute p95/error SLO with a 20% plus 10 ms relative gate and one confirmation rerun. The proposal also covers runner noise, baseline drift, artifact retention, cost, false alarms, and the rule that Stress and Spike never target production. Student acceptance is pending in `manual/07-task3-review-form.md`.
 
 ## 7. Agent Skill
 
