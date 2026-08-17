@@ -19,7 +19,7 @@ $evidenceDir = Join-Path $repoRoot "docs\evidence\load\$RunId"
 $counterCsv = Join-Path $evidenceDir "resource-counters.csv"
 $monitorJob = $null
 
-if ($RunId -ne "23127280_Load_Official_20260817_001") {
+if ($RunId -ne "23127280_Load_Official_20260818_002") {
     throw "RunId does not match the student's approved official Load run"
 }
 if ($CalibratedL -ne 10) { throw "Official Load requires the accepted calibrated L=10" }
