@@ -39,7 +39,7 @@ The student selected composite-index experiments and order-history pagination as
 
 ## 6. Continuous performance pipeline
 
-Task 3 is drafted in `docs/continuous-performance-pipeline.md` with review state `RUN_UNVERIFIED`. The model watches performance-sensitive paths, runs a 1-VU preflight, selects PR/nightly/weekly/release tiers, and compares only compatible p95 populations. It combines the absolute p95/error SLO with a 20% plus 10 ms relative gate and one confirmation rerun. The proposal also covers runner noise, baseline drift, artifact retention, cost, false alarms, and the rule that Stress and Spike never target production. Student acceptance is pending in `manual/07-task3-review-form.md`.
+Task 3 is `HUMAN_VERIFIED` in `docs/continuous-performance-pipeline.md`. On 2026-08-18, the student accepted commit `3eef521`, including its path rules, PR/nightly/weekly/release tiers, p95 rule, and non-production restriction for Stress and Spike. The model watches performance-sensitive paths, runs a 1-VU preflight, and compares only compatible p95 populations. It combines the absolute p95/error SLO with a 20% plus 10 ms relative gate and one confirmation rerun. The proposal also covers runner noise, baseline drift, artifact retention, cost, and false alarms.
 
 ## 7. Agent Skill
 
@@ -51,4 +51,4 @@ No issue is claimed yet. Source inspection identified candidate risks in account
 
 ## 9. Evidence and submission
 
-Load `_002`, Stress, corrected Spike, Soak `_002`, the official-run hardware, and Task 2 analysis are human-verified. Load `_002` replaces the contaminated `_001` evidence documented in `docs/load-001-integrity-incident.md`. Soak `_001` was removed from the submission tree and preserved under `rejected-evidence`. Video URLs, YouTube upload, and Moodle submission remain pending. The current TA rubric totals 100 points.
+Load `_002`, Stress, corrected Spike, Soak `_002`, the official-run hardware, Task 2 analysis, and Task 3 proposal are human-verified. Load `_002` replaces the contaminated `_001` evidence documented in `docs/load-001-integrity-incident.md`. Soak `_001` was removed from the submission tree and preserved under `rejected-evidence`. Video URLs, YouTube upload, and Moodle submission remain pending. The current TA rubric totals 100 points.

@@ -1,21 +1,12 @@
 # Task 3 Student Review
 
 - Artifact: `docs/continuous-performance-pipeline.md`
-- Review state: `RUN_UNVERIFIED`
-- Commit watcher and skip rules: **PENDING STUDENT REVIEW**
-- Execution tiers: **PENDING STUDENT REVIEW**
-- p95 and error gates: **PENDING STUDENT REVIEW**
-- Cost and false-alarm trade-offs: **PENDING STUDENT REVIEW**
-- Stress/Spike non-production restriction: **PENDING STUDENT REVIEW**
-- Student corrections: **PENDING**
-- Student name/date: **PENDING**
-
-Suggested decision format:
-
-```text
-ACCEPT TASK3 <commit>;
-PATH RULES OK;
-TIERS OK;
-P95 RULE OK;
-STRESS SPIKE NONPROD ONLY
-```
+- Review state: `HUMAN_VERIFIED`
+- Accepted source commit: `3eef521`
+- Commit watcher and skip rules: Accepted.
+- Execution tiers: Accepted.
+- p95 and error gates: Accepted.
+- Cost and false-alarm trade-offs: Accepted as written in the proposal.
+- Stress/Spike non-production restriction: Accepted; Stress and Spike must run only in an isolated non-production environment.
+- Student corrections: None requested.
+- Student name/date: Nguyễn Hiền Tuấn Anh — 2026-08-18.

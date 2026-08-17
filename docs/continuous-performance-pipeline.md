@@ -1,6 +1,6 @@
 # Task 3 — Continuous Performance Testing Proposal
 
-Review state: `RUN_UNVERIFIED`. This is a design proposal, not an implemented CI workflow. The student must review and accept it before submission.
+Review state: `HUMAN_VERIFIED`. On 2026-08-18, the student accepted the proposal from commit `3eef521`, including its path rules, execution tiers, p95 rule, and non-production restriction for Stress and Spike.
 
 ## 1. Objective and evidence basis
 
@@ -110,12 +110,14 @@ Automated runs begin as `RUN_UNVERIFIED`. The pipeline may pass or fail a CI gat
 
 This model spends the least time on low-risk commits and reserves expensive tests for schedules or release decisions. It flags p95 changes only within a compatible measurement scope, protects the absolute latency and error SLOs, and keeps noisy or failed automation separate from human-verified evidence. The design satisfies Task 3 as a proposal; `.github/workflows` currently contains no implemented workflow.
 
-## Student review gate
+## Student decision
 
-Before changing this artifact to `HUMAN_VERIFIED`, the student must confirm:
+On 2026-08-18, Nguyễn Hiền Tuấn Anh accepted commit `3eef521` with the following decisions:
 
-1. the path-based run/skip decision;
-2. the PR, nightly, weekly, and release tiers;
-3. the p95 dual threshold and one-repeat rule;
-4. the cost and false-alarm trade-offs;
-5. that Stress and Spike never run against production.
+1. path-based run and skip rules accepted;
+2. PR, nightly, weekly, and release tiers accepted;
+3. p95 dual threshold and one-repeat rule accepted;
+4. cost and false-alarm trade-offs accepted as part of the proposal;
+5. Stress and Spike restricted to isolated non-production environments.
+
+Review result: `HUMAN_VERIFIED`.
