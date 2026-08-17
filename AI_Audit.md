@@ -37,7 +37,8 @@
 | (1) Prompt + Tool | (2) AI Output | (3) Verdict | (4) Reasoning (ISTQB) | (5) Student Fix |
 | :---- | :---- | :---- | :---- | :---- |
 | **Artifact #1 - Implement HW05 plan and initialize audit**<br>Tool: Codex primary agent; load_plan_agent; stress_plan_agent; spike_plan_agent<br>Time: 2026-08-15 23:58:31 GMT+7<br>Full prompt: see Artifact #1 verbatim record below. | Created a clean HW05 worktree, guarded Scenario B scaffolding, four static-valid JMX plans, reusable Agent Skill, automation scripts, manual runbooks, demo materials, report skeleton, and CI proposal. Paused for a Java runtime decision after reproducing Java 25/Groovy incompatibility.<br>Full output: see Artifact #1 verbatim record below. | INCOMPLETE | File state and validators support the created artifacts: all four JMX files passed the skill's static validator and the skill passed `quick_validate.py`. Stress plan loading exposed `Unsupported class file major version 69` for bundled Groovy on Java 25. No end-to-end preflight or official evidence exists, so completion cannot be claimed. This follows the assignment evidence boundary and Apache JMeter's recommendation to use a supported Java runtime. | Student must choose JDK 17 isolation or BeanShell/core rewrite, then inspect a real one-VU preflight before measured execution. |
-| **Artifact #2 - Select isolated JDK 17 and finish the preflight gate**<br>Tool: Codex primary agent; load_plan_agent; stress_plan_agent; spike_plan_agent<br>Time: 2026-08-16 00:23:18 GMT+7<br>Full prompt: see Artifact #2 verbatim record below. | Installed a portable Temurin JDK 17 for JMeter only, corrected the four Scenario B plans and validators, seeded deterministic data, recorded one rejected preflight and one machine-valid but human-unverified preflight, committed the work in scoped commits, and stopped before official performance execution.<br>Full output: see Artifact #2 verbatim record below. | INCOMPLETE | The accepted preflight candidate contains exactly nine samples in canonical Scenario B order; all response codes are 200 and all samples report success. Its raw JTL, HTML dashboard, hashes, and run record exist. However, this is still `RUN_UNVERIFIED`: the student has not inspected the evidence or accepted it, and no calibrated or official Load/Stress/Spike/Soak execution has occurred. | Student must inspect the named JTL and HTML dashboard, then explicitly send `HUMAN_VERIFY PREFLIGHT 23127280_Preflight_20260816_000610` or reject it with a reason. |
+| **Artifact #2 - Select isolated JDK 17 and finish the preflight gate**<br>Tool: Codex primary agent; load_plan_agent; stress_plan_agent; spike_plan_agent<br>Time: 2026-08-16 00:23:18 GMT+7<br>Full prompt: see Artifact #2 verbatim record below. | Installed a portable Temurin JDK 17 for JMeter only, corrected the four Scenario B plans and validators, seeded deterministic data, recorded one rejected preflight and one machine-valid candidate, committed the work in scoped commits, and stopped before official performance execution.<br>Full output: see Artifact #2 verbatim record below. | INVALID | The later student rejection showed that the JTL review instruction did not explicitly distinguish CSV results from JMX/XML plans or explain that the CSV has no response body. Opening the CSV with JMeter **File → Open** fails at `timeStamp`; the run is therefore `REJECTED`, not accepted evidence. | Use the corrected CSV-JTL review procedure and create a new preflight run ID. |
+| **Artifact #3 - Correct rejected CSV-JTL review**<br>Tool: Codex primary agent<br>Time: 2026-08-17 21:35:59 GMT+7<br>Full prompt: see Artifact #3 verbatim record below. | Diagnosed the CSV-versus-JMX parsing error, marked preflight `000610` rejected, and corrected the future review procedure without rerunning the SUT.<br>Full output: see Artifact #3 verbatim record below. | VALID | The raw file header is `timeStamp,elapsed,...`, proving CSV format; the recorded parser error is consistent with opening it as XML/JMX. Run record, manifest, README, and runbook were updated to `REJECTED` and checked. | None required before a new preflight; the student must perform the corrected review. |
 <!-- AUDIT_TABLE_ROWS_END -->
 
 ### Verbatim Artifact Records
@@ -148,7 +149,7 @@ Kết quả:
 - JMeter 5.6.3 dùng Temurin JDK 17 portable riêng; Java hệ thống không đổi.
 - Cả 4 JMX Load, Stress, Spike, Soak đều PASS validator; mỗi flow có đủ 9 request Scenario B, correlation/assertion và listener GUI bị tắt khi chạy CLI.
 - Preflight đầu `...000456` bị REJECT vì chạy 602 samples do cấu hình loop sai; evidence được giữ và ghi nhãn đúng.
-- Preflight sửa `...000610` có đúng 9 samples, 9/9 HTTP 200, 0 lỗi. Trạng thái vẫn là `RUN_UNVERIFIED` cho đến khi em kiểm tra.
+- Preflight sửa `...000610` có đúng 9 samples, 9/9 HTTP 200, 0 lỗi ở mức máy. Sau đó em `REJECT` vì hướng dẫn review CSV-JTL chưa đủ rõ; run được giữ là `REJECTED`.
 - Đã tạo 10 commit implementation tách theo scaffold, data, skill, automation, 4 test plans, preflight và tài liệu; audit nằm ở commit thứ 11; chưa push.
 
 Việc em làm ngay — khoảng 5–10 phút:
@@ -176,14 +177,66 @@ Sau khi em xác nhận, bước kế tiếp mới là calibration để chọn `
   - File: `scripts/preflight.ps1`; Action: corrected; Details: forces one finite Scenario B iteration.
   - File: `performance/results/23127280_Preflight_20260816_000456/*`; Action: created; Details: first real preflight retained and explicitly rejected.
   - File: `performance/reports/23127280_Preflight_20260816_000456/*`; Action: created; Details: HTML evidence for the rejected run.
-  - File: `performance/results/23127280_Preflight_20260816_000610/*`; Action: created; Details: raw JTL, manifest, and run record for the accepted machine candidate.
+  - File: `performance/results/23127280_Preflight_20260816_000610/*`; Action: created; Details: raw JTL, manifest, and run record for a machine candidate later rejected during human review.
   - File: `performance/reports/23127280_Preflight_20260816_000610/*`; Action: created; Details: HTML dashboard awaiting student review.
   - File: `AI_Audit.md`; Action: appended and refreshed; Details: exact option-A prompt/output, evidence state, agents, modifications, accuracy summary, and disclosure.
 
-- **Verification Evidence:** Temurin `17.0.20+8` and JMeter 5.6.3 were confirmed with a scoped runtime; all four final JMX files passed `validate_jmx.py`; Stress, Soak, and final Spike plans loaded successfully in JMeter with deliberate missing-input guards; the second real preflight produced exactly nine successful HTTP 200 samples; raw and report hashes were recorded. The current Python runtimes lacked PyYAML when `quick_validate.py` was re-run, so that validator could not be repeated in this turn; its earlier successful result remains recorded, and the YAML/skill files were not claimed revalidated by that unavailable dependency.
-- **Verdict:** INCOMPLETE
-- **Reasoning:** Runtime compatibility and the one-user workflow are machine-verified, but the assignment requires human inspection and real measured tests. No official workload, resource observation, video evidence, issue confirmation, upload, or submission is claimed.
-- **Student Fixes:** Inspect the exact preflight JTL/HTML and explicitly accept or reject it before calibration.
+- **Verification Evidence:** Temurin `17.0.20+8` and JMeter 5.6.3 were confirmed with a scoped runtime; all four final JMX files passed `validate_jmx.py`; Stress, Soak, and final Spike plans loaded successfully in JMeter with deliberate missing-input guards; the second real preflight produced exactly nine successful HTTP 200 samples. On 2026-08-17, the student rejected it after JMeter parsed the CSV JTL as XML/JMX. The current Python runtimes lacked PyYAML when `quick_validate.py` was re-run, so that validator could not be repeated in this turn.
+- **Verdict:** INVALID
+- **Reasoning:** The response did not explicitly prevent the student from using JMeter **File → Open** on the CSV JTL, and it implied a level of raw response inspection that this CSV did not retain. The resulting human rejection supersedes machine-only status.
+- **Student Fixes:** Follow Artifact #3's corrected review procedure and rerun preflight with a new run ID.
+
+### Artifact #3 - Verbatim Record
+
+- **User:** Nguyễn Hiền Tuấn Anh (23127280)
+- **Date and Time:** 2026-08-17 21:35:59 GMT+7
+- **Agent Used:** Codex (primary agent)
+- **Prompt:**
+
+````text
+REJECT PREFLIGHT 23127280_Preflight_20260816_000610: only whitespace content allowed before start tag and not t (position: START_DOCUMENT seen t... @1:2) khi mở file raw jtl bị vây
+````
+
+- **AI Output:**
+
+````text
+Đúng: raw JTL này là CSV, không phải XML/JMX. Header thật của file là `timeStamp,elapsed,...`; ký tự `t` trong lỗi chính là chữ đầu của `timeStamp`.
+
+`File → Open` trong JMeter chỉ mở Test Plan `.jmx` dạng XML, nên dùng nó cho `.jtl` sẽ báo lỗi parser này.
+
+Anh đã:
+
+- Đổi evidence `23127280_Preflight_20260816_000610` thành `REJECTED`; chưa chạy lại preflight hay official test.
+- Cập nhật run record và manifest, giữ nguyên raw JTL làm rejected evidence.
+- Sửa README và runbook: CSV JTL xem qua Summary Report's Browse field, VS Code hoặc Excel; không dùng File → Open.
+- Ghi rõ CSV hiện tại chỉ lưu outcome/metrics, không có response body để tự xem orderId.
+- Sửa script tóm tắt để đọc trạng thái từ run record thay vì luôn in `RUN_UNVERIFIED`.
+- Cập nhật AI Audit: Artifact #2 là INVALID vì hướng dẫn review chưa đủ rõ; Artifact #3 ghi correction này.
+
+Khi chạy preflight mới:
+
+1. Mở Load `.jmx` bằng File → Open.
+2. Enable Summary Report trong plan.
+3. Dùng Browse của Summary Report chọn `.jtl` CSV.
+4. Mở HTML report để check 9 labels và 0 failures.
+5. Nếu cần nhìn response/orderId, chỉ bật View Results Tree cho preflight GUI riêng; không bật nó khi official CLI run.
+
+Next: không cần mở lại file `000610`; khi em sẵn sàng, gửi `PREPARE PREFLIGHT RERUN`.
+````
+
+- **File Modifications:**
+  - File: `performance/results/23127280_Preflight_20260816_000610/run-record.md`; Action: edited; Details: state changed to `REJECTED`, reason and evidence limitation recorded.
+  - File: `performance/results/23127280_Preflight_20260816_000610/manifest.json`; Action: edited; Details: every evidence item marked `REJECTED`.
+  - File: `manual/00-decisions-and-approvals.md`; Action: edited; Details: rejected preflight and new-preflight requirement recorded.
+  - File: `manual/02-official-run-runbook.md`; Action: edited; Details: explicit CSV-JTL review procedure and response-body limitation added.
+  - File: `README_HW05.md`; Action: edited; Details: rejected-preflight status and corrected review reference added.
+  - File: `scripts/summarize-jtl.py`; Action: edited; Details: evidence state can be supplied or read from sibling `run-record.md`.
+  - File: `AI_Audit.md`; Action: appended and refreshed; Details: Artifact #2 reassessed and Artifact #3 added.
+
+- **Verification Evidence:** The first JTL line is `timeStamp,elapsed,label,...`; that is CSV. The rejection reason is consistent with JMeter parsing it as XML via File → Open. Updated evidence states and instructions were checked without executing the SUT.
+- **Verdict:** VALID
+- **Reasoning:** The correction matches the actual JTL format and preserves the student's rejection. No unsupported test-pass claim was made.
+- **Student Fixes:** Create and review a new preflight before calibration.
 
 <!-- ARTIFACT_DETAILS_END -->
 
@@ -191,14 +244,14 @@ Sau khi em xác nhận, bước kế tiếp mới là calibration để chọn `
 
 | Metric | Count | Percentage |
 | :---- | :---- | :---- |
-| **Total AI-generated artifacts audited** | 2 | 100% |
-| **VALID (correct, accepted as-is)** | 0 | 0% |
-| **INVALID (wrong; rejected)** | 0 | 0% |
-| **INCOMPLETE (acceptable after edits)** | 2 | 100% |
+| **Total AI-generated artifacts audited** | 3 | 100% |
+| **VALID (correct, accepted as-is)** | 1 | 33.33% |
+| **INVALID (wrong; rejected)** | 1 | 33.33% |
+| **INCOMPLETE (acceptable after edits)** | 1 | 33.33% |
 
 ## **5. Conclusion - When should AI be used (or not)?**
 
-AI was effective for parallel artifact generation, reusable validation, exposing a runtime compatibility risk, and producing traceable preflight evidence. It should be used for repeatable structure, static checks, and evidence-backed analysis. It must not choose unobserved workload limits, claim human acceptance, or replace the student's review, resource observation, narration, issue confirmation, or submission. Both artifacts remain incomplete until the student accepts the preflight and completes the official measured workflow.
+AI was effective for parallel artifact generation, reusable validation, exposing a runtime compatibility risk, and preserving traceable rejected evidence. It made a review-procedure mistake by not explicitly distinguishing CSV JTL results from JMX/XML plans and by overstating what the CSV could show. AI should be used for repeatable structure, static checks, and evidence-backed analysis; it must not choose unobserved workload limits, claim human acceptance, or replace the student's review, resource observation, narration, issue confirmation, or submission.
 
 ## **6. Mandatory Disclosure (paste verbatim)**
 

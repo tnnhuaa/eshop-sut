@@ -3,6 +3,7 @@ import argparse
 import csv
 import json
 import math
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -19,6 +20,11 @@ def main():
     parser = argparse.ArgumentParser(description="Summarize a real JMeter CSV JTL without changing it.")
     parser.add_argument("jtl", type=Path)
     parser.add_argument("--output", type=Path)
+    parser.add_argument(
+        "--evidence-state",
+        choices=["NOT_RUN", "RUN_UNVERIFIED", "HUMAN_VERIFIED", "REJECTED"],
+        help="Override the evidence state; otherwise read a sibling run-record.md when available.",
+    )
     args = parser.parse_args()
     if not args.jtl.is_file() or args.jtl.stat().st_size == 0:
         raise SystemExit(f"Missing or empty JTL: {args.jtl}")
@@ -49,9 +55,16 @@ def main():
     if total == 0:
         raise SystemExit("JTL has no samples")
     duration = max(0.001, (max(end_timestamps) - min(timestamps)) / 1000)
+    evidence_state = args.evidence_state or "RUN_UNVERIFIED"
+    run_record = args.jtl.parent / "run-record.md"
+    if not args.evidence_state and run_record.is_file():
+        match = re.search(r"Evidence state:\s*`?([A-Z_]+)`?", run_record.read_text(encoding="utf-8"))
+        if match:
+            evidence_state = match.group(1)
+
     result = {
         "source": args.jtl.as_posix(),
-        "evidence_state": "RUN_UNVERIFIED",
+        "evidence_state": evidence_state,
         "samples": total,
         "successes": success,
         "errors": total - success,

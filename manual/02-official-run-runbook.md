@@ -20,7 +20,14 @@ node scripts/seed-performance-data.js --users=<CSV_ROWS> --max-uses=<ITERATIONS_
 powershell -ExecutionPolicy Bypass -File scripts/preflight.ps1
 ```
 
-Open its JTL in GUI and verify all nine samplers are green and My Orders contains the new `orderId`. If any step fails, stop; do not run Load/Stress/Spike.
+Review the generated evidence as follows:
+
+1. Do **not** use JMeter **File → Open** on a `.jtl`; that menu only opens JMX/XML test plans. A JTL beginning with `timeStamp,elapsed,...` is CSV.
+2. Open the Load `.jmx` first, then enable its disabled **Summary Report** listener and use the listener's **Browse** field to select the CSV JTL. Alternatively, open the CSV directly in VS Code or Excel for its labels and result columns.
+3. Open the generated HTML report. Confirm exactly nine Scenario B labels and no failed samples.
+4. A CSV JTL does not retain response bodies. To visually inspect the returned order data, run a separate, non-measured preflight in GUI with **View Results Tree** enabled; never enable that listener in official CLI runs.
+
+If review fails, mark the run `REJECTED`, keep it unchanged, and create a new run ID after correcting the procedure. Do not run Load/Stress/Spike/Soak.
 
 ## C. Calibration
 

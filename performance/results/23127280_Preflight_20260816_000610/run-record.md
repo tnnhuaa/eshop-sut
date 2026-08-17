@@ -1,6 +1,6 @@
 # Preflight Run Record
 
-- Evidence state: `RUN_UNVERIFIED`
+- Evidence state: `REJECTED`
 - Run ID: `23127280_Preflight_20260816_000610`
 - Reset ID: `23127280-preflight-20260816-002`
 - Purpose: 1 VU × 1 iteration Scenario B preflight, not official HW05 evidence
@@ -11,4 +11,6 @@
 - HTML report: `performance/reports/23127280_Preflight_20260816_000610/index.html`
 - Raw JTL: `performance/results/23127280_Preflight_20260816_000610/23127280_Preflight_20260816_000610.jtl`; SHA-256 `bcd9f9c1b8be104dee747443f7c7ffe094502110015134aad0dfa9640538053c`
 - Manifest: `performance/results/23127280_Preflight_20260816_000610/manifest.json`
-- Student action: open the JTL/report, inspect all labels/assertions, then mark `HUMAN_VERIFIED` or `REJECTED`.
+- Student review: `REJECTED` on 2026-08-17. The raw JTL is CSV and was incorrectly opened through JMeter **File → Open**, which expects a JMX/XML test plan.
+- Evidence limitation: this CSV JTL records sampler outcomes and does not retain response bodies; it cannot independently display the returned `orderId`.
+- Required next action: correct the review procedure, create a new preflight run ID, and repeat the human review. This run is retained only as rejected evidence.

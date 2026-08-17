@@ -8,7 +8,7 @@
 - [x] Official measured runs use CLI/non-GUI mode.
 - [x] JMeter installation smoke passed from the student-provided GUI screenshot on 2026-08-15.
 - [x] Student selected option A on 2026-08-16: use portable Temurin JDK 17 for JMeter while leaving system Java 25 unchanged.
-- [x] Automated preflight produced exactly nine successful samples; evidence remains `RUN_UNVERIFIED` pending student inspection.
+- [x] Automated preflight `23127280_Preflight_20260816_000610` produced nine successful samples but is `REJECTED` after an invalid CSV-JTL review attempt; a fresh preflight is required.
 
 ## Must be confirmed by the student
 
