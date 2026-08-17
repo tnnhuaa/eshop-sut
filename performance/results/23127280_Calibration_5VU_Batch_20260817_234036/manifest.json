@@ -1,0 +1,40 @@
+{
+  "evidence_state": "HUMAN_VERIFIED",
+  "student_decision": "ACCEPT BATCH CALIBRATION 5VU; ACCEPT L=10",
+  "files": [
+    {
+      "path": "performance/load/23127280_Load_20260815.jmx",
+      "size": 37095,
+      "sha256": "65652e1da01ffc2f9c9cdb2a252fec7f3f6b4c295a27108537fc5a09788e5c3b",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/data/users.csv",
+      "size": 900,
+      "sha256": "36ed5c640d83ac450179788e8f4f65f1453b0aec78573c67f63b86c3f707302e",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Calibration_5VU_Batch_20260817_234036/reset-snapshot.json",
+      "state": "INCOMPLETE"
+    },
+    {
+      "path": "performance/results/23127280_Calibration_5VU_Batch_20260817_234036/23127280_Calibration_5VU_Batch_20260817_234036.jtl",
+      "size": 96759,
+      "sha256": "d4837e022059fde26752b6c9eac3cd6e36389bbb5a55ff60625ac5f5b04949b8",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/reports/23127280_Calibration_5VU_Batch_20260817_234036/index.html",
+      "size": 9711,
+      "sha256": "4096de3748d0de5fd899924885b5dbdb1c6181a7abc5cfb55390e963252f6e0b",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/calibration/23127280_Calibration_5VU_Batch_20260817_234036/resource-counters.csv",
+      "size": 4279,
+      "sha256": "79b97110b94449d17e98e7e25d48afa0a12535a0dbb4836863dbc168668d4142",
+      "state": "RUN_UNVERIFIED"
+    }
+  ]
+}

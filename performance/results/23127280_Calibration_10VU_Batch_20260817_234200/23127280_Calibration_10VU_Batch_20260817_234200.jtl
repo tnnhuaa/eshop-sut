@@ -1,0 +1,1275 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1786984925127,69,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,677,235,2,2,http://localhost:3000/api/login,69,0,40
+1786984925128,69,01 POST /api/login,200,OK,Load profile - ramp then hold 1-2,text,true,,677,235,2,2,http://localhost:3000/api/login,69,0,40
+1786984925814,4,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-2,text,true,,453,143,3,3,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786984925813,6,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,3,3,http://localhost:3000/api/products?search=iPhone,6,0,0
+1786984926108,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-3,text,true,,677,235,3,3,http://localhost:3000/api/login,5,0,2
+1786984926327,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,3,3,http://localhost:3000/api/products/1,3,0,0
+1786984926327,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-2,text,true,,451,131,3,3,http://localhost:3000/api/products/1,3,0,0
+1786984926622,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-3,text,true,,453,143,4,4,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984926947,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,294,400,4,4,http://localhost:3000/api/cart,3,0,0
+1786984926947,5,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,400,4,4,http://localhost:3000/api/cart,5,0,0
+1786984927106,6,01 POST /api/login,200,OK,Load profile - ramp then hold 1-4,text,true,,677,235,4,4,http://localhost:3000/api/login,6,0,2
+1786984927135,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-3,text,true,,451,131,4,4,http://localhost:3000/api/products/1,2,0,0
+1786984927457,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,334,282,4,4,http://localhost:3000/api/cart,2,0,0
+1786984927462,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,334,282,4,4,http://localhost:3000/api/cart,3,0,0
+1786984927618,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-4,text,true,,453,143,5,5,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984927650,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,294,400,5,5,http://localhost:3000/api/cart,3,0,0
+1786984927969,17,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,242,5,5,http://localhost:3000/api/apply-coupon,17,0,0
+1786984927965,18,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-2,text,true,,401,242,5,5,http://localhost:3000/api/apply-coupon,18,0,0
+1786984928104,6,01 POST /api/login,200,OK,Load profile - ramp then hold 1-5,text,true,,677,235,5,5,http://localhost:3000/api/login,6,0,2
+1786984928136,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-4,text,true,,451,131,5,5,http://localhost:3000/api/products/1,2,0,0
+1786984928167,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,334,282,5,5,http://localhost:3000/api/cart,3,0,0
+1786984928531,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-1,text,true,,312,412,5,5,http://localhost:3000/api/checkout,10,0,0
+1786984928518,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-2,text,true,,312,412,5,5,http://localhost:3000/api/checkout,10,0,0
+1786984928625,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-5,text,true,,453,143,6,6,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984928657,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,294,400,6,6,http://localhost:3000/api/cart,3,0,0
+1786984928689,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-3,text,true,,401,242,6,6,http://localhost:3000/api/apply-coupon,3,0,0
+1786984929049,13,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-1,text,true,,295,358,6,6,http://localhost:3000/api/coupon-usage,13,0,0
+1786984929050,16,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-2,text,true,,295,358,6,6,http://localhost:3000/api/coupon-usage,16,0,0
+1786984929108,6,01 POST /api/login,200,OK,Load profile - ramp then hold 1-6,text,true,,677,235,6,6,http://localhost:3000/api/login,6,0,2
+1786984929138,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-5,text,true,,451,131,6,6,http://localhost:3000/api/products/1,2,0,0
+1786984929169,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,334,282,6,6,http://localhost:3000/api/cart,3,0,0
+1786984929199,16,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-3,text,true,,312,412,6,6,http://localhost:3000/api/checkout,16,0,0
+1786984929572,5,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-2,text,true,,416,294,6,6,http://localhost:3000/api/orders/my-orders,5,0,0
+1786984929572,5,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-1,text,true,,416,294,6,6,http://localhost:3000/api/orders/my-orders,5,0,0
+1786984929620,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-6,text,true,,453,143,7,7,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984929649,5,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,294,400,7,7,http://localhost:3000/api/cart,4,0,0
+1786984929681,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-4,text,true,,401,242,7,7,http://localhost:3000/api/apply-coupon,3,0,0
+1786984929727,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-3,text,true,,295,358,7,7,http://localhost:3000/api/coupon-usage,10,0,0
+1786984930084,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-2,text,true,,677,235,7,7,http://localhost:3000/api/login,4,0,0
+1786984930087,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,680,235,7,7,http://localhost:3000/api/login,3,0,0
+1786984930102,6,01 POST /api/login,200,OK,Load profile - ramp then hold 1-7,text,true,,680,235,7,7,http://localhost:3000/api/login,6,0,2
+1786984930132,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-6,text,true,,451,131,7,7,http://localhost:3000/api/products/1,3,0,0
+1786984930164,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,334,282,7,7,http://localhost:3000/api/cart,2,0,0
+1786984930195,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-4,text,true,,312,412,7,7,http://localhost:3000/api/checkout,11,0,0
+1786984930244,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-3,text,true,,416,294,7,7,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984930602,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,8,8,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984930602,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-2,text,true,,453,143,8,8,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984930617,5,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-7,text,true,,453,143,8,8,http://localhost:3000/api/products?search=iPhone,5,0,0
+1786984930648,6,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,294,400,8,8,http://localhost:3000/api/cart,6,0,0
+1786984930679,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-5,text,true,,401,242,8,8,http://localhost:3000/api/apply-coupon,3,0,0
+1786984930725,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-4,text,true,,295,358,8,8,http://localhost:3000/api/coupon-usage,10,0,0
+1786984930757,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-3,text,true,,681,235,8,8,http://localhost:3000/api/login,4,0,0
+1786984931101,6,01 POST /api/login,200,OK,Load profile - ramp then hold 1-8,text,true,,677,235,8,8,http://localhost:3000/api/login,6,0,2
+1786984931117,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-2,text,true,,451,131,8,8,http://localhost:3000/api/products/1,3,0,0
+1786984931117,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,8,8,http://localhost:3000/api/products/1,3,0,0
+1786984931132,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-7,text,true,,451,131,8,8,http://localhost:3000/api/products/1,3,0,0
+1786984931164,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,334,282,8,8,http://localhost:3000/api/cart,2,0,0
+1786984931195,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-5,text,true,,312,412,8,8,http://localhost:3000/api/checkout,9,0,0
+1786984931241,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-4,text,true,,416,294,8,8,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984931272,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-3,text,true,,453,143,8,8,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984931616,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-8,text,true,,453,143,9,9,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984931632,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,294,400,9,9,http://localhost:3000/api/cart,3,0,0
+1786984931632,6,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,402,9,9,http://localhost:3000/api/cart,6,0,0
+1786984931647,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,294,402,9,9,http://localhost:3000/api/cart,3,0,0
+1786984931677,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-6,text,true,,401,242,9,9,http://localhost:3000/api/apply-coupon,3,0,0
+1786984931712,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-5,text,true,,295,358,9,9,http://localhost:3000/api/coupon-usage,8,0,0
+1786984931757,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-4,text,true,,677,235,9,9,http://localhost:3000/api/login,4,0,0
+1786984931787,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-3,text,true,,451,131,9,9,http://localhost:3000/api/products/1,3,0,0
+1786984932100,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-9,text,true,,677,235,9,9,http://localhost:3000/api/login,5,0,1
+1786984932130,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-8,text,true,,451,131,9,9,http://localhost:3000/api/products/1,2,0,0
+1786984932146,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,334,282,9,9,http://localhost:3000/api/cart,2,0,0
+1786984932146,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,334,284,9,9,http://localhost:3000/api/cart,3,0,0
+1786984932162,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,334,284,9,9,http://localhost:3000/api/cart,4,0,0
+1786984932193,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-6,text,true,,312,412,9,9,http://localhost:3000/api/checkout,10,0,0
+1786984932225,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-5,text,true,,416,294,9,9,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984932271,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-4,text,true,,453,143,9,9,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984932303,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,294,402,9,9,http://localhost:3000/api/cart,3,0,0
+1786984932612,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-9,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984932644,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984932660,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-2,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984932660,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984932675,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-7,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984932723,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-6,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984932738,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-5,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984932785,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-4,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984932816,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,334,284,10,10,http://localhost:3000/api/cart,3,0,0
+1786984933100,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-10,text,true,,677,235,10,10,http://localhost:3000/api/login,5,0,1
+1786984933129,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-9,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984933159,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,401,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984933175,12,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-2,text,true,,312,412,10,10,http://localhost:3000/api/checkout,12,0,0
+1786984933175,17,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-1,text,true,,312,414,10,10,http://localhost:3000/api/checkout,17,0,0
+1786984933191,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-7,text,true,,312,414,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984933239,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-6,text,true,,416,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984933254,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-5,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984933301,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984933333,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-3,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984933617,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-10,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984933649,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984933667,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-8,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984933696,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-2,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984933712,13,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-7,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,13,0,0
+1786984933712,18,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-1,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,18,0,0
+1786984933758,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-6,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984933761,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-5,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984933821,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,401,282,10,10,http://localhost:3000/api/cart,4,0,0
+1786984933853,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-3,text,true,,313,415,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984934134,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-10,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984934165,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,401,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984934181,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-8,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984934212,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-2,text,true,,416,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984934244,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-7,text,true,,417,296,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984934244,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-1,text,true,,417,296,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984934267,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-6,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984934275,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984934339,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-4,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984934370,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-3,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984934654,5,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,294,400,10,10,http://localhost:3000/api/cart,5,0,0
+1786984934685,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-9,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984934701,12,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-8,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,12,0,0
+1786984934733,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-2,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984934765,6,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,680,235,10,10,http://localhost:3000/api/login,6,0,0
+1786984934765,8,01 POST /api/login,200,OK,Load profile - ramp then hold 1-7,text,true,,680,235,10,10,http://localhost:3000/api/login,8,0,0
+1786984934781,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-6,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984934796,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,401,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984934859,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-4,text,true,,313,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984934890,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-3,text,true,,419,296,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984935171,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,401,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984935202,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-9,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984935218,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-8,text,true,,565,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984935249,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-2,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984935281,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984935281,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-7,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984935296,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984935311,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-5,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984935376,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-4,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984935405,2,01 POST /api/login,200,OK,Load profile - ramp then hold 1-3,text,true,,681,235,10,10,http://localhost:3000/api/login,2,0,0
+1786984935685,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-10,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984935731,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-9,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984935731,13,01 POST /api/login,200,OK,Load profile - ramp then hold 1-8,text,true,,677,235,10,10,http://localhost:3000/api/login,13,0,0
+1786984935762,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-2,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984935793,4,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984935793,4,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-7,text,true,,451,131,10,10,http://localhost:3000/api/products/1,4,0,0
+1786984935809,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,401,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984935824,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-5,text,true,,313,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984935905,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-4,text,true,,565,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984935921,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-3,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984936202,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-10,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984936250,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-8,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984936250,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-9,text,true,,565,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984936282,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984936313,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984936313,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,402,10,10,http://localhost:3000/api/cart,4,0,0
+1786984936328,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-6,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984936344,12,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-5,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,12,0,0
+1786984936421,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-4,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984936437,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-3,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984936730,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-10,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984936758,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-8,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984936761,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-9,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984936791,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,401,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984936821,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,401,284,10,10,http://localhost:3000/api/cart,3,0,0
+1786984936823,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,401,284,10,10,http://localhost:3000/api/cart,3,0,0
+1786984936838,13,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-6,text,true,,313,412,10,10,http://localhost:3000/api/checkout,13,0,0
+1786984936869,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-5,text,true,,565,294,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984936933,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-4,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984936948,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984937246,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-10,text,true,,565,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984937277,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984937277,5,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-9,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,5,0,0
+1786984937308,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-2,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984937339,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984937339,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-7,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984937370,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-6,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984937385,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-5,text,true,,677,235,10,10,http://localhost:3000/api/login,5,0,0
+1786984937447,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-4,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984937463,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,401,284,10,10,http://localhost:3000/api/cart,4,0,0
+1786984937757,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-10,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984937784,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,467,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984937788,4,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-9,text,true,,451,131,10,10,http://localhost:3000/api/products/1,4,0,0
+1786984937819,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-2,text,true,,313,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984937850,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-7,text,true,,313,414,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984937850,16,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-1,text,true,,313,414,10,10,http://localhost:3000/api/checkout,15,0,0
+1786984937897,5,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-6,text,true,,565,294,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984937897,5,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-5,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,5,0,0
+1786984937958,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984937974,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-3,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984938270,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-10,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984938301,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984938301,7,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-8,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,7,0,0
+1786984938347,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-2,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984938378,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-1,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984938378,15,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-7,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,15,0,0
+1786984938408,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-6,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984938424,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-5,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984938472,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,467,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984938487,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-3,text,true,,313,415,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984938786,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-10,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984938818,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,467,282,10,10,http://localhost:3000/api/cart,4,0,0
+1786984938818,14,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-8,text,true,,313,412,10,10,http://localhost:3000/api/checkout,14,0,0
+1786984938866,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-2,text,true,,565,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984938898,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-1,text,true,,567,296,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984938898,5,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-7,text,true,,567,296,10,10,http://localhost:3000/api/orders/my-orders,5,0,0
+1786984938914,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-6,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984938945,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984938992,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-4,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984939007,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-3,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984939306,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984939338,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-8,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984939338,11,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-9,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,11,0,0
+1786984939385,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-2,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984939417,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,680,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984939417,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-7,text,true,,680,235,10,10,http://localhost:3000/api/login,5,0,0
+1786984939432,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-6,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984939462,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,467,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984939509,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-4,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984939525,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-3,text,true,,570,296,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984939824,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,467,282,10,10,http://localhost:3000/api/cart,4,0,0
+1786984939855,14,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-8,text,true,,713,294,10,10,http://localhost:3000/api/orders/my-orders,14,0,0
+1786984939855,14,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-9,text,true,,313,412,10,10,http://localhost:3000/api/checkout,14,0,0
+1786984939903,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-2,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984939934,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-7,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984939934,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984939950,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984939982,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-5,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984940029,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-4,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984940044,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-3,text,true,,681,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984940343,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-10,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984940375,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-9,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984940390,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-8,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984940420,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-2,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984940452,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-7,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984940452,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984940468,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,467,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984940498,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-5,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984940545,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-4,text,true,,713,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984940561,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-3,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984940858,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-10,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984940889,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-9,text,true,,713,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984940904,4,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-8,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786984940936,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984940959,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984940968,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984940983,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-6,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984941014,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-5,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984941061,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-4,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984941077,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-3,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984941377,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-10,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984941407,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-9,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984941423,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-8,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984941454,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,467,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984941470,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,467,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984941485,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,467,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984941501,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-6,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984941532,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-5,text,true,,713,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984941579,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-4,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984941595,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984941888,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-10,text,true,,713,294,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984941919,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-9,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984941934,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984941965,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-2,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984941981,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984941997,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-7,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984942029,7,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-6,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,7,0,0
+1786984942043,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-5,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984942090,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-4,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984942107,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,467,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984942406,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-10,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984942438,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-9,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984942453,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,534,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984942486,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-2,text,true,,313,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984942500,12,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-1,text,true,,313,414,10,10,http://localhost:3000/api/checkout,12,0,0
+1786984942517,12,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-7,text,true,,313,414,10,10,http://localhost:3000/api/checkout,12,0,0
+1786984942546,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-6,text,true,,713,294,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984942563,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-5,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984942610,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984942625,5,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-3,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,5,0,0
+1786984942921,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-10,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984942952,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984942966,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-8,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984943014,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-2,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984943029,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-1,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984943045,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-7,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984943061,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-6,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984943076,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-5,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984943124,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,534,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984943139,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-3,text,true,,313,415,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984943435,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-10,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984943466,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,534,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984943481,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-8,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984943528,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-2,text,true,,713,294,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984943558,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-1,text,true,,716,296,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984943561,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-7,text,true,,716,296,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984943575,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-6,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984943590,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984943638,5,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-4,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,5,0,0
+1786984943654,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-3,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984943950,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984943982,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-9,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984943998,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-8,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984944044,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-2,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984944076,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,680,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984944076,6,01 POST /api/login,200,OK,Load profile - ramp then hold 1-7,text,true,,680,235,10,10,http://localhost:3000/api/login,6,0,0
+1786984944091,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-6,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984944107,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,534,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984944153,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-4,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984944169,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-3,text,true,,720,296,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984944465,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,534,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984944498,12,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-9,text,true,,313,412,10,10,http://localhost:3000/api/checkout,12,0,0
+1786984944513,5,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-8,text,true,,861,294,10,10,http://localhost:3000/api/orders/my-orders,5,0,0
+1786984944560,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-2,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984944591,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984944594,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-7,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984944608,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984944623,5,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-5,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,5,0,0
+1786984944670,12,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-4,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,12,0,0
+1786984944685,7,01 POST /api/login,200,OK,Load profile - ramp then hold 1-3,text,true,,681,235,10,10,http://localhost:3000/api/login,7,0,0
+1786984944982,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-10,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984945029,7,01 POST /api/login,200,OK,Load profile - ramp then hold 1-8,text,true,,677,235,10,10,http://localhost:3000/api/login,7,0,0
+1786984945029,14,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-9,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,13,0,0
+1786984945076,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-2,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984945107,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984945107,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-7,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984945123,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,534,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984945139,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-5,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984945202,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-4,text,true,,861,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984945202,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-3,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984945499,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-10,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984945545,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-8,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984945561,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-9,text,true,,861,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984945592,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984945624,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984945624,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,402,10,10,http://localhost:3000/api/cart,4,0,0
+1786984945640,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-6,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984945655,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-5,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984945707,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-3,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984945718,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-4,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984946027,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-10,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984946058,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-8,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984946074,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-9,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984946104,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,534,282,10,10,http://localhost:3000/api/cart,4,0,0
+1786984946135,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,534,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984946135,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,534,284,10,10,http://localhost:3000/api/cart,4,0,0
+1786984946150,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-6,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984946182,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-5,text,true,,861,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984946213,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984946230,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-4,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984946542,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-10,text,true,,861,294,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984946572,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984946587,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-9,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984946620,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-2,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984946650,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984946650,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-7,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984946666,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-6,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984946697,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-5,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984946729,5,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,534,284,10,10,http://localhost:3000/api/cart,5,0,0
+1786984946745,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-4,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984947058,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-10,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984947090,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,600,282,10,10,http://localhost:3000/api/cart,4,0,0
+1786984947106,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-9,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984947137,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-2,text,true,,313,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984947160,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-7,text,true,,313,414,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984947169,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-1,text,true,,313,414,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984947185,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-6,text,true,,861,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984947217,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-5,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984947248,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-3,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984947264,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984947578,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-10,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984947609,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-8,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984947625,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984947656,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-2,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984947688,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-7,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984947688,16,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-1,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,16,0,0
+1786984947706,7,01 POST /api/login,200,OK,Load profile - ramp then hold 1-6,text,true,,677,235,10,10,http://localhost:3000/api/login,6,0,0
+1786984947735,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-5,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984947766,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-3,text,true,,313,415,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984947781,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,600,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984948093,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-10,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984948125,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-8,text,true,,313,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984948140,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,600,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984948171,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-2,text,true,,861,294,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984948218,4,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-6,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786984948218,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-7,text,true,,865,296,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984948218,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-1,text,true,,865,296,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984948249,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984948280,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-3,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984948296,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-4,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984948608,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984948654,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-8,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984948654,11,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-9,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,11,0,0
+1786984948686,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-2,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984948724,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-6,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984948733,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-7,text,true,,680,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984948733,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,680,235,10,10,http://localhost:3000/api/login,5,0,0
+1786984948764,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,600,282,10,10,http://localhost:3000/api/cart,4,0,0
+1786984948796,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-3,text,true,,870,296,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984948811,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-4,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984949122,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,600,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984949183,11,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-8,text,true,,1009,294,10,10,http://localhost:3000/api/orders/my-orders,11,0,0
+1786984949183,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-9,text,true,,313,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984949199,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-2,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984949230,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984949241,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-7,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984949246,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984949277,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-5,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984949309,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-3,text,true,,681,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984949328,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-4,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984949635,5,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-10,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,5,0,0
+1786984949713,7,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-2,text,true,,451,131,10,10,http://localhost:3000/api/products/1,7,0,0
+1786984949713,14,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-9,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,14,0,0
+1786984949713,17,01 POST /api/login,200,OK,Load profile - ramp then hold 1-8,text,true,,677,235,10,10,http://localhost:3000/api/login,17,0,0
+1786984949744,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,600,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984949760,4,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-7,text,true,,451,131,10,10,http://localhost:3000/api/products/1,4,0,0
+1786984949760,4,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,10,10,http://localhost:3000/api/products/1,4,0,0
+1786984949791,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-5,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984949822,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-3,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984949852,6,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-4,text,true,,1009,294,10,10,http://localhost:3000/api/orders/my-orders,6,0,0
+1786984950152,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-10,text,true,,313,412,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984950229,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984950233,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-9,text,true,,1009,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984950245,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-8,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984950261,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-6,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984950277,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984950277,5,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,402,10,10,http://localhost:3000/api/cart,4,0,0
+1786984950324,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-5,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984950339,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-3,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984950371,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-4,text,true,,677,235,10,10,http://localhost:3000/api/login,5,0,0
+1786984950670,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-10,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984950750,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,600,282,10,10,http://localhost:3000/api/cart,4,0,0
+1786984950750,5,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-8,text,true,,451,131,10,10,http://localhost:3000/api/products/1,5,0,0
+1786984950750,8,01 POST /api/login,200,OK,Load profile - ramp then hold 1-9,text,true,,677,235,10,10,http://localhost:3000/api/login,8,0,0
+1786984950781,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-6,text,true,,313,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984950797,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,600,284,10,10,http://localhost:3000/api/cart,4,0,0
+1786984950797,7,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,600,284,10,10,http://localhost:3000/api/cart,7,0,0
+1786984950843,5,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-5,text,true,,1009,294,10,10,http://localhost:3000/api/orders/my-orders,5,0,0
+1786984950858,7,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,294,402,10,10,http://localhost:3000/api/cart,7,0,0
+1786984950889,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-4,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984951187,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-10,text,true,,1009,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984951264,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984951267,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-9,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984951267,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-2,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984951299,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-6,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984951315,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984951315,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-7,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984951361,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-5,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984951378,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,600,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984951409,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-4,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984951707,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-10,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984951771,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,666,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984951773,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-9,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984951785,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-2,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984951817,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-6,text,true,,1009,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984951821,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-1,text,true,,313,414,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984951832,13,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-7,text,true,,313,414,10,10,http://localhost:3000/api/checkout,13,0,0
+1786984951879,4,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-5,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786984951894,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-3,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984951926,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984952225,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-10,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984952287,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984952287,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-8,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984952302,13,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-2,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,13,0,0
+1786984952333,2,01 POST /api/login,200,OK,Load profile - ramp then hold 1-6,text,true,,677,235,10,10,http://localhost:3000/api/login,2,0,0
+1786984952349,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-1,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984952365,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-7,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984952397,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-5,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984952412,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-3,text,true,,313,415,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984952443,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,666,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984952742,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-10,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984952794,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,666,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984952805,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-8,text,true,,313,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984952821,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-2,text,true,,1009,294,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984952853,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-6,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984952867,5,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-1,text,true,,1014,296,10,10,http://localhost:3000/api/orders/my-orders,5,0,0
+1786984952883,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-7,text,true,,1014,296,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984952914,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984952930,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-3,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984952962,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-4,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984953259,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984953307,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-9,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984953323,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-8,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984953338,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-2,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984953370,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-6,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984953385,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,680,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984953400,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-7,text,true,,680,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984953432,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,666,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984953447,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-3,text,true,,1020,296,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984953479,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-4,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984953778,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,666,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984953823,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-9,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984953839,5,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-8,text,true,,1157,294,10,10,http://localhost:3000/api/orders/my-orders,5,0,0
+1786984953855,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-2,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984953886,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984953902,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984953917,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-7,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984953949,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-5,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984953965,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-3,text,true,,681,235,10,10,http://localhost:3000/api/login,5,0,0
+1786984953997,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-4,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984954293,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-10,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984954340,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-9,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984954356,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-8,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984954372,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-2,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984954403,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,666,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984954419,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984954435,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-7,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984954466,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-5,text,true,,313,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984954482,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-3,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984954513,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-4,text,true,,1157,294,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984954806,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-10,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984954853,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-9,text,true,,1157,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984954870,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-8,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984954886,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984954917,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-6,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984954932,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984954948,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984954995,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-5,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984954995,9,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-3,text,true,,451,131,10,10,http://localhost:3000/api/products/1,9,0,0
+1786984955027,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-4,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984955323,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-10,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984955369,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-9,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984955384,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-8,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984955400,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,666,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984955430,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-6,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984955446,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,666,284,10,10,http://localhost:3000/api/cart,4,0,0
+1786984955462,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,666,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984955509,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984955508,5,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-5,text,true,,1157,294,10,10,http://localhost:3000/api/orders/my-orders,5,0,0
+1786984955541,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-4,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984955836,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-10,text,true,,1157,294,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984955884,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-9,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984955900,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984955915,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-2,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984955960,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-6,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984955960,11,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,11,0,0
+1786984955976,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-7,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984956016,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,666,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984956023,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-5,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984956055,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-4,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984956354,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-10,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984956403,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-9,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984956418,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,732,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984956434,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-2,text,true,,313,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984956482,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-6,text,true,,1157,294,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984956482,14,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-1,text,true,,313,414,10,10,http://localhost:3000/api/checkout,14,0,0
+1786984956482,14,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-7,text,true,,313,414,10,10,http://localhost:3000/api/checkout,14,0,0
+1786984956529,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-5,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984956529,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-3,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984956561,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984956872,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-10,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984956917,5,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,294,400,10,10,http://localhost:3000/api/cart,5,0,0
+1786984956932,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-8,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984956948,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-2,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984956996,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-6,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984957011,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-1,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984957011,12,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-7,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,12,0,0
+1786984957035,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-5,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984957042,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-3,text,true,,313,415,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984957073,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,732,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984957385,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-10,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984957432,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,732,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984957448,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-8,text,true,,313,412,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984957463,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-2,text,true,,1157,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984957508,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-6,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984957524,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-1,text,true,,1163,296,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984957539,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-7,text,true,,1163,296,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984957555,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984957571,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-3,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984957586,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-4,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984957900,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984957945,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-9,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984957960,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-8,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984957976,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-2,text,true,,677,235,10,10,http://localhost:3000/api/login,5,0,0
+1786984958022,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-6,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984958037,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,680,235,10,10,http://localhost:3000/api/login,5,0,0
+1786984958053,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-7,text,true,,680,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984958069,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,732,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984958101,6,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-3,text,true,,1170,296,10,10,http://localhost:3000/api/orders/my-orders,6,0,0
+1786984958101,13,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-4,text,true,,313,412,10,10,http://localhost:3000/api/checkout,13,0,0
+1786984958416,1,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,732,282,10,10,http://localhost:3000/api/cart,1,0,0
+1786984958462,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-9,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984958478,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-8,text,true,,1306,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984958493,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-2,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984958540,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984958555,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984958570,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-7,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984958586,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-5,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984958616,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-3,text,true,,681,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984958632,12,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-4,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,12,0,0
+1786984958928,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-10,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984958975,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-9,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984958991,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-8,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984959006,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-2,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984959052,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,732,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984959068,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984959084,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-7,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984959100,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-5,text,true,,313,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984959131,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-3,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984959161,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-4,text,true,,1306,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984959445,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-10,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984959491,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-9,text,true,,1306,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984959506,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-8,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984959521,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984959567,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-6,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984959583,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984959598,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984959630,12,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-5,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,12,0,0
+1786984959645,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-3,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984959677,8,01 POST /api/login,200,OK,Load profile - ramp then hold 1-4,text,true,,677,235,10,10,http://localhost:3000/api/login,8,0,0
+1786984959974,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-10,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984960006,2,01 POST /api/login,200,OK,Load profile - ramp then hold 1-9,text,true,,677,235,10,10,http://localhost:3000/api/login,2,0,0
+1786984960021,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-8,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984960038,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,732,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984960084,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-6,text,true,,313,412,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984960100,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,732,284,10,10,http://localhost:3000/api/cart,3,0,0
+1786984960115,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,732,284,10,10,http://localhost:3000/api/cart,3,0,0
+1786984960149,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-5,text,true,,1306,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984960161,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984960194,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-4,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984960491,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-10,text,true,,1306,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984960522,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-9,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984960538,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984960553,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-2,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984960601,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-6,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984960617,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984960632,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-7,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984960663,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-5,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984960678,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,732,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984960710,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-4,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984961007,2,01 POST /api/login,200,OK,Load profile - ramp then hold 1-10,text,true,,677,235,10,10,http://localhost:3000/api/login,2,0,0
+1786984961039,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-9,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984961054,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,798,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984961069,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-2,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984961132,10,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-6,text,true,,1306,294,10,10,http://localhost:3000/api/orders/my-orders,10,0,0
+1786984961132,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-1,text,true,,313,414,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984961148,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-7,text,true,,313,414,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984961179,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-5,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984961195,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-3,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984961226,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984961525,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-10,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984961556,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984961573,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-8,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984961587,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-2,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984961651,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-1,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984961651,13,01 POST /api/login,200,OK,Load profile - ramp then hold 1-6,text,true,,677,235,10,10,http://localhost:3000/api/login,13,0,0
+1786984961666,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-7,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984961697,1,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-5,text,true,,451,131,10,10,http://localhost:3000/api/products/1,1,0,0
+1786984961713,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-3,text,true,,313,415,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984961744,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,798,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984962040,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-10,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984962072,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,798,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984962086,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-8,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984962103,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-2,text,true,,1306,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984962165,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-1,text,true,,1313,296,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984962181,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-7,text,true,,1313,296,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984962181,4,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-6,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984962212,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984962228,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-3,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984962259,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-4,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984962555,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984962585,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-9,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984962601,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-8,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984962617,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-2,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984962679,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,680,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984962695,2,01 POST /api/login,200,OK,Load profile - ramp then hold 1-7,text,true,,680,235,10,10,http://localhost:3000/api/login,2,0,0
+1786984962695,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-6,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984962725,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,798,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984962743,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-3,text,true,,1321,296,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984962772,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-4,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984963069,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,798,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984963100,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-9,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984963116,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-8,text,true,,1454,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984963132,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-2,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984963194,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984963201,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-7,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984963209,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984963241,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-5,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984963257,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-3,text,true,,681,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984963288,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-4,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984963584,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-10,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984963616,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-9,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984963631,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-8,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984963647,1,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-2,text,true,,451,131,10,10,http://localhost:3000/api/products/1,1,0,0
+1786984963710,1,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-7,text,true,,451,131,10,10,http://localhost:3000/api/products/1,1,0,0
+1786984963710,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984963725,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,798,282,10,10,http://localhost:3000/api/cart,1,0,0
+1786984963756,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-5,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984963772,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-3,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984963802,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-4,text,true,,1454,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984964098,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-10,text,true,,313,412,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984964144,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-8,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984964144,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-9,text,true,,1454,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984964159,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984964215,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984964221,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984964236,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-6,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984964284,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-3,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984964284,13,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-5,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,13,0,0
+1786984964315,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-4,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984964613,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-10,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984964660,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-8,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984964660,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-9,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984964676,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,798,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984964722,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,798,284,10,10,http://localhost:3000/api/cart,3,0,0
+1786984964738,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,798,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984964754,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-6,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984964800,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984964815,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-5,text,true,,1454,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984964831,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-4,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984965129,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-10,text,true,,1454,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984965175,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984965175,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-9,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984965190,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-2,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984965236,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984965251,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-7,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984965282,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-6,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984965314,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,798,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984965329,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-5,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984965345,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-4,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984965642,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-10,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984965681,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,864,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984965689,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-9,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984965705,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-2,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984965752,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-1,text,true,,313,414,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984965767,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-7,text,true,,313,414,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984965798,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-6,text,true,,1454,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984965829,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-3,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984965843,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-5,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984965860,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984966158,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-10,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984966189,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-8,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984966204,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984966220,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-2,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984966268,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-1,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984966284,12,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-7,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,12,0,0
+1786984966316,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-6,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984966347,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-3,text,true,,313,415,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984966362,5,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-5,text,true,,451,131,10,10,http://localhost:3000/api/products/1,5,0,0
+1786984966377,6,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,864,282,10,10,http://localhost:3000/api/cart,6,0,0
+1786984966672,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-10,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984966704,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-8,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984966719,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,864,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984966735,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-2,text,true,,1454,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984966783,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-1,text,true,,1462,296,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984966812,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-7,text,true,,1462,296,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984966828,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-6,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984966875,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-3,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984966891,5,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,294,400,10,10,http://localhost:3000/api/cart,5,0,0
+1786984966891,7,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-4,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,7,0,0
+1786984967187,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984967218,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-8,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984967233,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-9,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984967250,2,01 POST /api/login,200,OK,Load profile - ramp then hold 1-2,text,true,,677,235,10,10,http://localhost:3000/api/login,2,0,0
+1786984967296,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,680,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984967327,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-7,text,true,,680,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984967343,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-6,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984967399,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,864,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984967406,5,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-3,text,true,,1471,296,10,10,http://localhost:3000/api/orders/my-orders,5,0,0
+1786984967406,12,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-4,text,true,,313,412,10,10,http://localhost:3000/api/checkout,12,0,0
+1786984967703,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,864,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984967734,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-8,text,true,,1602,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984967749,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-9,text,true,,313,412,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984967764,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-2,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984967810,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984967843,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-7,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984967859,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984967906,5,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-5,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,5,0,0
+1786984967921,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-3,text,true,,681,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984967937,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-4,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984968219,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-10,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984968250,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-8,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984968265,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-9,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984968280,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-2,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984968326,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984968358,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-7,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984968374,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,864,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984968421,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-5,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984968436,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-3,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984968452,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-4,text,true,,1602,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984968732,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-10,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984968764,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-8,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984968778,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-9,text,true,,1602,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984968794,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984968840,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984968871,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984968887,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-6,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984968948,4,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-3,text,true,,451,131,10,10,http://localhost:3000/api/products/1,4,0,0
+1786984968948,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-5,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984968963,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-4,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984969246,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-10,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984969277,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-8,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984969292,2,01 POST /api/login,200,OK,Load profile - ramp then hold 1-9,text,true,,677,235,10,10,http://localhost:3000/api/login,2,0,0
+1786984969310,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,864,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984969355,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,864,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984969386,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,864,284,10,10,http://localhost:3000/api/cart,3,0,0
+1786984969402,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-6,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984969464,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984969464,5,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-5,text,true,,1602,294,10,10,http://localhost:3000/api/orders/my-orders,5,0,0
+1786984969479,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-4,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984969763,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-10,text,true,,1602,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984969795,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984969810,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-9,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984969825,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-2,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984969872,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984969904,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-7,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984969919,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-6,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984969983,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,864,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984969983,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-5,text,true,,677,235,10,10,http://localhost:3000/api/login,5,0,0
+1786984969998,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-4,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984970279,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-10,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984970310,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,930,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984970325,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-9,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984970339,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-2,text,true,,313,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984970386,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-1,text,true,,313,414,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984970417,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-7,text,true,,313,414,10,10,http://localhost:3000/api/checkout,7,0,0
+1786984970449,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-6,text,true,,1602,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984970496,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-5,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984970496,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-3,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984970511,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984970793,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-10,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984970824,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-8,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984970839,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984970855,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-2,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984970902,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-1,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984970933,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-7,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984970964,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-6,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984971001,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-5,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984971011,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-3,text,true,,313,415,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984971027,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,930,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984971308,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-10,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984971339,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-8,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984971355,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,930,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984971371,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-2,text,true,,1602,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984971419,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-1,text,true,,1611,296,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984971451,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-7,text,true,,1611,296,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984971483,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-6,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984971515,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984971530,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-3,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984971545,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-4,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984971827,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984971858,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-8,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984971873,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-9,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984971889,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-2,text,true,,677,235,10,10,http://localhost:3000/api/login,5,0,0
+1786984971935,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,680,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984971966,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-7,text,true,,680,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984971997,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-6,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984972029,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,930,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984972045,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-3,text,true,,1621,296,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984972061,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-4,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984972341,1,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,930,282,10,10,http://localhost:3000/api/cart,1,0,0
+1786984972372,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-8,text,true,,1750,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984972388,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-9,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984972404,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-2,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984972451,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984972483,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-7,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984972516,1,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,294,400,10,10,http://localhost:3000/api/cart,1,0,0
+1786984972546,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-5,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984972562,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-3,text,true,,681,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984972578,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-4,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984972860,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-10,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984972891,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-8,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984972907,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-9,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984972922,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-2,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984972969,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984973001,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-7,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984973031,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,930,282,10,10,http://localhost:3000/api/cart,4,0,0
+1786984973062,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-5,text,true,,313,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984973078,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-3,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984973093,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-4,text,true,,1750,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984973375,7,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-10,text,true,,313,412,10,10,http://localhost:3000/api/checkout,7,0,0
+1786984973407,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-8,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984973423,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-9,text,true,,1750,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984973439,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984973486,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984973517,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984973548,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-6,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984973580,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-5,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984973596,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-3,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984973611,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-4,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984973890,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-10,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984973921,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-8,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984973936,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-9,text,true,,677,235,10,10,http://localhost:3000/api/login,5,0,0
+1786984973952,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,930,282,10,10,http://localhost:3000/api/cart,4,0,0
+1786984973999,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,930,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984974030,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,930,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984974061,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-6,text,true,,313,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984974093,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-5,text,true,,1750,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984974109,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984974125,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-4,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984974421,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-10,text,true,,1750,294,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984974438,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984974454,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-9,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984974468,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-2,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984974515,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984974546,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-7,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984974577,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-6,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984974609,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-5,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984974625,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,930,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984974641,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-4,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984974936,2,01 POST /api/login,200,OK,Load profile - ramp then hold 1-10,text,true,,677,235,10,10,http://localhost:3000/api/login,2,0,0
+1786984974951,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,996,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984974967,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-9,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984974983,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-2,text,true,,313,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984975031,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-1,text,true,,313,414,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984975061,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-7,text,true,,313,414,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984975093,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-6,text,true,,1750,294,10,10,http://localhost:3000/api/orders/my-orders,4,0,0
+1786984975124,4,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-5,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786984975139,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-3,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984975153,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984975451,4,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-10,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786984975466,7,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-8,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,7,0,0
+1786984975482,6,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,294,400,10,10,http://localhost:3000/api/cart,6,0,0
+1786984975497,17,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-2,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,17,0,0
+1786984975559,13,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-1,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,13,0,0
+1786984975575,14,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-7,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,14,0,0
+1786984975605,6,01 POST /api/login,200,OK,Load profile - ramp then hold 1-6,text,true,,677,235,10,10,http://localhost:3000/api/login,6,0,0
+1786984975637,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-5,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984975653,13,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-3,text,true,,314,415,10,10,http://localhost:3000/api/checkout,13,0,0
+1786984975669,6,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,996,282,10,10,http://localhost:3000/api/cart,6,0,0
+1786984975965,4,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-10,text,true,,451,131,10,10,http://localhost:3000/api/products/1,4,0,0
+1786984975981,18,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-8,text,true,,314,412,10,10,http://localhost:3000/api/checkout,18,0,0
+1786984976003,6,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,996,282,10,10,http://localhost:3000/api/cart,6,0,0
+1786984976026,5,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-2,text,true,,1750,294,10,10,http://localhost:3000/api/orders/my-orders,5,0,0
+1786984976089,6,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-1,text,true,,1760,296,10,10,http://localhost:3000/api/orders/my-orders,6,0,0
+1786984976106,7,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-7,text,true,,1760,296,10,10,http://localhost:3000/api/orders/my-orders,7,0,0
+1786984976122,7,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-6,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,7,0,0
+1786984976152,5,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,294,400,10,10,http://localhost:3000/api/cart,5,0,0
+1786984976183,13,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-3,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,13,0,0
+1786984976183,16,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-4,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,16,0,0
+1786984976490,6,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,294,400,10,10,http://localhost:3000/api/cart,5,0,0
+1786984976513,23,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-8,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,23,0,0
+1786984976527,14,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-9,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,14,0,0
+1786984976542,10,01 POST /api/login,200,OK,Load profile - ramp then hold 1-2,text,true,,677,235,10,10,http://localhost:3000/api/login,10,0,0
+1786984976610,11,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,680,235,10,10,http://localhost:3000/api/login,11,0,0
+1786984976622,10,01 POST /api/login,200,OK,Load profile - ramp then hold 1-7,text,true,,680,235,10,10,http://localhost:3000/api/login,10,0,0
+1786984976637,4,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-6,text,true,,451,131,10,10,http://localhost:3000/api/products/1,4,0,0
+1786984976669,6,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,996,282,10,10,http://localhost:3000/api/cart,5,0,0
+1786984976715,9,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-3,text,true,,1772,296,10,10,http://localhost:3000/api/orders/my-orders,9,0,0
+1786984976715,18,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-4,text,true,,314,412,10,10,http://localhost:3000/api/checkout,18,0,0
+1786984977011,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,996,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984977056,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-9,text,true,,314,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984977056,11,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-8,text,true,,1899,294,10,10,http://localhost:3000/api/orders/my-orders,11,0,0
+1786984977071,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-2,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984977135,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984977151,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-7,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984977166,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984977182,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-5,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984977245,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-4,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984977245,12,01 POST /api/login,200,OK,Load profile - ramp then hold 1-3,text,true,,681,235,10,10,http://localhost:3000/api/login,11,0,0
+1786984977525,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-10,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984977573,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-9,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984977573,13,01 POST /api/login,200,OK,Load profile - ramp then hold 1-8,text,true,,677,235,10,10,http://localhost:3000/api/login,13,0,0
+1786984977588,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-2,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984977652,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984977667,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-7,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984977683,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,996,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984977698,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-5,text,true,,314,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984977762,4,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-3,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786984977762,5,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-4,text,true,,1899,294,10,10,http://localhost:3000/api/orders/my-orders,5,0,0
+1786984978041,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-10,text,true,,314,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984978088,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-9,text,true,,1899,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984978104,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984978104,4,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-8,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786984978167,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984978182,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984978198,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-6,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984978214,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-5,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984978277,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-3,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984978277,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-4,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984978559,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-10,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984978606,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-9,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984978610,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,996,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984978622,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-8,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984978683,1,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,996,284,10,10,http://localhost:3000/api/cart,1,0,0
+1786984978699,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,996,284,10,10,http://localhost:3000/api/cart,3,0,0
+1786984978715,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-6,text,true,,314,412,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984978730,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-5,text,true,,1899,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984978783,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984978791,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-4,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984979072,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-10,text,true,,1899,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984979119,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-9,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984979119,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-2,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984979135,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984979198,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984979213,1,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-7,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,1,0,0
+1786984979229,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-6,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984979244,2,01 POST /api/login,200,OK,Load profile - ramp then hold 1-5,text,true,,677,235,10,10,http://localhost:3000/api/login,2,0,0
+1786984979291,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,996,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984979307,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-4,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984979588,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-10,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984979634,12,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-2,text,true,,314,412,10,10,http://localhost:3000/api/checkout,12,0,0
+1786984979634,12,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-9,text,true,,451,131,10,10,http://localhost:3000/api/products/1,12,0,0
+1786984979649,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,1062,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984979713,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-1,text,true,,314,414,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984979728,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-7,text,true,,314,414,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984979743,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-6,text,true,,1899,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984979758,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-5,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984979805,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-3,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984979819,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984980102,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-10,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984980151,7,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-2,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,7,0,0
+1786984980164,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984980164,7,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-8,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,7,0,0
+1786984980227,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-1,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984980243,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-7,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984980259,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-6,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984980274,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-5,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984980322,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-3,text,true,,314,415,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984980337,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,1062,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984980619,1,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-10,text,true,,451,131,10,10,http://localhost:3000/api/products/1,1,0,0
+1786984980666,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-2,text,true,,1899,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984980681,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,1062,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984980681,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-8,text,true,,314,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984980744,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-1,text,true,,1910,296,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984980760,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-7,text,true,,1910,296,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984980776,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-6,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984980792,1,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,294,400,10,10,http://localhost:3000/api/cart,1,0,0
+1786984980855,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-3,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984980855,12,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-4,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,12,0,0
+1786984981137,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984981184,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-2,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984981199,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-8,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984981199,11,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-9,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,11,0,0
+1786984981262,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,680,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984981278,2,01 POST /api/login,200,OK,Load profile - ramp then hold 1-7,text,true,,680,235,10,10,http://localhost:3000/api/login,2,0,0
+1786984981294,1,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-6,text,true,,451,131,10,10,http://localhost:3000/api/products/1,1,0,0
+1786984981311,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,1062,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984981373,10,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-3,text,true,,1923,296,10,10,http://localhost:3000/api/orders/my-orders,10,0,0
+1786984981373,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-4,text,true,,314,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984981654,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,1062,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984981702,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-2,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984981718,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-9,text,true,,314,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984981718,10,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-8,text,true,,2048,294,10,10,http://localhost:3000/api/orders/my-orders,10,0,0
+1786984981781,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984981797,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-7,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984981812,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984981828,1,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-5,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,1,0,0
+1786984981890,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-4,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984981890,13,01 POST /api/login,200,OK,Load profile - ramp then hold 1-3,text,true,,681,235,10,10,http://localhost:3000/api/login,13,0,0
+1786984982169,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-10,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984982217,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-2,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984982233,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-9,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984982233,12,01 POST /api/login,200,OK,Load profile - ramp then hold 1-8,text,true,,677,235,10,10,http://localhost:3000/api/login,12,0,0
+1786984982296,1,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,10,10,http://localhost:3000/api/products/1,1,0,0
+1786984982311,1,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-7,text,true,,451,131,10,10,http://localhost:3000/api/products/1,1,0,0
+1786984982327,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,1062,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984982343,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-5,text,true,,314,412,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984982406,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-4,text,true,,2048,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984982420,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-3,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984982687,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-10,text,true,,314,412,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984982734,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984982750,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-9,text,true,,2048,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984982750,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-8,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984982812,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984982826,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984982842,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-6,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984982858,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-5,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984982922,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-4,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984982937,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-3,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984983204,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-10,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984983252,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,1062,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984983254,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-9,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984983267,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-8,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984983330,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,1062,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984983346,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,1062,284,10,10,http://localhost:3000/api/cart,3,0,0
+1786984983361,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-6,text,true,,314,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984983377,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-5,text,true,,2048,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984983439,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-4,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984983455,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984983721,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-10,text,true,,2048,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984983768,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-9,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984983768,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-2,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984983783,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984983846,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984983862,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-7,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984983877,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-6,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984983893,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-5,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984983955,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-4,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984983971,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,1062,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984984236,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-10,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984984275,1,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-9,text,true,,451,131,10,10,http://localhost:3000/api/products/1,1,0,0
+1786984984284,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-2,text,true,,314,412,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984984300,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,1128,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984984361,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-1,text,true,,314,414,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984984377,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-7,text,true,,314,414,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984984393,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-6,text,true,,2048,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984984408,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-5,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984984469,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984984484,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-3,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984984750,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-10,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984984782,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984984798,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-2,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984984814,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-8,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984984876,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-1,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984984892,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-7,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984984908,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-6,text,true,,677,235,10,10,http://localhost:3000/api/login,5,0,0
+1786984984924,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-5,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984984986,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,1128,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984985002,7,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-3,text,true,,314,415,10,10,http://localhost:3000/api/checkout,7,0,0
+1786984985268,1,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-10,text,true,,451,131,10,10,http://localhost:3000/api/products/1,1,0,0
+1786984985300,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,1128,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984985315,7,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-2,text,true,,2048,294,10,10,http://localhost:3000/api/orders/my-orders,7,0,4
+1786984985330,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-8,text,true,,314,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984985392,4,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-1,text,true,,2060,296,10,10,http://localhost:3000/api/orders/my-orders,4,0,2
+1786984985408,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-7,text,true,,2060,296,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984985423,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-6,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984985439,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984985503,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-4,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984985518,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-3,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984985786,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984985818,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-9,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984985834,6,01 POST /api/login,200,OK,Load profile - ramp then hold 1-2,text,true,,677,235,10,10,http://localhost:3000/api/login,6,0,0
+1786984985849,12,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-8,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,12,0,0
+1786984985912,6,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,680,235,10,10,http://localhost:3000/api/login,5,0,0
+1786984985928,8,01 POST /api/login,200,OK,Load profile - ramp then hold 1-7,text,true,,680,235,10,10,http://localhost:3000/api/login,8,0,0
+1786984985928,8,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-6,text,true,,451,131,10,10,http://localhost:3000/api/products/1,8,0,0
+1786984985944,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,1128,282,10,10,http://localhost:3000/api/cart,4,0,0
+1786984986022,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-4,text,true,,314,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984986037,6,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-3,text,true,,2074,296,10,10,http://localhost:3000/api/orders/my-orders,6,0,0
+1786984986300,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,1128,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984986330,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-9,text,true,,314,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984986345,4,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-2,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786984986375,5,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-8,text,true,,2197,294,10,10,http://localhost:3000/api/orders/my-orders,5,0,0
+1786984986437,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984986452,5,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,294,400,10,10,http://localhost:3000/api/cart,5,0,0
+1786984986452,6,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-7,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,6,0,0
+1786984986452,7,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-5,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,7,0,0
+1786984986546,11,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-4,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,11,0,0
+1786984986561,7,01 POST /api/login,200,OK,Load profile - ramp then hold 1-3,text,true,,681,235,10,10,http://localhost:3000/api/login,7,0,3
+1786984986811,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-10,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984986857,13,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-9,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,12,0,0
+1786984986857,14,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-2,text,true,,451,131,10,10,http://localhost:3000/api/products/1,14,0,0
+1786984986887,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-8,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,0
+1786984986951,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984986967,5,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,1128,282,10,10,http://localhost:3000/api/cart,5,0,0
+1786984986966,14,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-5,text,true,,314,412,10,10,http://localhost:3000/api/checkout,13,0,0
+1786984986966,14,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-7,text,true,,451,131,10,10,http://localhost:3000/api/products/1,14,0,0
+1786984987076,7,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-4,text,true,,2197,294,10,10,http://localhost:3000/api/orders/my-orders,7,0,0
+1786984987076,9,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-3,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,9,0,0
+1786984987325,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-10,text,true,,314,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984987387,4,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,294,400,10,10,http://localhost:3000/api/cart,4,0,0
+1786984987387,10,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-9,text,true,,2197,294,10,10,http://localhost:3000/api/orders/my-orders,10,0,0
+1786984987403,6,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-8,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,5,0,0
+1786984987465,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984987480,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-6,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984987496,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984987496,12,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-5,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,12,0,0
+1786984987591,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-4,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,2
+1786984987593,3,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-3,text,true,,451,131,10,10,http://localhost:3000/api/products/1,3,0,0
+1786984987858,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-10,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984987905,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,1128,282,10,10,http://localhost:3000/api/cart,3,0,0
+1786984987905,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-9,text,true,,677,235,10,10,http://localhost:3000/api/login,5,0,0
+1786984987921,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-8,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984987984,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,1128,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984988000,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-6,text,true,,314,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984988015,5,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,1128,284,10,10,http://localhost:3000/api/cart,5,0,0
+1786984988015,6,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-5,text,true,,2197,294,10,10,http://localhost:3000/api/orders/my-orders,6,0,0
+1786984988108,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,294,402,10,10,http://localhost:3000/api/cart,3,0,0
+1786984988108,4,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-4,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786984988374,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-10,text,true,,2197,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984988421,3,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-9,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786984988421,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-2,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984988436,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984988499,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,3,0,0
+1786984988515,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-6,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984988531,4,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-7,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,4,0,0
+1786984988531,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-5,text,true,,677,235,10,10,http://localhost:3000/api/login,5,0,2
+1786984988623,3,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,1128,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984988623,4,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-4,text,true,,451,131,10,10,http://localhost:3000/api/products/1,4,0,0
+1786984988891,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-10,text,true,,677,235,10,10,http://localhost:3000/api/login,4,0,0
+1786984988938,12,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-2,text,true,,314,412,10,10,http://localhost:3000/api/checkout,12,0,0
+1786984988938,13,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-9,text,true,,451,131,10,10,http://localhost:3000/api/products/1,13,0,0
+1786984988953,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,1194,282,10,10,http://localhost:3000/api/cart,4,0,0
+1786984989015,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-1,text,true,,314,414,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984989032,7,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-6,text,true,,2197,294,10,10,http://localhost:3000/api/orders/my-orders,7,0,0
+1786984989047,13,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-5,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,13,0,0
+1786984989047,12,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-7,text,true,,314,414,10,10,http://localhost:3000/api/checkout,12,0,0
+1786984989143,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984989143,6,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-3,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,6,0,0
+1786984989407,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-10,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984989470,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984989470,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-2,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984989470,11,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-8,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,11,0,0
+1786984989534,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-1,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984989550,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-6,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,1
+1786984989566,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-5,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984989568,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-7,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984989659,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,1194,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984989659,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-3,text,true,,314,415,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984989923,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-10,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984989986,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,1194,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984989986,5,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-2,text,true,,2197,294,10,10,http://localhost:3000/api/orders/my-orders,5,0,0
+1786984989986,11,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-8,text,true,,314,412,10,10,http://localhost:3000/api/checkout,11,0,0
+1786984990048,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-1,text,true,,2210,296,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984990064,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-6,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984990079,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984990080,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-7,text,true,,2210,296,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984990175,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-3,text,true,,295,360,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984990175,9,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-4,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,9,0,0
+1786984990439,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984990501,5,01 POST /api/login,200,OK,Load profile - ramp then hold 1-2,text,true,,677,235,10,10,http://localhost:3000/api/login,5,0,0
+1786984990501,10,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-8,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,10,0,0
+1786984990502,10,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-9,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,10,0,0
+1786984990563,2,01 POST /api/login,200,OK,Load profile - ramp then hold 1-1,text,true,,680,235,10,10,http://localhost:3000/api/login,2,0,0
+1786984990579,1,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-6,text,true,,451,131,10,10,http://localhost:3000/api/products/1,1,0,0
+1786984990594,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-5,text,true,,1194,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984990594,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-7,text,true,,680,235,10,10,http://localhost:3000/api/login,4,0,1
+1786984990688,10,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-3,text,true,,2225,296,10,10,http://localhost:3000/api/orders/my-orders,10,0,0
+1786984990688,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-4,text,true,,314,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984990952,4,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-10,text,true,,1194,282,10,10,http://localhost:3000/api/cart,4,0,0
+1786984991015,10,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-2,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,10,0,0
+1786984991015,10,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-9,text,true,,314,412,10,10,http://localhost:3000/api/checkout,10,0,0
+1786984991015,11,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-8,text,true,,2346,294,10,10,http://localhost:3000/api/orders/my-orders,10,0,0
+1786984991077,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-1,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984991092,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,294,400,10,10,http://localhost:3000/api/cart,2,0,0
+1786984991108,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-7,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984991108,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-5,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984991201,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-4,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984991201,10,01 POST /api/login,200,OK,Load profile - ramp then hold 1-3,text,true,,681,235,10,10,http://localhost:3000/api/login,10,0,0
+1786984991467,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-10,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984991529,1,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-2,text,true,,451,131,10,10,http://localhost:3000/api/products/1,1,0,0
+1786984991530,4,01 POST /api/login,200,OK,Load profile - ramp then hold 1-8,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,1
+1786984991545,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-9,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984991591,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-1,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984991607,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-6,text,true,,1194,282,10,10,http://localhost:3000/api/cart,2,0,0
+1786984991623,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-7,text,true,,451,131,10,10,http://localhost:3000/api/products/1,2,0,0
+1786984991623,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-5,text,true,,314,412,10,10,http://localhost:3000/api/checkout,8,0,0
+1786984991716,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-4,text,true,,2346,294,10,10,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984991716,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-3,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984991982,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-10,text,true,,314,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984992046,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,294,400,10,10,http://localhost:3000/api/cart,3,0,0
+1786984992046,4,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-8,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786984992061,1,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-9,text,true,,2346,294,10,10,http://localhost:3000/api/orders/my-orders,1,0,0
+1786984992107,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984992122,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-6,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984992138,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984992138,9,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-5,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,9,0,0
+1786984992220,2,01 POST /api/login,200,OK,Load profile - ramp then hold 1-4,text,true,,677,235,10,10,http://localhost:3000/api/login,2,0,0
+1786984992232,1,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-3,text,true,,451,131,10,10,http://localhost:3000/api/products/1,1,0,0
+1786984992497,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-10,text,true,,295,358,10,10,http://localhost:3000/api/coupon-usage,8,0,0
+1786984992552,1,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-2,text,true,,1194,282,10,10,http://localhost:3000/api/cart,1,0,0
+1786984992559,1,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-8,text,true,,451,131,10,10,http://localhost:3000/api/products/1,1,0,0
+1786984992574,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-9,text,true,,677,235,10,10,http://localhost:3000/api/login,3,0,1
+1786984992620,1,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-1,text,true,,1194,284,10,10,http://localhost:3000/api/cart,1,0,0
+1786984992635,9,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-6,text,true,,314,412,10,10,http://localhost:3000/api/checkout,9,0,0
+1786984992651,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-7,text,true,,1194,284,10,10,http://localhost:3000/api/cart,2,0,0
+1786984992651,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-5,text,true,,2346,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984992729,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-4,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984992744,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,294,402,10,10,http://localhost:3000/api/cart,2,0,0
+1786984993009,3,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-10,text,true,,2346,294,10,10,http://localhost:3000/api/orders/my-orders,3,0,0
+1786984993057,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-2,text,true,,401,242,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984993073,1,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,294,400,10,10,http://localhost:3000/api/cart,1,0,0
+1786984993088,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-9,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984993136,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-1,text,true,,401,243,10,10,http://localhost:3000/api/apply-coupon,2,0,0
+1786984993151,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-6,text,true,,295,358,9,9,http://localhost:3000/api/coupon-usage,8,0,0
+1786984993166,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-5,text,true,,677,235,9,9,http://localhost:3000/api/login,3,0,0
+1786984993166,3,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-7,text,true,,401,243,9,9,http://localhost:3000/api/apply-coupon,3,0,0
+1786984993244,2,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-4,text,true,,451,131,9,9,http://localhost:3000/api/products/1,2,0,0
+1786984993259,2,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-3,text,true,,1194,284,9,9,http://localhost:3000/api/cart,2,0,0
+1786984993524,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-10,text,true,,677,235,9,9,http://localhost:3000/api/login,3,0,1
+1786984993571,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-2,text,true,,314,412,9,9,http://localhost:3000/api/checkout,8,0,0
+1786984993587,1,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-8,text,true,,1260,282,9,9,http://localhost:3000/api/cart,1,0,0
+1786984993603,1,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-9,text,true,,451,131,9,9,http://localhost:3000/api/products/1,1,0,0
+1786984993666,2,09 GET /api/orders/my-orders,200,OK,Load profile - ramp then hold 1-6,text,true,,2346,294,9,9,http://localhost:3000/api/orders/my-orders,2,0,0
+1786984993671,1,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-5,text,true,,453,143,9,9,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786984993682,8,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-7,text,true,,314,414,9,9,http://localhost:3000/api/checkout,8,0,0
+1786984993760,3,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,294,400,9,9,http://localhost:3000/api/cart,3,0,0
+1786984993776,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-3,text,true,,401,243,9,9,http://localhost:3000/api/apply-coupon,2,0,0
+1786984994038,2,02 GET /api/products search,200,OK,Load profile - ramp then hold 1-10,text,true,,453,143,9,9,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786984994086,7,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-2,text,true,,295,358,8,8,http://localhost:3000/api/coupon-usage,7,0,0
+1786984994101,2,06 POST /api/apply-coupon,200,OK,Load profile - ramp then hold 1-8,text,true,,401,242,7,7,http://localhost:3000/api/apply-coupon,2,0,0
+1786984994116,2,04 POST /api/cart,200,OK,Load profile - ramp then hold 1-9,text,true,,294,400,6,6,http://localhost:3000/api/cart,2,0,0
+1786984994174,3,01 POST /api/login,200,OK,Load profile - ramp then hold 1-6,text,true,,677,235,5,5,http://localhost:3000/api/login,3,0,0
+1786984994179,1,03 GET /api/products/{product_id},200,OK,Load profile - ramp then hold 1-5,text,true,,451,131,4,4,http://localhost:3000/api/products/1,1,0,0
+1786984994194,8,08 POST /api/coupon-usage,200,OK,Load profile - ramp then hold 1-7,text,true,,295,360,3,3,http://localhost:3000/api/coupon-usage,8,0,0
+1786984994274,1,05 GET /api/cart,200,OK,Load profile - ramp then hold 1-4,text,true,,1260,282,2,2,http://localhost:3000/api/cart,1,0,0
+1786984994288,7,07 POST /api/checkout using final_amount,200,OK,Load profile - ramp then hold 1-3,text,true,,314,415,1,1,http://localhost:3000/api/checkout,7,0,0

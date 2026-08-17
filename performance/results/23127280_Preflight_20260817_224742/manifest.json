@@ -1,0 +1,48 @@
+{
+  "evidence_state": "HUMAN_VERIFIED",
+  "student_decision": "HUMAN VERIFIED PREFLIGHT 23127280_Preflight_20260817_224742",
+  "files": [
+    {
+      "path": "performance/load/23127280_Load_20260815.jmx",
+      "size": 31174,
+      "sha256": "68ecbe0a5d5f4a94199c57dee019b5d47ee16811cc29a3994cd45c6ed474ff9f",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/data/users.csv",
+      "size": 900,
+      "sha256": "36ed5c640d83ac450179788e8f4f65f1453b0aec78573c67f63b86c3f707302e",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/data/last-reset.json",
+      "size": 444,
+      "sha256": "e5b3a00bd74741643715b515baccde50c2b4cdd74f132c09b969ac8844ea3084",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Preflight_20260817_224742/23127280_Preflight_20260817_224742.jtl",
+      "size": 1532,
+      "sha256": "7c9d8e548a45eeadb5a3e98cf54d1c862ef73a04a2e1a16605cca7f7386d163c",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "performance/reports/23127280_Preflight_20260817_224742/index.html",
+      "size": 9699,
+      "sha256": "b3b8b6d139ed7c7ca10cd579b06f0660f25cb50f38155454d2aa9900082ff5d5",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "docs/evidence/preflight/23127280_Preflight_20260817_224742/summary-report.png",
+      "size": 111716,
+      "sha256": "da8b7c9cab6f6dcca290d55c367b2e313ab8a600fdd6d40d737e1b490c37e7d9",
+      "state": "HUMAN_VERIFIED"
+    },
+    {
+      "path": "docs/evidence/preflight/23127280_Preflight_20260817_224742/html-dashboard.png",
+      "size": 93212,
+      "sha256": "494d46b413ba8dff003264eed712abe7415d363ec37641aecc60685eec2b1680",
+      "state": "HUMAN_VERIFIED"
+    }
+  ]
+}

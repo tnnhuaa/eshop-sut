@@ -1,0 +1,21 @@
+# Calibration Run Record — 2 VU
+
+- Evidence state: `HUMAN_VERIFIED`
+- Run ID: `23127280_Calibration_2VU_20260817_233048`
+- Reset ID: `23127280-calibration-2vu-20260817-001`
+- Git commit: `66fe5b775d7e1ae4b0ceae6f4d0f0dbf3da113bd`
+- Profile: 2 VU; ramp 10 seconds; hold 60 seconds; think time 500–1500 ms
+- Start GMT+7: `2026-08-17 23:30:54.422 +07:00`
+- End GMT+7: `2026-08-17 23:32:03.300 +07:00`
+- Samples: 259
+- Successes/errors: 259/0; error rate 0.00%
+- Throughput: 3.760 samples/second
+- Elapsed: p50 3 ms; p95 12 ms; p99 20 ms; max 73 ms
+- Baseline reported before run: CPU 8%; RAM 72%
+- Observed peak reported by the student: CPU 50%; RAM 75%
+- Screenshot capture: CPU 50%; RAM 17.8/23.8 GB (75%)
+- Raw JTL: `performance/results/23127280_Calibration_2VU_20260817_233048/23127280_Calibration_2VU_20260817_233048.jtl`
+- HTML report: `performance/reports/23127280_Calibration_2VU_20260817_233048/index.html`
+- Resource evidence: `docs/evidence/calibration/23127280_Calibration_2VU_20260817_233048/task-manager-during-run.png`
+- Student decision: `ACCEPT CALIBRATION 2VU 23127280_Calibration_2VU_20260817_233048`
+- Decision: accepted as the stable 2 VU calibration level; continue to 5 VU before selecting final `L`.

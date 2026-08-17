@@ -1,0 +1,23 @@
+# Calibration Run Record — Batch 5 VU
+
+- Evidence state: `HUMAN_VERIFIED`
+- Run ID: `23127280_Calibration_5VU_Batch_20260817_234036`
+- Reset ID: `23127280-calibration-5vu-batch-20260817_234036`
+- Git commit: `66fe5b775d7e1ae4b0ceae6f4d0f0dbf3da113bd`
+- Execution owner: Codex ran the repository CLI batch after the student's `BATCH CALIBRATION READY` instruction.
+- Profile: 5 VU; ramp 10 seconds; hold 60 seconds; think time 500–1500 ms
+- Start GMT+7: `2026-08-17 23:40:41.417 +07:00`
+- End GMT+7: `2026-08-17 23:41:50.658 +07:00`
+- Samples: 640
+- Successes/errors: 640/0; error rate 0.00%
+- Throughput: 9.243 samples/second
+- Elapsed: p50 3 ms; p95 10 ms; p99 15 ms; max 83 ms
+- CPU counter: first 56.94%; average 29.29%; maximum 77.04%
+- Committed-memory counter: first 96.48%; maximum 96.90%; last 92.66%; no upward drift observed in this short run
+- Raw JTL: `performance/results/23127280_Calibration_5VU_Batch_20260817_234036/23127280_Calibration_5VU_Batch_20260817_234036.jtl`
+- HTML report: `performance/reports/23127280_Calibration_5VU_Batch_20260817_234036/index.html`
+- Resource time series: `docs/evidence/calibration/23127280_Calibration_5VU_Batch_20260817_234036/resource-counters.csv`
+- Evidence limitation: `% Committed Bytes In Use` is not the same as Task Manager physical-RAM percentage and cannot establish a physical memory ceiling.
+- Evidence limitation: the per-run reset snapshot was not preserved before the next batch seed; the exact reset ID remains in the batch console output, but `reset-snapshot.json` is `INCOMPLETE` in the manifest.
+- Student decision: accepted in `ACCEPT BATCH CALIBRATION 5VU 23127280_Calibration_5VU_Batch_20260817_234036 AND 10VU 23127280_Calibration_10VU_Batch_20260817_234200; ACCEPT L=10`.
+- Decision: accepted as a stable calibration level, with the documented missing reset-snapshot limitation.

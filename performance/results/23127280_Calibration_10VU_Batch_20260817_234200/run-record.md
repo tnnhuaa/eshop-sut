@@ -1,0 +1,23 @@
+# Calibration Run Record — Batch 10 VU
+
+- Evidence state: `HUMAN_VERIFIED`
+- Run ID: `23127280_Calibration_10VU_Batch_20260817_234200`
+- Reset ID: `23127280-calibration-10vu-batch-20260817_234200`
+- Git commit: `66fe5b775d7e1ae4b0ceae6f4d0f0dbf3da113bd`
+- Execution owner: Codex ran the repository CLI batch after the student's `BATCH CALIBRATION READY` instruction.
+- Profile: 10 VU; ramp 10 seconds; hold 60 seconds; think time 500–1500 ms
+- Start GMT+7: `2026-08-17 23:42:05.127 +07:00`
+- End GMT+7: `2026-08-17 23:43:14.295 +07:00`
+- Samples: 1274
+- Successes/errors: 1274/0; error rate 0.00%
+- Throughput: 18.419 samples/second
+- Elapsed: p50 3 ms; p95 12 ms; p99 16 ms; max 69 ms
+- CPU counter: first 66.13%; average 37.19%; maximum 76.09%
+- Committed-memory counter: first 96.49%; maximum 97.28%; last 91.95%; no upward drift observed in this short run
+- Raw JTL: `performance/results/23127280_Calibration_10VU_Batch_20260817_234200/23127280_Calibration_10VU_Batch_20260817_234200.jtl`
+- HTML report: `performance/reports/23127280_Calibration_10VU_Batch_20260817_234200/index.html`
+- Resource time series: `docs/evidence/calibration/23127280_Calibration_10VU_Batch_20260817_234200/resource-counters.csv`
+- Reset snapshot: `performance/results/23127280_Calibration_10VU_Batch_20260817_234200/reset-snapshot.json`
+- Evidence limitation: `% Committed Bytes In Use` is not the same as Task Manager physical-RAM percentage and cannot establish a physical memory ceiling.
+- Student decision: accepted in `ACCEPT BATCH CALIBRATION 5VU 23127280_Calibration_5VU_Batch_20260817_234036 AND 10VU 23127280_Calibration_10VU_Batch_20260817_234200; ACCEPT L=10`.
+- Decision: accepted as the highest tested stable calibration level; calibrated `L = 10`.

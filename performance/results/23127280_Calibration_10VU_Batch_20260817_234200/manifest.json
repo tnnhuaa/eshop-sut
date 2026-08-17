@@ -1,0 +1,42 @@
+{
+  "evidence_state": "HUMAN_VERIFIED",
+  "student_decision": "ACCEPT BATCH CALIBRATION 10VU; ACCEPT L=10",
+  "files": [
+    {
+      "path": "performance/load/23127280_Load_20260815.jmx",
+      "size": 37095,
+      "sha256": "65652e1da01ffc2f9c9cdb2a252fec7f3f6b4c295a27108537fc5a09788e5c3b",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/data/users.csv",
+      "size": 900,
+      "sha256": "36ed5c640d83ac450179788e8f4f65f1453b0aec78573c67f63b86c3f707302e",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Calibration_10VU_Batch_20260817_234200/reset-snapshot.json",
+      "size": 461,
+      "sha256": "ccfa295ebf08ab5dfd47a862190a6b6e99a3e6e9079f54f94de3def6d0db61da",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Calibration_10VU_Batch_20260817_234200/23127280_Calibration_10VU_Batch_20260817_234200.jtl",
+      "size": 195151,
+      "sha256": "9503cdb0bdef08b83d5634d3127c79dff0edd0f51ac097dc0762cb3e50f5255c",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/reports/23127280_Calibration_10VU_Batch_20260817_234200/index.html",
+      "size": 9712,
+      "sha256": "96cc92abf027293f8064831df2085c0ce9ffc108acbf45599c2c38e6ee1b0fd1",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/calibration/23127280_Calibration_10VU_Batch_20260817_234200/resource-counters.csv",
+      "size": 4275,
+      "sha256": "a50af821b7c9ec4a205783d8694283847dab26eb62d3de67ddda9ca5f3a0b056",
+      "state": "RUN_UNVERIFIED"
+    }
+  ]
+}

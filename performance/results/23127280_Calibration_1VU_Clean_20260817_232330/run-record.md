@@ -1,0 +1,22 @@
+# Calibration Run Record — Clean 1 VU
+
+- Evidence state: `HUMAN_VERIFIED`
+- Run ID: `23127280_Calibration_1VU_Clean_20260817_232330`
+- Reset ID: `23127280-calibration-1vu-clean-20260817-002`
+- Git commit: `66fe5b775d7e1ae4b0ceae6f4d0f0dbf3da113bd`
+- Profile: 1 VU; ramp 10 seconds; hold 60 seconds; think time 500–1500 ms
+- Start GMT+7: `2026-08-17 23:23:37.085 +07:00`
+- End GMT+7: `2026-08-17 23:24:45.061 +07:00`
+- Samples: 132
+- Successes/errors: 132/0; error rate 0.00%
+- Throughput: 1.942 samples/second
+- Elapsed: p50 3 ms; p95 11 ms; p99 18 ms; max 52 ms
+- Baseline reported before run: CPU 10%; RAM 66%
+- Observed peak reported by the student: CPU 66%; RAM 71%
+- Screenshot capture: CPU 14%; RAM 16.8/23.8 GB (71%)
+- Resource limitation: the screenshot confirms the in-run state but not the reported 66% CPU peak; the peak remains a contemporaneous student observation.
+- Raw JTL: `performance/results/23127280_Calibration_1VU_Clean_20260817_232330/23127280_Calibration_1VU_Clean_20260817_232330.jtl`
+- HTML report: `performance/reports/23127280_Calibration_1VU_Clean_20260817_232330/index.html`
+- Resource evidence: `docs/evidence/calibration/23127280_Calibration_1VU_Clean_20260817_232330/task-manager-during-run.png`
+- Student decision: `ACCEPT CALIBRATION 1VU 23127280_Calibration_1VU_Clean_20260817_232330`
+- Decision: accepted as the stable 1 VU calibration level; continue to 2 VU before selecting final `L`.

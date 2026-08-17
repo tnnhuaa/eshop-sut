@@ -1,0 +1,42 @@
+{
+  "evidence_state": "HUMAN_VERIFIED",
+  "student_decision": "ACCEPT CALIBRATION 1VU 23127280_Calibration_1VU_Clean_20260817_232330",
+  "files": [
+    {
+      "path": "performance/load/23127280_Load_20260815.jmx",
+      "size": 37095,
+      "sha256": "65652e1da01ffc2f9c9cdb2a252fec7f3f6b4c295a27108537fc5a09788e5c3b",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/data/users.csv",
+      "size": 900,
+      "sha256": "36ed5c640d83ac450179788e8f4f65f1453b0aec78573c67f63b86c3f707302e",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/data/last-reset.json",
+      "size": 457,
+      "sha256": "49701dc2cf6b1dd9a49f8ca8f8852f398be309d0c2ed00277a7254ad6adb8b37",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/results/23127280_Calibration_1VU_Clean_20260817_232330/23127280_Calibration_1VU_Clean_20260817_232330.jtl",
+      "size": 20090,
+      "sha256": "8263a46ba214d66cf24b07f2417f264b1940a32e84515c4c9faaf182fd258983",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "performance/reports/23127280_Calibration_1VU_Clean_20260817_232330/index.html",
+      "size": 9711,
+      "sha256": "1bb4b2a1ecd85077e4addffba59623195b412824e9d325977348650605d0b25f",
+      "state": "RUN_UNVERIFIED"
+    },
+    {
+      "path": "docs/evidence/calibration/23127280_Calibration_1VU_Clean_20260817_232330/task-manager-during-run.png",
+      "size": 178831,
+      "sha256": "322dd44662471be2596334a36a384c1add42d19e111f196e64ea6160e168ba10",
+      "state": "RUN_UNVERIFIED"
+    }
+  ]
+}
