@@ -1,6 +1,6 @@
 # Task 2 — AI Analysis and Misinterpretation Hunt
 
-Review state: `RUN_UNVERIFIED` — the calculations below come from immutable raw JTL files, but the student must inspect and accept the analysis.
+Review state: `HUMAN_VERIFIED` — on 2026-08-18, the student accepted the evidence-backed analysis in commit `1817ba9`.
 
 ## Evidence analyzed
 
@@ -58,12 +58,6 @@ These thresholds are proposals for later runs, not retroactive changes to the ac
 | Add Node cluster workers immediately | Hallucinated without redesign | Carts live in the process-local `userCarts` object. Multiple workers would split cart state unless storage and session ownership were redesigned first. |
 | Cache order history in Redis | Unsupported at the observed scale | Order history changes after every checkout and currently has very low latency. Cache invalidation and a new dependency are not justified by these JTLs. |
 
-## Student review gate
+## Student decision
 
-Before marking this artifact `HUMAN_VERIFIED`, the student must:
-
-1. Check the four raw JTL paths and the two `statistics.json` files.
-2. Confirm the 799 Stress parent rows and 3,660 Spike parent rows.
-3. Accept or rewrite the threshold proposal.
-4. Select at least one feasible and one rejected optimization in their own words.
-5. Record their name, date, and decision in `manual/06-human-review-form.md`.
+On 2026-08-18, Nguyễn Hiền Tuấn Anh accepted this analysis from commit `1817ba9`. The student selected the composite-index experiments and order-history pagination as feasible improvements. The student rejected a generic database connection pool and immediate Node clustering because neither follows from the current SQLite architecture and process-local cart state. Review result: `HUMAN_VERIFIED`.

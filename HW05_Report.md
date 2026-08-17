@@ -31,9 +31,11 @@ Hardware evidence: `HUMAN_VERIFIED`. On 2026-08-18, the student confirmed that h
 
 ## 5. AI analysis and misinterpretation hunt
 
-The evidence-backed Task 2 draft is in `docs/task2-ai-analysis.md`, and the mandatory 200–300-word draft is in `AI_Critique.md`. Both remain `RUN_UNVERIFIED` until the student completes `manual/06-human-review-form.md`.
+The evidence-backed Task 2 analysis is in `docs/task2-ai-analysis.md`, and the mandatory 247-word critique is in `AI_Critique.md`. On 2026-08-18, the student accepted commit `1817ba9`; both artifacts and `manual/06-human-review-form.md` are `HUMAN_VERIFIED`.
 
 The main correction concerns aggregation scope. Stress has 7,607 raw rows, including 799 parent E2E rows and 6,808 endpoint rows; the HTML total is 6,883. The earlier AI explanation incorrectly treated the 724 order-history samples as parent rows. Spike shows the same risk: raw all-row p95 is 58 ms, while the HTML total reports 18 ms for a different population. Every reported metric must therefore identify its source and sample population.
+
+The student selected composite-index experiments and order-history pagination as feasible improvements. The student rejected a generic connection pool and immediate Node clustering as unsupported by the current SQLite and process-local cart architecture.
 
 ## 6. Continuous performance pipeline
 
@@ -49,4 +51,4 @@ No issue is claimed yet. Source inspection identified candidate risks in account
 
 ## 9. Evidence and submission
 
-Load `_002`, Stress, corrected Spike, Soak `_002`, and the official-run hardware are human-verified. Load `_002` replaces the contaminated `_001` evidence documented in `docs/load-001-integrity-incident.md`. Soak `_001` was removed from the submission tree and preserved under `rejected-evidence`. Video URLs, Task 2 human review, YouTube upload, and Moodle submission remain pending. The current TA rubric totals 100 points.
+Load `_002`, Stress, corrected Spike, Soak `_002`, the official-run hardware, and Task 2 analysis are human-verified. Load `_002` replaces the contaminated `_001` evidence documented in `docs/load-001-integrity-incident.md`. Soak `_001` was removed from the submission tree and preserved under `rejected-evidence`. Video URLs, YouTube upload, and Moodle submission remain pending. The current TA rubric totals 100 points.
