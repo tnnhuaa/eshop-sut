@@ -1,3 +1,15 @@
+* commit c36bce68440822ad43ed4c28407e3d0bd01850fc
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 09:43:33 2026 +0700
+| 
+|     docs(submission): add signed final PDFs
+| 
+* commit 1113c13a64b2bd45998d1cac82a7600649adc0c7
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 09:30:04 2026 +0700
+| 
+|     docs(submission): refresh commit log and manifest
+| 
 * commit f9ea3a84b43beecf1892fd2665475cdd458dcef4
 | Author: tnnhuaa <nguyenhientuananh@gmail.com>
 | Date:   Tue Aug 18 09:29:33 2026 +0700
