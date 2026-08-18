@@ -32,15 +32,15 @@ The Scenario B workflow covers auth-heavy Login, read-heavy Product Search/Detai
 
 ## Self-assessment
 
-| Criterion | Maximum | Provisional self-score | Basis |
-|---|---:|---:|---|
-| Task 1 — Load testing | 30 | 29 | Accepted rerun, raw JTL, HTML, resource evidence, and video; original integrity incident is disclosed |
-| Task 1 — Stress testing | 20 | 18 | Four stages through 30 VU with complete evidence; no application breaking point was reached |
-| Task 1 — Spike testing | 20 | 19 | Corrected data exhaustion, reran successfully, and demonstrated recovery |
-| Task 2 — AI analysis and misinterpretation hunt | 10 | 10 | Raw corrections, thresholds, optimization review, and 247-word critique accepted |
-| Task 3 — Continuous performance proposal | 10 | 10 | Flow chart, path rules, tiers, p95 gate, and trade-offs accepted |
-| Agent Skill | 10 | 10 | Reusable endpoint contracts, validators, evidence controls, and demo URL |
-| **Total** | **100** | **96** | Use ZIP suffix `096` if the student keeps this score after final review |
+| **No.** | **Criteria** | **Grade** | **Self-Assessed Grade** |
+| --- | --- | --- | --- |
+| **1** | Task 1 — Load testing | 30 | 30 |
+| **2** | Task 1 — Stress testing | 20 | 20 |
+| **3** | Task 1 — Spike testing | 20 | 20 |
+| **4** | Task 2 — AI analysis + misinterpretation hunt (with correct values from raw logs) | 10 | 10 |
+| **5** | Task 3 — Continuous Performance Testing proposal (G9.6) | 10 | 10 |
+| **6** | Agent Skills | 10 | 10 |
+|  | **Total** | **100** | **100** |
 
 ## Demo videos
 

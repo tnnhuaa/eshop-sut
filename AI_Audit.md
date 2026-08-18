@@ -44,8 +44,6 @@
 | **Artifact #6 - Record Task 2 human review**<br>Tool: Codex primary agent; eshop-jmeter-performance; clear-writing<br>Time: 2026-08-18 03:17:07 GMT+7<br>Full prompt: see Artifact #6 verbatim record below. | Applied the student's hardware and Task 2 decisions, retained indexes and pagination as feasible, rejected generic pooling and immediate clustering, and committed the two reviews separately.<br>Full output: see Artifact #6 verbatim record below. | VALID | The review cites raw JTL corrections: Stress has 799 parent rows, and Spike raw/HTML p95 values use different populations. The optimization decisions match the SQLite and process-local cart architecture. | None required. |
 | **Artifact #7 - Draft continuous performance proposal**<br>Tool: Codex primary agent; eshop-jmeter-performance; clear-writing<br>Time: 2026-08-18 03:22:54 GMT+7<br>Full prompt: see Artifact #7 verbatim record below. | Created a Task 3 proposal with path-based triggers, a flow chart, execution tiers, p95/error gates, baseline controls, and cost/false-alarm trade-offs; left it awaiting student review.<br>Full output: see Artifact #7 verbatim record below. | INCOMPLETE | The proposal satisfied the content requirements, but the response correctly kept it `RUN_UNVERIFIED` until the student reviewed its policy choices. Artifact #8 supplies that later acceptance. | Student reviewed and accepted the decisions in Artifact #8. |
 | **Artifact #8 - Accept continuous performance proposal**<br>Tool: Codex primary agent; clear-writing<br>Time: 2026-08-18 03:27:40 GMT+7<br>Full prompt: see Artifact #8 verbatim record below. | Recorded the student's acceptance of Task 3 path rules, tiers, p95 rule, and non-production restriction; kept the pipeline described as a proposal rather than an implemented workflow.<br>Full output: see Artifact #8 verbatim record below. | VALID | The current file and commits `3eef521` and `0ec4533` preserve the accepted proposal and human decision. No GitHub Actions execution is falsely claimed. | None required. |
-| **Artifact #9 - Extend and demonstrate the Agent Skill**<br>Tool: Codex primary agent; eshop-jmeter-performance; skill-creator<br>Time: 2026-08-18 03:32:51 GMT+7<br>Full prompt: see Artifact #9 verbatim record below. | Added reusable endpoint contracts, a template and extension guide, validated all four JMX plans and Load `_002` JTL, committed the skill update, and produced a concise recording script.<br>Full output: see Artifact #9 verbatim record below. | VALID | Commit `baeedd1` and the current skill show contract-driven sampler, CSV, correlation, listener, filename, and forbidden-literal rules. The demo audits existing evidence without executing JMeter or modifying the SUT. | None required. |
-| **Artifact #10 - Record video evidence links**<br>Tool: Codex primary agent; eshop-jmeter-performance; clear-writing<br>Time: 2026-08-18 03:55:52 GMT+7<br>Full prompt: see Artifact #10 verbatim record below. | Linked the four accepted performance runs and Agent Skill demo in the report, README, decisions, run records, and manifests; recalculated metadata hashes and committed the changes.<br>Full output: see Artifact #10 verbatim record below. | VALID | Commit `fbf26fd` contains the five student-provided URLs and associates them only with accepted runs. The response explicitly leaves playback, privacy, audio, and duration checks to the student. | Student must complete the final incognito playback gate before submission. |
 <!-- AUDIT_TABLE_ROWS_END -->
 
 ### Verbatim Artifact Records
@@ -508,176 +506,16 @@ Bước tiếp theo: upload các clip lên YouTube ở chế độ **Unlisted**,
 - **Reasoning:** The response accurately records the human decision and does not claim that the proposed CI/CD workflow was implemented or executed.
 - **Student Fixes:** None required.
 
-### Artifact #9 - Verbatim Record
-
-- **User:** Nguyễn Hiền Tuấn Anh (23127280)
-- **Date and Time:** 2026-08-18 03:32:51 GMT+7
-- **Agent Used:** Codex (primary agent); eshop-jmeter-performance skill; skill-creator skill
-- **Prompt:**
-
-````text
-BỔ SUNG SKILL và cho lại phần kịch bản hoàn chỉnh cần quay
-````
-
-- **AI Output:**
-
-````text
-Mở [kịch bản quay hoàn chỉnh](manual/11-agent-skill-demo-script-vi.md) và để cạnh cửa sổ OBS.
-
-Skill đã được nâng cấp để tái sử dụng thật sự:
-
-- Scenario B chuyển thành endpoint contract mặc định.
-- Endpoint mới dùng JSON contract, không cần sửa validator.
-- Bốn JMX hiện tại đều `PASS`.
-- Raw Load JTL đọc được `7120 samples`.
-- Commit: `baeedd1 feat(skill): support reusable endpoint contracts`
-
-Skill Creator định hướng việc giữ `SKILL.md` ngắn gọn và tách cấu hình mở rộng vào `references/` cùng `assets/`.
-
-## Kịch bản quay 2–3 phút
-
-### 1. Giới thiệu — 20 giây
-
-Hiển thị thư mục skill và nói:
-
-> Đây là Agent Skill em xây dựng cho performance testing và log analysis bằng JMeter. Skill bao gồm workflow, validator, endpoint contract, evidence policy và các template human review. Scenario B là contract mặc định, nhưng validator cũng nhận contract khác để tái sử dụng cho endpoint group mới.
-
-### 2. Chứng minh khả năng mở rộng — 25 giây
-
-Mở [endpoint-contract-template.json](.agents/skills/eshop-jmeter-performance/assets/endpoint-contract-template.json).
-
-Nói:
-
-> Với endpoint group mới, em không cần sửa validator. Em chỉ khai báo thứ tự sampler, CSV fields, correlation, listener, filename pattern và các giá trị không được hardcode. Quy trình preflight, approval, CLI execution, JTL validation và bảo vệ evidence vẫn được tái sử dụng.
-
-### 3. Gọi skill — 20 giây
-
-Trong Codex, gõ `$`, chọn `eshop-jmeter-performance`, rồi gửi:
-
-```text
-Use $eshop-jmeter-performance to audit the accepted Load run
-23127280_Load_Official_20260818_002.
-
-Use a working Python 3 runtime and run the bundled validate_jmx.py on
-performance/load/23127280_Load_20260815.jmx. Then run validate_jtl.py on
-performance/results/23127280_Load_Official_20260818_002/23127280_Load_Official_20260818_002.jtl.
-
-Confirm:
-1. the nine Scenario B requests;
-2. external CSV variables, correlations, assertions, and disabled GUI listener;
-3. samples, errors, raw p95, throughput, and recorded evidence state;
-4. how endpoint-contract-template.json adapts the workflow to another endpoint group;
-5. which evidence-safety rules were enforced.
-
-Do not execute JMeter, do not change the SUT, and do not modify any evidence.
-```
-
-Nói:
-
-> Em yêu cầu skill chạy validator thật trên JMX và raw JTL đã có. Em cấm chạy JMeter hoặc sửa evidence nên demo này không tạo measured run mới.
-
-### 4. Trình bày output — 60 giây
-
-Chỉ vào kết quả và nói:
-
-> JMX validator báo PASS theo Scenario B contract. Plan có đủ chín request từ login đến order history, sử dụng CSV bên ngoài, có các correlation cần thiết và listener bị disable khi chạy CLI.
-
-> JTL validator đọc được 7.120 samples. Summary của run ghi nhận 0 errors, raw p95 9 mili giây và throughput 16,983 samples mỗi giây.
-
-> Validator luôn bắt đầu với RUN_UNVERIFIED vì script không được tự cấp human verification. Run này chỉ trở thành HUMAN_VERIFIED sau khi em trực tiếp kiểm tra JTL, HTML report, Summary Report và resource evidence.
-
-### 5. Kết luận — 25 giây
-
-Mở [extension-guide.md](.agents/skills/eshop-jmeter-performance/references/extension-guide.md).
-
-Nói:
-
-> Khi áp dụng cho endpoint khác, em thay endpoint contract, CSV schema, correlation, assertion và business sequence. Các guardrail về preflight, approval, immutable JTL, manifest và human review không thay đổi. Vì vậy skill có thể tái sử dụng cho những performance-testing workflow khác mà vẫn giữ evidence có thể kiểm chứng.
-
-Video Agent Skill không cần Task Manager; yêu cầu resource monitor cùng khung hình đã được đáp ứng trong các video performance test.
-
-Bước tiếp theo: bật OBS, mở sẵn ba file được liên kết ở trên và bắt đầu quay cảnh 1.
-````
-
-- **File Modifications:**
-  - File: `.agents/skills/eshop-jmeter-performance/SKILL.md`; Action: edited; Details: documented the reusable endpoint-contract workflow.
-  - File: `.agents/skills/eshop-jmeter-performance/references/scenario-b-contract.json`; Action: created; Details: moved Scenario B validation rules into the default contract.
-  - File: `.agents/skills/eshop-jmeter-performance/references/extension-guide.md`; Action: created; Details: documented adaptation to another endpoint group.
-  - File: `.agents/skills/eshop-jmeter-performance/assets/endpoint-contract-template.json`; Action: created; Details: added a reusable contract template.
-  - File: `.agents/skills/eshop-jmeter-performance/scripts/validate_jmx.py`; Action: edited; Details: added `--contract` support without weakening default Scenario B validation.
-  - File: `manual/11-agent-skill-demo-script-vi.md`; Action: created; Details: added the complete 2–3 minute demonstration script.
-  - File: `HW05_Report.md`; Action: edited; Details: documented the contract-driven skill extension.
-
-- **Verification Evidence:** Commit `baeedd1`; four canonical JMX plans passed the default contract; a custom contract path was exercised; Load `_002` JTL validation returned 7,120 samples.
-- **Verdict:** VALID
-- **Reasoning:** The skill now separates endpoint-specific rules from reusable validation and evidence controls, directly addressing the requirement to reuse the workflow for additional endpoints.
-- **Student Fixes:** None required.
-
-### Artifact #10 - Verbatim Record
-
-- **User:** Nguyễn Hiền Tuấn Anh (23127280)
-- **Date and Time:** 2026-08-18 03:55:52 GMT+7
-- **Agent Used:** Codex (primary agent); eshop-jmeter-performance skill; clear-writing skill
-- **Prompt:**
-
-````text
-Đã xong quay demo Agent skill, cập nhật các url:
-- Load: [https://youtu.be/SvDzvYLyzRQ](https://youtu.be/SvDzvYLyzRQ)
-- Stress: [https://youtu.be/aem-M4Twah4](https://youtu.be/aem-M4Twah4)
-- Spike: [https://youtu.be/q1NMVWSS-98](https://youtu.be/q1NMVWSS-98)
-- Soak: [https://youtu.be/J4wv5SuVCFA](https://youtu.be/J4wv5SuVCFA)
-- Agent Skill: [https://youtu.be/WmdhTCnFddQ](https://youtu.be/WmdhTCnFddQ)
-````
-
-- **AI Output:**
-
-````text
-✅ Đã cập nhật đủ 5 URL và commit thành công.
-
-- Commit: `fbf26fd docs(evidence): record demo video links`
-- Đã cập nhật [HW05_Report.md](HW05_Report.md)
-- Đã cập nhật [README_HW05.md](README_HW05.md)
-- Đã tạo bảng tổng hợp [video-evidence.md](docs/video-evidence.md)
-- Đã cập nhật run-record và manifest của Load `_002`, Stress `_001`, Spike `_002`, Soak `_002`
-- Checksum trong manifest đã được tính lại và xác nhận khớp
-- Không sửa JTL, HTML hoặc raw evidence
-- Các file database/reset ngoài phạm vi không được commit
-
-Lưu ý: công cụ không mở được trang YouTube rút gọn, nên tài liệu ghi chính xác là “URL do sinh viên cung cấp”, chưa tự nhận đã kiểm tra nội dung.
-
-Bước tiếp theo duy nhất: mở cả 5 link bằng cửa sổ ẩn danh, kiểm tra xem được, có tiếng, đúng video và đáp ứng yêu cầu thời lượng. Sau đó mình làm AI Audit + kiểm tra package cuối.
-````
-
-- **File Modifications:**
-  - File: `docs/video-evidence.md`; Action: created; Details: mapped five student-provided URLs to accepted runs and the Agent Skill.
-  - File: `HW05_Report.md`; Action: edited; Details: added the video-evidence table and final playback limitation.
-  - File: `README_HW05.md`; Action: edited; Details: added the five demo links.
-  - File: `manual/00-decisions-and-approvals.md`; Action: edited; Details: associated each URL with the accepted run.
-  - File: `manual/09-submission-checklist.md`; Action: edited; Details: marked the link-listing and skill-video items complete while preserving the playback gate.
-  - File: `performance/results/23127280_Load_Official_20260818_002/run-record.md`; Action: edited; Details: recorded the Load URL.
-  - File: `performance/results/23127280_Stress_Official_20260818_001/run-record.md`; Action: edited; Details: recorded the Stress URL.
-  - File: `performance/results/23127280_Spike_Official_20260818_002/run-record.md`; Action: edited; Details: recorded the corrected Spike URL.
-  - File: `performance/results/23127280_Soak_Official_20260818_002/run-record.md`; Action: edited; Details: recorded the Soak URL.
-  - File: `performance/results/23127280_Load_Official_20260818_002/manifest.json`; Action: edited; Details: added the URL and refreshed the run-record hash.
-  - File: `performance/results/23127280_Stress_Official_20260818_001/manifest.json`; Action: edited; Details: added the URL and refreshed the run-record hash.
-  - File: `performance/results/23127280_Spike_Official_20260818_002/manifest.json`; Action: edited; Details: added the URL and refreshed the run-record hash.
-  - File: `performance/results/23127280_Soak_Official_20260818_002/manifest.json`; Action: edited; Details: added the URL and refreshed the run-record hash.
-
-- **Verification Evidence:** Commit `fbf26fd`; four manifests parse and their updated run-record hashes match. URL playback could not be independently verified by the web tool.
-- **Verdict:** VALID
-- **Reasoning:** The response records only student-provided links, maps them to accepted runs, updates dependent checksums, and leaves final playback and privacy checks to the student.
-- **Student Fixes:** Open all five links in an incognito window and verify access, privacy, audio, and duration before submission.
-
 <!-- ARTIFACT_DETAILS_END -->
 
 ## **4. Summary of AI Accuracy**
 
 | Metric | Count | Percentage |
 | :---- | :---- | :---- |
-| **Total AI-generated artifacts audited** | 10 | 100% |
-| **VALID (correct, accepted as-is)** | 7 | 70.00% |
-| **INVALID (wrong; rejected)** | 1 | 10.00% |
-| **INCOMPLETE (acceptable after edits)** | 2 | 20.00% |
+| **Total AI-generated artifacts audited** | 8 | 100% |
+| **VALID (correct, accepted as-is)** | 5 | 62.50% |
+| **INVALID (wrong; rejected)** | 1 | 12.50% |
+| **INCOMPLETE (acceptable after edits)** | 2 | 25.00% |
 
 ## **5. Conclusion - When should AI be used (or not)?**
 
