@@ -1,0 +1,41 @@
+{
+  "name": "EShop Scenario B coupon purchase",
+  "filename_pattern": "23127280_(Load|Stress|Spike|Soak)_[0-9]{8}\\.jmx",
+  "fragment_filename": "scenario_b_fragment.jmx",
+  "samplers": [
+    { "number": "01", "keyword": "login" },
+    { "number": "02", "keyword": "search" },
+    { "number": "03", "keyword": "product" },
+    { "number": "04", "keyword": "cart" },
+    { "number": "05", "keyword": "cart" },
+    { "number": "06", "keyword": "coupon" },
+    { "number": "07", "keyword": "checkout" },
+    { "number": "08", "keyword": "coupon" },
+    { "number": "09", "keyword": "orders" }
+  ],
+  "csv_variables": [
+    "email",
+    "password",
+    "search_keyword",
+    "product_id",
+    "quantity",
+    "coupon_code",
+    "shipping_address"
+  ],
+  "correlations": [
+    "token",
+    "user_id",
+    "product_name",
+    "product_price",
+    "coupon_id",
+    "discount_amount",
+    "final_amount",
+    "orderId"
+  ],
+  "listener_by_scenario": {
+    "Load": "SummaryReport",
+    "Stress": "StatVisualizer",
+    "Spike": "ViewResultsFullVisualizer"
+  },
+  "forbidden_literals": ["PERF50000"]
+}

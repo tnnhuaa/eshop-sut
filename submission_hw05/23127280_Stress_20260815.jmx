@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="23127280 - Stress - Scenario B Coupon Purchase" enabled="true">
+      <stringProp name="TestPlan.comments">Stress step-load for the canonical Scenario B workflow. L is mandatory and must come from calibration; this plan does not invent a baseline. Thread groups run serially at L, ceil(1.5L), 2L, and 3L. Official runs must use non-GUI mode.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="Documented CLI properties" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="base_url" elementType="Argument">
+            <stringProp name="Argument.name">base_url</stringProp>
+            <stringProp name="Argument.value">${__P(base_url,http://localhost:3000)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">SUT base URL without trailing slash</stringProp>
+          </elementProp>
+          <elementProp name="users_csv" elementType="Argument">
+            <stringProp name="Argument.name">users_csv</stringProp>
+            <stringProp name="Argument.value">${__P(users_csv,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Global cycling pool of valid isolated credentials; rows must be at least peak 3L</stringProp>
+          </elementProp>
+          <elementProp name="threads" elementType="Argument">
+            <stringProp name="Argument.name">threads</stringProp>
+            <stringProp name="Argument.value">${__P(threads,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Compatibility property; stress concurrency is derived from mandatory L</stringProp>
+          </elementProp>
+          <elementProp name="L" elementType="Argument">
+            <stringProp name="Argument.name">L</stringProp>
+            <stringProp name="Argument.value">${__P(L,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Highest stable concurrency established by calibration; mandatory</stringProp>
+          </elementProp>
+          <elementProp name="ramp_seconds" elementType="Argument">
+            <stringProp name="Argument.name">ramp_seconds</stringProp>
+            <stringProp name="Argument.value">${__P(ramp_seconds,30)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="hold_seconds" elementType="Argument">
+            <stringProp name="Argument.name">hold_seconds</stringProp>
+            <stringProp name="Argument.value">${__P(hold_seconds,120)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="think_min_ms" elementType="Argument">
+            <stringProp name="Argument.name">think_min_ms</stringProp>
+            <stringProp name="Argument.value">${__P(think_min_ms,500)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="think_max_ms" elementType="Argument">
+            <stringProp name="Argument.name">think_max_ms</stringProp>
+            <stringProp name="Argument.value">${__P(think_max_ms,1500)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="run_id" elementType="Argument">
+            <stringProp name="Argument.name">run_id</stringProp>
+            <stringProp name="Argument.value">${__P(run_id,23127280_Stress_20260815)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="result_path" elementType="Argument">
+            <stringProp name="Argument.name">result_path</stringProp>
+            <stringProp name="Argument.value">${__P(result_path,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="report_path" elementType="Argument">
+            <stringProp name="Argument.name">report_path</stringProp>
+            <stringProp name="Argument.value">${__P(report_path,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="00 - Preflight (no performance samples)">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Validate L, timing, base URL, CSV, and derive stress stages" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="script">def errors = []
+def lRaw = props.getProperty(&apos;L&apos;)
+def rampRaw = props.getProperty(&apos;ramp_seconds&apos;, &apos;30&apos;)
+def holdRaw = props.getProperty(&apos;hold_seconds&apos;, &apos;120&apos;)
+def minRaw = props.getProperty(&apos;think_min_ms&apos;, &apos;500&apos;)
+def maxRaw = props.getProperty(&apos;think_max_ms&apos;, &apos;1500&apos;)
+if (!lRaw || !(lRaw ==~ /[1-9][0-9]*/)) errors &lt;&lt; &apos;-JL must be a positive integer produced by calibration&apos;
+if (!(rampRaw ==~ /[1-9][0-9]*/)) errors &lt;&lt; &apos;-Jramp_seconds must be a positive integer&apos;
+if (!(holdRaw ==~ /[1-9][0-9]*/)) errors &lt;&lt; &apos;-Jhold_seconds must be a positive integer&apos;
+if (!(minRaw ==~ /[0-9]+/) || !(maxRaw ==~ /[0-9]+/) || ((minRaw ==~ /[0-9]+/) &amp;&amp; (maxRaw ==~ /[0-9]+/) &amp;&amp; minRaw.toInteger() &gt; maxRaw.toInteger())) errors &lt;&lt; &apos;think time must satisfy 0 &lt;= min &lt;= max&apos;
+def base = props.getProperty(&apos;base_url&apos;, &apos;http://localhost:3000&apos;)
+try { def uri = new URI(base); if (!uri.scheme || !uri.host) errors &lt;&lt; &apos;-Jbase_url must be an absolute HTTP(S) URL&apos; } catch (Exception ignored) { errors &lt;&lt; &apos;-Jbase_url is invalid&apos; }
+def csvRaw = props.getProperty(&apos;users_csv&apos;)
+if (!csvRaw) { errors &lt;&lt; &apos;-Jusers_csv is mandatory&apos; } else {
+  def csvFile = new File(csvRaw)
+  if (!csvFile.isAbsolute()) csvFile = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), csvRaw)
+  if (!csvFile.isFile()) errors &lt;&lt; &apos;users_csv does not exist: &apos; + csvFile.absolutePath
+}
+if (errors) {
+  SampleResult.setSuccessful(false); SampleResult.setResponseCode(&apos;CONFIG&apos;); SampleResult.setResponseMessage(errors.join(&apos;; &apos;)); log.error(&apos;Stress preflight failed: &apos; + errors.join(&apos;; &apos;))
+} else {
+  int l = lRaw.toInteger(); int minThink = minRaw.toInteger(); int maxThink = maxRaw.toInteger()
+  props.put(&apos;stress_stage1_threads&apos;, l.toString())
+  props.put(&apos;stress_stage2_threads&apos;, ((l * 3 + 1).intdiv(2)).toString())
+  props.put(&apos;stress_stage3_threads&apos;, (l * 2).toString())
+  props.put(&apos;stress_stage4_threads&apos;, (l * 3).toString())
+  props.put(&apos;stress_think_range_ms&apos;, (maxThink - minThink).toString())
+  SampleResult.setSuccessful(true); SampleResult.setResponseCode(&apos;200&apos;); SampleResult.setResponseMessage(&apos;Preflight passed; L=&apos; + l); SampleResult.setIgnore()
+}</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+      </hashTree>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Scenario B - Coupon Purchase" enabled="true"/>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Scenario B - Coupon Purchase E2E" enabled="true">
+          <boolProp name="TransactionController.parent">true</boolProp>
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="JSON and bearer headers" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${token}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-Performance-Run</stringProp>
+                <stringProp name="Header.value">${__P(run_id,23127280_Stress_20260815)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Think time min..max" enabled="true">
+            <stringProp name="ConstantTimer.delay">${__P(think_min_ms,500)}</stringProp>
+            <stringProp name="RandomTimer.range">${__P(stress_think_range_ms,1000)}</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="01 POST /api/login" enabled="true">
+            <stringProp name="HTTPSampler.path">${__P(base_url,http://localhost:3000)}/api/login</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;email&quot;:&quot;${email}&quot;,&quot;password&quot;:&quot;${password}&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Login returns 200" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message">Login must succeed</stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">8</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract token and user id" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">token;user_id</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.token;$.user.id</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1;1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND;NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="02 GET /api/products search" enabled="true">
+            <stringProp name="HTTPSampler.path">${__P(base_url,http://localhost:3000)}/api/products</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="search" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">search</stringProp>
+                  <stringProp name="Argument.value">${search_keyword}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Search returns JSON array" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1515393900">^\s*\[</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message">Product search must return an array</stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="03 GET /api/products/{product_id}" enabled="true">
+            <stringProp name="HTTPSampler.path">${__P(base_url,http://localhost:3000)}/api/products/${product_id}</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract product name and price" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">product_name;product_price</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.name;$.price</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1;1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND;NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Product detail has name and numeric price" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="script">def price = vars.get(&apos;product_price&apos;); if (vars.get(&apos;product_name&apos;) == &apos;NOT_FOUND&apos; || price == &apos;NOT_FOUND&apos; || !(price ==~ /[0-9]+(?:\.[0-9]+)?/)) { AssertionResult.setFailure(true); AssertionResult.setFailureMessage(&apos;Product detail did not provide a usable name and price&apos;) }</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="04 POST /api/cart" enabled="true">
+            <stringProp name="HTTPSampler.path">${__P(base_url,http://localhost:3000)}/api/cart</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;id&quot;:${product_id},&quot;name&quot;:&quot;${product_name}&quot;,&quot;price&quot;:${product_price},&quot;quantity&quot;:${quantity}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Cart add succeeds" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1182278043">Added to cart</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="05 GET /api/cart" enabled="true">
+            <stringProp name="HTTPSampler.path">${__P(base_url,http://localhost:3000)}/api/cart</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Cart contains product id" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="1296985734">&quot;id&quot;:${product_id}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="06 POST /api/apply-coupon" enabled="true">
+            <stringProp name="HTTPSampler.path">${__P(base_url,http://localhost:3000)}/api/apply-coupon</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;code&quot;:&quot;${coupon_code}&quot;,&quot;total_amount&quot;:${cart_total},&quot;user_id&quot;:${user_id}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Compute original cart total" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="script">def price = new BigDecimal(vars.get(&apos;product_price&apos;)); def quantity = new BigDecimal(vars.get(&apos;quantity&apos;)); vars.put(&apos;cart_total&apos;, price.multiply(quantity).stripTrailingZeros().toPlainString())</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract coupon values" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">coupon_id;discount_amount;final_amount</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.coupon_id;$.discount_amount;$.final_amount</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1;1;1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND;NOT_FOUND;NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Fixed coupon applied with valid amounts" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="script">def code = vars.get(&apos;coupon_code&apos;); def approvedFixedCodes = [&apos;PERF50000&apos;,&apos;BIGBUY&apos;,&apos;VIP100&apos;]; def missing = [&apos;coupon_id&apos;,&apos;discount_amount&apos;,&apos;final_amount&apos;].any { vars.get(it) == &apos;NOT_FOUND&apos; }; if (missing || !(code in approvedFixedCodes)) { AssertionResult.setFailure(true); AssertionResult.setFailureMessage(&apos;Coupon extraction failed or coupon_code is not an approved fixed coupon: &apos; + code); return }; try { def discount = new BigDecimal(vars.get(&apos;discount_amount&apos;)); def finalAmount = new BigDecimal(vars.get(&apos;final_amount&apos;)); def cartTotal = new BigDecimal(vars.get(&apos;cart_total&apos;)); if (discount &lt;= 0 || finalAmount &lt;= 0 || finalAmount &gt;= cartTotal) { AssertionResult.setFailure(true); AssertionResult.setFailureMessage(&apos;Coupon amounts must satisfy discount_amount &gt; 0 and 0 &lt; final_amount &lt; cart_total&apos;) } } catch (Exception e) { AssertionResult.setFailure(true); AssertionResult.setFailureMessage(&apos;Coupon amounts must be numeric: &apos; + e.message) }</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="07 POST /api/checkout using final_amount" enabled="true">
+            <stringProp name="HTTPSampler.path">${__P(base_url,http://localhost:3000)}/api/checkout</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;total_amount&quot;:${final_amount},&quot;shipping_address&quot;:&quot;${shipping_address}&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract orderId" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">orderId</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.orderId</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Checkout created an order" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="script">if (vars.get(&apos;orderId&apos;) == &apos;NOT_FOUND&apos;) { AssertionResult.setFailure(true); AssertionResult.setFailureMessage(&apos;Checkout response did not contain orderId&apos;) }</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Only after successful checkout" enabled="true">
+            <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="08 POST /api/coupon-usage" enabled="true">
+              <stringProp name="HTTPSampler.path">${__P(base_url,http://localhost:3000)}/api/coupon-usage</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;coupon_id&quot;:${coupon_id}}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Coupon usage recorded" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1346921361">Usage recorded</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="09 GET /api/orders/my-orders" enabled="true">
+            <stringProp name="HTTPSampler.path">${__P(base_url,http://localhost:3000)}/api/orders/my-orders</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="My orders contains new orderId" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="script">try { def orders = new groovy.json.JsonSlurper().parseText(prev.getResponseDataAsString()); def expected = vars.get(&apos;orderId&apos;); if (!(orders instanceof List) || expected == &apos;NOT_FOUND&apos; || !orders.any { it.id?.toString() == expected }) { AssertionResult.setFailure(true); AssertionResult.setFailureMessage(&apos;New orderId &apos; + expected + &apos; was not found in my-orders&apos;) } } catch (Exception e) { AssertionResult.setFailure(true); AssertionResult.setFailureMessage(&apos;my-orders was not valid JSON: &apos; + e.message) }</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Stage 1 - L" enabled="true">
+        <stringProp name="ThreadGroup.num_threads">${__P(stress_stage1_threads,1)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(ramp_seconds,30)}</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(hold_seconds,120)}</stringProp>
+        <longProp name="ThreadGroup.delay">0</longProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <intProp name="LoopController.loops">-1</intProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Scenario B users CSV - global cycling pool" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">${__P(users_csv,)}</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">true</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">email,password,search_keyword,product_id,quantity,coupon_code,shipping_address</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Run canonical Scenario B" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-482061842">23127280 - Stress - Scenario B Coupon Purchase</stringProp>
+            <stringProp name="707664122">Scenario B - Coupon Purchase</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Stage 2 - ceil(1.5L)" enabled="true">
+        <stringProp name="ThreadGroup.num_threads">${__P(stress_stage2_threads,1)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(ramp_seconds,30)}</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(hold_seconds,120)}</stringProp>
+        <longProp name="ThreadGroup.delay">0</longProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <intProp name="LoopController.loops">-1</intProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Scenario B users CSV - global cycling pool" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">${__P(users_csv,)}</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">true</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">email,password,search_keyword,product_id,quantity,coupon_code,shipping_address</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Run canonical Scenario B" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-482061842">23127280 - Stress - Scenario B Coupon Purchase</stringProp>
+            <stringProp name="707664122">Scenario B - Coupon Purchase</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Stage 3 - 2L" enabled="true">
+        <stringProp name="ThreadGroup.num_threads">${__P(stress_stage3_threads,1)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(ramp_seconds,30)}</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(hold_seconds,120)}</stringProp>
+        <longProp name="ThreadGroup.delay">0</longProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <intProp name="LoopController.loops">-1</intProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Scenario B users CSV - global cycling pool" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">${__P(users_csv,)}</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">true</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">email,password,search_keyword,product_id,quantity,coupon_code,shipping_address</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Run canonical Scenario B" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-482061842">23127280 - Stress - Scenario B Coupon Purchase</stringProp>
+            <stringProp name="707664122">Scenario B - Coupon Purchase</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Stage 4 - 3L">
+        <stringProp name="ThreadGroup.num_threads">${__P(stress_stage4_threads,1)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(ramp_seconds,30)}</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(hold_seconds,120)}</stringProp>
+        <longProp name="ThreadGroup.delay">0</longProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <intProp name="LoopController.loops">-1</intProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Scenario B users CSV - global cycling pool" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">${__P(users_csv,)}</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">true</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">email,password,search_keyword,product_id,quantity,coupon_code,shipping_address</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Run canonical Scenario B" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-482061842">23127280 - Stress - Scenario B Coupon Purchase</stringProp>
+            <stringProp name="707664122">Scenario B - Coupon Purchase</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="POST-RUN ONLY - Aggregate Report (disabled for CLI)" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">F:\D\Uni\YEAR_3\SEM_3\TESTING\LAB\Homework\HW05\performance\results\23127280_Stress_Official_20260818_001\23127280_Stress_Official_20260818_001.jtl</stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

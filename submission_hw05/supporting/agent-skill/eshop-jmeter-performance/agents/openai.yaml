@@ -1,0 +1,4 @@
+interface:
+  display_name: "EShop JMeter Performance"
+  short_description: "Validate guarded REST JMeter workflows"
+  default_prompt: "Use $eshop-jmeter-performance to validate and safely prepare an EShop or contract-defined REST performance test."

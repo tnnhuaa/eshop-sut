@@ -1,0 +1,18 @@
+{
+  "name": "New endpoint group",
+  "filename_pattern": "[0-9]+_(Load|Stress|Spike|Soak)_[0-9]{8}\\.jmx",
+  "fragment_filename": null,
+  "samplers": [
+    { "number": "01", "keyword": "login" },
+    { "number": "02", "keyword": "list" },
+    { "number": "03", "keyword": "create" }
+  ],
+  "csv_variables": ["email", "password", "resource_id"],
+  "correlations": ["token", "created_id"],
+  "listener_by_scenario": {
+    "Load": "SummaryReport",
+    "Stress": "StatVisualizer",
+    "Spike": "ViewResultsFullVisualizer"
+  },
+  "forbidden_literals": []
+}

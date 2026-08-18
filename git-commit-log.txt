@@ -1,0 +1,203 @@
+* commit 19a78508937edcdebe31eb4a70d0bda8fa45697a
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 09:28:43 2026 +0700
+| 
+|     docs(review): finalize audit and self-assessment
+| 
+* commit 0e2554048d2229574b0da604e4fde7dd264e5599
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 04:11:03 2026 +0700
+| 
+|     docs(audit): complete HW05 AI use record
+| 
+* commit fbf26fd6268b0ab11c5fdf84eba8f0542e1cf12d
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 04:00:22 2026 +0700
+| 
+|     docs(evidence): record demo video links
+| 
+* commit baeedd1b8e5a8cb1ab3d5bd0116a61168d647980
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 03:39:23 2026 +0700
+| 
+|     feat(skill): support reusable endpoint contracts
+| 
+* commit 0ec453377f605e625a44de4634bf277da63b70a2
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 03:28:44 2026 +0700
+| 
+|     docs(task3): record student acceptance
+| 
+* commit 3eef521b82a5f6fc248eb847ffbc41247531041a
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 03:27:14 2026 +0700
+| 
+|     docs(task3): propose continuous performance model
+| 
+* commit 200e3c9929f91f9218d9302ab40df15930e79039
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 03:21:36 2026 +0700
+| 
+|     docs(task2): record student review and optimization verdict
+| 
+* commit e6cdccbdb5db7f596248e4b0c7dcf175958198ce
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 03:19:41 2026 +0700
+| 
+|     docs(evidence): verify official test hardware
+| 
+* commit 1817ba9d311a0687ee49354bd6e6bf52697da983
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 03:14:58 2026 +0700
+| 
+|     docs(task2): draft evidence-backed AI analysis
+| 
+* commit 900302435a4c5be760f049d2e18e8595d235d1ef
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 03:09:33 2026 +0700
+| 
+|     test(data): preserve official soak user fixture
+| 
+* commit e6f7b3d1276cbff60f9ca9fb70c8aac85e1648f5
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 03:02:39 2026 +0700
+| 
+|     docs(hw5): replace contaminated load evidence with rerun
+| 
+* commit 46796cf621d2a3e080e5246f991e8bb973b457e7
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 03:02:13 2026 +0700
+| 
+|     test(evidence): record verified official load rerun
+| 
+* commit 8a17a7e6b36613dc471499b974792b8648276e13
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 02:44:39 2026 +0700
+| 
+|     fix(load): prepare guarded official rerun 002
+| 
+* commit b855ef018980d293f101edce318333b041491371
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 02:42:50 2026 +0700
+| 
+|     docs(evidence): record hardware system information
+| 
+* commit 5603fcbd8e60e6bb5dc32aeb498114e6837b20d6
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 02:41:06 2026 +0700
+| 
+|     docs(evidence): accept official soak run
+| 
+* commit b57b221799f404dc07efa791b7f466e64a2ee7d8
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 02:34:45 2026 +0700
+| 
+|     docs(hw5): consolidate performance evidence and decisions
+| 
+* commit 6b95b258549858347282d8da1a76988717f50eff
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 02:34:06 2026 +0700
+| 
+|     test(evidence): record official soak endurance run
+| 
+* commit 4d481d7c1b9ad1cd980bdeb57e49055e2c4059ba
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 02:32:19 2026 +0700
+| 
+|     test(evidence): record official stress and spike runs
+| 
+* commit 2351c1b39045743ff5e56f4ee5413f2c8e6b01bb
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 02:31:56 2026 +0700
+| 
+|     test(evidence): record accepted calibration and preflight
+| 
+* commit 5a247bd0053652dfb99f5326f7528101e32c4e38
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Tue Aug 18 02:30:12 2026 +0700
+| 
+|     test(performance): add guarded official JMeter sessions
+| 
+* commit 66fe5b775d7e1ae4b0ceae6f4d0f0dbf3da113bd
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Mon Aug 17 21:39:48 2026 +0700
+| 
+|     fix(preflight): document CSV JTL review and rejection
+| 
+* commit 7a3293a0ca290d7af5e8e717d443ddddba8161aa
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Sun Aug 16 00:24:52 2026 +0700
+| 
+|     docs(audit): record JDK 17 and preflight evidence
+| 
+* commit 1c0c647279b4d2d23430029f39bdb462b7c36064
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Sun Aug 16 00:23:02 2026 +0700
+| 
+|     docs(hw5): add report and manual evidence runbooks
+| 
+* commit 8e8a6e175f7f5275b4358d854678fcd9878c9989
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Sun Aug 16 00:23:00 2026 +0700
+| 
+|     test(preflight): record rejected and unverified smoke runs
+| 
+* commit 66a751543246f26a44dba1cd83e23405988b31ec
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Sun Aug 16 00:22:35 2026 +0700
+| 
+|     test(soak): add Scenario B soak plan
+| 
+* commit b16d80d009875798c88729bf9e37daac2f238e7c
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Sun Aug 16 00:22:35 2026 +0700
+| 
+|     test(spike): add Scenario B spike plan
+| 
+* commit 5ba9212b9ddeefff59406e2581e7de4266bc7a2a
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Sun Aug 16 00:22:34 2026 +0700
+| 
+|     test(stress): add staged Scenario B stress plan
+| 
+* commit 7a88c1a1a7242e00445412e96eaa8d45d7562efe
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Sun Aug 16 00:22:34 2026 +0700
+| 
+|     test(load): add Scenario B load plan
+| 
+* commit bf701dfb08f6d317458d4cadacf4f04811497919
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Sun Aug 16 00:22:19 2026 +0700
+| 
+|     feat(perf): add guarded JMeter automation
+| 
+* commit 8266b61683163d6ddea62535a5f85f4f9cc441c5
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Sun Aug 16 00:22:18 2026 +0700
+| 
+|     feat(skill): add guarded EShop performance agent
+| 
+* commit 6dc7da19ac8ce2d978396e235286833c800906fb
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Sun Aug 16 00:22:02 2026 +0700
+| 
+|     feat(data): add deterministic Scenario B fixtures
+| 
+* commit 09183e9616ce29a9341780a4d32b633b2b121d49
+| Author: tnnhuaa <nguyenhientuananh@gmail.com>
+| Date:   Sun Aug 16 00:18:23 2026 +0700
+| 
+|     chore(hw5): scaffold clean performance workspace
+| 
+* commit 85af3ba875c88283615e22cb108f13e2fccaf0e9
+| Author: ttbhanh-hcmus <ttbhanh@hcmus.edu.vn>
+| Date:   Fri May 15 08:30:35 2026 +0700
+| 
+|     first upload
+| 
+* commit 2f9bf2bab45855abf211377a5d5eba10031649e3
+  Author: Hanh Tran <ttbhanh@fit.hcmus.edu.vn>
+  Date:   Fri May 15 08:27:44 2026 +0700
+  
+      Initial commit
