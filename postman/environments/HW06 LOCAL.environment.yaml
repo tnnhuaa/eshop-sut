@@ -1,0 +1,11 @@
+name: HW06 LOCAL
+values:
+  - key: baseUrl
+    value: ''
+  - key: studentId
+    value: ''
+  - key: userToken
+    value: ''
+  - key: adminToken
+    value: ''
+color: 120

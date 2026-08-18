@@ -1,0 +1,12 @@
+$kind: collection
+name: HW06 API Testing
+scripts:
+  - type: http:beforeRequest
+    code: "pm.request.headers.upsert({\r
+
+      \  key: \"X-Student-Id\",\r
+
+      \  value: pm.environment.get(\"studentId\")\r
+
+      });"
+    language: text/javascript

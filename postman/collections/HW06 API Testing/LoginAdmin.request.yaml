@@ -1,0 +1,41 @@
+$kind: http-request
+name: LoginAdmin
+url: "{{baseUrl}}/api/login"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: "{\r
+
+    \  \"email\": \"admin@eshop.com\",\r
+
+    \  \"password\": \"Admin123!\"\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Login Admin thành công\", () => {\r
+
+      \  pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      const json = pm.response.json();\r
+
+      \r
+
+      pm.expect(json.token).to.be.a(\"string\").and.not.empty;\r
+
+      pm.expect(json.user.role).to.eql(\"admin\");\r
+
+      \r
+
+      pm.environment.set(\"adminToken\", json.token);"
+    language: text/javascript
+  - type: beforeRequest
+    code: ""
+    language: text/javascript
+order: 2772681127867975
