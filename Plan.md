@@ -6,9 +6,9 @@
 
 ## Next Action
 
-Run the exported collection with Newman using `studentId=23127280`, then push the CI smoke workflow and confirm its GitHub Actions run returns HTTP 200.
+Manually replace `evidence/header/x-student-id-console.png` with a cropped screenshot that shows the `X-Student-Id` request header but does not expose the response JWT or environment tokens, then commit the preparation evidence and documentation.
 
-Do not start generating the 105 AI-assisted test cases until Newman and the CI smoke run succeed and the current preparation files are committed.
+After that commit, analyze FR-01 and `POST /api/register`. Generate and audit test cases in small technique-focused batches instead of requesting all 35 cases at once.
 
 ## Approved Scope and Decisions
 
@@ -36,13 +36,16 @@ Do not start generating the 105 AI-assisted test cases until Newman and the CI s
 - `AGENTS.md` defines sources of truth, evidence rules, and workstream completion rules.
 - Newman-compatible collection and sanitized environment JSON exports exist and pass local structure checks.
 - `.github/workflows/api-tests.yml` contains the backend HTTP 200 smoke job.
+- Newman executed Login User, Login Admin, and Get Products with 3 assertions and 0 failures.
+- GitHub Actions run for commit `88b21d3` completed successfully.
+- Preparation evidence is stored under `evidence/header/`, `evidence/newman/`, and `evidence/cicd/`.
 
 ### Pending or Unverified
 
-- Newman has not yet executed the exported collection.
-- The CI smoke workflow has not yet been pushed or observed in GitHub Actions.
 - No API test-case rows have been added to the CSV.
-- No Newman HTML report, GitHub Issues, CI evidence, generator design, or final reports exist.
+- The preparation Newman HTML report exists; no final full-suite report exists yet.
+- No GitHub Issues, final CI evidence pair, generator design, or final reports exist.
+- The current header screenshot contains a runtime JWT and must be manually recaptured or cropped before it is committed.
 - `backend/database.sqlite` is modified runtime state and must not be staged.
 
 ## Workstream Order
@@ -126,8 +129,8 @@ Only append a row after explicit student approval.
 - [x] Scope, toolchain, local backend, Postman login scripts, and student header prepared.
 - [x] `.gitignore`, `AI_Audit.md`, CSV header, `Plan.md`, and `AGENTS.md` created.
 - [x] Newman-compatible collection/environment JSON and CI smoke workflow created.
-- [ ] Execute the exported collection with Newman.
-- [ ] Push and verify CI smoke, then commit all preparation artifacts.
+- [x] Execute the exported collection with Newman.
+- [x] Push and verify CI smoke, then commit all preparation artifacts.
 
 ### B. Test Design
 

@@ -37,6 +37,7 @@
 | (1) Prompt + Tool | (2) AI Output | (3) Verdict | (4) Reasoning (ISTQB) | (5) Student Fix |
 | :---- | :---- | :---- | :---- | :---- |
 | **Artifact #1 - Test-case file initialization**<br>Tool: Codex (primary agent)<br>Time: 2026-08-18 23:21 GMT+7<br>Full prompt: see Artifact #1 verbatim record below. | Proposed an Excel workbook with five sheets and a test-case column schema.<br>Full output: see Artifact #1 verbatim record below. | INCOMPLETE | The structure captured traceability, expected results, execution status, and AI-review fields, but the chosen `.xlsx` format no longer matched the student's explicit follow-up requesting CSV. ISTQB CTFL test-work-product principles require the documented format to remain usable and consistent with the agreed test process. | Replace the workbook deliverable with `test-cases/API_Test_Cases.csv` while retaining the traceability and audit columns. |
+| **Artifact #2 - Postman/Newman and CI preparation**<br>Tool: Codex (primary agent)<br>Time: 2026-08-18 23:43 GMT+7<br>Full prompt: see Artifact #2 verbatim record below. | Created sanitized Newman-compatible Postman JSON files, a backend HTTP 200 GitHub Actions smoke workflow, and updated the execution plan.<br>Full output: see Artifact #2 verbatim record below. | VALID | The collection structure, empty committed secrets, Newman run, HTML report, commit `88b21d3`, and successful GitHub Actions run provide direct evidence. This follows ISTQB test-environment preparation and test-execution evidence principles. | None required. |
 <!-- AUDIT_TABLE_ROWS_END -->
 
 ### Verbatim Artifact Records
@@ -103,24 +104,82 @@ Bước tiếp theo: tạo workbook với 5 sheet và hàng tiêu đề trên.
 - **Reasoning:** The proposed fields were usable, but the output format required a subsequent correction from `.xlsx` to `.csv`.
 - **Student Fixes:** Use one CSV file with explicit API and feature columns instead of separate workbook sheets.
 
+### Artifact #2 - Verbatim Record
+
+- **User:** Nguyễn Hiền Tuấn Anh (23127280)
+- **Date and Time:** 2026-08-18 23:43 GMT+7
+- **Agent Used:** Codex (primary agent)
+- **Prompt:**
+
+````text
+Chỉ 2 bước này, bước kiểm tra backend đã thành công trả status 200
+````
+
+- **AI Output:**
+
+````text
+Đã hoàn thành đúng hai phần yêu cầu.
+
+1. Postman JSON cho Newman
+
+   - postman/HW06_API_Testing.postman_collection.json
+   - postman/HW06_LOCAL.postman_environment.json
+
+   Đã kiểm tra:
+
+   - Đúng schema Postman Collection v2.1.
+   - Có LoginUser, LoginAdmin, GetProducts.
+   - Có collection pre-request script cho X-Student-Id.
+   - studentId, userToken, adminToken đều rỗng trong bản commit.
+
+2. CI smoke
+
+   - .github/workflows/api-tests.yml
+
+   Workflow thực hiện:
+
+   checkout
+   → Node.js 22
+   → npm ci backend
+   → chạy backend
+   → chờ GET /api/products
+   → yêu cầu HTTP 200
+   → upload backend log nếu fail
+
+Plan.md đã cập nhật trạng thái. CI chưa được gọi là “pass” vì workflow chưa push và chưa có GitHub Actions run thật.
+
+Bước tiếp theo: chạy collection JSON bằng Newman với studentId=23127280, sau đó push để kiểm tra CI smoke.
+````
+
+- **File Modifications:**
+  - **File:** `postman/HW06_API_Testing.postman_collection.json`; **Action:** created; **Details:** added a Postman Collection v2.1 JSON containing Login User, Login Admin, Get Products, response assertions, and the student-header pre-request script.
+  - **File:** `postman/HW06_LOCAL.postman_environment.json`; **Action:** created; **Details:** added a sanitized local environment with empty student ID and token values.
+  - **File:** `.github/workflows/api-tests.yml`; **Action:** created; **Details:** added a GitHub Actions smoke job that installs backend dependencies, starts the SUT, and requires HTTP 200 from `/api/products`.
+  - **File:** `Plan.md`; **Action:** edited; **Details:** recorded the created preparation artifacts and set Newman plus CI verification as the next action.
+
+- **Verification Evidence:** Newman executed 3 requests, 3 test scripts, 3 pre-request scripts, and 3 assertions with 0 failures; see `postman/reports/setup-smoke.html` and `evidence/newman/preparation-newman-pass.png`. GitHub Actions run for commit `88b21d3` completed successfully; see `evidence/cicd/preparation-ci-smoke-pass.png`. The required student header is visible in `evidence/header/x-student-id-console.png`.
+- **Verdict:** VALID
+- **Reasoning:** Current files and student-produced execution evidence confirm that the exported collection and CI smoke workflow behaved as specified. The GitHub Actions deprecation annotation did not change the successful job result.
+- **Student Fixes:** None required.
+
 <!-- ARTIFACT_DETAILS_END -->
 
 ## **4. Summary of AI Accuracy**
 
 | Metric | Count | Percentage |
 | :---- | :---- | :---- |
-| **Total AI-generated artifacts audited** | 1 | 100% |
-| **VALID (correct, accepted as-is)** | 0 | 0% |
+| **Total AI-generated artifacts audited** | 2 | 100% |
+| **VALID (correct, accepted as-is)** | 1 | 50% |
 | **INVALID (wrong; rejected)** | 0 | 0% |
-| **INCOMPLETE (acceptable after edits)** | 1 | 100% |
+| **INCOMPLETE (acceptable after edits)** | 1 | 50% |
 
 ## **5. Conclusion - When should AI be used (or not)?**
 
-AI is useful for proposing traceable test-case structures and reducing setup effort. Its output still requires human review because a technically reasonable artifact may not match the student's chosen submission format. The student should confirm the required format, preserve requirement-to-test traceability, and verify generated test content against the API specification before execution.
+AI is useful for proposing traceable test structures, creating repeatable Postman/Newman setup artifacts, and drafting CI configuration. Human review remains necessary because a technically reasonable proposal may use the wrong deliverable format or remain unverified until the student executes it. AI should support test design and automation, while the student must choose the accepted format, verify behavior against the specification, and produce genuine execution evidence.
 
 ## **6. Mandatory Disclosure (paste verbatim)**
 
-I used Codex to review the HW06 requirements, plan the API-testing workflow, configure the Postman and Newman setup, propose the test-case structure, and initialize the AI audit and CSV test-case files. I reviewed the outputs and changed the proposed Excel format to CSV. I remain responsible for validating every generated test case and for executing the tests. Console screenshots, Newman runs, GitHub Actions runs, bug reproductions, the self-drawn test-generator diagram, and submission evidence are not treated as genuine unless I produce and verify them myself.
+I used Codex to review the HW06 requirements, plan the API-testing workflow, create sanitized Postman/Newman configuration, draft the GitHub Actions smoke workflow, propose the test-case structure, and maintain the AI audit and CSV test-case files. I reviewed the outputs, changed the proposed Excel format to CSV, ran Newman, and verified the CI smoke result. I remain responsible for validating every generated test case and reproducing every reported defect. The console screenshots, Newman run, GitHub Actions run, future bug reproductions, self-drawn test-generator diagram, and submission evidence are student-produced evidence rather than AI-generated evidence.
 
 ## **Signature**
 
@@ -143,4 +202,3 @@ I used Codex to review the HW06 requirements, plan the API-testing workflow, con
 * Perkins, M., Roe, J., & Furze, L. (2025). AI Assessment Scale.
 * Anthropic (2025). Building reliable AI test agents - engineering blog.
 * DeepEval & Promptfoo documentation - testing frameworks for LLM systems.
-
