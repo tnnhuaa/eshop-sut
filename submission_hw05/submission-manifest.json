@@ -1942,9 +1942,19 @@
       "sha256": "e850b9f4a1de4ef23f2706720674f8a2eac7928cde53a93e187f8a17eb9e9af4"
     },
     {
+      "path": "AI_Audit.pdf",
+      "size": 363195,
+      "sha256": "4edd8544d2efca1d5f00093376f359a2c5c8242568832ac44bc2fe3f51452577"
+    },
+    {
       "path": "AI_Critique.md",
-      "size": 1748,
-      "sha256": "31752819c675333f5deb35eabd9ea40cac7e2fd7f0843becd106a918a1cdfa7d"
+      "size": 2880,
+      "sha256": "06ac4620e6348895619bdbf257940e7614e396a27478a76e7d3c4da944fc22b2"
+    },
+    {
+      "path": "AI_Critique.pdf",
+      "size": 93401,
+      "sha256": "5e6261770f6e56fbe7ff91d4a7a4c390298f5adac509dbcbc04248b0945ada0c"
     },
     {
       "path": "evidence/hardware/SystemInformation.png",
@@ -1972,9 +1982,14 @@
       "sha256": "c9f94f7d0467458e32fb563490b090cb78cb593a1d5d54a2049ea1d84df37772"
     },
     {
-      "path": "HW05_Report.md",
+      "path": "HW05_MainReport.md",
       "size": 13835,
       "sha256": "1d47cface1710e08af63e3214f4ce2f5d8a2c8288e5b6d7aaa074a39d03121cd"
+    },
+    {
+      "path": "Main_Report.pdf",
+      "size": 177730,
+      "sha256": "1618aa51a2c96d7f171e9f043de6d3568c599124d44e6636e0ca5815e9ceedf2"
     },
     {
       "path": "performance/data/users.csv",
