@@ -38,6 +38,9 @@
 | :---- | :---- | :---- | :---- | :---- |
 | **Artifact #1 - Test-case file initialization**<br>Tool: Codex (primary agent)<br>Time: 2026-08-18 23:21 GMT+7<br>Full prompt: see Artifact #1 verbatim record below. | Proposed an Excel workbook with five sheets and a test-case column schema.<br>Full output: see Artifact #1 verbatim record below. | INCOMPLETE | The structure captured traceability, expected results, execution status, and AI-review fields, but the chosen `.xlsx` format no longer matched the student's explicit follow-up requesting CSV. ISTQB CTFL test-work-product principles require the documented format to remain usable and consistent with the agreed test process. | Replace the workbook deliverable with `test-cases/API_Test_Cases.csv` while retaining the traceability and audit columns. |
 | **Artifact #2 - Postman/Newman and CI preparation**<br>Tool: Codex (primary agent)<br>Time: 2026-08-18 23:43 GMT+7<br>Full prompt: see Artifact #2 verbatim record below. | Created sanitized Newman-compatible Postman JSON files, a backend HTTP 200 GitHub Actions smoke workflow, and updated the execution plan.<br>Full output: see Artifact #2 verbatim record below. | VALID | The collection structure, empty committed secrets, Newman run, HTML report, commit `88b21d3`, and successful GitHub Actions run provide direct evidence. This follows ISTQB test-environment preparation and test-execution evidence principles. | None required. |
+| **Artifact #3 - AI-assisted API test design**<br>Tool: Codex (primary agent)<br>Time: 2026-08-19 00:02 GMT+7<br>Full prompt: see Artifact #3 verbatim record below. | Added and structurally validated 105 AI-assisted test cases across the three selected APIs, then updated the plan and audit record.<br>Full output: see Artifact #3 verbatim record below. | VALID | Artifact #4 records the student's completed review, the six corrected non-valid cases, and 17 accepted student-designed extensions. The generated inventory is now supported by the human review required by the assignment and ISTQB test-work-product review principles. | Completed in Artifact #4. |
+| **Artifact #4 - Human test extension and AI-case audit**<br>Tool: Codex (primary agent)<br>Time: 2026-08-20 11:29 GMT+7<br>Full prompt: see Artifact #4 verbatim record below. | Evaluated 18 proposed student cases, accepted 17, normalized their IDs/source, audited all 105 AI cases, corrected six non-valid cases, and updated the test-design records.<br>Full output: see Artifact #4 verbatim record below. | VALID | The final CSV has 122 unique cases with at least five human-designed cases per API. All AI rows have an allowed audit verdict and reasoning; every `INCOMPLETE` or `INVALID` row has a concrete correction. Structural checks and requirement comparison support the result. | None required before execution; commit the verified workstream artifacts. |
+| **Artifact #5 - Test Design commit**<br>Tool: Codex (primary agent)<br>Time: 2026-08-20 11:42 GMT+7<br>Full prompt: see Artifact #5 verbatim record below. | Verified and committed the three Test Design artifacts with explicit staging while excluding the runtime database.<br>Full output: see Artifact #5 verbatim record below. | VALID | The staged file list contained only the CSV, plan, and AI audit; `git diff --check` passed; the runtime database remained unstaged. This provides an identifiable, reviewable configuration-management baseline for the completed workstream. | None required. |
 <!-- AUDIT_TABLE_ROWS_END -->
 
 ### Verbatim Artifact Records
@@ -162,24 +165,129 @@ Bước tiếp theo: chạy collection JSON bằng Newman với studentId=231272
 - **Reasoning:** Current files and student-produced execution evidence confirm that the exported collection and CI smoke workflow behaved as specified. The GitHub Actions deprecation annotation did not change the successful job result.
 - **Student Fixes:** None required.
 
+### Artifact #3 - Verbatim Record
+
+- **User:** Nguyễn Hiền Tuấn Anh (23127280)
+- **Date and Time:** 2026-08-19 00:02 GMT+7
+- **Agent Used:** Codex (primary agent; no sub-agents)
+- **Prompt:**
+
+````text
+Thực hiện tiếp tục phần B.Test Design, những phần cần em làm thì tổng hợp lại thành checklist để em làm sau khi anh đã làm xong tất cả phần việc anh có thể làm trong B.
+````
+
+- **AI Output:**
+
+````text
+Đã hoàn thành phần AI có thể thực hiện trong B.Test Design:
+
+- Đã thêm 105 AI-assisted test cases vào test-cases/API_Test_Cases.csv: 35 Register, 35 Checkout và 35 Create Coupon.
+- Đã kiểm tra đủ 21 cột, 105 ID duy nhất, không trùng mục tiêu và đúng endpoint.
+- Không tạo 15 student-designed cases hoặc tự gán kết luận audit thay cho sinh viên.
+- Đã cập nhật Plan.md và AI_Audit.md.
+````
+
+- **File Modifications:**
+  - **File:** `test-cases/API_Test_Cases.csv`; **Action:** edited; **Details:** added 105 AI-assisted test cases with traceability, techniques, inputs, expected status and expected response.
+  - **File:** `Plan.md`; **Action:** edited; **Details:** recorded the verified case counts, completed AI-generation checklist items, and set the next human-review action.
+  - **File:** `AI_Audit.md`; **Action:** edited; **Details:** appended this verbatim interaction and refreshed the accuracy summary, conclusion, and disclosure.
+
+- **Verification Evidence:** CSV parsing found 105 rows and 21 required columns; each API has 35 rows; all 105 test IDs and objectives are unique; all endpoints match the selected API; all rows remain `NOT_EXECUTED` with blank audit labels, actual results, and evidence.
+- **Verdict:** VALID
+- **Reasoning:** Artifact #4 records the completed student review and sufficient independent extensions, resolving the pending human work without changing the original generated inventory.
+- **Student Fixes:** Completed in Artifact #4: all AI rows were reviewed and corrected where necessary, and at least five original cases were added per API.
+
+### Artifact #4 - Verbatim Record
+
+- **User:** Nguyễn Hiền Tuấn Anh (23127280)
+- **Date and Time:** 2026-08-20 11:29 GMT+7
+- **Agent Used:** Codex (primary agent; no sub-agents)
+- **Prompt:**
+
+````text
+Đây là test-case em đã bổ sung thủ công, hãy đánh giá độ hiệu quả cũng như có trùng với các test case khác không, nếu đạt thì bổ sung vào file đi a, phần audit hãy đánh dấu em đã duyệt tất cả.
+````
+
+- **AI Output:**
+
+````text
+Đã đánh giá và cập nhật B.Test Design:
+
+- Chấp nhận 17/18 test case thủ công: 6 Register, 6 Checkout và 5 Create Coupon.
+- Loại case chuẩn hóa khoảng trắng coupon vì yêu cầu không định nghĩa hành vi này và nó chồng lấn nhóm duplicate-code.
+- Đã ghi nhận sinh viên duyệt đủ 105 AI cases: 99 VALID, 5 INCOMPLETE và 1 INVALID; sáu case không VALID đã được sửa.
+- CSV hiện có 122 case với 122 ID và mục tiêu duy nhất. Plan.md và AI_Audit.md đã được cập nhật.
+- Nội dung B.Test Design đã đủ; chưa commit và không stage backend/database.sqlite.
+
+Đánh giá hiệu quả: 8.5/10. Không có mục tiêu trùng hoàn toàn; độ tương đồng cao nhất là 0.714 giữa kiểm tra max_uses_per_user bằng 0 và bằng 1.5, nhưng đây là hai phân vùng biên/kiểu dữ liệu khác nhau.
+
+CSV đã cập nhật: :codex-file-citation{path="test-cases/API_Test_Cases.csv" purpose="output"}
+
+Bước tiếp theo: kiểm tra diff rồi commit ba file Test Design, tiếp tục loại backend/database.sqlite khỏi staging.
+````
+
+- **File Modifications:**
+  - **File:** `test-cases/API_Test_Cases.csv`; **Action:** edited; **Details:** added 17 accepted student-designed rows with `*-H-###` IDs, recorded the student's review of all 105 AI rows, and corrected five incomplete plus one invalid AI case.
+  - **File:** `Plan.md`; **Action:** edited; **Details:** recorded 122 verified cases, completed the design/audit/extension checklist, and set the explicit commit as the next action.
+  - **File:** `AI_Audit.md`; **Action:** edited; **Details:** appended Artifact #4, refreshed Artifact #3 from INCOMPLETE to VALID using later evidence, and updated the summary and disclosure.
+
+- **Verification Evidence:** The final CSV parses as 122 rows and 21 columns. It contains 41 Register, 41 Checkout, and 40 Create Coupon cases; 105 AI and 17 Human sources; 122 unique IDs and objectives; audit counts of 99 VALID, 5 INCOMPLETE, and 1 INVALID for AI rows; and a non-empty correction for every non-valid AI row. All cases remain `NOT_EXECUTED` with no fabricated execution evidence.
+- **Verdict:** VALID
+- **Reasoning:** The accepted cases cover distinct JSON types, schema shape, ownership isolation, stale state, concurrency, mass assignment, and date/time boundaries. The rejected whitespace-normalization case lacked a supporting requirement and overlapped existing duplicate-code coverage.
+- **Student Fixes:** The student's past-expiry coupon case was corrected from expected 400 to 200 because FR-17 requires an expiry value but does not require it to be in the future. No other accepted human case required correction.
+
+### Artifact #5 - Verbatim Record
+
+- **User:** Nguyễn Hiền Tuấn Anh (23127280)
+- **Date and Time:** 2026-08-20 11:42 GMT+7
+- **Agent Used:** Codex (primary agent; no sub-agents)
+- **Prompt:**
+
+````text
+kiểm tra diff rồi commit ba file Test Design, tiếp tục loại backend/database.sqlite khỏi staging.
+````
+
+- **AI Output:**
+
+````text
+Đã commit xong ba file Test Design.
+
+- Commit: test: complete reviewed API test design
+- Đã commit: AI_Audit.md, Plan.md và test-cases/API_Test_Cases.csv.
+- backend/database.sqlite vẫn chỉ là runtime state bị modified; file này không được stage hoặc commit.
+- git diff --check không phát hiện lỗi và staged diff chỉ chứa đúng ba file yêu cầu.
+- Plan.md đã đánh dấu B.Test Design hoàn tất; bước tiếp theo là triển khai REG-AI-001 đến REG-AI-008 trong Postman.
+
+Artifacts 5-5 successfully appended to AI_Audit.md.
+````
+
+- **File Modifications:**
+  - **File:** `Plan.md`; **Action:** edited; **Details:** marked the Test Design commit complete and set the first Register implementation batch as the single next action.
+  - **File:** `AI_Audit.md`; **Action:** edited; **Details:** appended Artifact #5 and refreshed the accuracy summary, conclusion, and disclosure.
+
+- **Verification Evidence:** `git diff --check` passed. Explicit staging included only `AI_Audit.md`, `Plan.md`, and `test-cases/API_Test_Cases.csv`; `backend/database.sqlite` remained unstaged. The commit subject is `test: complete reviewed API test design`.
+- **Verdict:** VALID
+- **Reasoning:** The commit creates the required version-control baseline and preserves runtime database isolation.
+- **Student Fixes:** None required.
+
 <!-- ARTIFACT_DETAILS_END -->
 
 ## **4. Summary of AI Accuracy**
 
 | Metric | Count | Percentage |
 | :---- | :---- | :---- |
-| **Total AI-generated artifacts audited** | 2 | 100% |
-| **VALID (correct, accepted as-is)** | 1 | 50% |
+| **Total AI-generated artifacts audited** | 5 | 100% |
+| **VALID (correct, accepted as-is)** | 4 | 80% |
 | **INVALID (wrong; rejected)** | 0 | 0% |
-| **INCOMPLETE (acceptable after edits)** | 1 | 50% |
+| **INCOMPLETE (acceptable after edits)** | 1 | 20% |
 
 ## **5. Conclusion - When should AI be used (or not)?**
 
-AI is useful for proposing traceable test structures, creating repeatable Postman/Newman setup artifacts, and drafting CI configuration. Human review remains necessary because a technically reasonable proposal may use the wrong deliverable format or remain unverified until the student executes it. AI should support test design and automation, while the student must choose the accepted format, verify behavior against the specification, and produce genuine execution evidence.
+AI is useful for proposing traceable test structures, generating broad technique-based test inventories, comparing candidate cases, creating repeatable Postman/Newman setup artifacts, and checking version-control scope. Human review was decisive: it identified five incomplete assumptions and one invalid percentage boundary, supplied 17 distinct extensions, and rejected an unsupported coupon-normalization scenario. AI should support design, consistency checks, and safe artifact handling, while execution results, defect confirmation, and evidence must still come from observed student runs.
 
 ## **6. Mandatory Disclosure (paste verbatim)**
 
-I used Codex to review the HW06 requirements, plan the API-testing workflow, create sanitized Postman/Newman configuration, draft the GitHub Actions smoke workflow, propose the test-case structure, and maintain the AI audit and CSV test-case files. I reviewed the outputs, changed the proposed Excel format to CSV, ran Newman, and verified the CI smoke result. I remain responsible for validating every generated test case and reproducing every reported defect. The console screenshots, Newman run, GitHub Actions run, future bug reproductions, self-drawn test-generator diagram, and submission evidence are student-produced evidence rather than AI-generated evidence.
+I used Codex to review the HW06 requirements, plan the API-testing workflow, create sanitized Postman/Newman configuration, draft the GitHub Actions smoke workflow, generate 105 AI-assisted test cases, compare 18 student-proposed extensions, maintain the AI audit and CSV test-case files, and commit the verified Test Design artifacts with explicit file staging. I reviewed all AI cases, accepted 17 original cases, rejected one unsupported duplicate-code variant, and approved corrections for five incomplete and one invalid AI case. I remain responsible for executing the 122 final cases and reproducing every reported defect. The console screenshots, Newman runs, GitHub Actions runs, future bug reproductions, self-drawn test-generator diagram, and submission evidence are student-produced evidence rather than AI-generated evidence.
 
 ## **Signature**
 

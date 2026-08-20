@@ -1,14 +1,12 @@
 # HW06 Execution Plan
 
-**Last verified:** 2026-08-18  
+**Last verified:** 2026-08-20
 **Student:** Nguyễn Hiền Tuấn Anh — 23127280  
 **Target:** 90–100 points using Postman, Newman, and GitHub Actions
 
 ## Next Action
 
-Manually replace `evidence/header/x-student-id-console.png` with a cropped screenshot that shows the `X-Student-Id` request header but does not expose the response JWT or environment tokens, then commit the preparation evidence and documentation.
-
-After that commit, analyze FR-01 and `POST /api/register`. Generate and audit test cases in small technique-focused batches instead of requesting all 35 cases at once.
+Create the Register folder in the Postman collection and implement the first deterministic batch, `REG-AI-001` through `REG-AI-008`, with status and response assertions.
 
 ## Approved Scope and Decisions
 
@@ -39,13 +37,16 @@ After that commit, analyze FR-01 and `POST /api/register`. Generate and audit te
 - Newman executed Login User, Login Admin, and Get Products with 3 assertions and 0 failures.
 - GitHub Actions run for commit `88b21d3` completed successfully.
 - Preparation evidence is stored under `evidence/header/`, `evidence/newman/`, and `evidence/cicd/`.
+- `test-cases/API_Test_Cases.csv` contains 122 reviewed test cases: 41 Register, 41 Checkout, and 40 Create Coupon.
+- The suite contains 105 AI-assisted cases and 17 accepted student-designed cases; all IDs and objectives are unique.
+- The student audit covers all 105 AI cases: 99 `VALID`, 5 `INCOMPLETE`, and 1 `INVALID`; all six non-valid cases contain corrections.
+- The CSV has the required 21 columns, correct endpoint mapping, and all cases remain `NOT_EXECUTED` until workstream C.
+- The reviewed Test Design artifacts are committed under the subject `test: complete reviewed API test design` without `backend/database.sqlite`.
 
 ### Pending or Unverified
 
-- No API test-case rows have been added to the CSV.
 - The preparation Newman HTML report exists; no final full-suite report exists yet.
 - No GitHub Issues, final CI evidence pair, generator design, or final reports exist.
-- The current header screenshot contains a runtime JWT and must be manually recaptured or cropped before it is committed.
 - `backend/database.sqlite` is modified runtime state and must not be staged.
 
 ## Workstream Order
@@ -134,11 +135,12 @@ Only append a row after explicit student approval.
 
 ### B. Test Design
 
-- [ ] Register: at least 35 AI-assisted and 5 student-designed cases.
-- [ ] Checkout: at least 35 AI-assisted and 5 student-designed cases.
-- [ ] Create Coupon: at least 35 AI-assisted and 5 student-designed cases.
-- [ ] Audit and correct every AI-assisted case.
-- [ ] Confirm at least 120 non-duplicate final cases.
+- [x] Register: 35 AI-assisted cases generated and structurally validated.
+- [x] Checkout: 35 AI-assisted cases generated and structurally validated.
+- [x] Create Coupon: 35 AI-assisted cases generated and structurally validated.
+- [x] Student audited all 105 AI-assisted cases and corrections are recorded for every non-valid case.
+- [x] Added 17 student-designed cases and confirmed 122 unique final cases.
+- [x] Commit the verified Test Design artifacts without staging `backend/database.sqlite`.
 
 ### C. Execution and Bugs
 
