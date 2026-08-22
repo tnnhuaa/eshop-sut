@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{baseUrl}}/api/login"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: '{"email":"test@eshop.com","password":"Test1234!"}'
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('SETUP Login User returns 200', () => pm.response.to.have.status(200));
+      const json = pm.response.json();
+      pm.test('SETUP User token and role are valid', () => { pm.expect(json.token).to.be.a('string').and.not.empty; pm.expect(json.user.role).to.eql('user'); });
+      pm.environment.set('userToken', json.token);
+    language: text/javascript
+order: 1000

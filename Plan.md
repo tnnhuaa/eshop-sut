@@ -1,12 +1,12 @@
 # HW06 Execution Plan
 
-**Last verified:** 2026-08-20
+**Last verified:** 2026-08-22
 **Student:** Nguyễn Hiền Tuấn Anh — 23127280  
 **Target:** 90–100 points using Postman, Newman, and GitHub Actions
 
 ## Next Action
 
-Create the Register folder in the Postman collection and implement the first deterministic batch, `REG-AI-001` through `REG-AI-008`, with status and response assertions.
+Commit and push the prepared full-suite GitHub Actions changes, then verify that the `Newman full suite` job uploads the sanitized `hw06-newman-report` artifact even though genuine SUT defects make the job fail.
 
 ## Approved Scope and Decisions
 
@@ -26,7 +26,7 @@ Create the Register folder in the Postman collection and implement the first det
 
 - Node.js and the student's npm installation work; the student showed npm `11.14.0`.
 - Newman `6.2.2` and `newman-reporter-htmlextra` are installed under `api-tests/`.
-- Postman contains Login User, Login Admin, and Get Products requests.
+- Postman contains the imported full collection: setup plus Register, Checkout, and Create Coupon folders.
 - Login scripts validate the expected role and save `userToken` or `adminToken`.
 - The collection pre-request script adds `X-Student-Id` from the active environment.
 - The committed Postman environment has empty values for student ID and tokens.
@@ -39,14 +39,30 @@ Create the Register folder in the Postman collection and implement the first det
 - Preparation evidence is stored under `evidence/header/`, `evidence/newman/`, and `evidence/cicd/`.
 - `test-cases/API_Test_Cases.csv` contains 122 reviewed test cases: 41 Register, 41 Checkout, and 40 Create Coupon.
 - The suite contains 105 AI-assisted cases and 17 accepted student-designed cases; all IDs and objectives are unique.
-- The student audit covers all 105 AI cases: 99 `VALID`, 5 `INCOMPLETE`, and 1 `INVALID`; all six non-valid cases contain corrections.
-- The CSV has the required 21 columns, correct endpoint mapping, and all cases remain `NOT_EXECUTED` until workstream C.
+- The student audit covers all 105 AI cases: 97 `VALID`, 7 `INCOMPLETE`, and 1 `INVALID`; all eight non-valid cases contain corrections.
+- The CSV has the required 21 columns, correct endpoint mapping, and execution results for all 122 cases.
 - The reviewed Test Design artifacts are committed under the subject `test: complete reviewed API test design` without `backend/database.sqlite`.
+- The Postman collection now contains setup plus 41 Register, 41 Checkout, and 40 Create Coupon requests with deterministic data setup and assertions.
+- A clean Newman run executed all 122 unique cases: 35 passed and 87 failed (Register 13/41 passed; Checkout 6/41; Create Coupon 16/40).
+- The final run executed 125 collection items, 287 requests, and 678 assertions; 100 assertions failed because the SUT contradicted the reviewed oracles.
+- No checkout setup assertion failed in the final run. Ambiguous invalid-authentication oracles were corrected to accept either 401 or 403 before final execution.
+- `test-cases/API_Test_Cases.csv` records an actual result, execution status, bug mapping, and evidence path for every case.
+- Ten distinct product-defect groups are documented in `reports/23127280_Bug_Report.md`.
+- Focused concurrent checkout evidence returned two HTTP 200 responses, created two orders, and left the cart nonempty.
+- The committed-candidate Newman HTML and summary are sanitized; raw Newman JSON is ignored because it contains runtime tokens.
+- Student-produced execution evidence now includes two Newman screenshots and 20 distinct Postman screenshots: one request and one result for each of the 10 bug groups.
+- The Newman evidence shows `localhost:3000`, 287 executed requests, 678 assertions, and 100 assertion failures.
+- All evidence names match their Bug ID and Test ID after correcting `BUG-REG-003` from `CHK-AI-035` to `REG-AI-035`.
+- Ten copy-ready GitHub Issue bodies exist under `reports/github-issues/`, each with title, severity, environment, reproduction, expected/actual result, affected tests, and matching evidence filenames.
+- The student manually published all 10 public GitHub Issues as #24–#33. Public API verification confirmed matching Bug IDs/titles, Expected/Actual sections, and two uploaded images per issue.
+- The Bug Report contains all 10 public links, and every failed CSV row now traces to its mapped GitHub Issue URL.
+- The workflow has a locally validated `Newman full suite` job that runs the 122-case collection and always uploads sanitized HTML, summary, and backend log evidence.
+- The reusable report scripts accept CI-specific input/output paths. A local CI-path verification reproduced 122 cases (35 passed / 87 failed) and found zero remaining JWT patterns after sanitization.
 
 ### Pending or Unverified
 
-- The preparation Newman HTML report exists; no final full-suite report exists yet.
-- No GitHub Issues, final CI evidence pair, generator design, or final reports exist.
+- The full-suite workflow changes have not yet been committed/pushed, so no GitHub Actions Newman artifact or run link exists yet.
+- No final all-pass/controlled-one-fail CI evidence pair, generator design, or submission reports exist.
 - `backend/database.sqlite` is modified runtime state and must not be staged.
 
 ## Workstream Order
@@ -122,6 +138,7 @@ Only append a row after explicit student approval.
 | 2026-08-18 | Environment | Use isolated localhost environments instead of a shared deployment | Student continued with the local setup |
 | 2026-08-18 | Test-case storage | Replace the proposed Excel workbook with one CSV file | Student explicitly requested CSV |
 | 2026-08-18 | Agent workflow | Persist approved decisions and read `Plan.md` before continuing work | Student explicitly requested this behavior |
+| 2026-08-22 | GitHub Issues | Student will create the 10 public Issues manually from prepared Markdown drafts | Student stopped browser automation and requested copy-ready content |
 
 ## Progress Checklist
 
@@ -144,15 +161,17 @@ Only append a row after explicit student approval.
 
 ### C. Execution and Bugs
 
-- [ ] Implement Postman requests, data runs, and assertions.
-- [ ] Execute the full collection using Newman.
-- [ ] Save header, console, hostname, and HTML evidence.
-- [ ] Reproduce and separate product defects from test/environment failures.
-- [ ] Create matching Markdown bug reports and GitHub Issues.
+- [x] Implement Postman requests, deterministic data setup, and assertions for all 122 cases.
+- [x] Execute the full collection using Newman and record 35 passed / 87 failed.
+- [x] Save header, console, hostname, HTML, and 10 representative request/response evidence pairs.
+- [x] Reproduce and separate 10 product-defect groups from test/environment failures.
+- [x] Create the matching Markdown bug report.
+- [x] Prepare 10 copy-ready GitHub Issue bodies with matching evidence filenames.
+- [x] Create 10 public GitHub Issues, attach evidence, and record their verified links.
 
 ### D. CI/CD and Generator
 
-- [ ] Run Newman in GitHub Actions and upload the report.
+- [ ] Commit/push the prepared full-suite workflow and verify its uploaded sanitized Newman report.
 - [ ] Save one all-pass and one controlled one-fail pipeline run.
 - [ ] Write generator design and pseudocode.
 - [ ] Student manually draws and exports the diagram.

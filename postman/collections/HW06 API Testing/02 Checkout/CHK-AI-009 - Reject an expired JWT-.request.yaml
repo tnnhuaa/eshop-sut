@@ -1,0 +1,23 @@
+$kind: http-request
+name: CHK-AI-009 | Reject an expired JWT.
+url: "{{baseUrl}}/api/checkout"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{supabase_service_role_api_key_0tdn}}
+body:
+  type: json
+  content: '{"total_amount":200000,"shipping_address":"123 Le Loi"}'
+scripts:
+  - type: afterResponse
+    code: |-
+      const testId = "CHK-AI-009";
+      const allowedCodes = [403];
+      pm.test(testId + ' | expected HTTP status', () => pm.expect(allowedCodes).to.include(pm.response.code));
+      pm.test(testId + ' | X-Student-Id sent', () => pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')));
+      pm.test(testId + ' | response time under 2000 ms', () => pm.expect(pm.response.responseTime).to.be.below(2000));
+      pm.test(testId + ' | no unexpected 5xx', () => pm.expect(pm.response.code).to.be.below(500));
+      let json = null;
+      try { json = pm.response.json(); } catch (_) {}
+    language: text/javascript
+order: 9000

@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{baseUrl}}/api/login"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: '{"email":"admin@eshop.com","password":"Admin123!"}'
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('SETUP Login Admin returns 200', () => pm.response.to.have.status(200));
+      const json = pm.response.json();
+      pm.test('SETUP Admin token and role are valid', () => { pm.expect(json.token).to.be.a('string').and.not.empty; pm.expect(json.user.role).to.eql('admin'); });
+      pm.environment.set('adminToken', json.token);
+      pm.environment.set('adminUserId', String(json.user.id));
+    language: text/javascript
+order: 2000

@@ -1,0 +1,24 @@
+$kind: http-request
+name: CPN-AI-004 | Accept a valid future ISO timestamp for expired_at.
+url: "{{baseUrl}}/api/admin/coupons"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{adminToken}}
+body:
+  type: json
+  content: '{"code":"HW06D004_{{runId}}","type":"percent","discount_value":10,"min_order_amount":0,"expired_at":"2099-12-31T23:59:59Z","max_uses_per_user":1}'
+scripts:
+  - type: afterResponse
+    code: |-
+      const testId = "CPN-AI-004";
+      const allowedCodes = [200];
+      pm.test(testId + ' | expected HTTP status', () => pm.expect(allowedCodes).to.include(pm.response.code));
+      pm.test(testId + ' | X-Student-Id sent', () => pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')));
+      pm.test(testId + ' | response time under 2000 ms', () => pm.expect(pm.response.responseTime).to.be.below(2000));
+      pm.test(testId + ' | no unexpected 5xx', () => pm.expect(pm.response.code).to.be.below(500));
+      let json = null;
+      try { json = pm.response.json(); } catch (_) {}
+      if (pm.response.code === 200) pm.test(testId + ' | coupon success schema', () => { pm.expect(json.message).to.eql('Coupon created'); pm.expect(json.id).to.be.a('number').and.above(0); });
+    language: text/javascript
+order: 4000

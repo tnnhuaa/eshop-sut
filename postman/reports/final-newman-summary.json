@@ -1,0 +1,1664 @@
+{
+  "generatedAt": "2026-08-20T05:07:57.974Z",
+  "totalCases": 122,
+  "passedCases": 35,
+  "failedCases": 87,
+  "duplicateExecutions": [],
+  "byApi": {
+    "Register": {
+      "total": 41,
+      "passed": 13,
+      "failed": 28
+    },
+    "Checkout": {
+      "total": 41,
+      "passed": 6,
+      "failed": 35
+    },
+    "CreateCoupon": {
+      "total": 40,
+      "passed": 16,
+      "failed": 24
+    }
+  },
+  "failureKinds": {
+    "STATUS_MISMATCH": 62,
+    "PLAINTEXT_PASSWORD": 1,
+    "CART_NOT_CLEARED": 24,
+    "OTHER_ASSERTION": 13
+  },
+  "runStats": {
+    "iterations": {
+      "total": 1,
+      "pending": 0,
+      "failed": 0
+    },
+    "items": {
+      "total": 125,
+      "pending": 0,
+      "failed": 0
+    },
+    "scripts": {
+      "total": 290,
+      "pending": 0,
+      "failed": 0
+    },
+    "prerequests": {
+      "total": 125,
+      "pending": 0,
+      "failed": 0
+    },
+    "requests": {
+      "total": 287,
+      "pending": 0,
+      "failed": 0
+    },
+    "tests": {
+      "total": 125,
+      "pending": 0,
+      "failed": 0
+    },
+    "assertions": {
+      "total": 678,
+      "pending": 0,
+      "failed": 100
+    },
+    "testScripts": {
+      "total": 125,
+      "pending": 0,
+      "failed": 0
+    },
+    "prerequestScripts": {
+      "total": 165,
+      "pending": 0,
+      "failed": 0
+    }
+  },
+  "cases": [
+    {
+      "testId": "REG-AI-001",
+      "itemName": "REG-AI-001 | Register with a standard valid name, unique email, and strong password.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":3}",
+      "responseTime": 13,
+      "failures": []
+    },
+    {
+      "testId": "REG-AI-002",
+      "itemName": "REG-AI-002 | Accept a Vietnamese Unicode full name.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":4}",
+      "responseTime": 11,
+      "failures": []
+    },
+    {
+      "testId": "REG-AI-003",
+      "itemName": "REG-AI-003 | Accept a one-character nonblank name because no higher minimum is specified.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":5}",
+      "responseTime": 13,
+      "failures": []
+    },
+    {
+      "testId": "REG-AI-004",
+      "itemName": "REG-AI-004 | Accept a valid email containing a plus tag.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":6}",
+      "responseTime": 9,
+      "failures": []
+    },
+    {
+      "testId": "REG-AI-005",
+      "itemName": "REG-AI-005 | Accept a valid email with a subdomain.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":7}",
+      "responseTime": 8,
+      "failures": []
+    },
+    {
+      "testId": "REG-AI-006",
+      "itemName": "REG-AI-006 | Accept a password exactly eight characters long that satisfies all complexity classes.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":8}",
+      "responseTime": 11,
+      "failures": []
+    },
+    {
+      "testId": "REG-AI-007",
+      "itemName": "REG-AI-007 | Accept an allowed @ special character in the password.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":9}",
+      "responseTime": 10,
+      "failures": []
+    },
+    {
+      "testId": "REG-AI-008",
+      "itemName": "REG-AI-008 | Accept a unique valid email containing uppercase characters.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":10}",
+      "responseTime": 9,
+      "failures": []
+    },
+    {
+      "testId": "REG-AI-009",
+      "itemName": "REG-AI-009 | Reject a request with the required name field omitted.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":11}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "REG-AI-009 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-010",
+      "itemName": "REG-AI-010 | Reject a null name.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":12}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "REG-AI-010 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-011",
+      "itemName": "REG-AI-011 | Reject an empty name.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":13}",
+      "responseTime": 7,
+      "failures": [
+        {
+          "assertion": "REG-AI-011 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-012",
+      "itemName": "REG-AI-012 | Reject a whitespace-only name.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":14}",
+      "responseTime": 10,
+      "failures": [
+        {
+          "assertion": "REG-AI-012 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-013",
+      "itemName": "REG-AI-013 | Reject a request with email omitted.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":15}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "REG-AI-013 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-014",
+      "itemName": "REG-AI-014 | Reject a null email.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":16}",
+      "responseTime": 10,
+      "failures": [
+        {
+          "assertion": "REG-AI-014 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-015",
+      "itemName": "REG-AI-015 | Reject an empty email.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":17}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "REG-AI-015 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-016",
+      "itemName": "REG-AI-016 | Reject an email without @.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":18}",
+      "responseTime": 12,
+      "failures": [
+        {
+          "assertion": "REG-AI-016 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-017",
+      "itemName": "REG-AI-017 | Reject an email without a local part.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":19}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "REG-AI-017 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-018",
+      "itemName": "REG-AI-018 | Reject an email without a domain.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":20}",
+      "responseTime": 9,
+      "failures": [
+        {
+          "assertion": "REG-AI-018 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-019",
+      "itemName": "REG-AI-019 | Reject an email containing embedded spaces.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":21}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "REG-AI-019 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-020",
+      "itemName": "REG-AI-020 | Reject an exact duplicate email.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":23}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "REG-AI-020 | expected HTTP status",
+          "message": "expected [ 409 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-021",
+      "itemName": "REG-AI-021 | Characterize handling of a duplicate email differing only by letter case because normalization is unspecified.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":25}",
+      "responseTime": 7,
+      "failures": []
+    },
+    {
+      "testId": "REG-AI-022",
+      "itemName": "REG-AI-022 | Reject a request with password omitted.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":26}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "REG-AI-022 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-023",
+      "itemName": "REG-AI-023 | Reject a null password.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":27}",
+      "responseTime": 7,
+      "failures": [
+        {
+          "assertion": "REG-AI-023 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-024",
+      "itemName": "REG-AI-024 | Reject an empty password.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":28}",
+      "responseTime": 7,
+      "failures": [
+        {
+          "assertion": "REG-AI-024 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-025",
+      "itemName": "REG-AI-025 | Reject a seven-character password immediately below the minimum.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":29}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "REG-AI-025 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-026",
+      "itemName": "REG-AI-026 | Reject a password without an uppercase letter.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":30}",
+      "responseTime": 9,
+      "failures": [
+        {
+          "assertion": "REG-AI-026 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-027",
+      "itemName": "REG-AI-027 | Reject a password without a lowercase letter.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":31}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "REG-AI-027 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-028",
+      "itemName": "REG-AI-028 | Reject a password without a digit.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":32}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "REG-AI-028 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-029",
+      "itemName": "REG-AI-029 | Reject a password without a special character.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":33}",
+      "responseTime": 7,
+      "failures": [
+        {
+          "assertion": "REG-AI-029 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-030",
+      "itemName": "REG-AI-030 | Reject a password whose only special character is outside the allowed set.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":34}",
+      "responseTime": 9,
+      "failures": [
+        {
+          "assertion": "REG-AI-030 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-031",
+      "itemName": "REG-AI-031 | Ensure SQL-injection text in email cannot alter the query or user table.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":35}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "REG-AI-031 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-AI-032",
+      "itemName": "REG-AI-032 | Store an HTML/script-like name as inert text and verify the registration API does not execute or reflect it as HTML.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":36}",
+      "responseTime": 8,
+      "failures": []
+    },
+    {
+      "testId": "REG-AI-033",
+      "itemName": "REG-AI-033 | Ensure an extra role=admin field cannot create an administrator.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Login successful\",\"token\":\"[REDACTED_JWT]\",\"user\":{\"id\":37,\"name\":\"Role Attack\",\"email\":\"reg_033_23127280_1787202458662@domain.com\",\"password\":\"Password1!\",\"role\":\"user\",\"login_attempts\":0,\"locked_until\":null,\"reset_token\":null,\"shipping_address\":null,\"phone\":null}}",
+      "responseTime": 3,
+      "failures": []
+    },
+    {
+      "testId": "REG-AI-034",
+      "itemName": "REG-AI-034 | Reject malformed JSON without creating a user.",
+      "status": "PASSED",
+      "responseCode": 400,
+      "responseBody": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>SyntaxError: Expected &#39;,&#39; or &#39;}&#39; after property value in JSON at position 68 (line 1 column 69)<br> &nbsp; &nbsp;at JSON.parse (&lt;anonymous&gt;)<br> &nbsp; &nbsp;at parse (F:\\D\\Uni\\YEAR_3\\SEM_3\\TESTING\\LAB\\Homework\\HW06\\backend\\node_modules\\body-parser\\lib\\types\\json.js:72:19)<br> &nbsp; &nbsp;at F:\\D\\Uni\\YEAR_3\\SEM_3\\TESTING\\LAB\\Homework\\HW06\\backend\\node_modules\\body-parser\\lib\\read.js:162:18<br> &nbsp; &nbsp;at AsyncResource.runInAsyncScope (node:async_hooks:214:14)<br> &nbsp; &nbsp;at invokeCallback (F:\\D\\Uni\\YEAR_3\\SEM_3\\TESTING\\LAB\\Homework\\HW06\\backend\\node_modules\\raw-body\\index.js:238:16)<br> &nbsp; &nbsp;at done (F:\\D\\Uni\\YEAR_3\\SEM_3\\TESTING\\LAB\\Homework\\HW06\\backend\\node_modules\\raw-body\\index.js:227:7)<br> &nbsp; &nbsp;at IncomingMessage.onEnd (F:\\D\\Uni\\YEAR_3\\SEM_3\\TESTING\\LAB\\Homework\\HW06\\backend\\node_modules\\raw-body\\index.js:287:7)<br> &nbsp; &nbsp",
+      "responseTime": 4,
+      "failures": []
+    },
+    {
+      "testId": "REG-AI-035",
+      "itemName": "REG-AI-035 | Validate the successful response schema and verify password data is not exposed or stored as plaintext.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Login successful\",\"token\":\"[REDACTED_JWT]\",\"user\":{\"id\":38,\"name\":\"Schema User\",\"email\":\"reg_035_23127280_1787202458662@domain.com\",\"password\":\"Password1!\",\"role\":\"user\",\"login_attempts\":0,\"locked_until\":null,\"reset_token\":null,\"shipping_address\":null,\"phone\":null}}",
+      "responseTime": 5,
+      "failures": [
+        {
+          "assertion": "REG-AI-035 | password is not returned or stored as plaintext",
+          "message": "expected 'Password1!' to not deeply equal 'Password1!'"
+        }
+      ]
+    },
+    {
+      "testId": "REG-H-001",
+      "itemName": "REG-H-001 | Reject a numeric name value instead of a string.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":39}",
+      "responseTime": 9,
+      "failures": [
+        {
+          "assertion": "REG-H-001 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-H-002",
+      "itemName": "REG-H-002 | Reject a numeric email value instead of a string.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":40}",
+      "responseTime": 11,
+      "failures": [
+        {
+          "assertion": "REG-H-002 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-H-003",
+      "itemName": "REG-H-003 | Reject a numeric password value instead of a string.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":41}",
+      "responseTime": 9,
+      "failures": [
+        {
+          "assertion": "REG-H-003 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-H-004",
+      "itemName": "REG-H-004 | Reject a top-level JSON array when the endpoint requires a JSON object.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":42}",
+      "responseTime": 9,
+      "failures": [
+        {
+          "assertion": "REG-H-004 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "REG-H-005",
+      "itemName": "REG-H-005 | Ensure a client-supplied server-managed id field cannot force the new user's database id.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":43}",
+      "responseTime": 8,
+      "failures": []
+    },
+    {
+      "testId": "REG-H-006",
+      "itemName": "REG-H-006 | Reject an email containing multiple @ characters.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"User registered successfully\",\"id\":44}",
+      "responseTime": 13,
+      "failures": [
+        {
+          "assertion": "REG-H-006 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-001",
+      "itemName": "CHK-AI-001 | Checkout one cart item with a valid user token.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":1,\"user_id\":45,\"total_amount\":200000,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi, TP.HCM\",\"created_at\":\"2026-08-20 05:07:42\"}]",
+      "responseTime": 12,
+      "failures": [
+        {
+          "assertion": "CHK-AI-001 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-002",
+      "itemName": "CHK-AI-002 | Checkout multiple different cart products.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":2,\"user_id\":46,\"total_amount\":350000,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi, TP.HCM\",\"created_at\":\"2026-08-20 05:07:42\"}]",
+      "responseTime": 10,
+      "failures": [
+        {
+          "assertion": "CHK-AI-002 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) }, { id: 2, …(3) } ] to be empty"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-003",
+      "itemName": "CHK-AI-003 | Accept a valid Vietnamese Unicode shipping address.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":3,\"user_id\":47,\"total_amount\":200000,\"status\":\"pending\",\"shipping_address\":\"12 Nguyễn Huệ, Quận 1, TP.HCM\",\"created_at\":\"2026-08-20 05:07:43\"}]",
+      "responseTime": 18,
+      "failures": [
+        {
+          "assertion": "CHK-AI-003 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-004",
+      "itemName": "CHK-AI-004 | Accept a short but nonblank shipping address when no minimum length is specified.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":4,\"user_id\":48,\"total_amount\":200000,\"status\":\"pending\",\"shipping_address\":\"A\",\"created_at\":\"2026-08-20 05:07:43\"}]",
+      "responseTime": 7,
+      "failures": [
+        {
+          "assertion": "CHK-AI-004 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-005",
+      "itemName": "CHK-AI-005 | Reject checkout without an Authorization header.",
+      "status": "PASSED",
+      "responseCode": 401,
+      "responseBody": "{\"error\":\"Unauthorized\"}",
+      "responseTime": 3,
+      "failures": []
+    },
+    {
+      "testId": "CHK-AI-006",
+      "itemName": "CHK-AI-006 | Reject an Authorization header without Bearer format.",
+      "status": "PASSED",
+      "responseCode": 403,
+      "responseBody": "{\"error\":\"Forbidden\"}",
+      "responseTime": 3,
+      "failures": []
+    },
+    {
+      "testId": "CHK-AI-007",
+      "itemName": "CHK-AI-007 | Reject a random invalid JWT.",
+      "status": "PASSED",
+      "responseCode": 403,
+      "responseBody": "{\"error\":\"Forbidden\"}",
+      "responseTime": 4,
+      "failures": []
+    },
+    {
+      "testId": "CHK-AI-008",
+      "itemName": "CHK-AI-008 | Reject a correctly shaped JWT with an invalid signature.",
+      "status": "PASSED",
+      "responseCode": 403,
+      "responseBody": "{\"error\":\"Forbidden\"}",
+      "responseTime": 3,
+      "failures": []
+    },
+    {
+      "testId": "CHK-AI-009",
+      "itemName": "CHK-AI-009 | Reject an expired JWT.",
+      "status": "PASSED",
+      "responseCode": 403,
+      "responseBody": "{\"error\":\"Forbidden\"}",
+      "responseTime": 3,
+      "failures": []
+    },
+    {
+      "testId": "CHK-AI-010",
+      "itemName": "CHK-AI-010 | Allow an authenticated admin account to checkout as a user unless explicitly prohibited.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":5,\"user_id\":1,\"total_amount\":100000,\"status\":\"pending\",\"shipping_address\":\"Admin Address\",\"created_at\":\"2026-08-20 05:07:43\"}]",
+      "responseTime": 18,
+      "failures": [
+        {
+          "assertion": "CHK-AI-010 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-011",
+      "itemName": "CHK-AI-011 | Ignore a client total lower than the actual cart total.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":6,\"user_id\":49,\"total_amount\":1,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi\",\"created_at\":\"2026-08-20 05:07:44\"}]",
+      "responseTime": 9,
+      "failures": [
+        {
+          "assertion": "CHK-AI-011 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        },
+        {
+          "assertion": "CHK-AI-011 | server recalculates total from isolated cart",
+          "message": "expected 1 to deeply equal 200000"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-012",
+      "itemName": "CHK-AI-012 | Ignore client total zero when the cart total is positive.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":7,\"user_id\":50,\"total_amount\":0,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi\",\"created_at\":\"2026-08-20 05:07:44\"}]",
+      "responseTime": 15,
+      "failures": [
+        {
+          "assertion": "CHK-AI-012 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        },
+        {
+          "assertion": "CHK-AI-012 | server recalculates total from isolated cart",
+          "message": "expected +0 to deeply equal 200000"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-013",
+      "itemName": "CHK-AI-013 | Ignore a negative client total.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":8,\"user_id\":51,\"total_amount\":-1,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi\",\"created_at\":\"2026-08-20 05:07:44\"}]",
+      "responseTime": 4,
+      "failures": [
+        {
+          "assertion": "CHK-AI-013 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        },
+        {
+          "assertion": "CHK-AI-013 | server recalculates total from isolated cart",
+          "message": "expected -1 to deeply equal 200000"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-014",
+      "itemName": "CHK-AI-014 | Ignore a numeric string supplied as client total.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":9,\"user_id\":52,\"total_amount\":1,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi\",\"created_at\":\"2026-08-20 05:07:44\"}]",
+      "responseTime": 7,
+      "failures": [
+        {
+          "assertion": "CHK-AI-014 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        },
+        {
+          "assertion": "CHK-AI-014 | server recalculates total from isolated cart",
+          "message": "expected 1 to deeply equal 200000"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-015",
+      "itemName": "CHK-AI-015 | Ignore a null client total and calculate from cart.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":10,\"user_id\":53,\"total_amount\":null,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi\",\"created_at\":\"2026-08-20 05:07:44\"}]",
+      "responseTime": 6,
+      "failures": [
+        {
+          "assertion": "CHK-AI-015 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        },
+        {
+          "assertion": "CHK-AI-015 | server recalculates total from isolated cart",
+          "message": "expected null to deeply equal 200000"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-016",
+      "itemName": "CHK-AI-016 | Calculate total when total_amount is omitted.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":11,\"user_id\":54,\"total_amount\":null,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi\",\"created_at\":\"2026-08-20 05:07:44\"}]",
+      "responseTime": 4,
+      "failures": [
+        {
+          "assertion": "CHK-AI-016 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        },
+        {
+          "assertion": "CHK-AI-016 | server recalculates total from isolated cart",
+          "message": "expected null to deeply equal 200000"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-017",
+      "itemName": "CHK-AI-017 | Ignore a fractional client total inconsistent with an integer cart total.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":12,\"user_id\":55,\"total_amount\":0.5,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi\",\"created_at\":\"2026-08-20 05:07:44\"}]",
+      "responseTime": 7,
+      "failures": [
+        {
+          "assertion": "CHK-AI-017 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        },
+        {
+          "assertion": "CHK-AI-017 | server recalculates total from isolated cart",
+          "message": "expected 0.5 to deeply equal 200000"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-018",
+      "itemName": "CHK-AI-018 | Ignore an extremely large client total.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":13,\"user_id\":56,\"total_amount\":9007199254740991,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi\",\"created_at\":\"2026-08-20 05:07:45\"}]",
+      "responseTime": 5,
+      "failures": [
+        {
+          "assertion": "CHK-AI-018 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        },
+        {
+          "assertion": "CHK-AI-018 | server recalculates total from isolated cart",
+          "message": "expected 9007199254740991 to deeply equal 200000"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-019",
+      "itemName": "CHK-AI-019 | Reject checkout when shipping_address is omitted.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Checkout successful\",\"orderId\":14}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CHK-AI-019 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-020",
+      "itemName": "CHK-AI-020 | Reject a null shipping address.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Checkout successful\",\"orderId\":15}",
+      "responseTime": 10,
+      "failures": [
+        {
+          "assertion": "CHK-AI-020 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-021",
+      "itemName": "CHK-AI-021 | Reject an empty shipping address.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Checkout successful\",\"orderId\":16}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CHK-AI-021 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-022",
+      "itemName": "CHK-AI-022 | Reject a whitespace-only shipping address.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Checkout successful\",\"orderId\":17}",
+      "responseTime": 10,
+      "failures": [
+        {
+          "assertion": "CHK-AI-022 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-023",
+      "itemName": "CHK-AI-023 | Reject a numeric shipping address value.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Checkout successful\",\"orderId\":18}",
+      "responseTime": 9,
+      "failures": [
+        {
+          "assertion": "CHK-AI-023 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-024",
+      "itemName": "CHK-AI-024 | Handle an excessively long shipping address safely when no maximum length is documented.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":19,\"user_id\":62,\"total_amount\":200000,\"status\":\"pending\",\"shipping_address\":\"A repeated 5000 times\",\"created_at\":\"2026-08-20 05:07:45\"}]",
+      "responseTime": 5,
+      "failures": [
+        {
+          "assertion": "CHK-AI-024 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-025",
+      "itemName": "CHK-AI-025 | Ensure SQL-injection text in address cannot alter order queries.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":20,\"user_id\":63,\"total_amount\":200000,\"status\":\"pending\",\"shipping_address\":\"x'); DROP TABLE orders;--\",\"created_at\":\"2026-08-20 05:07:46\"}]",
+      "responseTime": 5,
+      "failures": [
+        {
+          "assertion": "CHK-AI-025 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-026",
+      "itemName": "CHK-AI-026 | Ensure an XSS payload in address is never executed when order data is displayed.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":21,\"user_id\":64,\"total_amount\":200000,\"status\":\"pending\",\"shipping_address\":\"<img src=x onerror=alert(1)>\",\"created_at\":\"2026-08-20 05:07:46\"}]",
+      "responseTime": 5,
+      "failures": [
+        {
+          "assertion": "CHK-AI-026 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-027",
+      "itemName": "CHK-AI-027 | Reject checkout with an empty cart.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Checkout successful\",\"orderId\":22}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CHK-AI-027 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-028",
+      "itemName": "CHK-AI-028 | Clear the cart after successful checkout.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":23,\"user_id\":66,\"total_amount\":200000,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi\",\"created_at\":\"2026-08-20 05:07:46\"}]",
+      "responseTime": 5,
+      "failures": [
+        {
+          "assertion": "CHK-AI-028 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-029",
+      "itemName": "CHK-AI-029 | Prevent duplicate order creation by a second checkout after the cart was cleared.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Checkout successful\",\"orderId\":25}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CHK-AI-029 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-030",
+      "itemName": "CHK-AI-030 | Calculate quantity greater than one correctly.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":26,\"user_id\":68,\"total_amount\":1,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi\",\"created_at\":\"2026-08-20 05:07:46\"}]",
+      "responseTime": 5,
+      "failures": [
+        {
+          "assertion": "CHK-AI-030 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        },
+        {
+          "assertion": "CHK-AI-030 | server recalculates total from isolated cart",
+          "message": "expected 1 to deeply equal 300000"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-031",
+      "itemName": "CHK-AI-031 | Reject or safely consolidate an injected cart state containing duplicate lines for the same product.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":27,\"user_id\":69,\"total_amount\":1,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi\",\"created_at\":\"2026-08-20 05:07:46\"}]",
+      "responseTime": 5,
+      "failures": [
+        {
+          "assertion": "CHK-AI-031 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) }, { id: 1, …(3) } ] to be empty"
+        },
+        {
+          "assertion": "CHK-AI-031 | server recalculates total from isolated cart",
+          "message": "expected 1 to deeply equal 400000"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-032",
+      "itemName": "CHK-AI-032 | Validate the successful checkout response schema.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":28,\"user_id\":70,\"total_amount\":200000,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi\",\"created_at\":\"2026-08-20 05:07:46\"}]",
+      "responseTime": 5,
+      "failures": [
+        {
+          "assertion": "CHK-AI-032 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-033",
+      "itemName": "CHK-AI-033 | Verify a newly created order starts in pending state.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":29,\"user_id\":71,\"total_amount\":200000,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi\",\"created_at\":\"2026-08-20 05:07:47\"}]",
+      "responseTime": 6,
+      "failures": [
+        {
+          "assertion": "CHK-AI-033 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-034",
+      "itemName": "CHK-AI-034 | Ignore a supplied user_id and assign the order to the authenticated user.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":30,\"user_id\":72,\"total_amount\":200000,\"status\":\"pending\",\"shipping_address\":\"123 Le Loi\",\"created_at\":\"2026-08-20 05:07:47\"}]",
+      "responseTime": 4,
+      "failures": [
+        {
+          "assertion": "CHK-AI-034 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-AI-035",
+      "itemName": "CHK-AI-035 | Reject malformed JSON without creating an order or clearing the cart.",
+      "status": "PASSED",
+      "responseCode": 400,
+      "responseBody": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>SyntaxError: Unexpected end of JSON input<br> &nbsp; &nbsp;at JSON.parse (&lt;anonymous&gt;)<br> &nbsp; &nbsp;at parse (F:\\D\\Uni\\YEAR_3\\SEM_3\\TESTING\\LAB\\Homework\\HW06\\backend\\node_modules\\body-parser\\lib\\types\\json.js:72:19)<br> &nbsp; &nbsp;at F:\\D\\Uni\\YEAR_3\\SEM_3\\TESTING\\LAB\\Homework\\HW06\\backend\\node_modules\\body-parser\\lib\\read.js:162:18<br> &nbsp; &nbsp;at AsyncResource.runInAsyncScope (node:async_hooks:214:14)<br> &nbsp; &nbsp;at invokeCallback (F:\\D\\Uni\\YEAR_3\\SEM_3\\TESTING\\LAB\\Homework\\HW06\\backend\\node_modules\\raw-body\\index.js:238:16)<br> &nbsp; &nbsp;at done (F:\\D\\Uni\\YEAR_3\\SEM_3\\TESTING\\LAB\\Homework\\HW06\\backend\\node_modules\\raw-body\\index.js:227:7)<br> &nbsp; &nbsp;at IncomingMessage.onEnd (F:\\D\\Uni\\YEAR_3\\SEM_3\\TESTING\\LAB\\Homework\\HW06\\backend\\node_modules\\raw-body\\index.js:287:7)<br> &nbsp; &nbsp;at IncomingMessage.emit (node:events:518:28)<br> &nbsp; &nbsp;at endR",
+      "responseTime": 2,
+      "failures": []
+    },
+    {
+      "testId": "CHK-H-001",
+      "itemName": "CHK-H-001 | Reject an object value for shipping_address instead of a string.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Checkout successful\",\"orderId\":31}",
+      "responseTime": 17,
+      "failures": [
+        {
+          "assertion": "CHK-H-001 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-H-002",
+      "itemName": "CHK-H-002 | Reject a top-level JSON array instead of the required checkout object.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Checkout successful\",\"orderId\":32}",
+      "responseTime": 11,
+      "failures": [
+        {
+          "assertion": "CHK-H-002 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-H-003",
+      "itemName": "CHK-H-003 | Ensure checkout uses only the authenticated user's cart and never another user's cart.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Checkout successful\",\"orderId\":33}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CHK-H-003 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-H-004",
+      "itemName": "CHK-H-004 | Fail safely when the cart contains a stale item whose product no longer exists or is unavailable.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Checkout successful\",\"orderId\":34}",
+      "responseTime": 9,
+      "failures": [
+        {
+          "assertion": "CHK-H-004 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-H-005",
+      "itemName": "CHK-H-005 | Prevent duplicate orders when two checkout requests for the same cart arrive concurrently.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":35,\"user_id\":78,\"total_amount\":null,\"status\":\"pending\",\"shipping_address\":\"123 Concurrent St\",\"created_at\":\"2026-08-20 05:07:48\"}]",
+      "responseTime": 5,
+      "failures": [
+        {
+          "assertion": "CHK-H-005 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        },
+        {
+          "assertion": "CHK-H-005 | server recalculates total from isolated cart",
+          "message": "expected null to deeply equal 200000"
+        }
+      ]
+    },
+    {
+      "testId": "CHK-H-006",
+      "itemName": "CHK-H-006 | Accept a legitimate multi-line shipping address containing punctuation without corruption.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":36,\"user_id\":79,\"total_amount\":null,\"status\":\"pending\",\"shipping_address\":\"Apt 12B, 45 O'Connor St.\\nWard 7 / District 3\",\"created_at\":\"2026-08-20 05:07:48\"}]",
+      "responseTime": 5,
+      "failures": [
+        {
+          "assertion": "CHK-H-006 | successful checkout clears cart",
+          "message": "expected [ { id: 1, …(3) } ] to be empty"
+        },
+        {
+          "assertion": "CHK-H-006 | server recalculates total from isolated cart",
+          "message": "expected null to deeply equal 200000"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-001",
+      "itemName": "CPN-AI-001 | Create a valid percentage coupon as admin.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":5}",
+      "responseTime": 8,
+      "failures": []
+    },
+    {
+      "testId": "CPN-AI-002",
+      "itemName": "CPN-AI-002 | Create a valid fixed-value coupon as admin.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":6}",
+      "responseTime": 10,
+      "failures": []
+    },
+    {
+      "testId": "CPN-AI-003",
+      "itemName": "CPN-AI-003 | Accept min_order_amount=0 and max_uses_per_user=1 boundaries.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":7}",
+      "responseTime": 9,
+      "failures": []
+    },
+    {
+      "testId": "CPN-AI-004",
+      "itemName": "CPN-AI-004 | Accept a valid future ISO timestamp for expired_at.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":8}",
+      "responseTime": 12,
+      "failures": []
+    },
+    {
+      "testId": "CPN-AI-005",
+      "itemName": "CPN-AI-005 | Handle a unique Unicode coupon code when no ASCII-only rule is specified.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":9}",
+      "responseTime": 13,
+      "failures": []
+    },
+    {
+      "testId": "CPN-AI-006",
+      "itemName": "CPN-AI-006 | Validate successful response schema and persisted coupon fields.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "[{\"id\":1,\"code\":\"SAVE10\",\"type\":\"percent\",\"discount_value\":10,\"min_order_amount\":300000,\"expired_at\":\"2099-12-31\",\"is_active\":1,\"max_uses_per_user\":1},{\"id\":2,\"code\":\"BIGBUY\",\"type\":\"fixed\",\"discount_value\":50000,\"min_order_amount\":500000,\"expired_at\":\"2099-12-31\",\"is_active\":1,\"max_uses_per_user\":1},{\"id\":3,\"code\":\"VIP100\",\"type\":\"fixed\",\"discount_value\":100000,\"min_order_amount\":300000,\"expired_at\":\"2099-12-31\",\"is_active\":1,\"max_uses_per_user\":2},{\"id\":4,\"code\":\"EXPIRED\",\"type\":\"percent\",\"discount_value\":20,\"min_order_amount\":100000,\"expired_at\":\"2020-01-01\",\"is_active\":1,\"max_uses_per_user\":1},{\"id\":5,\"code\":\"HW06P001_23127280_1787202458662\",\"type\":\"percent\",\"discount_value\":15,\"min_order_amount\":200000,\"expired_at\":\"2099-12-31\",\"is_active\":1,\"max_uses_per_user\":1},{\"id\":6,\"code\":\"HW06F002_23127280_1787202458662\",\"type\":\"fixed\",\"discount_value\":50000,\"min_order_amount\":300000,\"expired_at\":\"2099-12-31\",\"is_active\":1,\"max_uses_per_user\":2},{\"id\":7,\"code\":\"HW06B003_23127280_1787202458",
+      "responseTime": 3,
+      "failures": []
+    },
+    {
+      "testId": "CPN-AI-007",
+      "itemName": "CPN-AI-007 | Reject coupon creation without Authorization.",
+      "status": "PASSED",
+      "responseCode": 401,
+      "responseBody": "{\"error\":\"Unauthorized\"}",
+      "responseTime": 1,
+      "failures": []
+    },
+    {
+      "testId": "CPN-AI-008",
+      "itemName": "CPN-AI-008 | Reject Authorization without Bearer format.",
+      "status": "PASSED",
+      "responseCode": 403,
+      "responseBody": "{\"error\":\"Forbidden\"}",
+      "responseTime": 2,
+      "failures": []
+    },
+    {
+      "testId": "CPN-AI-009",
+      "itemName": "CPN-AI-009 | Reject a JWT with invalid signature.",
+      "status": "PASSED",
+      "responseCode": 403,
+      "responseBody": "{\"error\":\"Forbidden\"}",
+      "responseTime": 1,
+      "failures": []
+    },
+    {
+      "testId": "CPN-AI-010",
+      "itemName": "CPN-AI-010 | Reject an expired admin JWT.",
+      "status": "PASSED",
+      "responseCode": 403,
+      "responseBody": "{\"error\":\"Forbidden\"}",
+      "responseTime": 3,
+      "failures": []
+    },
+    {
+      "testId": "CPN-AI-011",
+      "itemName": "CPN-AI-011 | Reject coupon creation with an authenticated regular-user token.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":11}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CPN-AI-011 | expected HTTP status",
+          "message": "expected [ 403 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-012",
+      "itemName": "CPN-AI-012 | Ensure role=admin in request body cannot elevate a regular-user token.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":12}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CPN-AI-012 | expected HTTP status",
+          "message": "expected [ 403 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-013",
+      "itemName": "CPN-AI-013 | Reject a request with required code omitted.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":13}",
+      "responseTime": 9,
+      "failures": [
+        {
+          "assertion": "CPN-AI-013 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-014",
+      "itemName": "CPN-AI-014 | Reject null code.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":14}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CPN-AI-014 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-015",
+      "itemName": "CPN-AI-015 | Reject empty code.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":15}",
+      "responseTime": 13,
+      "failures": [
+        {
+          "assertion": "CPN-AI-015 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-016",
+      "itemName": "CPN-AI-016 | Reject whitespace-only code.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":16}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CPN-AI-016 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-017",
+      "itemName": "CPN-AI-017 | Reject an exact duplicate coupon code.",
+      "status": "FAILED",
+      "responseCode": 500,
+      "responseBody": "{\"error\":\"SQLITE_CONSTRAINT: UNIQUE constraint failed: coupons.code\"}",
+      "responseTime": 4,
+      "failures": [
+        {
+          "assertion": "CPN-AI-017 | expected HTTP status",
+          "message": "expected [ 409 ] to include 500"
+        },
+        {
+          "assertion": "CPN-AI-017 | no unexpected 5xx",
+          "message": "expected 500 to be below 500"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-018",
+      "itemName": "CPN-AI-018 | Characterize duplicate coupon-code handling when the new code differs only by letter case.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":19}",
+      "responseTime": 8,
+      "failures": []
+    },
+    {
+      "testId": "CPN-AI-019",
+      "itemName": "CPN-AI-019 | Ensure SQL-injection text in code cannot alter coupon queries.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":20}",
+      "responseTime": 8,
+      "failures": []
+    },
+    {
+      "testId": "CPN-AI-020",
+      "itemName": "CPN-AI-020 | Reject a request with required type omitted.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":21}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CPN-AI-020 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-021",
+      "itemName": "CPN-AI-021 | Reject null type.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":22}",
+      "responseTime": 10,
+      "failures": [
+        {
+          "assertion": "CPN-AI-021 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-022",
+      "itemName": "CPN-AI-022 | Reject a type outside percent/fixed.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":23}",
+      "responseTime": 14,
+      "failures": [
+        {
+          "assertion": "CPN-AI-022 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-023",
+      "itemName": "CPN-AI-023 | Reject incorrect-case enum value Percent when exact enum values are specified.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":24}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CPN-AI-023 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-024",
+      "itemName": "CPN-AI-024 | Reject a request with discount_value omitted.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":25}",
+      "responseTime": 9,
+      "failures": [
+        {
+          "assertion": "CPN-AI-024 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-025",
+      "itemName": "CPN-AI-025 | Reject null discount_value.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":26}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CPN-AI-025 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-026",
+      "itemName": "CPN-AI-026 | Reject discount_value=0 because it must be positive.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":27}",
+      "responseTime": 9,
+      "failures": [
+        {
+          "assertion": "CPN-AI-026 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-027",
+      "itemName": "CPN-AI-027 | Reject a negative discount_value.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":28}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CPN-AI-027 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-028",
+      "itemName": "CPN-AI-028 | Accept a percent discount equal to 100.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":29}",
+      "responseTime": 8,
+      "failures": []
+    },
+    {
+      "testId": "CPN-AI-029",
+      "itemName": "CPN-AI-029 | Accept a percent discount greater than 100 at creation because FR-17 specifies only a positive value and no upper bound.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":30}",
+      "responseTime": 9,
+      "failures": []
+    },
+    {
+      "testId": "CPN-AI-030",
+      "itemName": "CPN-AI-030 | Reject a request with min_order_amount omitted because it is required.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":31}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CPN-AI-030 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-031",
+      "itemName": "CPN-AI-031 | Reject min_order_amount below zero.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":32}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CPN-AI-031 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-032",
+      "itemName": "CPN-AI-032 | Reject a request with max_uses_per_user omitted because it is required.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":33}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CPN-AI-032 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-033",
+      "itemName": "CPN-AI-033 | Reject max_uses_per_user=0.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":34}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CPN-AI-033 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-034",
+      "itemName": "CPN-AI-034 | Reject a request with expired_at omitted because it is required.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":35}",
+      "responseTime": 9,
+      "failures": [
+        {
+          "assertion": "CPN-AI-034 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-AI-035",
+      "itemName": "CPN-AI-035 | Reject an invalid expired_at date value.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":36}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CPN-AI-035 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-H-001",
+      "itemName": "CPN-H-001 | Reject discount_value supplied as a numeric string.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":37}",
+      "responseTime": 9,
+      "failures": [
+        {
+          "assertion": "CPN-H-001 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-H-002",
+      "itemName": "CPN-H-002 | Reject min_order_amount supplied as a numeric string.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":38}",
+      "responseTime": 9,
+      "failures": [
+        {
+          "assertion": "CPN-H-002 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-H-003",
+      "itemName": "CPN-H-003 | Reject a fractional max_uses_per_user value.",
+      "status": "FAILED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":39}",
+      "responseTime": 8,
+      "failures": [
+        {
+          "assertion": "CPN-H-003 | expected HTTP status",
+          "message": "expected [ 400 ] to include 200"
+        }
+      ]
+    },
+    {
+      "testId": "CPN-H-004",
+      "itemName": "CPN-H-004 | Accept a syntactically valid past expired_at during creation because FR-17 requires the field but does not require a future date.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":40}",
+      "responseTime": 9,
+      "failures": []
+    },
+    {
+      "testId": "CPN-H-005",
+      "itemName": "CPN-H-005 | Accept a valid future ISO timestamp with an explicit non-UTC timezone offset.",
+      "status": "PASSED",
+      "responseCode": 200,
+      "responseBody": "{\"message\":\"Coupon created\",\"id\":41}",
+      "responseTime": 8,
+      "failures": []
+    }
+  ]
+}

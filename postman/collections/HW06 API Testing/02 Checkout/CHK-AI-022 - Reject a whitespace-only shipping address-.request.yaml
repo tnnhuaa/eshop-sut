@@ -1,0 +1,43 @@
+$kind: http-request
+name: CHK-AI-022 | Reject a whitespace-only shipping address.
+url: "{{baseUrl}}/api/checkout"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{caseToken}}
+body:
+  type: json
+  content: '{"total_amount":200000,"shipping_address":"   "}'
+scripts:
+  - type: beforeRequest
+    code: |-
+      const caseEmail = pm.variables.replaceIn("23127280_chk_ai_022_{{runId}}@execution.local");
+      const casePassword = "Execution1!";
+      const baseUrl = pm.environment.get('baseUrl');
+      const commonHeaders = { 'Content-Type': 'application/json', 'X-Student-Id': pm.environment.get('studentId') };
+      pm.sendRequest({ url: baseUrl + '/api/register', method: 'POST', header: commonHeaders, body: { mode: 'raw', raw: JSON.stringify({ name: 'Execution User', email: caseEmail, password: casePassword }) } }, () => {
+        pm.sendRequest({ url: baseUrl + '/api/login', method: 'POST', header: commonHeaders, body: { mode: 'raw', raw: JSON.stringify({ email: caseEmail, password: casePassword }) } }, (loginError, loginResponse) => {
+          if (loginError || loginResponse.code !== 200) { pm.variables.set('caseSetupError', 'login'); return; }
+          const loginJson = loginResponse.json();
+          pm.variables.set('caseToken', loginJson.token);
+          pm.variables.set('caseUserId', String(loginJson.user.id));
+          pm.request.headers.upsert({ key: 'Authorization', value: 'Bearer ' + loginJson.token });
+          const cartBody = "{\"id\":1,\"name\":\"Execution Product\",\"price\":100000,\"quantity\":2}";
+          pm.sendRequest({ url: baseUrl + '/api/cart', method: 'POST', header: { ...commonHeaders, Authorization: 'Bearer ' + loginJson.token }, body: { mode: 'raw', raw: cartBody } }, () => {
+          });
+        });
+      });
+    language: text/javascript
+  - type: afterResponse
+    code: |-
+      const testId = "CHK-AI-022";
+      const allowedCodes = [400];
+      pm.test(testId + ' | expected HTTP status', () => pm.expect(allowedCodes).to.include(pm.response.code));
+      pm.test(testId + ' | X-Student-Id sent', () => pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')));
+      pm.test(testId + ' | response time under 2000 ms', () => pm.expect(pm.response.responseTime).to.be.below(2000));
+      pm.test(testId + ' | isolated checkout setup succeeded', () => pm.expect(pm.variables.get('caseSetupError')).to.eql(undefined));
+      pm.test(testId + ' | no unexpected 5xx', () => pm.expect(pm.response.code).to.be.below(500));
+      let json = null;
+      try { json = pm.response.json(); } catch (_) {}
+    language: text/javascript
+order: 22000

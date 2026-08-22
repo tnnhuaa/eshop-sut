@@ -1,0 +1,46 @@
+$kind: http-request
+name: CHK-AI-014 | Ignore a numeric string supplied as client total.
+url: "{{baseUrl}}/api/checkout"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{caseToken}}
+body:
+  type: json
+  content: '{"total_amount":"1","shipping_address":"123 Le Loi"}'
+scripts:
+  - type: beforeRequest
+    code: |-
+      const caseEmail = pm.variables.replaceIn("23127280_chk_ai_014_{{runId}}@execution.local");
+      const casePassword = "Execution1!";
+      const baseUrl = pm.environment.get('baseUrl');
+      const commonHeaders = { 'Content-Type': 'application/json', 'X-Student-Id': pm.environment.get('studentId') };
+      pm.sendRequest({ url: baseUrl + '/api/register', method: 'POST', header: commonHeaders, body: { mode: 'raw', raw: JSON.stringify({ name: 'Execution User', email: caseEmail, password: casePassword }) } }, () => {
+        pm.sendRequest({ url: baseUrl + '/api/login', method: 'POST', header: commonHeaders, body: { mode: 'raw', raw: JSON.stringify({ email: caseEmail, password: casePassword }) } }, (loginError, loginResponse) => {
+          if (loginError || loginResponse.code !== 200) { pm.variables.set('caseSetupError', 'login'); return; }
+          const loginJson = loginResponse.json();
+          pm.variables.set('caseToken', loginJson.token);
+          pm.variables.set('caseUserId', String(loginJson.user.id));
+          pm.request.headers.upsert({ key: 'Authorization', value: 'Bearer ' + loginJson.token });
+          const cartBody = "{\"id\":1,\"name\":\"Execution Product\",\"price\":100000,\"quantity\":2}";
+          pm.sendRequest({ url: baseUrl + '/api/cart', method: 'POST', header: { ...commonHeaders, Authorization: 'Bearer ' + loginJson.token }, body: { mode: 'raw', raw: cartBody } }, () => {
+          });
+        });
+      });
+    language: text/javascript
+  - type: afterResponse
+    code: |-
+      const testId = "CHK-AI-014";
+      const allowedCodes = [200];
+      pm.test(testId + ' | expected HTTP status', () => pm.expect(allowedCodes).to.include(pm.response.code));
+      pm.test(testId + ' | X-Student-Id sent', () => pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')));
+      pm.test(testId + ' | response time under 2000 ms', () => pm.expect(pm.response.responseTime).to.be.below(2000));
+      pm.test(testId + ' | isolated checkout setup succeeded', () => pm.expect(pm.variables.get('caseSetupError')).to.eql(undefined));
+      pm.test(testId + ' | no unexpected 5xx', () => pm.expect(pm.response.code).to.be.below(500));
+      let json = null;
+      try { json = pm.response.json(); } catch (_) {}
+      if (pm.response.code === 200) pm.test(testId + ' | checkout success schema', () => { pm.expect(json.message).to.eql('Checkout successful'); pm.expect(json.orderId).to.be.a('number').and.above(0); });
+      if (pm.response.code === 200 && pm.variables.get('caseToken')) { pm.sendRequest({ url: pm.environment.get('baseUrl') + '/api/cart', method: 'GET', header: { Authorization: 'Bearer ' + pm.variables.get('caseToken'), 'X-Student-Id': pm.environment.get('studentId') } }, (error, response) => { pm.test(testId + ' | successful checkout clears cart', () => { pm.expect(error).to.eql(null); pm.expect(response.json()).to.be.an('array').that.is.empty; }); }); }
+      if (pm.response.code === 200 && pm.variables.get('caseToken')) { const orderId = json.orderId; pm.sendRequest({ url: pm.environment.get('baseUrl') + '/api/orders/my-orders', method: 'GET', header: { Authorization: 'Bearer ' + pm.variables.get('caseToken'), 'X-Student-Id': pm.environment.get('studentId') } }, (error, response) => { const orders = response.json(); const order = orders.find((item) => item.id === orderId); pm.test(testId + ' | order is persisted for authenticated user', () => { pm.expect(error).to.eql(null); pm.expect(order).to.be.an('object'); pm.expect(String(order.user_id)).to.eql(pm.variables.get('caseUserId')); }); pm.test(testId + ' | server recalculates total from isolated cart', () => pm.expect(order.total_amount).to.eql(200000)); pm.test(testId + ' | new order starts pending', () => pm.expect(order.status).to.eql('pending')); }); }
+    language: text/javascript
+order: 14000

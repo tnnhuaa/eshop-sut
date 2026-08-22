@@ -1,12 +1,15 @@
 $kind: collection
-name: HW06 API Testing
+description: Full HW06 Postman collection generated from the reviewed CSV. Contains setup plus 122 traceable API test cases.
+variables:
+  executionMode: local
+  caseToken: ""
 scripts:
   - type: http:beforeRequest
-    code: "pm.request.headers.upsert({\r
-
-      \  key: \"X-Student-Id\",\r
-
-      \  value: pm.environment.get(\"studentId\")\r
-
-      });"
+    code: |-
+      if (!pm.environment.get('studentId')) pm.environment.set('studentId', '23127280');
+      if (!pm.environment.get('runId')) pm.environment.set('runId', `${pm.environment.get('studentId')}_${Date.now()}`);
+      pm.variables.unset('caseSetupError');
+      pm.variables.unset('caseToken');
+      pm.variables.unset('caseUserId');
+      pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });
     language: text/javascript

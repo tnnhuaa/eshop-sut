@@ -39,6 +39,9 @@ postman/**/*.local.json
 postman/**/secrets*.json
 postman/data/generated/
 postman/reports/tmp/
+postman/reports/ci/
+# Raw Newman JSON contains runtime tokens; keep only sanitized HTML and summary artifacts.
+postman/reports/final-newman.json
 
 # Office temporary files
 ~$*.docx
@@ -53,4 +56,3 @@ postman/reports/tmp/
 .DS_Store
 Thumbs.db
 Desktop.ini
-

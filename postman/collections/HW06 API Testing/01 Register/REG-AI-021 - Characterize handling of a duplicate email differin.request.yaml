@@ -1,0 +1,30 @@
+$kind: http-request
+name: REG-AI-021 | Characterize handling of a duplicate email differing only by letter case because normalization is unspecified.
+url: "{{baseUrl}}/api/register"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: '{"name":"Case Duplicate","email":"23127280_REG021_{{runId}}@DOMAIN.COM","password":"Password1!"}'
+scripts:
+  - type: beforeRequest
+    code: |-
+      const duplicateSetupBody = pm.variables.replaceIn("{\"name\":\"Case Duplicate\",\"email\":\"23127280_reg021_{{runid}}@domain.com\",\"password\":\"Password1!\"}");
+      pm.sendRequest({ url: pm.environment.get('baseUrl') + '/api/register', method: 'POST', header: { 'Content-Type': 'application/json', 'X-Student-Id': pm.environment.get('studentId') }, body: { mode: 'raw', raw: duplicateSetupBody } }, (error, response) => {
+        pm.variables.set('setupStatus', error ? 'ERROR' : String(response.code));
+      });
+    language: text/javascript
+  - type: afterResponse
+    code: |-
+      const testId = "REG-AI-021";
+      const allowedCodes = [200,400,409];
+      pm.test(testId + ' | expected HTTP status', () => pm.expect(allowedCodes).to.include(pm.response.code));
+      pm.test(testId + ' | X-Student-Id sent', () => pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')));
+      pm.test(testId + ' | response time under 2000 ms', () => pm.expect(pm.response.responseTime).to.be.below(2000));
+      pm.test(testId + ' | no unexpected 5xx', () => pm.expect(pm.response.code).to.be.below(500));
+      let json = null;
+      try { json = pm.response.json(); } catch (_) {}
+      if (pm.response.code === 200) pm.test(testId + ' | register success schema', () => { pm.expect(json).to.be.an('object'); pm.expect(json.message).to.eql('User registered successfully'); pm.expect(json.id).to.be.a('number').and.above(0); pm.expect(json).not.to.have.property('password'); });
+    language: text/javascript
+order: 21000

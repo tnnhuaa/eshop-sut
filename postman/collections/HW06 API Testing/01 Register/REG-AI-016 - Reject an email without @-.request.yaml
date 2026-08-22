@@ -1,0 +1,22 @@
+$kind: http-request
+name: REG-AI-016 | Reject an email without @.
+url: "{{baseUrl}}/api/register"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: '{"name":"Bad Email","email":"user.domain.com_{{runId}}","password":"Password1!"}'
+scripts:
+  - type: afterResponse
+    code: |-
+      const testId = "REG-AI-016";
+      const allowedCodes = [400];
+      pm.test(testId + ' | expected HTTP status', () => pm.expect(allowedCodes).to.include(pm.response.code));
+      pm.test(testId + ' | X-Student-Id sent', () => pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')));
+      pm.test(testId + ' | response time under 2000 ms', () => pm.expect(pm.response.responseTime).to.be.below(2000));
+      pm.test(testId + ' | no unexpected 5xx', () => pm.expect(pm.response.code).to.be.below(500));
+      let json = null;
+      try { json = pm.response.json(); } catch (_) {}
+    language: text/javascript
+order: 16000
