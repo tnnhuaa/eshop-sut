@@ -1,0 +1,134 @@
+{
+  "info": {
+    "_postman_id": "23127280-0006-4000-8000-ci-demo000001",
+    "name": "HW06 CI Demonstration",
+    "description": "A deterministic CI-only demonstration. It does not replace the genuine 122-case suite. controlledFailure=false makes all four demo cases pass; true makes exactly CI-CONTROL-001 fail by one assertion.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });"
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "name": "CI-DEMO-001 | Products endpoint is available",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/products",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "products"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('CI-DEMO-001 | HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('CI-DEMO-001 | response is an array', () => pm.expect(pm.response.json()).to.be.an('array'));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "CI-DEMO-002 | User login works",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"test@eshop.com\",\"password\":\"Test1234!\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "login"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('CI-DEMO-002 | HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('CI-DEMO-002 | user role returned', () => pm.expect(pm.response.json().user.role).to.eql('user'));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "CI-DEMO-003 | Admin login works",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"admin@eshop.com\",\"password\":\"Admin123!\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "login"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('CI-DEMO-003 | HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('CI-DEMO-003 | admin role returned', () => pm.expect(pm.response.json().user.role).to.eql('admin'));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "CI-CONTROL-001 | Disclosed controlled assertion",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/products",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "products"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('CI-CONTROL-001 | HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('CI-CONTROL-001 | controlled demonstration assertion', () => {",
+              "  const enabled = String(pm.environment.get('controlledFailure')).toLowerCase() === 'true';",
+              "  pm.expect(enabled, 'controlledFailure must be false in all-pass mode').to.eql(false);",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

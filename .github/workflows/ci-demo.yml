@@ -1,0 +1,93 @@
+name: HW06 CI Demonstration
+
+on:
+  push:
+    branches:
+      - hw6-tanh
+    paths:
+      - .github/workflows/ci-demo.yml
+      - api-tests/ci-demo-mode.json
+      - postman/HW06_CI_Demo.postman_collection.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ci-demo:
+    name: Controlled Newman demonstration
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            backend/package-lock.json
+            api-tests/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          npm ci --prefix backend
+          npm ci --prefix api-tests
+
+      - name: Start backend
+        run: |
+          node backend/server.js > backend.log 2>&1 &
+          echo $! > backend.pid
+
+      - name: Wait for API readiness
+        shell: bash
+        run: |
+          for attempt in {1..30}; do
+            status="$(curl --silent --output products-response.json --write-out '%{http_code}' http://127.0.0.1:3000/api/products || true)"
+            if [ "$status" = "200" ]; then
+              echo "Backend is ready with HTTP 200."
+              exit 0
+            fi
+            sleep 1
+          done
+          cat backend.log
+          exit 1
+
+      - name: Run disclosed CI demonstration
+        shell: bash
+        run: |
+          controlled_failure="$(node -p "String(require('./api-tests/ci-demo-mode.json').controlledFailure)")"
+          if [ "$controlled_failure" != "true" ] && [ "$controlled_failure" != "false" ]; then
+            echo "controlledFailure must be true or false."
+            exit 2
+          fi
+          echo "Disclosed controlledFailure=$controlled_failure"
+
+          mkdir -p postman/reports/ci-demo
+          set +e
+          node api-tests/node_modules/newman/bin/newman.js run postman/HW06_CI_Demo.postman_collection.json \
+            -e postman/HW06_LOCAL.postman_environment.json \
+            --env-var studentId=23127280 \
+            --env-var controlledFailure="$controlled_failure" \
+            --reporters cli,htmlextra \
+            --reporter-htmlextra-export postman/reports/ci-demo/newman.html
+          newman_status=$?
+          set -e
+
+          node api-tests/scripts/sanitize-newman-reports.js \
+            postman/reports/ci-demo/newman.html
+          exit "$newman_status"
+
+      - name: Upload sanitized CI demonstration evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hw06-ci-demo-report
+          path: |
+            postman/reports/ci-demo/newman.html
+            backend.log
+          if-no-files-found: warn
+          retention-days: 14

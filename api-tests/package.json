@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build:collection": "node scripts/build-full-collection.js",
-    "test:local": "node node_modules/newman/bin/newman.js run ../postman/HW06_API_Testing.postman_collection.json -e ../postman/HW06_LOCAL.postman_environment.json --env-var studentId=23127280 --reporters cli,htmlextra,json --reporter-htmlextra-export ../postman/reports/final-newman.html --reporter-json-export ../postman/reports/final-newman.json"
+    "test:local": "node node_modules/newman/bin/newman.js run ../postman/HW06_API_Testing.postman_collection.json -e ../postman/HW06_LOCAL.postman_environment.json --env-var studentId=23127280 --reporters cli,htmlextra,json --reporter-htmlextra-export ../postman/reports/final-newman.html --reporter-json-export ../postman/reports/final-newman.json",
+    "test:ci-demo": "node node_modules/newman/bin/newman.js run ../postman/HW06_CI_Demo.postman_collection.json -e ../postman/HW06_LOCAL.postman_environment.json --env-var studentId=23127280 --env-var controlledFailure=false --reporters cli"
   },
   "keywords": [],
   "author": "",

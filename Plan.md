@@ -6,7 +6,7 @@
 
 ## Next Action
 
-Push commit `90067ce` to branch `hw6-tanh`.
+Push the all-pass baseline commit for workflow `HW06 CI Demonstration` to branch `hw6-tanh`.
 
 ## Approved Scope and Decisions
 
@@ -59,11 +59,16 @@ Push commit `90067ce` to branch `hw6-tanh`.
 - The workflow has a locally validated `Newman full suite` job that runs the 122-case collection and always uploads sanitized HTML, summary, and backend log evidence.
 - The reusable report scripts accept CI-specific input/output paths. A local CI-path verification reproduced 122 cases (35 passed / 87 failed) and found zero remaining JWT patterns after sanitization.
 - Part C and the full-suite CI preparation are committed as `90067ce` (`test: complete API execution and CI preparation`); the commit contains 184 deliverable files and excludes `backend/database.sqlite`.
+- GitHub Actions run `32560329025` executed commit `ddb3900` on `hw6-tanh`: `Backend smoke test` passed, `Newman full suite` failed on the genuine 35 passed / 87 failed SUT result, and artifact `hw06-newman-report` uploaded successfully.
+- GitHub's public API verified artifact `9472588715` (114,354 bytes, not expired). Student screenshots are stored as `evidence/cicd/full-suite-run-32560329025.png` and `evidence/cicd/full-suite-summary-artifact-32560329025.png`.
+- A separate, explicitly disclosed CI demonstration exists so the genuine 122-case suite remains unchanged. It runs four deterministic requests and eight assertions with `X-Student-Id: 23127280`.
+- `api-tests/ci-demo-mode.json` is set to the all-pass baseline (`controlledFailure: false`). Local Newman verification produced 4 requests, 8 assertions, 0 failures, and exit code 0.
+- A local override with `controlledFailure: true` produced the same four requests with exactly one failed assertion and exit code 1. The sanitized all-pass HTML removed two runtime JWTs and contains zero JWT patterns.
 
 ### Pending or Unverified
 
-- Commit `90067ce` has not yet been pushed, so no GitHub Actions Newman artifact or run link exists yet.
-- No final all-pass/controlled-one-fail CI evidence pair, generator design, or submission reports exist.
+- The all-pass baseline and exactly-one-failure behavior are locally verified, but their two public GitHub Actions runs/screenshots/links do not exist yet.
+- No generator design or submission reports exist.
 - `backend/database.sqlite` is modified runtime state and must not be staged.
 
 ## Workstream Order
@@ -172,8 +177,9 @@ Only append a row after explicit student approval.
 
 ### D. CI/CD and Generator
 
-- [ ] Push commit `90067ce` and verify the full-suite workflow's uploaded sanitized Newman report.
-- [ ] Save one all-pass and one controlled one-fail pipeline run.
+- [x] Push the full-suite workflow and verify run `32560329025` plus its uploaded sanitized Newman artifact.
+- [ ] Push and capture the all-pass `HW06 CI Demonstration` run.
+- [ ] Change only `controlledFailure` to `true`, commit/push, and capture the exactly-one-failure run.
 - [ ] Write generator design and pseudocode.
 - [ ] Student manually draws and exports the diagram.
 - [ ] Add optional Agent Skill/video demonstration if time permits.

@@ -40,6 +40,7 @@ postman/**/secrets*.json
 postman/data/generated/
 postman/reports/tmp/
 postman/reports/ci/
+postman/reports/ci-demo/
 # Raw Newman JSON contains runtime tokens; keep only sanitized HTML and summary artifacts.
 postman/reports/final-newman.json
 
