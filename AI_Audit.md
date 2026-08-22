@@ -50,6 +50,7 @@
 | **Artifact #12 - Controlled CI demonstration baseline**<br>Tool: Codex (primary agent)<br>Time: 2026-08-22 14:53 GMT+7<br>Full prompt: see Artifact #12 verbatim record below. | Created a separate four-request products/login demonstration with all-pass and controlled-failure modes.<br>Full output: see Artifact #12 verbatim record below. | INVALID | The mechanics were locally verified and did not alter the genuine suite, but the sample did not exercise Register, Checkout, and Create Coupon. It therefore missed the assignment's selected-API scope. | Replaced by the selected-API sample suite in Artifact #14. |
 | **Artifact #13 - All-pass CI verification and controlled-failure commit**<br>Tool: Codex (primary agent)<br>Time: 2026-08-22 15:15 GMT+7<br>Full prompt: see Artifact #13 verbatim record below. | Verified the public all-pass run and artifact, then prepared a controlled-failure commit based on a four-request demonstration.<br>Full output: see Artifact #13 verbatim record below. | INVALID | The public metadata and local counts were real, but the demonstration's test cases targeted products/login rather than the three selected APIs. This did not safely satisfy the assignment's literal requirement for all API test cases passing and one API test case failing. | Corrected in Artifact #14 by replacing the demo with selected-API cases for Register, Checkout, and Create Coupon. |
 | **Artifact #14 - Selected-API CI sample correction**<br>Tool: Codex (primary agent)<br>Time: 2026-08-22 15:32 GMT+7<br>Full prompt: see Artifact #14 verbatim record below. | Replaced the generic CI demonstration with a deterministic sample suite covering all three selected APIs, verified all-pass and exactly-one-failure modes, and prepared the corrected green baseline.<br>Full output: see Artifact #14 verbatim record below. | VALID | The collection now contains target cases for `POST /api/register`, `POST /api/checkout`, and `POST /api/admin/coupons`, with setup requests labelled separately. Local Newman evidence shows 6 requests/16 assertions/0 failures in green mode and exactly one failed assertion inside `CPN-CI-001` in controlled mode. | Push and capture the corrected green run before creating the red commit that changes only the mode flag. |
+| **Artifact #15 - Selected-API all-pass CI evidence**<br>Tool: Codex (primary agent)<br>Time: 2026-08-22 16:16 GMT+7<br>Full prompt: see Artifact #15 verbatim record below. | Verified two student-produced GitHub Actions screenshots, saved them as repository evidence, recorded the public run and artifact, and closed the corrected all-pass checklist item.<br>Full output: see Artifact #15 verbatim record below. | VALID | Public metadata and the screenshots agree on run `32562812190`, commit `929ce04`, the successful selected-API job, uploaded artifact, all three selected target cases, and Newman's 6 requests/16 assertions/0 failures. | Create the red sample commit by changing only `controlledFailure` to `true`, then capture the genuine one-failure run. |
 <!-- AUDIT_TABLE_ROWS_END -->
 
 ### Verbatim Artifact Records
@@ -674,16 +675,46 @@ Artifacts 14-14 successfully appended to AI_Audit.md.
 - **Reasoning:** The correction maps the CI sample directly to the three APIs fixed in the assignment scope, isolates setup from test cases, keeps the genuine 122-case suite unchanged, and creates traceable green/red behavior without masking product defects.
 - **Student Fixes:** Push and capture the corrected green run and artifact, then create the one-failure commit by changing only `controlledFailure` to `true`.
 
+### Artifact #15 - Verbatim Record
+
+- **User:** Nguyễn Hiền Tuấn Anh (23127280)
+- **Date and Time:** 2026-08-22 16:16 GMT+7
+- **Agent Used:** Codex (primary agent; no sub-agents)
+- **Prompt:**
+
+````text
+[Attached Image #1: GitHub Actions summary for the successful `HW06 Selected API Sample Runs` run, including commit, branch, successful job, and artifact.]
+
+[Attached Image #2: Expanded `Run selected API sample suite` log showing `controlledFailure=false`, the three selected API cases, and the Newman summary.]
+````
+
+- **AI Output:**
+
+````text
+Mốc all-pass hợp lệ và đủ bằng chứng. Anh sẽ lưu hai ảnh dưới `evidence/cicd/`, ghi nhận run `32562812190`, artifact `9473264343`, commit `929ce04`, rồi đóng checklist all-pass. Bước kế tiếp là tạo commit chỉ đổi `controlledFailure` từ `false` sang `true`; chưa được coi là hoàn tất cho đến khi có run đỏ đúng một failure và ảnh thật từ em.
+````
+
+- **File Modifications:**
+  - **File:** `evidence/cicd/selected-api-all-pass-run-32562812190.png`; **Action:** created; **Details:** preserved the student's genuine run-summary and artifact screenshot.
+  - **File:** `evidence/cicd/selected-api-all-pass-log-32562812190.png`; **Action:** created; **Details:** preserved the student's genuine expanded selected-API Newman log screenshot.
+  - **File:** `Plan.md`; **Action:** edited; **Details:** recorded the public run, artifact, log counts, evidence paths, closed the green checklist item, and set the controlled one-failure commit as the single next action.
+  - **File:** `AI_Audit.md`; **Action:** edited; **Details:** appended Artifact #15 and refreshed the accuracy summary and mandatory disclosure.
+
+- **Verification Evidence:** GitHub's public API returned run `32562812190` as completed/success for commit `929ce04a514960af15167f34617bb3935f4cd131` on `hw6-tanh`. Job `97006923432` (`Selected API Newman sample`) concluded success. Artifact `9473264343`, named `hw06-selected-api-sample-report`, is 12,666 bytes and unexpired. Visual inspection of the student screenshots found the matching workflow, commit, branch, successful job, artifact, `controlledFailure=false`, all three target cases, localhost endpoints, 6 executed requests, 16 executed assertions, and zero failures.
+- **Verdict:** VALID
+- **Reasoning:** The public metadata, student-produced screenshots, and local baseline verification agree. The evidence directly satisfies the assignment's all-passing selected-API sample requirement without substituting the genuine 122-case defect run or fabricating execution results.
+- **Student Fixes:** None for the green sample. The separate controlled one-failure run remains pending.
+
 <!-- ARTIFACT_DETAILS_END -->
 
 ## **4. Summary of AI Accuracy**
 
 | Metric | Count | Percentage |
 | :---- | :---- | :---- |
-| **Total AI-generated artifacts audited** | 14 | 100% |
-| **VALID (correct, accepted as-is)** | 11 | 78.57% |
-| **INVALID (wrong; rejected)** | 2 | 14.29% |
-| **INCOMPLETE (acceptable after edits)** | 1 | 7.14% |
+| **Total AI-generated artifacts audited** | 15 | 100% |
+| **VALID (correct, accepted as-is)** | 12 | 80.00% |
+| **INVALID (wrong; rejected)** | 2 | 13.33% |
+| **INCOMPLETE (acceptable after edits)** | 1 | 6.67% |
 
 ## **5. Conclusion - When should AI be used (or not)?**
 
@@ -691,7 +722,7 @@ AI is useful for proposing traceable test structures, generating broad technique
 
 ## **6. Mandatory Disclosure (paste verbatim)**
 
-I used Codex to review the HW06 requirements, plan the workflow, create sanitized Postman/Newman configuration, draft and extend the CI workflows, generate 105 AI-assisted cases, compare 18 student-proposed extensions, implement and execute the 122-case local Newman suite, analyze results, sanitize runtime tokens, reproduce a concurrency defect, maintain the CSV and AI audit, draft a 10-group bug report, verify student-produced screenshots and public Issue/Actions metadata, prepare 10 GitHub Issue drafts, commit the verified Part C/CI artifacts, and create a disclosed selected-API CI sample suite. I reviewed all AI cases, accepted 17 original cases, rejected one unsupported variant, approved corrections for the non-valid AI cases, captured the genuine screenshots, manually published Issues #24–#33, pushed the branch, provided the genuine full-suite CI evidence, and rejected the earlier generic products/login demonstration as final sample evidence. I remain responsible for pushing and capturing the corrected selected-API green and red sample runs, drawing the test-generator diagram, and assembling submission evidence; no unobserved pipeline run or evidence was fabricated or claimed as complete.
+I used Codex to review the HW06 requirements, plan the workflow, create sanitized Postman/Newman configuration, draft and extend the CI workflows, generate 105 AI-assisted cases, compare 18 student-proposed extensions, implement and execute the 122-case local Newman suite, analyze results, sanitize runtime tokens, reproduce a concurrency defect, maintain the CSV and AI audit, draft a 10-group bug report, verify student-produced screenshots and public Issue/Actions metadata, prepare 10 GitHub Issue drafts, commit the verified Part C/CI artifacts, and create a disclosed selected-API CI sample suite. I reviewed all AI cases, accepted 17 original cases, rejected one unsupported variant, approved corrections for the non-valid AI cases, captured the genuine screenshots, manually published Issues #24–#33, pushed the branch, provided the genuine full-suite CI evidence, rejected the earlier generic products/login demonstration as final sample evidence, and captured the corrected selected-API all-pass run. I remain responsible for pushing and capturing the selected-API controlled one-failure run, drawing the test-generator diagram, and assembling submission evidence; no unobserved pipeline run or evidence was fabricated or claimed as complete.
 
 ## **Signature**
 

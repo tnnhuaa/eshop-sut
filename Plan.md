@@ -6,7 +6,7 @@
 
 ## Next Action
 
-Push the corrected all-pass baseline for workflow `HW06 Selected API Sample Runs` to branch `hw6-tanh`.
+Create and push the controlled one-failure commit by changing only `api-tests/ci-demo-mode.json` from `controlledFailure: false` to `controlledFailure: true`.
 
 ## Approved Scope and Decisions
 
@@ -65,10 +65,12 @@ Push the corrected all-pass baseline for workflow `HW06 Selected API Sample Runs
 - The corrected CI sample suite contains three target cases—`REG-CI-001`, `CHK-CI-001`, and `CPN-CI-001`—plus three labelled setup requests for authentication and cart state. Every request receives `X-Student-Id: 23127280`.
 - With `controlledFailure: false`, local Newman verification executed 6 requests and 16 assertions with 0 failures and exit code 0. With a runtime override of `true`, the same suite produced exactly 1 failed assertion inside `CPN-CI-001` and exit code 1.
 - The corrected all-pass HTML redacted five runtime JWT occurrences and contains zero JWT patterns. The genuine full 122-case collection remains unchanged.
+- GitHub Actions run `32562812190` executed corrected commit `929ce04` on `hw6-tanh`; workflow `HW06 Selected API Sample Runs` and job `Selected API Newman sample` completed successfully.
+- The green run log shows `controlledFailure=false`, all three target cases (`REG-CI-001`, `CHK-CI-001`, and `CPN-CI-001`), 6 requests, 16 assertions, and 0 failures.
+- GitHub artifact `9473264343`, named `hw06-selected-api-sample-report`, is 12,666 bytes and was verified as unexpired. Student-produced screenshots are stored as `evidence/cicd/selected-api-all-pass-run-32562812190.png` and `evidence/cicd/selected-api-all-pass-log-32562812190.png`.
 
 ### Pending or Unverified
 
-- The corrected selected-API all-pass baseline has not been pushed, so its public run/link/screenshot and artifact do not exist yet.
 - The selected-API controlled one-failure commit must be created only after the corrected green run is verified.
 - No generator design or submission reports exist.
 - `backend/database.sqlite` is modified runtime state and must not be staged.
@@ -181,7 +183,7 @@ Only append a row after explicit student approval.
 ### D. CI/CD and Generator
 
 - [x] Push the full-suite workflow and verify run `32560329025` plus its uploaded sanitized Newman artifact.
-- [ ] Push, capture, and verify the corrected all-pass `HW06 Selected API Sample Runs` workflow and artifact.
+- [x] Push, capture, and verify the corrected all-pass `HW06 Selected API Sample Runs` workflow and artifact.
 - [ ] Change only `controlledFailure` to `true`, then commit/push and capture exactly one failing selected-API test case.
 - [ ] Write generator design and pseudocode.
 - [ ] Student manually draws and exports the diagram.
