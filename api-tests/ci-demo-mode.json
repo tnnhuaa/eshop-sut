@@ -1,4 +1,4 @@
 {
-  "controlledFailure": false,
+  "controlledFailure": true,
   "purpose": "All-pass baseline for the three selected API sample cases. Set true only in the disclosed one-failure sample commit."
 }
