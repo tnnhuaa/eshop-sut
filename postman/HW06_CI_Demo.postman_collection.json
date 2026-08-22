@@ -1,8 +1,8 @@
 {
   "info": {
-    "_postman_id": "23127280-0006-4000-8000-ci-demo000001",
-    "name": "HW06 CI Demonstration",
-    "description": "A deterministic CI-only demonstration. It does not replace the genuine 122-case suite. controlledFailure=false makes all four demo cases pass; true makes exactly CI-CONTROL-001 fail by one assertion.",
+    "_postman_id": "23127280-0006-4000-8000-ci-demo000002",
+    "name": "HW06 CI Selected API Sample Suite",
+    "description": "A deterministic CI sample suite for the three selected HW06 APIs: Register, Checkout, and Create Coupon. Setup requests prepare authentication and cart state. This suite does not replace the genuine 122-case execution. controlledFailure=false makes all three selected API cases pass; true makes exactly CPN-CI-001 fail by one disclosed assertion.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "event": [
@@ -11,6 +11,13 @@
       "script": {
         "type": "text/javascript",
         "exec": [
+          "if (!pm.environment.get('ciRunId')) {",
+          "  const runId = String(pm.environment.get('studentId')) + '_' + Date.now();",
+          "  pm.environment.set('ciRunId', runId);",
+          "  pm.environment.set('ciUserEmail', 'ci_' + runId + '@execution.local');",
+          "  pm.environment.set('ciUserPassword', 'Execution1!');",
+          "  pm.environment.set('ciCouponCode', 'CI_' + runId);",
+          "}",
           "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });"
         ]
       }
@@ -18,14 +25,21 @@
   ],
   "item": [
     {
-      "name": "CI-DEMO-001 | Products endpoint is available",
+      "name": "REG-CI-001 | Register a valid unique user",
       "request": {
-        "method": "GET",
-        "header": [],
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"CI Sample User\",\"email\":\"{{ciUserEmail}}\",\"password\":\"{{ciUserPassword}}\"}",
+          "options": { "raw": { "language": "json" } }
+        },
         "url": {
-          "raw": "{{baseUrl}}/api/products",
+          "raw": "{{baseUrl}}/api/register",
           "host": ["{{baseUrl}}"],
-          "path": ["api", "products"]
+          "path": ["api", "register"]
         }
       },
       "event": [
@@ -34,15 +48,17 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.test('CI-DEMO-001 | HTTP 200', () => pm.response.to.have.status(200));",
-              "pm.test('CI-DEMO-001 | response is an array', () => pm.expect(pm.response.json()).to.be.an('array'));"
+              "const json = pm.response.json();",
+              "pm.test('REG-CI-001 | HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('REG-CI-001 | success schema', () => { pm.expect(json.message).to.eql('User registered successfully'); pm.expect(json.id).to.be.a('number').and.above(0); });",
+              "pm.test('REG-CI-001 | X-Student-Id sent', () => pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')));"
             ]
           }
         }
       ]
     },
     {
-      "name": "CI-DEMO-002 | User login works",
+      "name": "SETUP-CI-001 | Login registered user",
       "request": {
         "method": "POST",
         "header": [
@@ -50,7 +66,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\"email\":\"test@eshop.com\",\"password\":\"Test1234!\"}",
+          "raw": "{\"email\":\"{{ciUserEmail}}\",\"password\":\"{{ciUserPassword}}\"}",
           "options": { "raw": { "language": "json" } }
         },
         "url": {
@@ -65,15 +81,83 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.test('CI-DEMO-002 | HTTP 200', () => pm.response.to.have.status(200));",
-              "pm.test('CI-DEMO-002 | user role returned', () => pm.expect(pm.response.json().user.role).to.eql('user'));"
+              "const json = pm.response.json();",
+              "pm.test('SETUP-CI-001 | HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('SETUP-CI-001 | user token returned', () => { pm.expect(json.user.role).to.eql('user'); pm.expect(json.token).to.be.a('string').and.not.empty; });",
+              "pm.environment.set('ciUserToken', json.token);"
             ]
           }
         }
       ]
     },
     {
-      "name": "CI-DEMO-003 | Admin login works",
+      "name": "SETUP-CI-002 | Add deterministic cart item",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json", "type": "text" },
+          { "key": "Authorization", "value": "Bearer {{ciUserToken}}", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\":1,\"name\":\"CI Sample Product\",\"price\":100000,\"quantity\":2}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/cart",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "cart"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('SETUP-CI-002 | HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('SETUP-CI-002 | cart item accepted', () => pm.expect(pm.response.json().message).to.eql('Added to cart'));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "CHK-CI-001 | Checkout authenticated user's cart",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json", "type": "text" },
+          { "key": "Authorization", "value": "Bearer {{ciUserToken}}", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"total_amount\":200000,\"shipping_address\":\"231 Nguyen Van Cu, District 5, HCMC\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/checkout",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "checkout"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const json = pm.response.json();",
+              "pm.test('CHK-CI-001 | HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('CHK-CI-001 | success schema', () => { pm.expect(json.message).to.eql('Checkout successful'); pm.expect(json.orderId).to.be.a('number').and.above(0); });",
+              "pm.test('CHK-CI-001 | X-Student-Id sent', () => pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SETUP-CI-003 | Login admin",
       "request": {
         "method": "POST",
         "header": [
@@ -96,22 +180,32 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.test('CI-DEMO-003 | HTTP 200', () => pm.response.to.have.status(200));",
-              "pm.test('CI-DEMO-003 | admin role returned', () => pm.expect(pm.response.json().user.role).to.eql('admin'));"
+              "const json = pm.response.json();",
+              "pm.test('SETUP-CI-003 | HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('SETUP-CI-003 | admin token returned', () => { pm.expect(json.user.role).to.eql('admin'); pm.expect(json.token).to.be.a('string').and.not.empty; });",
+              "pm.environment.set('ciAdminToken', json.token);"
             ]
           }
         }
       ]
     },
     {
-      "name": "CI-CONTROL-001 | Disclosed controlled assertion",
+      "name": "CPN-CI-001 | Create a valid coupon as admin",
       "request": {
-        "method": "GET",
-        "header": [],
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json", "type": "text" },
+          { "key": "Authorization", "value": "Bearer {{ciAdminToken}}", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"code\":\"{{ciCouponCode}}\",\"type\":\"percent\",\"discount_value\":15,\"min_order_amount\":200000,\"expired_at\":\"2099-12-31\",\"max_uses_per_user\":1}",
+          "options": { "raw": { "language": "json" } }
+        },
         "url": {
-          "raw": "{{baseUrl}}/api/products",
+          "raw": "{{baseUrl}}/api/admin/coupons",
           "host": ["{{baseUrl}}"],
-          "path": ["api", "products"]
+          "path": ["api", "admin", "coupons"]
         }
       },
       "event": [
@@ -120,10 +214,13 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.test('CI-CONTROL-001 | HTTP 200', () => pm.response.to.have.status(200));",
-              "pm.test('CI-CONTROL-001 | controlled demonstration assertion', () => {",
+              "const json = pm.response.json();",
+              "pm.test('CPN-CI-001 | HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('CPN-CI-001 | success schema', () => { pm.expect(json.message).to.eql('Coupon created'); pm.expect(json.id).to.be.a('number').and.above(0); });",
+              "pm.test('CPN-CI-001 | X-Student-Id sent', () => pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')));",
+              "pm.test('CPN-CI-001 | controlled sample outcome', () => {",
               "  const enabled = String(pm.environment.get('controlledFailure')).toLowerCase() === 'true';",
-              "  pm.expect(enabled, 'controlledFailure must be false in all-pass mode').to.eql(false);",
+              "  pm.expect(enabled, 'controlledFailure must be false in the all-pass sample commit').to.eql(false);",
               "});"
             ]
           }

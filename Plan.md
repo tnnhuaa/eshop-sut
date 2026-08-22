@@ -6,7 +6,7 @@
 
 ## Next Action
 
-Push the controlled one-failure commit for workflow `HW06 CI Demonstration` to branch `hw6-tanh`.
+Push the corrected all-pass baseline for workflow `HW06 Selected API Sample Runs` to branch `hw6-tanh`.
 
 ## Approved Scope and Decisions
 
@@ -61,15 +61,15 @@ Push the controlled one-failure commit for workflow `HW06 CI Demonstration` to b
 - Part C and the full-suite CI preparation are committed as `90067ce` (`test: complete API execution and CI preparation`); the commit contains 184 deliverable files and excludes `backend/database.sqlite`.
 - GitHub Actions run `32560329025` executed commit `ddb3900` on `hw6-tanh`: `Backend smoke test` passed, `Newman full suite` failed on the genuine 35 passed / 87 failed SUT result, and artifact `hw06-newman-report` uploaded successfully.
 - GitHub's public API verified artifact `9472588715` (114,354 bytes, not expired). Student screenshots are stored as `evidence/cicd/full-suite-run-32560329025.png` and `evidence/cicd/full-suite-summary-artifact-32560329025.png`.
-- A separate, explicitly disclosed CI demonstration exists so the genuine 122-case suite remains unchanged. It runs four deterministic requests and eight assertions with `X-Student-Id: 23127280`.
-- GitHub Actions run `32560969372` and job `97002335125` verified the all-pass baseline for commit `ada303f`: the workflow concluded `success`, and non-expired artifact `hw06-ci-demo-report` uploaded successfully.
-- `api-tests/ci-demo-mode.json` is now set to the disclosed one-failure mode (`controlledFailure: true`). With the backend returning HTTP 200, local Newman verification produced 4 requests, 8 assertions, exactly 1 failed controlled assertion, and exit code 1.
-- The sanitized all-pass HTML removed two runtime JWTs and contains zero JWT patterns. The genuine full 122-case collection remains unchanged.
+- The earlier four-request demonstration run `32560969372` is retained as historical evidence but does not count as the final all-pass sample because its test cases targeted products/login instead of the three selected APIs.
+- The corrected CI sample suite contains three target cases—`REG-CI-001`, `CHK-CI-001`, and `CPN-CI-001`—plus three labelled setup requests for authentication and cart state. Every request receives `X-Student-Id: 23127280`.
+- With `controlledFailure: false`, local Newman verification executed 6 requests and 16 assertions with 0 failures and exit code 0. With a runtime override of `true`, the same suite produced exactly 1 failed assertion inside `CPN-CI-001` and exit code 1.
+- The corrected all-pass HTML redacted five runtime JWT occurrences and contains zero JWT patterns. The genuine full 122-case collection remains unchanged.
 
 ### Pending or Unverified
 
-- The all-pass public run/link and artifact are verified, but its student screenshot has not been stored yet.
-- The controlled one-failure commit has not been pushed, so its public Actions run/link/screenshot does not exist yet.
+- The corrected selected-API all-pass baseline has not been pushed, so its public run/link/screenshot and artifact do not exist yet.
+- The selected-API controlled one-failure commit must be created only after the corrected green run is verified.
 - No generator design or submission reports exist.
 - `backend/database.sqlite` is modified runtime state and must not be staged.
 
@@ -122,7 +122,7 @@ Required evidence:
 ### 4. Complete CI/CD and Test Generator
 
 1. Extend the smoke workflow to run Newman and upload the HTML report.
-2. Produce one disclosed all-pass CI demonstration and one run with exactly one controlled failing assertion.
+2. Produce one selected-API sample run where Register, Checkout, and Create Coupon all pass, then one run where exactly one of those test cases fails.
 3. Write the generator pseudocode and optional reusable Agent Skill.
 4. The student manually designs and draws the generator diagram in diagrams.net.
 5. Record links, screenshots, commit IDs, and limitations in the reports.
@@ -147,6 +147,7 @@ Only append a row after explicit student approval.
 | 2026-08-18 | Test-case storage | Replace the proposed Excel workbook with one CSV file | Student explicitly requested CSV |
 | 2026-08-18 | Agent workflow | Persist approved decisions and read `Plan.md` before continuing work | Student explicitly requested this behavior |
 | 2026-08-22 | GitHub Issues | Student will create the 10 public Issues manually from prepared Markdown drafts | Student stopped browser automation and requested copy-ready content |
+| 2026-08-22 | CI/CD sample scope | Follow the assignment literally: both sample runs must exercise Register, Checkout, and Create Coupon; setup requests are labelled separately | Student explicitly requested "chỉ làm theo đúng đề" |
 
 ## Progress Checklist
 
@@ -180,9 +181,8 @@ Only append a row after explicit student approval.
 ### D. CI/CD and Generator
 
 - [x] Push the full-suite workflow and verify run `32560329025` plus its uploaded sanitized Newman artifact.
-- [x] Push and verify the all-pass `HW06 CI Demonstration` run `32560969372` and artifact.
-- [ ] Save the student-captured all-pass run screenshot.
-- [ ] Push the commit changing only `controlledFailure` to `true`, then capture and verify the exactly-one-failure run.
+- [ ] Push, capture, and verify the corrected all-pass `HW06 Selected API Sample Runs` workflow and artifact.
+- [ ] Change only `controlledFailure` to `true`, then commit/push and capture exactly one failing selected-API test case.
 - [ ] Write generator design and pseudocode.
 - [ ] Student manually draws and exports the diagram.
 - [ ] Add optional Agent Skill/video demonstration if time permits.

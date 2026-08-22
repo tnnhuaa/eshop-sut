@@ -1,4 +1,4 @@
-name: HW06 CI Demonstration
+name: HW06 Selected API Sample Runs
 
 on:
   push:
@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   ci-demo:
-    name: Controlled Newman demonstration
+    name: Selected API Newman sample
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -56,7 +56,7 @@ jobs:
           cat backend.log
           exit 1
 
-      - name: Run disclosed CI demonstration
+      - name: Run selected API sample suite
         shell: bash
         run: |
           controlled_failure="$(node -p "String(require('./api-tests/ci-demo-mode.json').controlledFailure)")"
@@ -81,11 +81,11 @@ jobs:
             postman/reports/ci-demo/newman.html
           exit "$newman_status"
 
-      - name: Upload sanitized CI demonstration evidence
+      - name: Upload sanitized selected API evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: hw06-ci-demo-report
+          name: hw06-selected-api-sample-report
           path: |
             postman/reports/ci-demo/newman.html
             backend.log
