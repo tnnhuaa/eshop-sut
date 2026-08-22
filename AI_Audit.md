@@ -45,6 +45,7 @@
 | **Artifact #7 - Student execution evidence review**<br>Tool: Codex (primary agent)<br>Time: 2026-08-22 13:55 GMT+7<br>Full prompt: see Artifact #7 verbatim record below. | Verified 22 student-produced screenshots, corrected two filenames, and advanced the plan to public GitHub Issue creation.<br>Full output: see Artifact #7 verbatim record below. | VALID | The evidence set contains two readable Newman images plus 10 distinct Postman request/result pairs with matching Bug and Test IDs. The student later authorized Issue creation, then explicitly chose manual creation from prepared drafts. | Completed in Artifact #8. |
 | **Artifact #8 - Manual GitHub Issue drafts**<br>Tool: Codex (primary agent)<br>Time: 2026-08-22 14:02 GMT+7<br>Full prompt: see Artifact #8 verbatim record below. | Stopped browser automation and created 10 copy-ready Markdown Issue bodies with matching evidence filenames.<br>Full output: see Artifact #8 verbatim record below. | VALID | File inspection found exactly 10 drafts; each contains severity, environment, reproduction steps, expected result, actual result, and two matching evidence image paths. No Issue was falsely claimed as published. | Completed and verified in Artifact #9. |
 | **Artifact #9 - Public Issue verification and CI handoff**<br>Tool: Codex (primary agent)<br>Time: 2026-08-22 14:20 GMT+7<br>Full prompt: see Artifact #9 verbatim record below. | Verified 10 student-created public Issues, recorded their links in the Bug Report and CSV, closed Part C, and prepared a full-suite Newman GitHub Actions job with sanitized artifact upload.<br>Full output: see Artifact #9 verbatim record below. | VALID | GitHub's public API returned Issues #24–#33 with matching Bug IDs/titles, Expected/Actual sections, and two image URLs each. CSV inspection found 122 rows, 10 unique Issue URLs, and no unknown Bug ID. Local CI-path verification reproduced 35 passed / 87 failed cases and zero JWT patterns after sanitization. The response does not claim an unobserved GitHub Actions run. | Commit/push the prepared workflow and capture the real run/artifact evidence. |
+| **Artifact #10 - Execution and CI preparation commit**<br>Tool: Codex (primary agent)<br>Time: 2026-08-22 14:39 GMT+7<br>Full prompt: see Artifact #10 verbatim record below. | Committed the verified Part C deliverables and full-suite CI preparation, preserved runtime-database isolation, and reduced the next student action to pushing the branch.<br>Full output: see Artifact #10 verbatim record below. | VALID | Commit `90067ce` contains 184 deliverable files under the expected subject. Cached diff validation passed after formatting cleanup; the staged file list excluded `backend/database.sqlite` and ignored raw Newman JSON. | Student pushes `hw6-tanh`, opens the triggered Actions run, and returns its link/screenshot. |
 <!-- AUDIT_TABLE_ROWS_END -->
 
 ### Verbatim Artifact Records
@@ -480,16 +481,50 @@ Artifacts 9-9 successfully appended to AI_Audit.md.
 - **Reasoning:** The work closes the externally verified defect-reporting requirement and safely prepares the next CI step without fabricating pipeline evidence or suppressing genuine product failures.
 - **Student Fixes:** Commit/push the prepared workflow and capture the real GitHub Actions run plus uploaded artifact.
 
+### Artifact #10 - Verbatim Record
+
+- **User:** Nguyễn Hiền Tuấn Anh (23127280)
+- **Date and Time:** 2026-08-22 14:39 GMT+7
+- **Agent Used:** Codex (primary agent; no sub-agents)
+- **Prompt:**
+
+````text
+oke commit r chỉ em bước tiếp theo ngắn gọn
+````
+
+- **AI Output:**
+
+````text
+1. Chạy `git push origin hw6-tanh` (khoảng 1–2 phút).
+2. Mở GitHub → **Actions** → workflow **HW06 API Tests** → run mới nhất.
+3. Mở job **Newman full suite**, kiểm tra artifact `hw06-newman-report`, rồi gửi anh link run hoặc ảnh chụp.
+
+Đã commit phần chính: `90067ce` — `test: complete API execution and CI preparation`. Commit tài liệu audit dùng subject `docs: record execution commit and push step`. `backend/database.sqlite` vẫn nằm ngoài commit.
+
+Job `Newman full suite` dự kiến màu đỏ vì 87 lỗi SUT thật; artifact vẫn phải xuất hiện ở cuối trang run.
+
+Artifacts 10-10 successfully appended to AI_Audit.md.
+````
+
+- **File Modifications:**
+  - **File:** `Plan.md`; **Action:** edited; **Details:** recorded commit `90067ce`, confirmed database exclusion, and set branch push as the single next action.
+  - **File:** `AI_Audit.md`; **Action:** edited; **Details:** appended Artifact #10 and refreshed the accuracy summary and mandatory disclosure.
+
+- **Verification Evidence:** Git created commit `90067ce` with subject `test: complete API execution and CI preparation`, reporting 184 files changed. The cached diff check passed after removing generated trailing whitespace. Before commit, `git diff --cached --name-only -- backend/database.sqlite` returned no path; afterward, `git status --short -- backend/database.sqlite` continued to show only an unstaged runtime modification. Raw `postman/reports/final-newman.json` remained ignored and unstaged.
+- **Verdict:** VALID
+- **Reasoning:** The requested commit exists and is identifiable, required deliverables were included, runtime state was excluded, and the response gives a bounded next action without claiming an unobserved push or Actions run.
+- **Student Fixes:** Push branch `hw6-tanh` and return the real Actions run evidence.
+
 <!-- ARTIFACT_DETAILS_END -->
 
 ## **4. Summary of AI Accuracy**
 
 | Metric | Count | Percentage |
 | :---- | :---- | :---- |
-| **Total AI-generated artifacts audited** | 9 | 100% |
-| **VALID (correct, accepted as-is)** | 8 | 88.89% |
+| **Total AI-generated artifacts audited** | 10 | 100% |
+| **VALID (correct, accepted as-is)** | 9 | 90% |
 | **INVALID (wrong; rejected)** | 0 | 0% |
-| **INCOMPLETE (acceptable after edits)** | 1 | 11.11% |
+| **INCOMPLETE (acceptable after edits)** | 1 | 10% |
 
 ## **5. Conclusion - When should AI be used (or not)?**
 
@@ -497,7 +532,7 @@ AI is useful for proposing traceable test structures, generating broad technique
 
 ## **6. Mandatory Disclosure (paste verbatim)**
 
-I used Codex to review the HW06 requirements, plan the workflow, create sanitized Postman/Newman configuration, draft and extend the CI workflow, generate 105 AI-assisted cases, compare 18 student-proposed extensions, implement and execute the 122-case local Newman suite, analyze results, sanitize runtime tokens, reproduce a concurrency defect, maintain the CSV and AI audit, draft a 10-group bug report, verify student-produced screenshots and public Issue metadata, and prepare 10 GitHub Issue drafts. I reviewed all AI cases, accepted 17 original cases, rejected one unsupported variant, approved corrections for the non-valid AI cases, captured the genuine screenshots, and manually published Issues #24–#33 with their evidence. I remain responsible for committing and running the CI workflow, drawing the test-generator diagram, and assembling submission evidence; no unobserved pipeline run or evidence was fabricated or claimed as complete.
+I used Codex to review the HW06 requirements, plan the workflow, create sanitized Postman/Newman configuration, draft and extend the CI workflow, generate 105 AI-assisted cases, compare 18 student-proposed extensions, implement and execute the 122-case local Newman suite, analyze results, sanitize runtime tokens, reproduce a concurrency defect, maintain the CSV and AI audit, draft a 10-group bug report, verify student-produced screenshots and public Issue metadata, prepare 10 GitHub Issue drafts, and commit the verified Part C/CI artifacts. I reviewed all AI cases, accepted 17 original cases, rejected one unsupported variant, approved corrections for the non-valid AI cases, captured the genuine screenshots, and manually published Issues #24–#33 with their evidence. I remain responsible for pushing and verifying the CI runs, drawing the test-generator diagram, and assembling submission evidence; no unobserved pipeline run or evidence was fabricated or claimed as complete.
 
 ## **Signature**
 

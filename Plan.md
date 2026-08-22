@@ -6,7 +6,7 @@
 
 ## Next Action
 
-Commit and push the prepared full-suite GitHub Actions changes, then verify that the `Newman full suite` job uploads the sanitized `hw06-newman-report` artifact even though genuine SUT defects make the job fail.
+Push commit `90067ce` to branch `hw6-tanh`.
 
 ## Approved Scope and Decisions
 
@@ -58,10 +58,11 @@ Commit and push the prepared full-suite GitHub Actions changes, then verify that
 - The Bug Report contains all 10 public links, and every failed CSV row now traces to its mapped GitHub Issue URL.
 - The workflow has a locally validated `Newman full suite` job that runs the 122-case collection and always uploads sanitized HTML, summary, and backend log evidence.
 - The reusable report scripts accept CI-specific input/output paths. A local CI-path verification reproduced 122 cases (35 passed / 87 failed) and found zero remaining JWT patterns after sanitization.
+- Part C and the full-suite CI preparation are committed as `90067ce` (`test: complete API execution and CI preparation`); the commit contains 184 deliverable files and excludes `backend/database.sqlite`.
 
 ### Pending or Unverified
 
-- The full-suite workflow changes have not yet been committed/pushed, so no GitHub Actions Newman artifact or run link exists yet.
+- Commit `90067ce` has not yet been pushed, so no GitHub Actions Newman artifact or run link exists yet.
 - No final all-pass/controlled-one-fail CI evidence pair, generator design, or submission reports exist.
 - `backend/database.sqlite` is modified runtime state and must not be staged.
 
@@ -171,7 +172,7 @@ Only append a row after explicit student approval.
 
 ### D. CI/CD and Generator
 
-- [ ] Commit/push the prepared full-suite workflow and verify its uploaded sanitized Newman report.
+- [ ] Push commit `90067ce` and verify the full-suite workflow's uploaded sanitized Newman report.
 - [ ] Save one all-pass and one controlled one-fail pipeline run.
 - [ ] Write generator design and pseudocode.
 - [ ] Student manually draws and exports the diagram.
