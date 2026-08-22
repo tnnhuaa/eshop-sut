@@ -48,6 +48,7 @@
 | **Artifact #10 - Execution and CI preparation commit**<br>Tool: Codex (primary agent)<br>Time: 2026-08-22 14:39 GMT+7<br>Full prompt: see Artifact #10 verbatim record below. | Committed the verified Part C deliverables and full-suite CI preparation, preserved runtime-database isolation, and reduced the next student action to pushing the branch.<br>Full output: see Artifact #10 verbatim record below. | VALID | Commit `90067ce` contains 184 deliverable files under the expected subject. Cached diff validation passed after formatting cleanup; the staged file list excluded `backend/database.sqlite` and ignored raw Newman JSON. Artifact #11 verifies the resulting public Actions run and artifact. | Completed in Artifact #11. |
 | **Artifact #11 - Full-suite CI run verification**<br>Tool: Codex (primary agent)<br>Time: 2026-08-22 14:45 GMT+7<br>Full prompt: see Artifact #11 verbatim record below. | Verified the student-provided Actions run and screenshots, saved two CI evidence images, closed D1, and advanced the plan to the controlled CI demonstration pair.<br>Full output: see Artifact #11 verbatim record below. | VALID | GitHub's public API confirms run `32560329025` completed for commit `ddb3900`: smoke succeeded, full Newman failed, and non-expired artifact `hw06-newman-report` exists. The screenshots show 122 cases, 35 passed / 87 failed, 100 assertion failures, token redaction, exit code 1, and successful evidence upload. | Create the separate all-pass and exactly-one-controlled-failure CI demonstration runs. |
 | **Artifact #12 - Controlled CI demonstration baseline**<br>Tool: Codex (primary agent)<br>Time: 2026-08-22 14:53 GMT+7<br>Full prompt: see Artifact #12 verbatim record below. | Created a separate four-request CI demonstration, an all-pass mode file, and an Actions workflow that can produce either zero or exactly one disclosed assertion failure without altering the genuine suite.<br>Full output: see Artifact #12 verbatim record below. | VALID | Local Newman runs verified `false` as 8/8 passing with exit 0 and `true` as exactly 1/8 failing with exit 1. The all-pass HTML was sanitized from two runtime JWTs to zero JWT patterns. The full 122-case collection was not changed. | Push the all-pass baseline and return its green workflow link/screenshot before enabling the one-failure commit. |
+| **Artifact #13 - All-pass CI verification and controlled-failure commit**<br>Tool: Codex (primary agent)<br>Time: 2026-08-22 15:15 GMT+7<br>Full prompt: see Artifact #13 verbatim record below. | Verified the public all-pass run and artifact, changed only the disclosed mode flag, locally reproduced exactly one controlled assertion failure, and committed the D2.2 handoff.<br>Full output: see Artifact #13 verbatim record below. | VALID | GitHub's public API confirms run `32560969372` and job `97002335125` concluded successfully for commit `ada303f`, with non-expired artifact `hw06-ci-demo-report`. After the API returned HTTP 200, local Newman executed four requests and eight assertions with exactly one controlled failure and exit code 1. | Push the controlled-failure commit, then capture both the missing green screenshot and the red run summary/artifact evidence. |
 <!-- AUDIT_TABLE_ROWS_END -->
 
 ### Verbatim Artifact Records
@@ -597,16 +598,52 @@ Artifacts 12-12 successfully appended to AI_Audit.md.
 - **Reasoning:** The design demonstrates CI success and one intentional failure without rewriting product oracles, suppressing real defects, or claiming the controlled subset is the full suite. It remains clearly disclosed and independently traceable.
 - **Student Fixes:** Push the all-pass baseline, capture the real green run and artifact, then return the link before the mode is changed to `true`.
 
+### Artifact #13 - Verbatim Record
+
+- **User:** Nguyễn Hiền Tuấn Anh (23127280)
+- **Date and Time:** 2026-08-22 15:15 GMT+7
+- **Agent Used:** Codex (primary agent; no sub-agents)
+- **Prompt:**
+
+````text
+[https://github.com/tnnhuaa/eshop-sut/actions/runs/32560969372/job/97002335125](https://github.com/tnnhuaa/eshop-sut/actions/runs/32560969372/job/97002335125)
+````
+
+- **AI Output:**
+
+````text
+Mốc D2.2 đã chuẩn bị. Việc tiếp theo: chạy `git push origin hw6-tanh` (khoảng 1–2 phút).
+
+- Run all-pass `32560969372` đã được GitHub API xác minh: workflow `HW06 CI Demonstration` pass và artifact `hw06-ci-demo-report` tồn tại.
+- Đã đổi duy nhất `controlledFailure` từ `false` sang `true`.
+- Local verification: 4 requests, 8 assertions, đúng 1 failure, exit 1.
+- Đã commit với subject `ci: demonstrate exactly one controlled failure`; `backend/database.sqlite` vẫn ngoài commit.
+
+Sau khi push: mở run đỏ của **HW06 CI Demonstration**, chụp phần summary `8 assertions / 1 failed` và artifact upload thành công, rồi gửi link + ảnh. Giữ lại ảnh run xanh `32560969372` nữa.
+
+Artifacts 13-13 successfully appended to AI_Audit.md.
+````
+
+- **File Modifications:**
+  - **File:** `api-tests/ci-demo-mode.json`; **Action:** edited; **Details:** changed only `controlledFailure` from `false` to `true` for the disclosed one-failure commit.
+  - **File:** `Plan.md`; **Action:** edited; **Details:** verified the all-pass public run/artifact and set the controlled-failure push as the single next action.
+  - **File:** `AI_Audit.md`; **Action:** edited; **Details:** appended Artifact #13 and refreshed the accuracy summary and disclosure.
+
+- **Verification Evidence:** GitHub's public API returned run `32560969372` and job `97002335125` as completed/success for commit `ada303f6ac8e8fe417ad3e63dfab2bc22a9752cd`; artifact `9472760275`, named `hw06-ci-demo-report`, is 11,760 bytes, unexpired, and tied to the same commit. The first local attempt was rejected as environment-invalid because the backend was not running. After `GET /api/products` returned HTTP 200, Newman executed four requests and eight assertions with zero request failures, exactly one failed controlled assertion, and exit code 1.
+- **Verdict:** VALID
+- **Reasoning:** The change preserves the genuine 122-case suite and alters only a clearly disclosed control flag. Public metadata proves the green baseline, while the accepted local rerun isolates the intended assertion failure from environment failures.
+- **Student Fixes:** Push the controlled-failure commit, capture its red run summary and successful artifact upload, and also save a screenshot of the verified green run.
+
 <!-- ARTIFACT_DETAILS_END -->
 
 ## **4. Summary of AI Accuracy**
 
 | Metric | Count | Percentage |
 | :---- | :---- | :---- |
-| **Total AI-generated artifacts audited** | 12 | 100% |
-| **VALID (correct, accepted as-is)** | 11 | 91.67% |
+| **Total AI-generated artifacts audited** | 13 | 100% |
+| **VALID (correct, accepted as-is)** | 12 | 92.31% |
 | **INVALID (wrong; rejected)** | 0 | 0% |
-| **INCOMPLETE (acceptable after edits)** | 1 | 8.33% |
+| **INCOMPLETE (acceptable after edits)** | 1 | 7.69% |
 
 ## **5. Conclusion - When should AI be used (or not)?**
 
@@ -614,7 +651,7 @@ AI is useful for proposing traceable test structures, generating broad technique
 
 ## **6. Mandatory Disclosure (paste verbatim)**
 
-I used Codex to review the HW06 requirements, plan the workflow, create sanitized Postman/Newman configuration, draft and extend the CI workflows, generate 105 AI-assisted cases, compare 18 student-proposed extensions, implement and execute the 122-case local Newman suite, analyze results, sanitize runtime tokens, reproduce a concurrency defect, maintain the CSV and AI audit, draft a 10-group bug report, verify student-produced screenshots and public Issue/Actions metadata, prepare 10 GitHub Issue drafts, commit the verified Part C/CI artifacts, and create a disclosed controlled CI demonstration. I reviewed all AI cases, accepted 17 original cases, rejected one unsupported variant, approved corrections for the non-valid AI cases, captured the genuine screenshots, manually published Issues #24–#33, pushed the branch, and provided the genuine full-suite CI evidence. I remain responsible for pushing and capturing the all-pass and exactly-one-failure demonstration runs, drawing the test-generator diagram, and assembling submission evidence; no unobserved pipeline run or evidence was fabricated or claimed as complete.
+I used Codex to review the HW06 requirements, plan the workflow, create sanitized Postman/Newman configuration, draft and extend the CI workflows, generate 105 AI-assisted cases, compare 18 student-proposed extensions, implement and execute the 122-case local Newman suite, analyze results, sanitize runtime tokens, reproduce a concurrency defect, maintain the CSV and AI audit, draft a 10-group bug report, verify student-produced screenshots and public Issue/Actions metadata, prepare 10 GitHub Issue drafts, commit the verified Part C/CI artifacts, and create a disclosed controlled CI demonstration. I reviewed all AI cases, accepted 17 original cases, rejected one unsupported variant, approved corrections for the non-valid AI cases, captured the genuine screenshots, manually published Issues #24–#33, pushed the branch, provided the genuine full-suite CI evidence, and supplied the successful all-pass demonstration run for verification. I remain responsible for pushing and capturing the exactly-one-failure demonstration run, saving the all-pass run screenshot, drawing the test-generator diagram, and assembling submission evidence; no unobserved pipeline run or evidence was fabricated or claimed as complete.
 
 ## **Signature**
 

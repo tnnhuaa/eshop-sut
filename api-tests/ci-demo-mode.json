@@ -1,4 +1,4 @@
 {
-  "controlledFailure": false,
+  "controlledFailure": true,
   "purpose": "Set true only in the disclosed one-failure demonstration commit."
 }
